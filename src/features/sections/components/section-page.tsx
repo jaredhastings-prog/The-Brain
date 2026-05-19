@@ -19,7 +19,7 @@ const statusLabel: Record<SectionDefinition["status"], string> = {
 export function SectionPage({ section }: SectionPageProps) {
   return (
     <div className="space-y-6">
-      <section className="rounded-lg border border-border/80 bg-card/70 p-5 shadow-sm md:p-6">
+      <section className="rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant={section.status === "planned" ? "attention" : "signal"}>
             {statusLabel[section.status]}
@@ -60,7 +60,7 @@ export function SectionPage({ section }: SectionPageProps) {
           description="Frontend-only placeholder until data services are added."
         >
           <div className="space-y-3">
-            <div className="flex items-center gap-3 rounded-md border border-border/70 bg-background/40 px-3 py-2">
+            <div className="flex items-center gap-3 rounded-md border border-border/70 bg-muted/45 px-3 py-2">
               <Clock3 className="size-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">
                 No backend or database logic connected.
@@ -88,7 +88,7 @@ function ListWithIcon({
     <div className="space-y-2">
       {items.map((item) => (
         <div
-          className="flex items-center gap-3 rounded-md border border-border/70 bg-background/40 px-3 py-2 text-sm"
+          className="flex items-center gap-3 rounded-md border border-border/70 bg-muted/45 px-3 py-2 text-sm"
           key={item}
         >
           <div className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">

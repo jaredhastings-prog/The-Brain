@@ -27,7 +27,7 @@ export function DashboardCard({
   title,
 }: DashboardCardProps) {
   return (
-    <Card className={cn("overflow-hidden bg-card/80", className)}>
+    <Card className={cn("overflow-hidden bg-card/95", className)}>
       <CardHeader className="gap-3">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">

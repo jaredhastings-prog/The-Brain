@@ -9,7 +9,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen bg-background/85 text-foreground lg:grid lg:grid-cols-[280px_minmax(0,1fr)]">
+    <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[280px_minmax(0,1fr)]">
       <Sidebar
         isMobileOpen={isSidebarOpen}
         onMobileClose={() => setIsSidebarOpen(false)}

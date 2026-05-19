@@ -15,10 +15,10 @@ export function ExecutiveDashboard() {
   return (
     <div className="space-y-6">
       <section className="grid gap-4 xl:grid-cols-[minmax(0,1.55fr)_minmax(320px,0.8fr)]">
-        <div className="rounded-lg border border-border/80 bg-card/70 p-5 shadow-sm md:p-6">
+        <div className="rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="signal">Executive dashboard</Badge>
-            <Badge variant="outline">Dark mode first</Badge>
+            <Badge variant="outline">Hybrid workspace</Badge>
           </div>
           <div className="mt-8 max-w-3xl">
             <h1 className="text-3xl font-semibold tracking-normal text-foreground md:text-5xl">
@@ -74,7 +74,7 @@ export function ExecutiveDashboard() {
             <div className="space-y-2">
               {widget.items.map((item) => (
                 <div
-                  className="flex items-center justify-between rounded-md border border-border/70 bg-background/40 px-3 py-2 text-sm"
+                  className="flex items-center justify-between rounded-md border border-border/70 bg-muted/45 px-3 py-2 text-sm"
                   key={item}
                 >
                   <span className="text-muted-foreground">{item}</span>
@@ -99,7 +99,7 @@ function InsightRow({
   value: string;
 }) {
   return (
-    <div className="flex items-center justify-between gap-3 rounded-md border border-border/70 bg-background/40 px-3 py-2">
+    <div className="flex items-center justify-between gap-3 rounded-md border border-border/70 bg-muted/45 px-3 py-2">
       <div className="flex min-w-0 items-center gap-3">
         <div className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
           {icon}
