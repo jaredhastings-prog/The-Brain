@@ -63,3 +63,5 @@ Those systems are represented as clean frontend contracts and architecture lanes
 - AI Agents
 - Global Capture Inbox
 - Settings
+
+<!-- Deploy preview trigger: no functional change. -->
