@@ -4,12 +4,15 @@ import { Bell, Command, Menu, Plus, Search, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useCaptureInbox } from "@/features/capture-inbox/context/capture-inbox-context";
 
 type TopCommandBarProps = {
   onOpenSidebar: () => void;
 };
 
 export function TopCommandBar({ onOpenSidebar }: TopCommandBarProps) {
+  const { openQuickCapture } = useCaptureInbox();
+
   return (
     <header className="sticky top-0 z-30 border-b border-sidebar-accent/80 bg-sidebar/95 text-sidebar-foreground backdrop-blur-xl">
       <div className="flex min-h-16 items-center gap-3 px-4 md:px-6">
@@ -37,7 +40,9 @@ export function TopCommandBar({ onOpenSidebar }: TopCommandBarProps) {
         <Button
           aria-label="Global capture"
           className="border-sidebar-accent bg-sidebar-accent/55 text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+          onClick={openQuickCapture}
           size="icon"
+          type="button"
           variant="outline"
         >
           <Plus />

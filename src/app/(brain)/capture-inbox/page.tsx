@@ -1,6 +1,5 @@
-import { SectionPage } from "@/features/sections/components/section-page";
-import { sectionRegistry } from "@/features/sections/section-registry";
+import { GlobalCaptureInbox } from "@/features/capture-inbox/components/global-capture-inbox";
 
 export default function CaptureInboxPage() {
-  return <SectionPage section={sectionRegistry.captureInbox} />;
+  return <GlobalCaptureInbox />;
 }
