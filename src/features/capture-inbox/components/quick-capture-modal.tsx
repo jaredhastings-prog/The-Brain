@@ -82,6 +82,8 @@ function QuickCaptureModal() {
   const [form, setForm] =
     React.useState<QuickCaptureFormState>(initialFormState);
   const [isDetailsOpen, setIsDetailsOpen] = React.useState(false);
+  const [formError, setFormError] = React.useState<string | null>(null);
+  const [isSaving, setIsSaving] = React.useState(false);
 
   const availableSubDomains = form.domain ? domainHierarchy[form.domain] : [];
   const canSave = Boolean(form.rawContent.trim());
@@ -101,11 +103,13 @@ function QuickCaptureModal() {
 
   function handleClose() {
     setForm(initialFormState);
+    setFormError(null);
+    setIsSaving(false);
     setIsDetailsOpen(false);
     closeQuickCapture();
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const trimmedContent = form.rawContent.trim();
@@ -114,20 +118,30 @@ function QuickCaptureModal() {
       return;
     }
 
-    addCapture({
-      title: form.title.trim() || undefined,
-      rawContent: trimmedContent,
-      type: form.type || undefined,
-      domain: form.domain || undefined,
-      subDomain: form.subDomain || undefined,
-      priority: form.priority || undefined,
-      status: form.status,
-      tags: form.tags
-        .split(",")
-        .map((tag) => tag.trim())
-        .filter(Boolean),
-    });
-    handleClose();
+    setFormError(null);
+    setIsSaving(true);
+
+    try {
+      await addCapture({
+        title: form.title.trim() || undefined,
+        rawContent: trimmedContent,
+        type: form.type || undefined,
+        domain: form.domain || undefined,
+        subDomain: form.subDomain || undefined,
+        priority: form.priority || undefined,
+        status: form.status,
+        tags: form.tags
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean),
+      });
+      handleClose();
+    } catch (error) {
+      setFormError(
+        error instanceof Error ? error.message : "Unable to save capture.",
+      );
+      setIsSaving(false);
+    }
   }
 
   return (
@@ -269,11 +283,16 @@ function QuickCaptureModal() {
             <Button onClick={handleClose} type="button" variant="ghost">
               Cancel
             </Button>
-            <Button disabled={!canSave} type="submit">
-              Save capture
+            <Button disabled={!canSave || isSaving} type="submit">
+              {isSaving ? "Saving..." : "Save capture"}
               <Inbox className="size-4" />
             </Button>
           </div>
+          {formError ? (
+            <div className="mt-3 rounded-md border border-destructive/20 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+              {formError}
+            </div>
+          ) : null}
         </form>
       </div>
     </div>

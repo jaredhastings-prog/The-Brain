@@ -2,42 +2,29 @@
 
 import * as React from "react";
 
-import { mockCapturedItems } from "@/features/capture-inbox/data/mock-captures";
+import {
+  createCaptureRecord,
+  listCaptures,
+  type NewCaptureInput,
+  updateCaptureStatusRecord,
+} from "@/features/capture-inbox/data/capture-repository";
 import type {
   CaptureInboxItem,
-  CapturePriority,
   CaptureStatus,
-  CaptureSubDomain,
-  CaptureType,
-  LifeDomain,
   ProcessingTarget,
 } from "@/features/capture-inbox/types";
-
-type NewCaptureInput = {
-  title?: string;
-  rawContent: string;
-  type?: CaptureType;
-  domain?: LifeDomain;
-  subDomain?: CaptureSubDomain;
-  priority?: CapturePriority;
-  tags?: string[];
-  status?: CaptureStatus;
-};
+import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 type CaptureInboxContextValue = {
-  addCapture: (capture: NewCaptureInput) => void;
+  addCapture: (capture: NewCaptureInput) => Promise<void>;
   closeQuickCapture: () => void;
+  error: string | null;
   isQuickCaptureOpen: boolean;
+  isLoading: boolean;
   items: CaptureInboxItem[];
   openQuickCapture: () => void;
-  processCapture: (id: string, target: ProcessingTarget) => void;
-  updateCaptureStatus: (id: string, status: CaptureStatus) => void;
-};
-
-const targetCaptureTypeMap: Partial<Record<ProcessingTarget, CaptureType>> = {
-  Task: "Task",
-  Memory: "Memory",
-  "CRM Note": "CRM Note",
+  processCapture: (id: string, target: ProcessingTarget) => Promise<void>;
+  updateCaptureStatus: (id: string, status: CaptureStatus) => Promise<void>;
 };
 
 const CaptureInboxContext =
@@ -48,66 +35,122 @@ export function CaptureInboxProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [items, setItems] =
-    React.useState<CaptureInboxItem[]>(mockCapturedItems);
+  const supabase = React.useMemo(() => createSupabaseBrowserClient(), []);
+  const [items, setItems] = React.useState<CaptureInboxItem[]>([]);
+  const [userId, setUserId] = React.useState<string | null>(null);
+  const [error, setError] = React.useState<string | null>(null);
+  const [isLoading, setIsLoading] = React.useState(true);
   const [isQuickCaptureOpen, setIsQuickCaptureOpen] = React.useState(false);
 
-  const addCapture = React.useCallback((capture: NewCaptureInput) => {
-    const nextItem: CaptureInboxItem = {
-      id: `capture-${Date.now()}`,
-      title: capture.title || undefined,
-      type: capture.type,
-      domain: capture.domain,
-      subDomain: capture.subDomain,
-      priority: capture.priority,
-      status: capture.status ?? "Unprocessed",
-      tags: capture.tags ?? [],
-      rawContent: capture.rawContent,
-      createdAt: new Date().toISOString(),
-      aiRoutingHint: capture.domain
-        ? `Routed to ${
-            capture.subDomain
-              ? `${capture.domain} / ${capture.subDomain}`
-              : capture.domain
-          }.`
-        : "Uncategorised. Ready for later routing.",
-    };
+  React.useEffect(() => {
+    let isMounted = true;
 
-    setItems((current) => [nextItem, ...current]);
-  }, []);
+    async function loadCaptures() {
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const {
+          data: { user },
+          error: userError,
+        } = await supabase.auth.getUser();
+
+        if (userError) {
+          throw new Error(userError.message);
+        }
+
+        if (!user) {
+          throw new Error("No authenticated user found.");
+        }
+
+        const captures = await listCaptures(supabase);
+
+        if (isMounted) {
+          setUserId(user.id);
+          setItems(captures);
+        }
+      } catch (loadError) {
+        if (isMounted) {
+          setError(getErrorMessage(loadError));
+          setItems([]);
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    }
+
+    loadCaptures();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [supabase]);
+
+  const addCapture = React.useCallback(
+    async (capture: NewCaptureInput) => {
+      if (!userId) {
+        throw new Error("No authenticated user found.");
+      }
+
+      try {
+        setError(null);
+        const savedCapture = await createCaptureRecord(
+          supabase,
+          userId,
+          capture,
+        );
+
+        setItems((current) => [savedCapture, ...current]);
+      } catch (saveError) {
+        setError(getErrorMessage(saveError));
+        throw saveError;
+      }
+    },
+    [supabase, userId],
+  );
 
   const processCapture = React.useCallback(
-    (id: string, target: ProcessingTarget) => {
-      setItems((current) =>
-        current.map((item) =>
-          item.id === id
-            ? {
-                ...item,
-                processedAs: target,
-                status: "Processed",
-                type: targetCaptureTypeMap[target] ?? item.type,
-              }
-            : item,
-        ),
-      );
+    async (id: string, _target: ProcessingTarget) => {
+      try {
+        setError(null);
+        const updatedCapture = await updateCaptureStatusRecord(
+          supabase,
+          id,
+          "Processed",
+        );
+
+        setItems((current) =>
+          current.map((item) => (item.id === id ? updatedCapture : item)),
+        );
+      } catch (processError) {
+        setError(getErrorMessage(processError));
+        throw processError;
+      }
     },
-    [],
+    [supabase],
   );
 
   const updateCaptureStatus = React.useCallback(
-    (id: string, status: CaptureStatus) => {
-      setItems((current) =>
-        current.map((item) =>
-          item.id === id
-            ? {
-                ...item,
-                status,
-              }
-            : item,
-        ),
-      );
+    async (id: string, status: CaptureStatus) => {
+      try {
+        setError(null);
+        const updatedCapture = await updateCaptureStatusRecord(
+          supabase,
+          id,
+          status,
+        );
+
+        setItems((current) =>
+          current.map((item) => (item.id === id ? updatedCapture : item)),
+        );
+      } catch (statusError) {
+        setError(getErrorMessage(statusError));
+        throw statusError;
+      }
     },
-    [],
+    [supabase],
   );
 
   const closeQuickCapture = React.useCallback(() => {
@@ -122,6 +165,8 @@ export function CaptureInboxProvider({
     () => ({
       addCapture,
       closeQuickCapture,
+      error,
+      isLoading,
       isQuickCaptureOpen,
       items,
       openQuickCapture,
@@ -131,6 +176,8 @@ export function CaptureInboxProvider({
     [
       addCapture,
       closeQuickCapture,
+      error,
+      isLoading,
       isQuickCaptureOpen,
       items,
       openQuickCapture,
@@ -144,6 +191,10 @@ export function CaptureInboxProvider({
       {children}
     </CaptureInboxContext.Provider>
   );
+}
+
+function getErrorMessage(error: unknown) {
+  return error instanceof Error ? error.message : "Something went wrong.";
 }
 
 export function useCaptureInbox() {

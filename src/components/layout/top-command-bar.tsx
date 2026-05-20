@@ -4,6 +4,7 @@ import { Bell, Command, Menu, Plus, Search, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { LogoutButton } from "@/features/auth/components/logout-button";
 import { useCaptureInbox } from "@/features/capture-inbox/context/capture-inbox-context";
 
 type TopCommandBarProps = {
@@ -62,6 +63,7 @@ export function TopCommandBar({ onOpenSidebar }: TopCommandBarProps) {
         >
           <Bell />
         </Button>
+        <LogoutButton />
       </div>
     </header>
   );

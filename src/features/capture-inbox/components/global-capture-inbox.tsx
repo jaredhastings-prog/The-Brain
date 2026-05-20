@@ -32,7 +32,8 @@ import { cn } from "@/lib/utils";
 type FilterValue<T extends string> = "All" | "Uncategorised" | T;
 
 export function GlobalCaptureInbox() {
-  const { items, processCapture, updateCaptureStatus } = useCaptureInbox();
+  const { error, isLoading, items, processCapture, updateCaptureStatus } =
+    useCaptureInbox();
   const [actionNoticeByItem, setActionNoticeByItem] = React.useState<
     Record<string, string>
   >({});
@@ -66,6 +67,24 @@ export function GlobalCaptureInbox() {
 
   function showActionNotice(id: string, message: string) {
     setActionNoticeByItem((current) => ({ ...current, [id]: message }));
+  }
+
+  async function runItemAction(
+    id: string,
+    action: () => Promise<void>,
+    successMessage: string,
+  ) {
+    try {
+      await action();
+      showActionNotice(id, successMessage);
+    } catch (actionError) {
+      showActionNotice(
+        id,
+        actionError instanceof Error
+          ? actionError.message
+          : "Unable to update capture.",
+      );
+    }
   }
 
   return (
@@ -105,6 +124,11 @@ export function GlobalCaptureInbox() {
           eyebrow="Triage"
           title="Captured Items"
         >
+          {error ? (
+            <div className="mb-4 rounded-md border border-destructive/20 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+              {error}
+            </div>
+          ) : null}
           <div className="mb-4 grid gap-3 md:grid-cols-3">
             <FilterSelect
               label="Type"
@@ -134,30 +158,40 @@ export function GlobalCaptureInbox() {
           </div>
 
           <div className="space-y-3">
-            {filteredItems.length ? (
+            {isLoading ? (
+              <div className="rounded-md border border-border/70 bg-muted/45 px-4 py-8 text-center text-sm text-muted-foreground">
+                Loading captures...
+              </div>
+            ) : filteredItems.length ? (
               filteredItems.map((item) => (
                 <CapturedItemCard
                   actionNotice={actionNoticeByItem[item.id]}
                   item={item}
                   key={item.id}
-                  onArchive={() => {
-                    updateCaptureStatus(item.id, "Archived");
-                    showActionNotice(item.id, "Archived locally.");
-                  }}
-                  onMarkProcessed={() => {
-                    updateCaptureStatus(item.id, "Processed");
-                    showActionNotice(item.id, "Marked processed locally.");
-                  }}
+                  onArchive={() =>
+                    runItemAction(
+                      item.id,
+                      () => updateCaptureStatus(item.id, "Archived"),
+                      "Archived in Supabase.",
+                    )
+                  }
+                  onMarkProcessed={() =>
+                    runItemAction(
+                      item.id,
+                      () => updateCaptureStatus(item.id, "Processed"),
+                      "Marked processed in Supabase.",
+                    )
+                  }
                   onPlaceholderAction={(action) =>
                     showActionNotice(item.id, `${action} coming soon.`)
                   }
-                  onProcess={(target) => {
-                    processCapture(item.id, target);
-                    showActionNotice(
+                  onProcess={(target) =>
+                    runItemAction(
                       item.id,
-                      `Converted to ${target} locally.`,
-                    );
-                  }}
+                      () => processCapture(item.id, target),
+                      `${target} routing is coming soon. Capture marked processed.`,
+                    )
+                  }
                 />
               ))
             ) : (
@@ -259,10 +293,10 @@ function CapturedItemCard({
 }: {
   actionNotice?: string;
   item: CaptureInboxItem;
-  onArchive: () => void;
-  onMarkProcessed: () => void;
+  onArchive: () => Promise<void>;
+  onMarkProcessed: () => Promise<void>;
   onPlaceholderAction: (action: string) => void;
-  onProcess: (target: ProcessingTarget) => void;
+  onProcess: (target: ProcessingTarget) => Promise<void>;
 }) {
   const isArchived = item.status === "Archived";
   const isProcessed = item.status === "Processed";
@@ -284,9 +318,6 @@ function CapturedItemCard({
             <Badge variant="outline">
               Sub-domain: {item.subDomain ?? "None"}
             </Badge>
-            {item.processedAs ? (
-              <Badge variant="signal">Object: {item.processedAs}</Badge>
-            ) : null}
           </div>
           <h2 className="mt-3 text-base font-semibold text-foreground">
             {item.title ?? "Untitled capture"}

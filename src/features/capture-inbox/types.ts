@@ -66,7 +66,6 @@ export type CaptureInboxItem = {
   domain?: LifeDomain;
   subDomain?: CaptureSubDomain;
   priority?: CapturePriority;
-  processedAs?: ProcessingTarget;
   status: CaptureStatus;
   tags: string[];
   rawContent: string;
