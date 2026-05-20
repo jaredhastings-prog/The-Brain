@@ -1,27 +1,41 @@
 "use client";
 
 import * as React from "react";
-import { BrainCircuit, Filter, Mic, Sparkles, Tags } from "lucide-react";
+import {
+  Archive,
+  BrainCircuit,
+  CheckCircle2,
+  Filter,
+  Mic,
+  Sparkles,
+  Tags,
+} from "lucide-react";
 
 import { DashboardCard } from "@/components/dashboard/dashboard-card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { useCaptureInbox } from "@/features/capture-inbox/context/capture-inbox-context";
 import {
   captureStatuses,
   captureTypes,
   lifeDomains,
+  processingTargets,
   type CaptureInboxItem,
   type CapturePriority,
   type CaptureStatus,
   type CaptureType,
   type LifeDomain,
+  type ProcessingTarget,
 } from "@/features/capture-inbox/types";
 import { cn } from "@/lib/utils";
 
 type FilterValue<T extends string> = "All" | "Uncategorised" | T;
 
 export function GlobalCaptureInbox() {
-  const { items } = useCaptureInbox();
+  const { items, processCapture, updateCaptureStatus } = useCaptureInbox();
+  const [actionNoticeByItem, setActionNoticeByItem] = React.useState<
+    Record<string, string>
+  >({});
   const [typeFilter, setTypeFilter] =
     React.useState<FilterValue<CaptureType>>("All");
   const [domainFilter, setDomainFilter] =
@@ -43,8 +57,16 @@ export function GlobalCaptureInbox() {
     return matchesType && matchesDomain && matchesStatus;
   });
 
-  const inboxCount = items.filter((item) => item.status === "Inbox").length;
-  const uncategorisedCount = items.filter((item) => !item.domain).length;
+  const unprocessedCount = items.filter(
+    (item) => item.status === "Unprocessed",
+  ).length;
+  const archivedCount = items.filter(
+    (item) => item.status === "Archived",
+  ).length;
+
+  function showActionNotice(id: string, message: string) {
+    setActionNoticeByItem((current) => ({ ...current, [id]: message }));
+  }
 
   return (
     <div className="space-y-6 pb-20">
@@ -65,10 +87,13 @@ export function GlobalCaptureInbox() {
           </div>
           <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
             <CaptureStat label="Captured" value={items.length.toString()} />
-            <CaptureStat label="In inbox" value={inboxCount.toString()} />
             <CaptureStat
-              label="Uncategorised"
-              value={uncategorisedCount.toString()}
+              label="Unprocessed"
+              value={unprocessedCount.toString()}
+            />
+            <CaptureStat
+              label="Archived"
+              value={archivedCount.toString()}
             />
           </div>
         </div>
@@ -111,7 +136,29 @@ export function GlobalCaptureInbox() {
           <div className="space-y-3">
             {filteredItems.length ? (
               filteredItems.map((item) => (
-                <CapturedItemCard item={item} key={item.id} />
+                <CapturedItemCard
+                  actionNotice={actionNoticeByItem[item.id]}
+                  item={item}
+                  key={item.id}
+                  onArchive={() => {
+                    updateCaptureStatus(item.id, "Archived");
+                    showActionNotice(item.id, "Archived locally.");
+                  }}
+                  onMarkProcessed={() => {
+                    updateCaptureStatus(item.id, "Processed");
+                    showActionNotice(item.id, "Marked processed locally.");
+                  }}
+                  onPlaceholderAction={(action) =>
+                    showActionNotice(item.id, `${action} coming soon.`)
+                  }
+                  onProcess={(target) => {
+                    processCapture(item.id, target);
+                    showActionNotice(
+                      item.id,
+                      `Converted to ${target} locally.`,
+                    );
+                  }}
+                />
               ))
             ) : (
               <div className="rounded-md border border-border/70 bg-muted/45 px-4 py-8 text-center text-sm text-muted-foreground">
@@ -202,27 +249,51 @@ function FilterSelect<T extends readonly string[]>({
   );
 }
 
-function CapturedItemCard({ item }: { item: CaptureInboxItem }) {
-  const domainLabel = item.domain
-    ? item.subDomain
-      ? `${item.domain} / ${item.subDomain}`
-      : item.domain
-    : "Uncategorised";
+function CapturedItemCard({
+  actionNotice,
+  item,
+  onArchive,
+  onMarkProcessed,
+  onPlaceholderAction,
+  onProcess,
+}: {
+  actionNotice?: string;
+  item: CaptureInboxItem;
+  onArchive: () => void;
+  onMarkProcessed: () => void;
+  onPlaceholderAction: (action: string) => void;
+  onProcess: (target: ProcessingTarget) => void;
+}) {
+  const isArchived = item.status === "Archived";
+  const isProcessed = item.status === "Processed";
 
   return (
     <article className="rounded-md border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]">
       <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <Badge variant={item.status === "Inbox" ? "attention" : "secondary"}>
+            <Badge variant={getStatusBadgeVariant(item.status)}>
               {item.status}
             </Badge>
-            <Badge variant="outline">{item.type ?? "Uncategorised"}</Badge>
-            <Badge variant="outline">{domainLabel}</Badge>
+            <Badge variant="outline">
+              Capture: {item.type ?? "Uncategorised"}
+            </Badge>
+            <Badge variant="outline">
+              Domain: {item.domain ?? "Uncategorised"}
+            </Badge>
+            <Badge variant="outline">
+              Sub-domain: {item.subDomain ?? "None"}
+            </Badge>
+            {item.processedAs ? (
+              <Badge variant="signal">Object: {item.processedAs}</Badge>
+            ) : null}
           </div>
           <h2 className="mt-3 text-base font-semibold text-foreground">
             {item.title ?? "Untitled capture"}
           </h2>
+          <div className="mt-1 text-xs text-muted-foreground">
+            Created {formatCaptureDate(item.createdAt)}
+          </div>
         </div>
         {item.priority ? <PriorityBadge priority={item.priority} /> : null}
       </div>
@@ -251,8 +322,98 @@ function CapturedItemCard({ item }: { item: CaptureInboxItem }) {
       <div className="mt-4 rounded-md border border-dashed border-border bg-muted/35 px-3 py-2 text-xs leading-5 text-muted-foreground">
         {item.aiRoutingHint}
       </div>
+
+      <div className="mt-4 border-t border-border/70 pt-4">
+        <div className="text-xs font-medium uppercase tracking-normal text-muted-foreground">
+          Process
+        </div>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {processingTargets.map((target) => (
+            <Button
+              disabled={isArchived}
+              key={target}
+              onClick={() => onProcess(target)}
+              size="sm"
+              type="button"
+              variant="secondary"
+            >
+              Convert to {target}
+            </Button>
+          ))}
+          <Button
+            disabled={isProcessed || isArchived}
+            onClick={onMarkProcessed}
+            size="sm"
+            type="button"
+            variant="outline"
+          >
+            <CheckCircle2 className="size-3.5" />
+            Mark Processed
+          </Button>
+          <Button
+            disabled={isArchived}
+            onClick={onArchive}
+            size="sm"
+            type="button"
+            variant="outline"
+          >
+            <Archive className="size-3.5" />
+            Archive
+          </Button>
+        </div>
+      </div>
+
+      <div className="mt-4 border-t border-border/70 pt-4">
+        <div className="text-xs font-medium uppercase tracking-normal text-muted-foreground">
+          AI Assist
+        </div>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {["Suggest destination", "Extract actions", "Summarise"].map(
+            (action) => (
+              <Button
+                key={action}
+                onClick={() => onPlaceholderAction(action)}
+                size="sm"
+                type="button"
+                variant="ghost"
+              >
+                <Sparkles className="size-3.5" />
+                {action}
+              </Button>
+            ),
+          )}
+        </div>
+        {actionNotice ? (
+          <div className="mt-3 rounded-md border border-border/70 bg-muted/40 px-3 py-2 text-xs text-muted-foreground">
+            {actionNotice}
+          </div>
+        ) : null}
+      </div>
     </article>
   );
+}
+
+function getStatusBadgeVariant(
+  status: CaptureStatus,
+): "attention" | "secondary" | "signal" {
+  if (status === "Processed") {
+    return "signal";
+  }
+
+  if (status === "Archived") {
+    return "secondary";
+  }
+
+  return "attention";
+}
+
+function formatCaptureDate(value: string) {
+  return new Intl.DateTimeFormat("en-AU", {
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    month: "short",
+  }).format(new Date(value));
 }
 
 function PriorityBadge({ priority }: { priority: CapturePriority }) {

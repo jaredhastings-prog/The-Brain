@@ -8,7 +8,7 @@ export const mockCapturedItems: CaptureInboxItem[] = [
     domain: "Business",
     subDomain: "Evolve Lab",
     priority: "High",
-    status: "Inbox",
+    status: "Unprocessed",
     tags: ["evolve-lab", "offer", "client-journey"],
     rawContent:
       "Sketch a clearer onboarding path from first call through first 30 days. Include decisions, assets, client expectations, and places where AI can summarize progress.",
@@ -22,7 +22,8 @@ export const mockCapturedItems: CaptureInboxItem[] = [
     domain: "Study & Learning",
     subDomain: "Master of Business Psychology",
     priority: "Medium",
-    status: "Triaged",
+    processedAs: "Note",
+    status: "Processed",
     tags: ["masters", "assessment", "reading"],
     rawContent:
       "Need to connect motivation theory notes with real workplace coaching examples. Pull out three examples from current client context before writing.",
@@ -36,7 +37,7 @@ export const mockCapturedItems: CaptureInboxItem[] = [
     domain: "Liam",
     subDomain: "Activities",
     priority: "High",
-    status: "In Progress",
+    status: "Unprocessed",
     tags: ["liam", "weekend", "family"],
     rawContent:
       "Plan something outside this weekend. Keep it simple, active, and not over-scheduled. Check weather and choose one main thing.",
@@ -49,7 +50,7 @@ export const mockCapturedItems: CaptureInboxItem[] = [
     type: "Finance Note",
     domain: "Finance",
     priority: "Medium",
-    status: "Inbox",
+    status: "Unprocessed",
     tags: ["budget", "subscriptions"],
     rawContent:
       "Review active tools, SaaS, streaming, and app subscriptions. Decide what is essential, what is experimental, and what can be cancelled.",
@@ -72,7 +73,7 @@ export const mockCapturedItems: CaptureInboxItem[] = [
   },
   {
     id: "capture-006",
-    status: "Inbox",
+    status: "Unprocessed",
     tags: [],
     rawContent:
       "Follow up on the thought about simplifying the weekly reset. Leave it uncategorised until it is clearer where it belongs.",

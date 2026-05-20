@@ -10,6 +10,7 @@ import type {
   CaptureSubDomain,
   CaptureType,
   LifeDomain,
+  ProcessingTarget,
 } from "@/features/capture-inbox/types";
 
 type NewCaptureInput = {
@@ -29,6 +30,14 @@ type CaptureInboxContextValue = {
   isQuickCaptureOpen: boolean;
   items: CaptureInboxItem[];
   openQuickCapture: () => void;
+  processCapture: (id: string, target: ProcessingTarget) => void;
+  updateCaptureStatus: (id: string, status: CaptureStatus) => void;
+};
+
+const targetCaptureTypeMap: Partial<Record<ProcessingTarget, CaptureType>> = {
+  Task: "Task",
+  Memory: "Memory",
+  "CRM Note": "CRM Note",
 };
 
 const CaptureInboxContext =
@@ -51,7 +60,7 @@ export function CaptureInboxProvider({
       domain: capture.domain,
       subDomain: capture.subDomain,
       priority: capture.priority,
-      status: capture.status ?? "Inbox",
+      status: capture.status ?? "Unprocessed",
       tags: capture.tags ?? [],
       rawContent: capture.rawContent,
       createdAt: new Date().toISOString(),
@@ -66,6 +75,40 @@ export function CaptureInboxProvider({
 
     setItems((current) => [nextItem, ...current]);
   }, []);
+
+  const processCapture = React.useCallback(
+    (id: string, target: ProcessingTarget) => {
+      setItems((current) =>
+        current.map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                processedAs: target,
+                status: "Processed",
+                type: targetCaptureTypeMap[target] ?? item.type,
+              }
+            : item,
+        ),
+      );
+    },
+    [],
+  );
+
+  const updateCaptureStatus = React.useCallback(
+    (id: string, status: CaptureStatus) => {
+      setItems((current) =>
+        current.map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                status,
+              }
+            : item,
+        ),
+      );
+    },
+    [],
+  );
 
   const closeQuickCapture = React.useCallback(() => {
     setIsQuickCaptureOpen(false);
@@ -82,8 +125,18 @@ export function CaptureInboxProvider({
       isQuickCaptureOpen,
       items,
       openQuickCapture,
+      processCapture,
+      updateCaptureStatus,
     }),
-    [addCapture, closeQuickCapture, isQuickCaptureOpen, items, openQuickCapture],
+    [
+      addCapture,
+      closeQuickCapture,
+      isQuickCaptureOpen,
+      items,
+      openQuickCapture,
+      processCapture,
+      updateCaptureStatus,
+    ],
   );
 
   return (

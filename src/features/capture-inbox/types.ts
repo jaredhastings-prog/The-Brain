@@ -23,18 +23,21 @@ export const lifeDomains = [
 
 export const capturePriorities = ["Low", "Medium", "High", "Urgent"] as const;
 
-export const captureStatuses = [
-  "Inbox",
-  "Triaged",
-  "In Progress",
-  "Done",
-  "Archived",
+export const captureStatuses = ["Unprocessed", "Processed", "Archived"] as const;
+
+export const processingTargets = [
+  "Task",
+  "Project",
+  "Note",
+  "Memory",
+  "CRM Note",
 ] as const;
 
 export type CaptureType = (typeof captureTypes)[number];
 export type LifeDomain = (typeof lifeDomains)[number];
 export type CapturePriority = (typeof capturePriorities)[number];
 export type CaptureStatus = (typeof captureStatuses)[number];
+export type ProcessingTarget = (typeof processingTargets)[number];
 
 export const domainHierarchy = {
   Business: [
@@ -63,6 +66,7 @@ export type CaptureInboxItem = {
   domain?: LifeDomain;
   subDomain?: CaptureSubDomain;
   priority?: CapturePriority;
+  processedAs?: ProcessingTarget;
   status: CaptureStatus;
   tags: string[];
   rawContent: string;

@@ -39,7 +39,7 @@ const initialFormState: QuickCaptureFormState = {
   subDomain: "",
   priority: "",
   tags: "",
-  status: "Inbox",
+  status: "Unprocessed",
 };
 
 export function GlobalQuickCapture() {
