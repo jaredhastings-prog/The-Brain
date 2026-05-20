@@ -9,14 +9,14 @@ export default function LoginPage() {
         <div className="grid w-full gap-8 lg:grid-cols-[minmax(0,0.9fr)_420px] lg:items-center">
           <section>
             <div className="inline-flex rounded-md border border-sidebar-accent bg-sidebar-accent/45 px-3 py-1 text-sm text-sidebar-foreground/75">
-              Jared Brain
+              Private workspace access
             </div>
             <h1 className="mt-6 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
-              Sign in to your executive brain.
+              Secure login for Jared Brain.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-sidebar-foreground/65">
-              Capture, process, and preserve your thinking in a private,
-              user-scoped workspace.
+              This is a private personal operating system for Jared&apos;s
+              thinking, capture, and memory. Authorised access only.
             </p>
           </section>
           <Suspense fallback={<LoginCardFallback />}>

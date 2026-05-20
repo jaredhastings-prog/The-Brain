@@ -25,6 +25,7 @@ export function LoginForm() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const nextPath = getSafeNextPath(searchParams.get("next"));
+  const isOwnerSetup = mode === "signup";
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -57,8 +58,10 @@ export function LoginForm() {
       return;
     }
 
-    if (mode === "signup" && !result.data.session) {
-      setMessage("Account created. Check your email to confirm sign-up.");
+    if (isOwnerSetup && !result.data.session) {
+      setMessage(
+        "Private access setup started. Check the authorised email to confirm.",
+      );
       return;
     }
 
@@ -70,11 +73,14 @@ export function LoginForm() {
     <section className="rounded-lg border border-sidebar-accent bg-sidebar-accent/35 p-5 shadow-2xl">
       <div>
         <div className="text-sm font-medium text-sidebar-foreground/65">
-          {mode === "login" ? "Welcome back" : "Create access"}
+          {isOwnerSetup ? "Authorised owner setup" : "Private workspace access"}
         </div>
         <h2 className="mt-1 text-2xl font-semibold text-sidebar-foreground">
-          {mode === "login" ? "Log in" : "Sign up"}
+          {isOwnerSetup ? "Private access setup" : "Secure login"}
         </h2>
+        <p className="mt-2 text-sm leading-6 text-sidebar-foreground/60">
+          This is a private personal operating system. Authorised access only.
+        </p>
       </div>
 
       {!hasConfig ? (
@@ -128,9 +134,9 @@ export function LoginForm() {
         >
           {isSubmitting
             ? "Please wait..."
-            : mode === "login"
-              ? "Log in"
-              : "Sign up"}
+            : isOwnerSetup
+              ? "Create private access"
+              : "Enter Jared Brain"}
         </Button>
       </form>
 
@@ -142,9 +148,7 @@ export function LoginForm() {
         }}
         type="button"
       >
-        {mode === "login"
-          ? "Need access? Create an account."
-          : "Already have access? Log in."}
+        {isOwnerSetup ? "Return to secure login." : "Authorised setup only."}
       </button>
     </section>
   );
