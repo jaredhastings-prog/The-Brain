@@ -1,5 +1,4 @@
 import type * as React from "react";
-import Link from "next/link";
 import { ArrowRight, BrainCircuit, Inbox, Sparkles } from "lucide-react";
 
 import { DashboardCard } from "@/components/dashboard/dashboard-card";
@@ -7,6 +6,7 @@ import { MetricCard } from "@/components/dashboard/metric-card";
 import { WidgetGrid } from "@/components/dashboard/widget-grid";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { QuickCaptureButton } from "@/features/capture-inbox/components/quick-capture-modal";
 import {
   dashboardWidgets,
   executiveMetrics,
@@ -29,12 +29,10 @@ export function ExecutiveDashboard() {
               A calm personal operating system for decisions, memory, business,
               learning, health, relationships, finance, and AI-assisted execution.
             </p>
-            <Button asChild className="mt-6">
-              <Link href="/capture-inbox">
-                <Inbox className="size-4" />
-                Quick capture
-              </Link>
-            </Button>
+            <QuickCaptureButton className="mt-6">
+              <Inbox className="size-4" />
+              Quick capture
+            </QuickCaptureButton>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {executiveMetrics.map((metric) => (
