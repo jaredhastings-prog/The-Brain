@@ -14,11 +14,9 @@ import { nlpTopicGroups } from "@/features/nlp-study/data/nlp-repository-content
 export function NlpRepository() {
   const [groupFilter, setGroupFilter] = React.useState("All");
   const [openGroupIds, setOpenGroupIds] = React.useState<Set<string>>(
-    () => new Set(["nlp-foundations"]),
+    () => new Set(),
   );
-  const [openTopicId, setOpenTopicId] = React.useState(
-    nlpTopicGroups[0].topics[0].id,
-  );
+  const [openTopicId, setOpenTopicId] = React.useState("");
   const [searchQuery, setSearchQuery] = React.useState("");
 
   const filteredGroups = React.useMemo(() => {
@@ -68,7 +66,7 @@ export function NlpRepository() {
   }
 
   function handleTopicToggle(topicId: string, groupId: string) {
-    setOpenTopicId(topicId);
+    setOpenTopicId((current) => (current === topicId ? "" : topicId));
     setOpenGroupIds((current) => new Set(current).add(groupId));
   }
 
