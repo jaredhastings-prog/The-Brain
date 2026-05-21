@@ -38,6 +38,9 @@ export function NlpRepository() {
             topic.models.join(" "),
             topic.patterns.join(" "),
             topic.examples.join(" "),
+            topic.personalNotes.join(" "),
+            topic.resources.join(" "),
+            topic.linkedCaptures.join(" "),
           ]
             .join(" ")
             .toLowerCase()
