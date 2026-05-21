@@ -1,6 +1,5 @@
-import { SectionPage } from "@/features/sections/components/section-page";
-import { sectionRegistry } from "@/features/sections/section-registry";
+import { NlpStudyHub } from "@/features/nlp-study/components/nlp-study-hub";
 
 export default function NlpPage() {
-  return <SectionPage section={sectionRegistry.nlp} />;
+  return <NlpStudyHub />;
 }
