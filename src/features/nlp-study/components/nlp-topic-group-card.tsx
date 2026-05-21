@@ -1,47 +1,37 @@
 import * as React from "react";
 import {
   BookOpen,
-  CheckCircle2,
   ChevronDown,
-  Circle,
   FileText,
-  LayoutPanelLeft,
-  PenLine,
-  Sparkles,
-  Target,
+  FolderOpen,
+  Image,
+  Layers3,
+  Link2,
+  MessageSquareText,
+  NotebookPen,
+  Workflow,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import type {
   NlpTopic,
   NlpTopicGroup,
-  NlpTopicStatus,
-} from "@/features/nlp-study/data/nlp-study-content";
-import type { StatusByTopic } from "@/features/nlp-study/types";
+} from "@/features/nlp-study/data/nlp-repository-content";
 import { cn } from "@/lib/utils";
 
 export function NlpTopicGroupCard({
   group,
   isOpen,
-  onStatusChange,
   onToggle,
   onTopicToggle,
   openTopicId,
-  statusByTopic,
 }: {
   group: NlpTopicGroup;
   isOpen: boolean;
-  onStatusChange: (topicId: string, status: NlpTopicStatus) => void;
   onToggle: () => void;
   onTopicToggle: (topicId: string, groupId: string) => void;
   openTopicId: string;
-  statusByTopic: StatusByTopic;
 }) {
-  const integratedCount = group.topics.filter(
-    (topic) => statusByTopic[topic.id] === "Integrated",
-  ).length;
-
   return (
     <div className="rounded-lg border border-border/80 bg-card/90 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]">
       <button
@@ -52,10 +42,8 @@ export function NlpTopicGroupCard({
       >
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="outline">{group.topics.length} topics</Badge>
-            {group.pathwayDay ? (
-              <Badge variant="secondary">Day {group.pathwayDay}</Badge>
-            ) : null}
+            <Badge variant="outline">{group.topics.length} entries</Badge>
+            <Badge variant="secondary">Reference area</Badge>
           </div>
           <h2 className="mt-3 text-base font-semibold text-foreground">
             {group.title}
@@ -64,17 +52,12 @@ export function NlpTopicGroupCard({
             {group.description}
           </p>
         </div>
-        <div className="flex shrink-0 items-center gap-3">
-          <span className="hidden text-xs text-muted-foreground sm:inline">
-            {integratedCount}/{group.topics.length} integrated
-          </span>
-          <ChevronDown
-            className={cn(
-              "size-4 text-muted-foreground transition-transform",
-              isOpen && "rotate-180",
-            )}
-          />
-        </div>
+        <ChevronDown
+          className={cn(
+            "mt-1 size-4 shrink-0 text-muted-foreground transition-transform",
+            isOpen && "rotate-180",
+          )}
+        />
       </button>
 
       {isOpen ? (
@@ -85,9 +68,7 @@ export function NlpTopicGroupCard({
               groupTitle={group.title}
               isOpen={openTopicId === topic.id}
               key={topic.id}
-              onStatusChange={onStatusChange}
               onToggle={onTopicToggle}
-              status={statusByTopic[topic.id]}
               topic={topic}
             />
           ))}
@@ -101,17 +82,13 @@ function NlpTopicCard({
   groupId,
   groupTitle,
   isOpen,
-  onStatusChange,
   onToggle,
-  status,
   topic,
 }: {
   groupId: string;
   groupTitle: string;
   isOpen: boolean;
-  onStatusChange: (topicId: string, status: NlpTopicStatus) => void;
   onToggle: (topicId: string, groupId: string) => void;
-  status: NlpTopicStatus;
   topic: NlpTopic;
 }) {
   return (
@@ -123,7 +100,9 @@ function NlpTopicCard({
         type="button"
       >
         <div className="flex min-w-0 items-center gap-3">
-          <StatusIcon status={status} />
+          <span className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
+            <FolderOpen className="size-4" />
+          </span>
           <div className="min-w-0">
             <h3 className="truncate text-sm font-semibold text-foreground">
               {topic.title}
@@ -131,80 +110,67 @@ function NlpTopicCard({
             <p className="mt-0.5 text-xs text-muted-foreground">{groupTitle}</p>
           </div>
         </div>
-        <div className="flex shrink-0 items-center gap-2">
-          <StatusBadge status={status} />
-          <ChevronDown
-            className={cn(
-              "size-4 text-muted-foreground transition-transform",
-              isOpen && "rotate-180",
-            )}
-          />
-        </div>
+        <ChevronDown
+          className={cn(
+            "size-4 shrink-0 text-muted-foreground transition-transform",
+            isOpen && "rotate-180",
+          )}
+        />
       </button>
 
       {isOpen ? (
         <div className="border-t border-border/70 px-4 py-4">
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_240px]">
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_260px]">
             <div className="space-y-4">
-              <LearningBlock
+              <RepositoryBlock
                 icon={<BookOpen className="size-4" />}
                 title="Overview"
               >
                 <p>{topic.overview}</p>
-              </LearningBlock>
-              <LearningBlock
-                icon={<Target className="size-4" />}
-                title="Key ideas"
+              </RepositoryBlock>
+              <RepositoryBlock
+                icon={<Layers3 className="size-4" />}
+                title="Core Concepts"
               >
-                <ul className="space-y-2">
-                  {topic.keyIdeas.map((idea) => (
-                    <li className="flex gap-2" key={idea}>
-                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>{idea}</span>
-                    </li>
-                  ))}
-                </ul>
-              </LearningBlock>
+                <BulletList items={topic.coreConcepts} />
+              </RepositoryBlock>
+              <RepositoryBlock
+                icon={<Workflow className="size-4" />}
+                title="Patterns / Techniques"
+              >
+                <BulletList items={topic.patterns} />
+              </RepositoryBlock>
             </div>
 
             <div className="space-y-3">
-              <PlaceholderPanel
-                icon={<LayoutPanelLeft className="size-4" />}
-                title="Visual / diagram"
+              <RepositoryListPanel
+                description="Model maps, process diagrams, visual tables, and image references."
+                icon={<Image className="size-4" />}
+                items={topic.models}
+                title="Models / Diagrams"
               />
-              <PlaceholderPanel
-                icon={<PenLine className="size-4" />}
-                title="Practice exercise"
+              <RepositoryListPanel
+                description="Concrete examples, context notes, and observed applications."
+                icon={<MessageSquareText className="size-4" />}
+                items={topic.examples}
+                title="Examples"
               />
-              <PlaceholderPanel
+              <RepositoryPlaceholder
+                description="Private notes, personal distinctions, and future source-backed expansions."
+                icon={<NotebookPen className="size-4" />}
+                title="Personal Notes"
+              />
+              <RepositoryPlaceholder
+                description="Books, PDFs, videos, links, and supporting references."
+                icon={<Link2 className="size-4" />}
+                title="Related Resources"
+              />
+              <RepositoryPlaceholder
+                description="Future links from Global Capture Inbox entries and raw notes."
                 icon={<FileText className="size-4" />}
-                title="Personal notes"
-              />
-              <PlaceholderPanel
-                icon={<BookOpen className="size-4" />}
-                title="Resources"
+                title="Linked Captures"
               />
             </div>
-          </div>
-
-          <div className="mt-4 flex flex-wrap gap-2 border-t border-border/70 pt-4">
-            <Button
-              onClick={() => onStatusChange(topic.id, "In Progress")}
-              size="sm"
-              type="button"
-              variant="secondary"
-            >
-              Mark in progress
-            </Button>
-            <Button
-              onClick={() => onStatusChange(topic.id, "Integrated")}
-              size="sm"
-              type="button"
-              variant="outline"
-            >
-              <CheckCircle2 className="size-3.5" />
-              Mark integrated
-            </Button>
           </div>
         </div>
       ) : null}
@@ -212,7 +178,7 @@ function NlpTopicCard({
   );
 }
 
-function LearningBlock({
+function RepositoryBlock({
   children,
   icon,
   title,
@@ -234,10 +200,25 @@ function LearningBlock({
   );
 }
 
-function PlaceholderPanel({
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li className="flex gap-2" key={item}>
+          <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function RepositoryPlaceholder({
+  description,
   icon,
   title,
 }: {
+  description: string;
   icon: React.ReactNode;
   title: string;
 }) {
@@ -250,45 +231,42 @@ function PlaceholderPanel({
         {title}
       </div>
       <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        Placeholder ready for practitioner manual notes, workbook reflections,
-        diagrams, and resource links.
+        {description}
       </p>
     </div>
   );
 }
 
-function StatusIcon({ status }: { status: NlpTopicStatus }) {
-  if (status === "Integrated") {
-    return (
-      <span className="grid size-8 shrink-0 place-items-center rounded-md bg-emerald-50 text-emerald-700">
-        <CheckCircle2 className="size-4" />
-      </span>
-    );
-  }
-
-  if (status === "In Progress") {
-    return (
-      <span className="grid size-8 shrink-0 place-items-center rounded-md bg-amber-50 text-amber-700">
-        <Sparkles className="size-4" />
-      </span>
-    );
-  }
-
+function RepositoryListPanel({
+  description,
+  icon,
+  items,
+  title,
+}: {
+  description: string;
+  icon: React.ReactNode;
+  items: string[];
+  title: string;
+}) {
   return (
-    <span className="grid size-8 shrink-0 place-items-center rounded-md bg-zinc-50 text-zinc-500">
-      <Circle className="size-4" />
-    </span>
+    <div className="rounded-md border border-dashed border-border bg-card/65 p-3">
+      <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+        <span className="grid size-8 place-items-center rounded-md bg-accent text-accent-foreground">
+          {icon}
+        </span>
+        {title}
+      </div>
+      <p className="mt-2 text-xs leading-5 text-muted-foreground">
+        {description}
+      </p>
+      <ul className="mt-3 space-y-2 text-xs leading-5 text-muted-foreground">
+        {items.map((item) => (
+          <li className="flex gap-2" key={item}>
+            <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-}
-
-function StatusBadge({ status }: { status: NlpTopicStatus }) {
-  if (status === "Integrated") {
-    return <Badge variant="signal">Integrated</Badge>;
-  }
-
-  if (status === "In Progress") {
-    return <Badge variant="attention">In Progress</Badge>;
-  }
-
-  return <Badge variant="outline">Not Started</Badge>;
 }
