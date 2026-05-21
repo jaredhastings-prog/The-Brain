@@ -1,18 +1,7 @@
-import * as React from "react";
-import {
-  BookOpen,
-  ChevronDown,
-  FileText,
-  FolderOpen,
-  Image,
-  Layers3,
-  Link2,
-  MessageSquareText,
-  NotebookPen,
-  Workflow,
-} from "lucide-react";
+import { ChevronDown, FolderOpen } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
+import { NlpTopicTabs } from "@/features/nlp-study/components/nlp-topic-tabs";
 import type {
   NlpTopic,
   NlpTopicGroup,
@@ -120,153 +109,9 @@ function NlpTopicCard({
 
       {isOpen ? (
         <div className="border-t border-border/70 px-4 py-4">
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_260px]">
-            <div className="space-y-4">
-              <RepositoryBlock
-                icon={<BookOpen className="size-4" />}
-                title="Overview"
-              >
-                <p>{topic.overview}</p>
-              </RepositoryBlock>
-              <RepositoryBlock
-                icon={<Layers3 className="size-4" />}
-                title="Core Concepts"
-              >
-                <BulletList items={topic.coreConcepts} />
-              </RepositoryBlock>
-              <RepositoryBlock
-                icon={<Workflow className="size-4" />}
-                title="Patterns / Techniques"
-              >
-                <BulletList items={topic.patterns} />
-              </RepositoryBlock>
-            </div>
-
-            <div className="space-y-3">
-              <RepositoryListPanel
-                description="Model maps, process diagrams, visual tables, and image references."
-                icon={<Image className="size-4" />}
-                items={topic.models}
-                title="Models / Diagrams"
-              />
-              <RepositoryListPanel
-                description="Concrete examples, context notes, and observed applications."
-                icon={<MessageSquareText className="size-4" />}
-                items={topic.examples}
-                title="Examples"
-              />
-              <RepositoryPlaceholder
-                description="Private notes, personal distinctions, and future source-backed expansions."
-                icon={<NotebookPen className="size-4" />}
-                title="Personal Notes"
-              />
-              <RepositoryPlaceholder
-                description="Books, PDFs, videos, links, and supporting references."
-                icon={<Link2 className="size-4" />}
-                title="Related Resources"
-              />
-              <RepositoryPlaceholder
-                description="Future links from Global Capture Inbox entries and raw notes."
-                icon={<FileText className="size-4" />}
-                title="Linked Captures"
-              />
-            </div>
-          </div>
+          <NlpTopicTabs topic={topic} />
         </div>
       ) : null}
     </article>
-  );
-}
-
-function RepositoryBlock({
-  children,
-  icon,
-  title,
-}: {
-  children: React.ReactNode;
-  icon: React.ReactNode;
-  title: string;
-}) {
-  return (
-    <section>
-      <div className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
-        {icon}
-        {title}
-      </div>
-      <div className="rounded-md border border-border/70 bg-card/70 px-3 py-3 text-sm leading-6 text-muted-foreground">
-        {children}
-      </div>
-    </section>
-  );
-}
-
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul className="space-y-2">
-      {items.map((item) => (
-        <li className="flex gap-2" key={item}>
-          <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function RepositoryPlaceholder({
-  description,
-  icon,
-  title,
-}: {
-  description: string;
-  icon: React.ReactNode;
-  title: string;
-}) {
-  return (
-    <div className="rounded-md border border-dashed border-border bg-card/65 p-3">
-      <div className="flex items-center gap-2 text-sm font-medium text-foreground">
-        <span className="grid size-8 place-items-center rounded-md bg-accent text-accent-foreground">
-          {icon}
-        </span>
-        {title}
-      </div>
-      <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        {description}
-      </p>
-    </div>
-  );
-}
-
-function RepositoryListPanel({
-  description,
-  icon,
-  items,
-  title,
-}: {
-  description: string;
-  icon: React.ReactNode;
-  items: string[];
-  title: string;
-}) {
-  return (
-    <div className="rounded-md border border-dashed border-border bg-card/65 p-3">
-      <div className="flex items-center gap-2 text-sm font-medium text-foreground">
-        <span className="grid size-8 place-items-center rounded-md bg-accent text-accent-foreground">
-          {icon}
-        </span>
-        {title}
-      </div>
-      <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        {description}
-      </p>
-      <ul className="mt-3 space-y-2 text-xs leading-5 text-muted-foreground">
-        {items.map((item) => (
-          <li className="flex gap-2" key={item}>
-            <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
