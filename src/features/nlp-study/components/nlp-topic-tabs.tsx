@@ -131,15 +131,24 @@ function TabContent({
       );
     case "personal-notes":
       return (
-        <PlaceholderContent description="Private notes, personal distinctions, coaching observations, and future source-backed expansions can be added here." />
+        <RepositoryList
+          description="Private notes, personal distinctions, coaching observations, and source-backed expansions can be collected here."
+          items={topic.personalNotes}
+        />
       );
     case "resources":
       return (
-        <PlaceholderContent description="Books, videos, links, citation notes, and supporting references can be organised here without exposing private source files in the app." />
+        <RepositoryList
+          description="Books, videos, citation notes, and supporting references can be organised here without exposing private source files in the app."
+          items={topic.resources}
+        />
       );
     case "linked-captures":
       return (
-        <PlaceholderContent description="Future links from Global Capture Inbox entries, raw notes, and related personal brain records will appear here." />
+        <RepositoryList
+          description="Future links from Global Capture Inbox entries, raw notes, and related personal brain records will appear here."
+          items={topic.linkedCaptures}
+        />
       );
   }
 }
@@ -161,21 +170,17 @@ function RepositoryList({
   description,
   items,
 }: {
-  description: string;
+  description?: string;
   items: string[];
 }) {
   return (
     <div className="space-y-3">
-      <p className="text-sm leading-6 text-muted-foreground">{description}</p>
+      {description ? (
+        <p className="text-sm leading-6 text-muted-foreground">
+          {description}
+        </p>
+      ) : null}
       <BulletList items={items} />
-    </div>
-  );
-}
-
-function PlaceholderContent({ description }: { description: string }) {
-  return (
-    <div className="rounded-md border border-dashed border-border bg-muted/25 px-3 py-3">
-      <p className="text-sm leading-6 text-muted-foreground">{description}</p>
     </div>
   );
 }
