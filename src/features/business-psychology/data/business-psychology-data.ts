@@ -5,8 +5,33 @@ export type WeeklyTopic = {
   week: number;
   title: string;
   summary: string;
+  summarySections?: WeeklySummarySection[];
+  subModules?: WeeklySubModule[];
   keyConcepts: string[];
   assessmentLinks: string[];
+};
+
+export type WeeklySummarySection = {
+  id: string;
+  title: string;
+  body?: string;
+  bullets?: string[];
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
+};
+
+export type WeeklySubModule = {
+  id: string;
+  title: string;
+  notes: string[];
+  keyConcepts: string[];
+  screenshots: string[];
+  videos: string[];
+  readings: string[];
+  reflections: string[];
+  linkedCaptures: string[];
 };
 
 export type Assessment = {
@@ -34,6 +59,170 @@ export type StudyUnit = {
   };
 };
 
+function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function createSubModule(title: string, keyConcepts: string[] = []): WeeklySubModule {
+  return {
+    id: slugify(title),
+    title,
+    notes: [
+      "Add lecture notes, copied university notes, and personal synthesis here.",
+    ],
+    keyConcepts: keyConcepts.length
+      ? keyConcepts
+      : ["Add key concepts, definitions, models, and useful distinctions."],
+    screenshots: [
+      "Add screenshots, diagrams, visual notes, or slide captures here.",
+    ],
+    videos: ["Add university media links, YouTube links, and timestamps here."],
+    readings: ["Add readings, citations, article notes, and page references here."],
+    reflections: [
+      "Add application reflections, assignment links, and workplace examples here.",
+    ],
+    linkedCaptures: [
+      "Future: show Global Capture Inbox items linked to this sub-module.",
+    ],
+  };
+}
+
+function createSubModules(titles: string[]) {
+  return titles.map((title) => createSubModule(title));
+}
+
+const healthyWorkWeekOneSummary: WeeklySummarySection[] = [
+  {
+    id: "overview",
+    title: "Overview",
+    body:
+      "Week 1 establishes the foundation for Healthy Work & Wellbeing by defining wellbeing, connecting wellbeing to work, and introducing Minecorp as an applied case for analysing workplace risks and organisational responsibilities.",
+    bullets: [
+      "Clarify what workplace wellbeing means before designing interventions.",
+      "Separate general wellbeing from the specific conditions that shape wellbeing at work.",
+      "Use Minecorp as a practical case for identifying risks, tensions, and wellbeing factors.",
+    ],
+  },
+  {
+    id: "why-workplace-wellbeing-important",
+    title: "1.1 Why is Workplace Wellbeing Important?",
+    body:
+      "Workplace wellbeing matters because work affects health, identity, relationships, performance, motivation, safety, and quality of life. Healthy workplaces reduce avoidable harm and make sustainable performance more likely.",
+    bullets: [
+      "Wellbeing is both an employee health issue and an organisational performance issue.",
+      "Poor wellbeing can show up as stress, disengagement, absence, safety incidents, turnover, or reduced work quality.",
+      "A useful wellbeing plan must consider both employee needs and employer responsibilities.",
+    ],
+  },
+  {
+    id: "concept-of-wellbeing",
+    title: "1.2 The Concept of Wellbeing",
+    body:
+      "Wellbeing is a multi-dimensional state rather than a single mood or metric. It includes how people feel, function, relate, cope, and make meaning in the contexts where they live and work.",
+    bullets: [
+      "Wellbeing includes subjective experience and observable functioning.",
+      "Wellbeing is shaped by personal, social, organisational, and environmental factors.",
+      "The concept is broad, so definitions must be specific enough to guide workplace action.",
+    ],
+  },
+  {
+    id: "dimensions-of-wellbeing",
+    title: "1.3 Dimensions of Wellbeing",
+    body:
+      "Wellbeing can be mapped across connected dimensions. The dimensions are not isolated: strain in one area can affect the others.",
+    table: {
+      headers: ["Dimension", "Study focus"],
+      rows: [
+        ["Psychological", "Mood, stress, coping, identity, confidence, and meaning."],
+        ["Physical", "Energy, fatigue, safety, injury risk, sleep, and health behaviours."],
+        ["Social", "Belonging, support, respect, conflict, and inclusion."],
+        ["Occupational", "Work design, demands, resources, autonomy, recognition, and workload."],
+      ],
+    },
+  },
+  {
+    id: "wellbeing-at-work",
+    title: "1.4 Wellbeing at Work",
+    body:
+      "Wellbeing at work is influenced by job demands, available resources, management behaviour, workplace culture, safety systems, role clarity, workload, relationships, and the wider organisational environment.",
+    bullets: [
+      "Healthy work is designed to reduce unnecessary harm and support employee functioning.",
+      "Wellbeing at work is not only an individual responsibility; it is also shaped by systems and culture.",
+      "A strong analysis looks for both risks and protective factors.",
+    ],
+  },
+  {
+    id: "case-of-minecorp",
+    title: "1.5 The Case of Minecorp",
+    body:
+      "Minecorp acts as the applied case for examining workplace wellbeing in context. The case invites analysis of how work design, safety, leadership, stress, culture, and organisational responses interact.",
+    bullets: [
+      "Identify the visible wellbeing risks in the work environment.",
+      "Look for underlying organisational patterns, not only individual symptoms.",
+      "Connect the case to evidence-based wellbeing planning.",
+    ],
+  },
+  {
+    id: "application-of-minecorp",
+    title: "1.6 Discussion: Application of Minecorp",
+    body:
+      "The Minecorp discussion asks how wellbeing concepts apply to a realistic organisational setting. The useful move is to translate concepts into observable risks, needs, trade-offs, and intervention points.",
+    bullets: [
+      "What is happening at the individual, team, leadership, and system level?",
+      "Which wellbeing dimensions are most affected?",
+      "What evidence would be needed before recommending an intervention?",
+    ],
+  },
+  {
+    id: "brainstorming-wellbeing-concepts",
+    title: "1.7 Brainstorming Wellbeing Concepts",
+    body:
+      "This section expands the vocabulary for analysing wellbeing. The goal is to build a broad concept map before narrowing to assessment-relevant factors.",
+    bullets: [
+      "Generate wellbeing factors before judging which ones matter most.",
+      "Group concepts into demands, resources, risks, supports, outcomes, and interventions.",
+      "Use the brainstorm to identify evidence gaps and possible assessment themes.",
+    ],
+  },
+  {
+    id: "understanding-risks",
+    title: "1.8 Understanding Risks",
+    body:
+      "Risk analysis connects wellbeing concepts to likely harm. Risks may be psychosocial, physical, cultural, relational, procedural, or leadership-related.",
+    bullets: [
+      "Separate immediate hazards from deeper systemic contributors.",
+      "Consider severity, likelihood, exposure, and who is affected.",
+      "Use risks to prioritise interventions rather than treating every issue equally.",
+    ],
+  },
+  {
+    id: "interrelating-wellbeing-factors",
+    title: "1.9 Interrelating Wellbeing Factors",
+    body:
+      "Wellbeing factors interact. Workload may affect stress, stress may affect safety, safety climate may affect trust, and trust may affect whether employees report issues early.",
+    bullets: [
+      "Map relationships between factors instead of listing them in isolation.",
+      "Look for reinforcing loops, pressure points, and protective resources.",
+      "Use interrelationships to design interventions that address causes, not only symptoms.",
+    ],
+  },
+  {
+    id: "final-synthesis",
+    title: "Week 1 Final Synthesis",
+    body:
+      "Week 1 frames workplace wellbeing as a multi-dimensional, system-shaped, evidence-informed area of business psychology. The practical task is to define wellbeing clearly, identify relevant risks and resources, and connect those factors to realistic organisational action.",
+    bullets: [
+      "Workplace wellbeing is best analysed through connected dimensions.",
+      "Healthy work requires attention to demands, resources, culture, safety, leadership, and employee experience.",
+      "Minecorp provides a case base for practising applied diagnosis and evidence-based wellbeing planning.",
+    ],
+  },
+];
+
 const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-1-defining-wellbeing-at-work",
@@ -41,6 +230,18 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
     title: "Defining Wellbeing at Work",
     summary:
       "Establishes the language of workplace wellbeing, including how wellbeing is defined, measured, and connected to healthy work.",
+    summarySections: healthyWorkWeekOneSummary,
+    subModules: createSubModules([
+      "1.1 Discussion: Why is workplace wellbeing important?",
+      "1.2 The concept of wellbeing",
+      "1.3 Dimensions of wellbeing",
+      "1.4 Wellbeing at work",
+      "1.5 The case of Minecorp",
+      "1.6 Discussion: Your take on Minecorp",
+      "1.7 Brainstorming wellbeing concepts",
+      "1.8 Understanding risks",
+      "1.9 Discussion: Exploring wellbeing factors",
+    ]),
     keyConcepts: [
       "Employee wellbeing",
       "Healthy work",
@@ -57,6 +258,17 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
     title: "Managing work stress",
     summary:
       "Maps how work stress emerges from demands, resources, strain, appraisal, coping, and organisational context.",
+    subModules: createSubModules([
+      "2.1 Costs of workplace stress",
+      "2.2 Managing workplace stress",
+      "2.3 Discussion: Managing your own stress",
+      "2.4 Defining stress",
+      "2.5 Identifying stressors",
+      "2.6 Understanding work stress: The JD-R model",
+      "2.7 Understanding work stress: The challenge hindrance framework",
+      "2.8 Discussion: Organisational responses to stress - Minecorp",
+      "2.9 Discussion: Connecting responses and work contexts",
+    ]),
     keyConcepts: [
       "Job demands",
       "Job resources",
@@ -73,6 +285,15 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
     title: "Safety at work",
     summary:
       "Connects psychosocial safety, safety culture, and organisational systems to employee health and wellbeing.",
+    subModules: createSubModules([
+      "3.1 Relating safety to health and wellbeing",
+      "3.2 Types of safety",
+      "3.3 Discussion: Defining safety culture",
+      "3.4 Discussion: Examining safety culture - Minecorp",
+      "3.5 Discussion: Impacts of safety on wellbeing",
+      "3.6 Discussion: Building a safety culture",
+      "3.7 Safety culture across industries",
+    ]),
     keyConcepts: [
       "Psychosocial safety",
       "Safety culture",
@@ -89,6 +310,15 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
     title: "Interventions for wellbeing",
     summary:
       "Focuses on designing, selecting, and evaluating evidence-based initiatives that improve workplace wellbeing.",
+    subModules: createSubModules([
+      "4.1 Types of bullying",
+      "4.2 Discussion: Preventing bullying and harassment",
+      "4.3 Understanding triggers: Minecorp",
+      "4.4 The role of management",
+      "4.5 Discussion: Away from bullying, towards wellbeing",
+      "4.6 Discussion: Health and wellbeing programs",
+      "4.7 Discussion: Intervention at Minecorp",
+    ]),
     keyConcepts: [
       "Intervention design",
       "Evidence-based initiatives",
@@ -105,6 +335,14 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
     title: "Fostering wellbeing",
     summary:
       "Explores positive workplace behaviour, wellness practices, and conditions that help employees sustain wellbeing.",
+    subModules: createSubModules([
+      "5.1 Discussion: The role of mindfulness",
+      "5.2 Critical reflection on mindfulness",
+      "5.3 Fostering wellbeing",
+      "5.4 Discussion: Climate and culture for wellbeing",
+      "5.5 Mitigating external stressors: Minecorp",
+      "5.6 The roles of employers and employees",
+    ]),
     keyConcepts: [
       "Positive workplace behaviour",
       "Wellness at work",
@@ -118,9 +356,17 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-6-developing-resilience-compassion",
     week: 6,
-    title: "Developing resilience and compassion",
+    title: "Developing Resilience & Compassion",
     summary:
       "Examines resilience and compassion as individual and organisational capabilities within healthy workplaces.",
+    subModules: createSubModules([
+      "6.1 Defining resilience and compassion",
+      "6.2 Types of resilience",
+      "6.3 Cultivating compassion: Minecorp",
+      "6.4 Discussion: Building resilience",
+      "6.5 The role of managers and leaders in fostering resilience",
+      "6.6 Discussion: Reflecting on your experience",
+    ]),
     keyConcepts: [
       "Resilience",
       "Compassion at work",

@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import * as React from "react";
 import {
   ArrowLeft,
   BookOpen,
+  ChevronDown,
   ClipboardList,
   FileText,
   Image,
+  Layers3,
   Lightbulb,
   Link2,
   NotebookPen,
@@ -20,9 +23,12 @@ import { Button } from "@/components/ui/button";
 import { StudyTabs } from "@/features/business-psychology/components/study-tabs";
 import type {
   StudyUnit,
+  WeeklySubModule,
+  WeeklySummarySection,
   WeeklyTopic,
 } from "@/features/business-psychology/data/business-psychology-data";
 import { getUnitHref } from "@/features/business-psychology/data/business-psychology-data";
+import { cn } from "@/lib/utils";
 
 export function BusinessPsychologyWeekPage({
   unit,
@@ -56,6 +62,14 @@ export function BusinessPsychologyWeekPage({
       </section>
 
       <DashboardCard
+        eyebrow="Sub-modules"
+        title="Weekly Study Structure"
+        description="Open a sub-module to organise notes, concepts, screenshots, videos, readings, reflections, and linked captures."
+      >
+        <SubModuleAccordion subModules={week.subModules ?? []} />
+      </DashboardCard>
+
+      <DashboardCard
         description="Weekly workspace for summary, module notes, readings, screenshots, videos, key concepts, assessment links, personal notes, Feynman explanation, and linked captures."
         eyebrow="Weekly topic page"
         title={`Week ${week.week}: ${week.title}`}
@@ -67,7 +81,7 @@ export function BusinessPsychologyWeekPage({
               id: "summary",
               label: "Summary",
               icon: BookOpen,
-              content: <ParagraphBlock text={week.summary} />,
+              content: <WeekSummaryContent week={week} />,
             },
             {
               id: "module-notes",
@@ -177,13 +191,172 @@ export function BusinessPsychologyWeekPage({
   );
 }
 
-function ParagraphBlock({ text }: { text: string }) {
-  return <p className="text-sm leading-6 text-muted-foreground">{text}</p>;
+function WeekSummaryContent({ week }: { week: WeeklyTopic }) {
+  if (!week.summarySections?.length) {
+    return <p className="text-sm leading-6 text-muted-foreground">{week.summary}</p>;
+  }
+
+  return (
+    <div className="space-y-3">
+      {week.summarySections.map((section) => (
+        <SummarySectionCard key={section.id} section={section} />
+      ))}
+    </div>
+  );
 }
 
-function BulletList({ items }: { items: string[] }) {
+function SummarySectionCard({ section }: { section: WeeklySummarySection }) {
   return (
-    <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
+    <section className="rounded-md border border-border/70 bg-background/70 p-4">
+      <h3 className="text-sm font-semibold text-foreground">{section.title}</h3>
+      {section.body ? (
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+          {section.body}
+        </p>
+      ) : null}
+      {section.bullets?.length ? (
+        <BulletList className="mt-3" items={section.bullets} />
+      ) : null}
+      {section.table ? <SummaryTable table={section.table} /> : null}
+    </section>
+  );
+}
+
+function SummaryTable({
+  table,
+}: {
+  table: NonNullable<WeeklySummarySection["table"]>;
+}) {
+  return (
+    <div className="mt-3 overflow-hidden rounded-md border border-border/70">
+      <div className="grid grid-cols-[130px_minmax(0,1fr)] bg-muted/45 text-xs font-medium uppercase tracking-normal text-muted-foreground">
+        {table.headers.map((header) => (
+          <div className="border-r border-border/70 px-3 py-2 last:border-r-0" key={header}>
+            {header}
+          </div>
+        ))}
+      </div>
+      {table.rows.map((row) => (
+        <div
+          className="grid grid-cols-[130px_minmax(0,1fr)] border-t border-border/70 bg-background/70 text-sm"
+          key={row.join("-")}
+        >
+          {row.map((cell, index) => (
+            <div
+              className={cn(
+                "border-r border-border/70 px-3 py-2 text-muted-foreground last:border-r-0",
+                index === 0 && "font-medium text-foreground",
+              )}
+              key={cell}
+            >
+              {cell}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SubModuleAccordion({ subModules }: { subModules: WeeklySubModule[] }) {
+  const [openSubModuleId, setOpenSubModuleId] = React.useState("");
+
+  if (!subModules.length) {
+    return (
+      <div className="rounded-md border border-dashed border-border bg-background/65 p-4 text-sm leading-6 text-muted-foreground">
+        Add sub-modules for this week as the university notes are migrated.
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-3">
+      {subModules.map((subModule) => {
+        const isOpen = openSubModuleId === subModule.id;
+
+        return (
+          <article
+            className="rounded-md border border-border/70 bg-background/70"
+            key={subModule.id}
+          >
+            <button
+              aria-expanded={isOpen}
+              className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/35"
+              onClick={() =>
+                setOpenSubModuleId((current) =>
+                  current === subModule.id ? "" : subModule.id,
+                )
+              }
+              type="button"
+            >
+              <div className="flex min-w-0 items-center gap-3">
+                <span className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
+                  <Layers3 className="size-4" />
+                </span>
+                <h3 className="truncate text-sm font-semibold text-foreground">
+                  {subModule.title}
+                </h3>
+              </div>
+              <ChevronDown
+                className={cn(
+                  "size-4 shrink-0 text-muted-foreground transition-transform",
+                  isOpen && "rotate-180",
+                )}
+              />
+            </button>
+            {isOpen ? (
+              <div className="border-t border-border/70 p-4">
+                <SubModulePlaceholderGrid subModule={subModule} />
+              </div>
+            ) : null}
+          </article>
+        );
+      })}
+    </div>
+  );
+}
+
+function SubModulePlaceholderGrid({
+  subModule,
+}: {
+  subModule: WeeklySubModule;
+}) {
+  const sections = [
+    { title: "Notes", items: subModule.notes },
+    { title: "Key Concepts", items: subModule.keyConcepts },
+    { title: "Screenshots / Images", items: subModule.screenshots },
+    { title: "Videos", items: subModule.videos },
+    { title: "Readings", items: subModule.readings },
+    { title: "Reflections", items: subModule.reflections },
+    { title: "Linked Captures", items: subModule.linkedCaptures },
+  ];
+
+  return (
+    <div className="grid gap-3 md:grid-cols-2">
+      {sections.map((section) => (
+        <div
+          className="rounded-md border border-border/70 bg-muted/25 p-3"
+          key={section.title}
+        >
+          <h4 className="text-xs font-medium uppercase tracking-normal text-muted-foreground">
+            {section.title}
+          </h4>
+          <BulletList className="mt-2" items={section.items} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function BulletList({
+  className,
+  items,
+}: {
+  className?: string;
+  items: string[];
+}) {
+  return (
+    <ul className={cn("space-y-2 text-sm leading-6 text-muted-foreground", className)}>
       {items.map((item) => (
         <li className="flex gap-2" key={item}>
           <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
