@@ -132,7 +132,7 @@ function TabContent({
     case "personal-notes":
       return (
         <RepositoryList
-          description="Private notes, personal distinctions, coaching observations, and source-backed expansions can be collected here."
+          description="Private notes, personal distinctions, coaching observations, and future repository additions can be collected here."
           items={topic.personalNotes}
         />
       );
