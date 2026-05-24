@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
+import NextImage from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   BookOpen,
   FileText,
-  Image,
+  Image as ImageIcon,
   Layers3,
   Link2,
   MessageSquareText,
@@ -13,6 +14,7 @@ import {
   Workflow,
 } from "lucide-react";
 
+import communicationModelImage from "../../../../docs/nlp/NLP-Commsmodel-Image.png";
 import type { NlpTopic } from "@/features/nlp-study/data/nlp-repository-content";
 import {
   getNlpTopicReferenceContent,
@@ -39,7 +41,7 @@ type TopicTab = {
 const topicTabs: TopicTab[] = [
   { id: "overview", icon: BookOpen, label: "Overview" },
   { id: "core-concepts", icon: Layers3, label: "Core Concepts" },
-  { id: "models-diagrams", icon: Image, label: "Models / Diagrams" },
+  { id: "models-diagrams", icon: ImageIcon, label: "Models / Diagrams" },
   { id: "patterns-techniques", icon: Workflow, label: "Patterns / Techniques" },
   { id: "examples", icon: MessageSquareText, label: "Examples" },
   { id: "personal-notes", icon: NotebookPen, label: "Personal Notes" },
@@ -122,6 +124,7 @@ function TabContent({
             description="Model maps, process diagrams, visual tables, and image references can be collected here."
             items={referenceContent.models ?? topic.models}
           />
+          {referenceContent.modelDiagram ? <CommunicationModelImage /> : null}
           {referenceContent.modelDiagram ? (
             <ModelDiagram nodes={referenceContent.modelDiagram} />
           ) : null}
@@ -200,6 +203,21 @@ function NumberedList({ items }: { items: string[] }) {
         </li>
       ))}
     </ol>
+  );
+}
+
+function CommunicationModelImage() {
+  return (
+    <figure className="overflow-hidden rounded-md border border-border/70 bg-background/70 p-3 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]">
+      <NextImage
+        alt="NLP Communication Model diagram showing how reality is filtered into internal representation, state, physiology, and behaviour"
+        className="h-auto w-full rounded-sm object-contain"
+        placeholder="blur"
+        priority={false}
+        src={communicationModelImage}
+        sizes="(min-width: 1280px) 820px, (min-width: 768px) 70vw, 100vw"
+      />
+    </figure>
   );
 }
 
