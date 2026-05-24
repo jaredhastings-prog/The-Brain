@@ -111,6 +111,8 @@ function TabContent({
   topic: NlpTopic;
 }) {
   const referenceContent = getNlpTopicReferenceContent(topic);
+  const showCommunicationModelImage =
+    topic.title === "NLP Communication Model" && referenceContent.modelDiagram;
 
   switch (tabId) {
     case "overview":
@@ -124,7 +126,7 @@ function TabContent({
             description="Model maps, process diagrams, visual tables, and image references can be collected here."
             items={referenceContent.models ?? topic.models}
           />
-          {referenceContent.modelDiagram ? <CommunicationModelImage /> : null}
+          {showCommunicationModelImage ? <CommunicationModelImage /> : null}
           {referenceContent.modelDiagram ? (
             <ModelDiagram nodes={referenceContent.modelDiagram} />
           ) : null}
