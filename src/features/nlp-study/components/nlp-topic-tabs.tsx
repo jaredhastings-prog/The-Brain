@@ -14,6 +14,10 @@ import {
 } from "lucide-react";
 
 import type { NlpTopic } from "@/features/nlp-study/data/nlp-repository-content";
+import {
+  getNlpTopicReferenceContent,
+  type NlpModelDiagramNode,
+} from "@/features/nlp-study/data/nlp-reference-overrides";
 import { cn } from "@/lib/utils";
 
 type TopicTabId =
@@ -104,21 +108,24 @@ function TabContent({
   tabId: TopicTabId;
   topic: NlpTopic;
 }) {
+  const referenceContent = getNlpTopicReferenceContent(topic);
+
   switch (tabId) {
     case "overview":
-      return (
-        <p className="text-sm leading-6 text-muted-foreground">
-          {topic.overview}
-        </p>
-      );
+      return <OverviewContent topic={topic} />;
     case "core-concepts":
       return <BulletList items={topic.coreConcepts} />;
     case "models-diagrams":
       return (
-        <RepositoryList
-          description="Model maps, process diagrams, visual tables, and image references can be collected here."
-          items={topic.models}
-        />
+        <div className="space-y-4">
+          <RepositoryList
+            description="Model maps, process diagrams, visual tables, and image references can be collected here."
+            items={referenceContent.models ?? topic.models}
+          />
+          {referenceContent.modelDiagram ? (
+            <ModelDiagram nodes={referenceContent.modelDiagram} />
+          ) : null}
+        </div>
       );
     case "patterns-techniques":
       return <BulletList items={topic.patterns} />;
@@ -153,6 +160,21 @@ function TabContent({
   }
 }
 
+function OverviewContent({ topic }: { topic: NlpTopic }) {
+  const referenceContent = getNlpTopicReferenceContent(topic);
+
+  return (
+    <div className="space-y-4">
+      <p className="text-sm leading-6 text-muted-foreground">
+        {referenceContent.overview ?? topic.overview}
+      </p>
+      {referenceContent.overviewItems?.length ? (
+        <NumberedList items={referenceContent.overviewItems} />
+      ) : null}
+    </div>
+  );
+}
+
 function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
@@ -163,6 +185,51 @@ function BulletList({ items }: { items: string[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+function NumberedList({ items }: { items: string[] }) {
+  return (
+    <ol className="space-y-2 text-sm leading-6 text-muted-foreground">
+      {items.map((item, index) => (
+        <li className="grid grid-cols-[2rem_minmax(0,1fr)] gap-2" key={item}>
+          <span className="flex size-7 items-center justify-center rounded-md border border-border bg-background text-xs font-semibold text-foreground">
+            {index + 1}
+          </span>
+          <span className="pt-0.5">{item}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function ModelDiagram({ nodes }: { nodes: NlpModelDiagramNode[] }) {
+  return (
+    <div className="rounded-md border border-border/70 bg-background/70 p-3">
+      <div className="mb-3 text-xs font-medium uppercase tracking-normal text-muted-foreground">
+        Recreated Communication Model Diagram
+      </div>
+      <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+        {nodes.map((node, index) => (
+          <div
+            className="rounded-md border border-border bg-card/80 p-3 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]"
+            key={node.label}
+          >
+            <div className="mb-2 flex items-center gap-2">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-primary text-xs font-semibold text-primary-foreground">
+                {index + 1}
+              </span>
+              <h4 className="text-sm font-semibold text-foreground">
+                {node.label}
+              </h4>
+            </div>
+            <p className="text-xs leading-5 text-muted-foreground">
+              {node.detail}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

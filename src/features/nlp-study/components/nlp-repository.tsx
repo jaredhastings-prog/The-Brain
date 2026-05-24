@@ -7,9 +7,12 @@ import { DashboardCard } from "@/components/dashboard/dashboard-card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { NlpFilterSelect } from "@/features/nlp-study/components/nlp-filter-select";
-import { NlpRepositoryPanel } from "@/features/nlp-study/components/nlp-repository-panel";
 import { NlpTopicGroupCard } from "@/features/nlp-study/components/nlp-topic-group-card";
 import { nlpTopicGroups } from "@/features/nlp-study/data/nlp-repository-content";
+import {
+  getNlpTopicSearchText,
+  withNlpReferenceOverrides,
+} from "@/features/nlp-study/data/nlp-reference-overrides";
 
 export function NlpRepository() {
   const [groupFilter, setGroupFilter] = React.useState("All");
@@ -18,11 +21,15 @@ export function NlpRepository() {
   );
   const [openTopicId, setOpenTopicId] = React.useState("");
   const [searchQuery, setSearchQuery] = React.useState("");
+  const repositoryGroups = React.useMemo(
+    () => withNlpReferenceOverrides(nlpTopicGroups),
+    [],
+  );
 
   const filteredGroups = React.useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
 
-    return nlpTopicGroups
+    return repositoryGroups
       .filter((group) => groupFilter === "All" || group.id === groupFilter)
       .map((group) => {
         const groupMatchesSearch = [group.title, group.description]
@@ -31,18 +38,7 @@ export function NlpRepository() {
           .includes(query);
 
         const topics = group.topics.filter((topic) => {
-          const topicMatchesSearch = [
-            topic.title,
-            topic.overview,
-            topic.coreConcepts.join(" "),
-            topic.models.join(" "),
-            topic.patterns.join(" "),
-            topic.examples.join(" "),
-            topic.personalNotes.join(" "),
-            topic.resources.join(" "),
-            topic.linkedCaptures.join(" "),
-          ]
-            .join(" ")
+          const topicMatchesSearch = getNlpTopicSearchText(topic)
             .toLowerCase()
             .includes(query);
 
@@ -52,7 +48,7 @@ export function NlpRepository() {
         return { ...group, topics };
       })
       .filter((group) => group.topics.length > 0);
-  }, [groupFilter, searchQuery]);
+  }, [groupFilter, repositoryGroups, searchQuery]);
 
   function toggleGroup(groupId: string) {
     setOpenGroupIds((current) => {
@@ -82,16 +78,16 @@ export function NlpRepository() {
         </div>
         <div className="mt-8 max-w-4xl">
           <h1 className="text-3xl font-semibold tracking-normal text-foreground md:text-5xl">
-            NLP Repository
+            Neuro Linguistic Programming
           </h1>
           <p className="mt-4 text-base leading-7 text-muted-foreground">
-            A structured knowledge base for NLP models, patterns, techniques,
-            diagrams, notes, and resources.
+            "NLP is an attitude, backed up by a methodology that leaves behind
+            it a trail of techniques." - Richard Bandler
           </p>
         </div>
       </section>
 
-      <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_360px]">
+      <section className="grid gap-4">
         <div className="space-y-4">
           <DashboardCard
             description="Browse model families, pattern references, notes, diagrams, and resource placeholders."
@@ -115,7 +111,7 @@ export function NlpRepository() {
                 onChange={setGroupFilter}
                 options={[
                   { label: "All areas", value: "All" },
-                  ...nlpTopicGroups.map((group) => ({
+                  ...repositoryGroups.map((group) => ({
                     label: group.title,
                     value: group.id,
                   })),
@@ -144,10 +140,6 @@ export function NlpRepository() {
             </div>
           </DashboardCard>
         </div>
-
-        <aside className="space-y-4">
-          <NlpRepositoryPanel />
-        </aside>
       </section>
     </div>
   );
