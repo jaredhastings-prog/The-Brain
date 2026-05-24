@@ -1,6 +1,5 @@
-import { SectionPage } from "@/features/sections/components/section-page";
-import { sectionRegistry } from "@/features/sections/section-registry";
+import { BusinessPsychologyDashboard } from "@/features/business-psychology/components/business-psychology-dashboard";
 
 export default function BusinessPsychologyPage() {
-  return <SectionPage section={sectionRegistry.businessPsychology} />;
+  return <BusinessPsychologyDashboard />;
 }
