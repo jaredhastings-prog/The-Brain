@@ -34,7 +34,7 @@ export function BusinessPsychologyUnitPage({ unit }: { unit: StudyUnit }) {
 
       <section className="rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
         <div className="flex flex-wrap items-center gap-2">
-          <Badge variant={unit.status === "Active" ? "signal" : "outline"}>
+          <Badge variant={unit.status === "Completed" ? "signal" : "outline"}>
             {unit.status}
           </Badge>
           <Badge variant="secondary">{unit.code}</Badge>

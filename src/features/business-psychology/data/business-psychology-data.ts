@@ -1,4 +1,4 @@
-export type StudyUnitStatus = "Active" | "Mapped" | "To map";
+export type StudyUnitStatus = "Completed" | "Active" | "Mapped" | "To map";
 
 export type WeeklyTopic = {
   id: string;
@@ -54,7 +54,7 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-2-managing-work-stress",
     week: 2,
-    title: "Managing Work Stress",
+    title: "Managing work stress",
     summary:
       "Maps how work stress emerges from demands, resources, strain, appraisal, coping, and organisational context.",
     keyConcepts: [
@@ -70,7 +70,7 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-3-safety-at-work",
     week: 3,
-    title: "Safety at Work",
+    title: "Safety at work",
     summary:
       "Connects psychosocial safety, safety culture, and organisational systems to employee health and wellbeing.",
     keyConcepts: [
@@ -86,7 +86,7 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-4-interventions-for-wellbeing",
     week: 4,
-    title: "Interventions for Wellbeing",
+    title: "Interventions for wellbeing",
     summary:
       "Focuses on designing, selecting, and evaluating evidence-based initiatives that improve workplace wellbeing.",
     keyConcepts: [
@@ -102,7 +102,7 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-5-fostering-wellbeing",
     week: 5,
-    title: "Fostering Wellbeing",
+    title: "Fostering wellbeing",
     summary:
       "Explores positive workplace behaviour, wellness practices, and conditions that help employees sustain wellbeing.",
     keyConcepts: [
@@ -118,7 +118,7 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-6-developing-resilience-compassion",
     week: 6,
-    title: "Developing Resilience & Compassion",
+    title: "Developing resilience and compassion",
     summary:
       "Examines resilience and compassion as individual and organisational capabilities within healthy workplaces.",
     keyConcepts: [
@@ -133,12 +133,195 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   },
 ];
 
+const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
+  {
+    id: "week-1-foundations-of-human-thinking",
+    week: 1,
+    title: "Foundations of human thinking",
+    summary:
+      "Introduces the core questions, assumptions, and cognitive foundations of human information processing.",
+    keyConcepts: [
+      "Human thinking",
+      "Cognition",
+      "Information processing",
+      "Mental representation",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-2-how-do-we-obtain-knowledge",
+    week: 2,
+    title: "How do we obtain knowledge?",
+    summary:
+      "Explores attention, perception, learning, and the ways people gather information from the environment.",
+    keyConcepts: ["Knowledge acquisition", "Attention", "Perception", "Learning"],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-3-how-do-we-store-knowledge-memory",
+    week: 3,
+    title: "How do we store knowledge (memory)?",
+    summary:
+      "Covers memory systems, encoding, storage, retrieval, and the structure of remembered knowledge.",
+    keyConcepts: ["Memory", "Encoding", "Storage", "Retrieval"],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-4-verbal-and-visual-knowledge",
+    week: 4,
+    title: "Verbal and Visual knowledge",
+    summary:
+      "Examines how people represent, process, and use verbal and visual forms of knowledge.",
+    keyConcepts: [
+      "Verbal knowledge",
+      "Visual knowledge",
+      "Mental imagery",
+      "Representation",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-5-information-processing-executive-functions",
+    week: 5,
+    title: "Information processing (executive functions)",
+    summary:
+      "Maps executive functions such as planning, inhibition, working memory, cognitive control, and flexible thinking.",
+    keyConcepts: [
+      "Executive functions",
+      "Working memory",
+      "Cognitive control",
+      "Flexible thinking",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-6-higher-order-thinking",
+    week: 6,
+    title: "Higher-order thinking",
+    summary:
+      "Focuses on reasoning, problem solving, decision making, creativity, and complex thought.",
+    keyConcepts: [
+      "Reasoning",
+      "Problem solving",
+      "Decision making",
+      "Higher-order cognition",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+];
+
+const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
+  {
+    id: "week-1-biopsychosocial-models-of-wellbeing",
+    week: 1,
+    title: "Biopsychosocial models of wellbeing",
+    summary:
+      "Introduces wellbeing through biological, psychological, and social lenses.",
+    keyConcepts: [
+      "Biopsychosocial model",
+      "Wellbeing",
+      "Health psychology",
+      "Context",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-2-resiliency-models-of-wellbeing-across-the-lifespan",
+    week: 2,
+    title: "Resiliency models of wellbeing across the lifespan",
+    summary:
+      "Explores resilience, development, protective factors, and wellbeing across life stages.",
+    keyConcepts: [
+      "Resilience",
+      "Lifespan development",
+      "Protective factors",
+      "Adaptation",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-3-positive-psychology-for-wellbeing",
+    week: 3,
+    title: "Positive psychology for wellbeing",
+    summary:
+      "Examines positive psychology concepts and interventions that support wellbeing.",
+    keyConcepts: [
+      "Positive psychology",
+      "Strengths",
+      "Positive emotion",
+      "Meaning",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-4-goals-and-motivation",
+    week: 4,
+    title: "Goals and motivation",
+    summary:
+      "Connects motivation, goal pursuit, values, and wellbeing-related behaviour.",
+    keyConcepts: ["Goals", "Motivation", "Values", "Behaviour change"],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-5-self-regulation-and-emotion",
+    week: 5,
+    title: "Self-regulation and emotion",
+    summary:
+      "Focuses on emotion, self-regulation, coping, and psychological wellbeing.",
+    keyConcepts: [
+      "Self-regulation",
+      "Emotion",
+      "Coping",
+      "Psychological flexibility",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+  {
+    id: "week-6-psychological-science-academic-achievement-and-personal-wellbeing",
+    week: 6,
+    title: "Psychological science, academic achievement and personal wellbeing",
+    summary:
+      "Integrates psychological science with academic achievement, sustainable study habits, and personal wellbeing.",
+    keyConcepts: [
+      "Academic achievement",
+      "Personal wellbeing",
+      "Study behaviour",
+      "Sustainable performance",
+    ],
+    assessmentLinks: [
+      "Add assessment links, rubric notes, and study priorities for this week.",
+    ],
+  },
+];
+
 export const businessPsychologyUnits: StudyUnit[] = [
   {
     id: "healthy-work-wellbeing",
     name: "Healthy Work & Wellbeing",
     code: "HRM6006.2",
-    status: "Active",
+    status: "Completed",
     result: "70.8%",
     weeklyTopics: healthyWorkWeeklyTopics,
     assessments: [
@@ -209,9 +392,9 @@ export const businessPsychologyUnits: StudyUnit[] = [
     id: "human-information-processing",
     name: "Psychological Science of Human Information Processing",
     code: "To add",
-    status: "To map",
+    status: "Completed",
     result: "Not recorded",
-    weeklyTopics: [],
+    weeklyTopics: humanInformationProcessingWeeklyTopics,
     assessments: [],
     keyResources: [
       "Unit outline to add",
@@ -239,9 +422,9 @@ export const businessPsychologyUnits: StudyUnit[] = [
     id: "psychological-science-of-wellbeing",
     name: "Psychological Science of Wellbeing",
     code: "To add",
-    status: "To map",
+    status: "Completed",
     result: "Not recorded",
-    weeklyTopics: [],
+    weeklyTopics: psychologicalScienceWellbeingWeeklyTopics,
     assessments: [],
     keyResources: [
       "Unit outline to add",

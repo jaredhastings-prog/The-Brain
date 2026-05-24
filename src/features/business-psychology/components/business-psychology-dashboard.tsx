@@ -21,9 +21,7 @@ import {
 } from "@/features/business-psychology/data/business-psychology-data";
 
 export function BusinessPsychologyDashboard() {
-  const activeUnit = businessPsychologyUnits.find(
-    (unit) => unit.status === "Active",
-  );
+  const highlightedUnit = businessPsychologyUnits[0];
   const recordedAssessments = businessPsychologyUnits.reduce(
     (total, unit) =>
       total +
@@ -44,20 +42,16 @@ export function BusinessPsychologyDashboard() {
             <h1 className="text-3xl font-semibold tracking-normal text-foreground md:text-5xl">
               Master of Business Psychology
             </h1>
-            <p className="mt-4 text-base leading-7 text-muted-foreground">
-              A calm academic workspace for units, weekly topics, assessments,
-              resources, grades, notes, and linked captures.
-            </p>
           </div>
           <div className="rounded-md border border-border/70 bg-muted/35 p-4">
             <div className="text-xs font-medium uppercase tracking-normal text-muted-foreground">
-              Current focus
+              Latest completed unit
             </div>
             <div className="mt-2 text-sm font-semibold text-foreground">
-              {activeUnit?.name ?? "Select active unit"}
+              {highlightedUnit?.name ?? "Unit to add"}
             </div>
             <div className="mt-1 text-xs text-muted-foreground">
-              {activeUnit?.code ?? "Unit code to add"}
+              {highlightedUnit?.code ?? "Unit code to add"}
             </div>
           </div>
         </div>
@@ -77,11 +71,7 @@ export function BusinessPsychologyDashboard() {
         <StudyMetric icon={CheckCircle2} label="Current total" value="70.8%" />
       </section>
 
-      <DashboardCard
-        description="A Notion-inspired operating view for the degree, adapted into Jared Brain."
-        eyebrow="Degree dashboard"
-        title="Units"
-      >
+      <DashboardCard eyebrow="Degree dashboard" title="Units">
         <div className="grid gap-3">
           {businessPsychologyUnits.map((unit) => (
             <article
@@ -92,7 +82,9 @@ export function BusinessPsychologyDashboard() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
                     <Badge
-                      variant={unit.status === "Active" ? "signal" : "outline"}
+                      variant={
+                        unit.status === "Completed" ? "signal" : "outline"
+                      }
                     >
                       {unit.status}
                     </Badge>
@@ -101,16 +93,8 @@ export function BusinessPsychologyDashboard() {
                   <h2 className="mt-3 text-base font-semibold text-foreground">
                     {unit.name}
                   </h2>
-                  <div className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
-                    <UnitStat
-                      icon={CalendarDays}
-                      label="Weekly topics"
-                      value={
-                        unit.weeklyTopics.length
-                          ? unit.weeklyTopics.length.toString()
-                          : "To add"
-                      }
-                    />
+                  <WeeklyTopicsPreview topics={unit.weeklyTopics} />
+                  <div className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
                     <UnitStat
                       icon={ClipboardList}
                       label="Assessments"
@@ -150,11 +134,7 @@ export function BusinessPsychologyDashboard() {
       </DashboardCard>
 
       <section className="grid gap-4 lg:grid-cols-2">
-        <DashboardCard
-          description="A clear first version for migrating study structure, notes, resources, grades, and capture links."
-          eyebrow="Study system"
-          title="Workspace Structure"
-        >
+        <DashboardCard eyebrow="Study system" title="Workspace Structure">
           <div className="grid gap-2 sm:grid-cols-2">
             {degreeWorkspaceSections.map((section) => (
               <div
@@ -169,11 +149,7 @@ export function BusinessPsychologyDashboard() {
             ))}
           </div>
         </DashboardCard>
-        <DashboardCard
-          description="Prepared lanes for future notes, screenshots, readings, videos, PDFs, and inbox-linked study captures."
-          eyebrow="Capture links"
-          title="Study Inbox"
-        >
+        <DashboardCard eyebrow="Capture links" title="Study Inbox">
           <div className="rounded-md border border-dashed border-border bg-background/65 p-4">
             <div className="flex items-start gap-3">
               <span className="grid size-9 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
@@ -220,6 +196,38 @@ function StudyMetric({
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function WeeklyTopicsPreview({
+  topics,
+}: {
+  topics: Array<{ id: string; week: number; title: string }>;
+}) {
+  return (
+    <div className="mt-3 rounded-md border border-border/60 bg-background/65 p-3">
+      <div className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
+        <CalendarDays className="size-3.5" />
+        Weekly topics
+      </div>
+      {topics.length ? (
+        <div className="space-y-1.5">
+          {topics.map((topic) => (
+            <div
+              className="grid gap-2 rounded-sm bg-muted/35 px-2 py-1.5 text-xs leading-5 text-muted-foreground sm:grid-cols-[3.75rem_minmax(0,1fr)]"
+              key={topic.id}
+            >
+              <span className="font-medium text-foreground">
+                Week {topic.week}
+              </span>
+              <span>{topic.title}</span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-sm text-muted-foreground">Topics to add</div>
+      )}
     </div>
   );
 }
