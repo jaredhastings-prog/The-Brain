@@ -29,6 +29,7 @@ type TopicGroupSeed = {
   id: string;
   title: string;
   description: string;
+  applicationFrame: string;
   principles: string[];
   modelFrame: string;
   practiceFrame: string;
@@ -48,26 +49,40 @@ function topic(title: string, focus: string, move: string, example: string): Top
   return { title, focus, move, example };
 }
 
+function sentenceCase(value: string) {
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+function asStatement(value: string) {
+  const trimmed = value.trim().replace(/[.!?]$/, "");
+
+  if (trimmed.startsWith("NLP as ")) {
+    return `NLP is ${trimmed.slice(7)}.`;
+  }
+
+  return `${sentenceCase(trimmed)}.`;
+}
+
 function createTopics(group: TopicGroupSeed): NlpTopic[] {
   return group.topics.map((entry) => ({
     id: `${group.id}-${slugify(entry.title)}`,
     title: entry.title,
-    overview: `${entry.title} is a reference point for ${entry.focus}. In coaching, communication, and self-leadership, it helps Jared notice how internal maps, language, physiology, and meaning shape behaviour before choosing the next useful move.`,
+    overview: `${asStatement(entry.focus)} ${group.applicationFrame}`,
     coreConcepts: [
-      `${entry.title} focuses attention on ${entry.focus}.`,
+      asStatement(entry.focus),
       ...group.principles,
-      "Treat the distinction as a working map rather than a fixed truth about a person.",
-      "Look for observable cues in language, attention, physiology, state, and behaviour before forming an interpretation.",
+      "Use the distinction behaviourally: identify cues, map structure, choose a practitioner move, and test the response.",
+      "Track language, representation, physiology, state, criteria, and observable behaviour as one connected system.",
     ],
     models: [
       `Diagram brief: ${group.modelFrame}`,
-      `Visual model placeholder: show ${entry.title} as cue -> internal representation/filter -> state -> behaviour -> feedback.`,
-      "Reference table placeholder: definition, signals, practitioner questions, related patterns, and linked repository entries.",
+      "Visual model placeholder: map cues, filters, internal representations, state, physiology, behaviour, feedback, and intervention points.",
+      "Reference table placeholder: definition, signals, precision questions, practitioner choices, and related repository entries.",
     ],
     patterns: [
-      `Practitioner move: ${entry.move}`,
+      entry.move,
       group.practiceFrame,
-      `Workbook reflection: apply ${entry.title} to a real conversation, coaching moment, decision, or self-management example and note what shifted.`,
+      "Applied reflection: map one real example, identify the structure, and write the next clean practitioner move.",
     ],
     examples: [
       entry.example,
@@ -79,9 +94,8 @@ function createTopics(group: TopicGroupSeed): NlpTopic[] {
       "Capture distinctions that prove useful in business, parenting, health, relationships, or personal operating system design.",
     ],
     resources: [
-      "Source reference: NLP Practitioner Manual.",
-      "Source reference: NLP Practitioner Workbook.",
-      `Add concise summaries, diagrams, reading notes, and external references connected to ${entry.title}.`,
+      `Add trusted references, diagrams, terms, and external links connected to ${entry.title}.`,
+      "Add concise summaries only; keep original documents outside the interface.",
     ],
     linkedCaptures: [
       `Future: show Global Capture Inbox items tagged with ${entry.title}.`,
@@ -95,6 +109,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "nlp-foundations",
     title: "NLP Foundations",
     description: "Core frames for understanding NLP as a practical model of communication, meaning, state, and behaviour.",
+    applicationFrame: "It gives the repository a shared language for mapping perception, meaning, state, communication, and behavioural choice.",
     principles: [
       "NLP studies the relationship between neurology, language, internal representation, state, and behaviour.",
       "People respond to their internal maps of experience, not directly to reality itself.",
@@ -146,6 +161,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "meta-programs",
     title: "Meta Programs",
     description: "Attention, motivation, and sorting patterns that shape how people perceive, decide, and respond.",
+    applicationFrame: "It reveals the sorting patterns that influence motivation, decision-making, rapport, and behavioural flexibility.",
     principles: [
       "Meta programs describe patterns in how attention is directed and information is sorted.",
       "They are contextual tendencies, not identity labels.",
@@ -167,6 +183,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "listening",
     title: "Listening",
     description: "Presence, calibration, sensory acuity, and representational listening for cleaner understanding.",
+    applicationFrame: "It sharpens presence, calibration, and sensory accuracy so interventions are based on what is actually occurring.",
     principles: [
       "Listening includes words, predicates, physiology, rhythm, attention, silence, and state shifts.",
       "Calibration means noticing changes from a person's own baseline.",
@@ -188,6 +205,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "supporting-and-rapport",
     title: "Supporting and Rapport",
     description: "Pacing, matching, perceptual flexibility, and perspective-taking for trust and influence.",
+    applicationFrame: "It builds the conditions for trust, pacing, and clean influence before any leading move is attempted.",
     principles: [
       "Rapport is built through respectful pacing before leading.",
       "Matching can happen through language, values, rhythm, posture, predicates, or level of abstraction.",
@@ -209,6 +227,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "states",
     title: "States",
     description: "How emotional, cognitive, and physiological states are elicited, shifted, anchored, and integrated.",
+    applicationFrame: "It turns emotion, physiology, representation, meaning, and attention into practical levers for choice.",
     principles: [
       "State is shaped by representation, physiology, meaning, attention, and context.",
       "Useful work often starts by changing state before changing content.",
@@ -229,6 +248,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "meta-states-and-framing",
     title: "Meta States and Framing",
     description: "Higher-level meanings, frames, reframes, and pattern work that transform how experience is organised.",
+    applicationFrame: "It clarifies how meanings about meanings organise identity, emotion, belief, and response.",
     principles: [
       "A meta state is a state applied to another state, such as curiosity about fear or respect for grief.",
       "Frames determine what an experience means and what response feels available.",
@@ -254,6 +274,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "precision-questioning",
     title: "Precision Questioning",
     description: "Meta Model distinctions and outcome questions for recovering missing information and improving clarity.",
+    applicationFrame: "It recovers deleted, distorted, or generalised information so language becomes specific and actionable.",
     principles: [
       "Language both reveals and hides the structure of experience.",
       "Deletions, generalisations, and distortions can be gently questioned to recover choice.",
@@ -275,6 +296,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "strategies-and-modelling",
     title: "Strategies and Modelling",
     description: "How people sequence internal and external steps to decide, learn, motivate, influence, and perform.",
+    applicationFrame: "It reveals the sequence that produces an outcome, making excellence easier to model and stuck patterns easier to update.",
     principles: [
       "A strategy is a repeatable sequence of representations, tests, states, and actions.",
       "Modelling studies excellence by eliciting structure rather than copying personality.",
@@ -298,6 +320,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "time-lines",
     title: "Time-Lines",
     description: "How people code time, organise memory and future, and update emotional meaning across a timeline.",
+    applicationFrame: "It shows how the coding of past, present, and future shapes emotion, expectation, identity, and behaviour.",
     principles: [
       "People often represent past, present, and future spatially and sensorially.",
       "Timeline work changes the coding of memories, decisions, and anticipated futures.",
@@ -320,6 +343,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "milton-model-and-trance",
     title: "Milton Model and Trance",
     description: "Indirect language, permissive suggestion, and trance processes for opening options and inner resources.",
+    applicationFrame: "It uses language, attention, and absorption to invite resourceful inner search while preserving agency.",
     principles: [
       "The Milton Model uses ambiguity, presupposition, pacing, and suggestion to invite inner search.",
       "Trance can be understood as focused absorption and altered attention, not a theatrical state.",
@@ -339,6 +363,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "nlp-patterns",
     title: "NLP Patterns",
     description: "Reusable intervention formats for parts work, negotiation, meetings, identity shifts, and behavioural change.",
+    applicationFrame: "It gives a structured intervention format for changing representation, state, internal negotiation, and future response.",
     principles: [
       "Patterns are step-by-step maps that should be adapted to the person and context.",
       "Most patterns rely on state, representation, positive intent, ecology, and future testing.",
@@ -360,6 +385,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "appendices-and-reference",
     title: "Appendices and Reference",
     description: "Reference material, tests, history, and broader Neuro-Semantic context for deeper repository work.",
+    applicationFrame: "It anchors the repository with quick-reference distinctions, tests, lineage notes, and adjacent models.",
     principles: [
       "Reference material supports practice by making distinctions easier to find and compare.",
       "Tests and histories should be used as orientation tools rather than rigid authority.",
