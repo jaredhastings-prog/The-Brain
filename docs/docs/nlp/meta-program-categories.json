@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cognitive-thinking",
+    "title": "Cognitive \u2014 Thinking",
+    "subtitle": "How we think, perceive, compare, filter, and organise information.",
+    "order": 1
+  },
+  {
+    "id": "emotional-feeling",
+    "title": "Emotional \u2014 Feeling",
+    "subtitle": "How we feel, relate, respond emotionally, and manage social-emotional experience.",
+    "order": 2
+  },
+  {
+    "id": "cognitive-choosing",
+    "title": "Cognitive \u2014 Choosing",
+    "subtitle": "How we decide, act, adapt, choose, and move toward outcomes.",
+    "order": 3
+  },
+  {
+    "id": "semantic-meta",
+    "title": "Semantic \u2014 Meta meta-programs",
+    "subtitle": "How we frame identity, meaning, time, values, responsibility, and selfhood.",
+    "order": 4
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "representation": {
+    "title": "Representation",
+    "visualScene": "A person choosing between four learning inputs: a picture, headphones, a physical object, and a book.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person choosing between four learning inputs: a picture, headphones, a physical object, and a book. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "scale-scope": {
+    "title": "Scale / Scope",
+    "visualScene": "Three people viewing the same project: one inspecting fine details, one viewing the whole map, and one connecting it to another idea with puzzle pieces.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three people viewing the same project: one inspecting fine details, one viewing the whole map, and one connecting it to another idea with puzzle pieces. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "motivation": {
+    "title": "Motivation",
+    "visualScene": "One person walking toward a bright goal on a path, while another moves away from a warning sign and storm clouds.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: One person walking toward a bright goal on a path, while another moves away from a warning sign and storm clouds. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "stress-coping": {
+    "title": "Stress Coping",
+    "visualScene": "Three people facing a pressure situation: one stepping back, one calmly choosing, and one charging forward.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three people facing a pressure situation: one stepping back, one calmly choosing, and one charging forward. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "self-esteem": {
+    "title": "Self-Esteem",
+    "visualScene": "A person looking into a mirror, with one side showing achievement trophies and the other showing calm self-acceptance.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person looking into a mirror, with one side showing achievement trophies and the other showing calm self-acceptance. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  }
+}

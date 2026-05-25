@@ -1,0 +1,211 @@
+[
+  {
+    "id": "representation",
+    "number": 1,
+    "title": "Representation",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Visual",
+      "Auditory",
+      "Kinaesthetic",
+      "Language"
+    ],
+    "oneLine": "Preferred way of representing information and experience.",
+    "frontSummary": "People organise experience through preferred sensory-symbolic channels: pictures, sounds, body sensations, or words.",
+    "definition": "Representation describes how people take in external sensory information and reproduce it internally. A person may prefer to think in images, sounds, body sensations, or language.",
+    "languageCues": [
+      "Visual: see, view, looks right, picture, show",
+      "Auditory: hear, sounds right, listen, tone, quiet",
+      "Kinaesthetic: feel, handle, sense, touch, move",
+      "Language: words, rules, criteria, lists, definitions"
+    ],
+    "behaviouralSigns": [
+      "Visual: looks upward, prefers diagrams, notices appearance",
+      "Auditory: attends to tone, rhythm, words, and sound",
+      "Kinaesthetic: gestures, slows down, references body feeling",
+      "Language: prefers reading, concepts, labels, and criteria"
+    ],
+    "strengths": [
+      "Creates efficient internal processing",
+      "Helps tailor coaching, teaching, and communication",
+      "Improves rapport when matched well"
+    ],
+    "blindSpots": [
+      "May overuse one representational channel",
+      "May miss information delivered in another format",
+      "May assume others process experience the same way"
+    ],
+    "coachingPrompts": [
+      "Do you need to see it, hear it, feel it, or put it into words?",
+      "What format makes this easiest for you to understand?",
+      "How are you representing this internally right now?"
+    ],
+    "visualScene": "A person choosing between four learning inputs: a picture, headphones, a physical object, and a book.",
+    "example": "A visual client may understand a plan through a diagram, while a language-oriented client may prefer written criteria and steps.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "scale-scope",
+    "number": 3,
+    "title": "Scale / Scope",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "three-point",
+    "continuum": [
+      "Detail",
+      "Lateral",
+      "Global"
+    ],
+    "oneLine": "Preferred level of information: specifics, lateral links, or big picture.",
+    "frontSummary": "People differ in whether they begin with details, the big picture, or sideways associations.",
+    "definition": "Scale describes the size of information a person prefers when thinking, communicating, learning, and understanding. Some begin with specifics and build upward, some begin with the whole picture and move downward, while others think laterally through analogies and relationships.",
+    "languageCues": [
+      "Detail: specifics, exactly, step-by-step, what specifically",
+      "Global: overall, big picture, principle, concept, purpose",
+      "Lateral: like, similar to, reminds me of, analogy, story"
+    ],
+    "behaviouralSigns": [
+      "Detail: asks for specifics before feeling clear",
+      "Global: wants the purpose or frame before the details",
+      "Lateral: connects ideas through stories, metaphors, and analogies"
+    ],
+    "strengths": [
+      "Detail: precision and accuracy",
+      "Global: vision and meaning",
+      "Lateral: creativity and pattern recognition"
+    ],
+    "blindSpots": [
+      "Detail: can get lost in complexity",
+      "Global: may skip important specifics",
+      "Lateral: may wander away from the immediate task"
+    ],
+    "coachingPrompts": [
+      "Do you need the big picture first or the details first?",
+      "What level of detail would make this useful?",
+      "What does this connect to?"
+    ],
+    "visualScene": "Three people viewing the same project: one inspecting fine details, one viewing the whole map, and one connecting it to another idea with puzzle pieces.",
+    "example": "In planning, a global thinker may ask why the project matters, while a detail thinker wants the exact next steps.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "motivation",
+    "number": 35,
+    "title": "Motivation",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "two-point",
+    "continuum": [
+      "Toward",
+      "Away From"
+    ],
+    "oneLine": "Direction of motivational energy: toward desired outcomes or away from unwanted outcomes.",
+    "frontSummary": "People are motivated either by moving toward what they want or away from what they want to avoid.",
+    "definition": "Motivation describes the direction of intent. Toward motivation is pulled by goals, gains, and possibilities. Away From motivation is driven by avoiding problems, risks, pain, or unwanted consequences.",
+    "languageCues": [
+      "Toward: achieve, gain, create, reach, obtain, build",
+      "Away From: avoid, prevent, reduce, stop, get rid of, stay away from"
+    ],
+    "behaviouralSigns": [
+      "Toward: talks about goals, visions, and positive outcomes",
+      "Away From: notices risks, problems, consequences, and what could go wrong"
+    ],
+    "strengths": [
+      "Toward: vision, ambition, momentum, possibility",
+      "Away From: risk awareness, prevention, quality control, contingency planning"
+    ],
+    "blindSpots": [
+      "Toward: may ignore risks or warning signs",
+      "Away From: may struggle to define positive goals"
+    ],
+    "coachingPrompts": [
+      "What do you want?",
+      "What will having this do for you?",
+      "What do you want to avoid?",
+      "What problem are you trying to prevent?"
+    ],
+    "visualScene": "One person walking toward a bright goal on a path, while another moves away from a warning sign and storm clouds.",
+    "example": "A Toward client may be energised by a vision of success. An Away From client may take action once they clearly see the cost of staying the same.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "stress-coping",
+    "number": 22,
+    "title": "Stress Coping",
+    "categoryId": "emotional-feeling",
+    "continuumType": "three-point",
+    "continuum": [
+      "Passive",
+      "Assertive",
+      "Aggressive"
+    ],
+    "oneLine": "How a person responds under pressure, threat, or stress.",
+    "frontSummary": "People may move away from stress, think and choose through stress, or go at stress directly.",
+    "definition": "Stress Coping describes how people perceive and respond when they feel threatened or pressured. Passive coping moves away from stress, assertive coping keeps presence of mind and chooses a response, and aggressive coping goes directly at the stressor.",
+    "languageCues": [
+      "Passive: peace, avoid, keep harmony, should, must",
+      "Assertive: choose, pause, respond, think, decide",
+      "Aggressive: challenge, confront, take on, push through"
+    ],
+    "behaviouralSigns": [
+      "Passive: avoids conflict, seeks harmony, may people-please",
+      "Assertive: pauses, evaluates, chooses a response",
+      "Aggressive: confronts pressure directly, may intimidate or over-push"
+    ],
+    "strengths": [
+      "Passive: preserves peace and reduces escalation",
+      "Assertive: creates choice under pressure",
+      "Aggressive: brings courage, energy, and directness"
+    ],
+    "blindSpots": [
+      "Passive: can become avoidance or self-abandonment",
+      "Assertive: requires emotional regulation and awareness",
+      "Aggressive: can become controlling, reactive, or unsafe"
+    ],
+    "coachingPrompts": [
+      "When stressed, do you move away, pause and choose, or move toward the stressor?",
+      "What would an assertive response look like here?",
+      "What are you protecting yourself from?"
+    ],
+    "visualScene": "Three people facing a pressure situation: one stepping back, one calmly choosing, and one charging forward.",
+    "example": "In conflict, a passive pattern may avoid the conversation, an assertive pattern may name the issue calmly, and an aggressive pattern may attack the problem or person.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "self-esteem",
+    "number": 51,
+    "title": "Self-Esteem",
+    "categoryId": "semantic-meta",
+    "continuumType": "two-point",
+    "continuum": [
+      "Conditional",
+      "Unconditional"
+    ],
+    "oneLine": "Whether self-worth is treated as earned or inherent.",
+    "frontSummary": "Self-esteem concerns a person\u2019s sense of worth as a human being.",
+    "definition": "Self-Esteem describes how a person relates to their own worth. Conditional self-esteem links value to performance, approval, achievement, or external conditions. Unconditional self-esteem recognises worth as inherent.",
+    "languageCues": [
+      "Conditional: I have to prove myself, I\u2019m only valuable if, I need to earn it",
+      "Unconditional: I have worth, I matter, my value is not up for negotiation"
+    ],
+    "behaviouralSigns": [
+      "Conditional: overachieving, approval-seeking, shame after mistakes",
+      "Unconditional: steadier self-regard, more acceptance, less identity collapse after failure"
+    ],
+    "strengths": [
+      "Conditional: can drive performance and effort",
+      "Unconditional: supports resilience, dignity, and emotional stability"
+    ],
+    "blindSpots": [
+      "Conditional: can create perfectionism, people-pleasing, and chronic proving",
+      "Unconditional: may be misunderstood as avoiding accountability if not balanced with responsibility"
+    ],
+    "coachingPrompts": [
+      "Do you experience your worth as something you must earn?",
+      "What happens to your sense of self when you make a mistake?",
+      "What would change if your worth was not conditional on performance?"
+    ],
+    "visualScene": "A person looking into a mirror, with one side showing achievement trophies and the other showing calm self-acceptance.",
+    "example": "A client with conditional self-esteem may feel valuable only when performing well. A client with unconditional self-esteem can still improve without making mistakes mean they are worthless.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  }
+]
