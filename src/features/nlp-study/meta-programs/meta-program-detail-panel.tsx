@@ -1,0 +1,112 @@
+import { BookOpen, Image as ImageIcon, RotateCcw } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { MetaProgramContinuum } from "@/features/nlp-study/meta-programs/meta-program-continuum";
+import type { MetaProgramCard } from "@/features/nlp-study/meta-programs/meta-program-types";
+
+export function MetaProgramDetailPanel({
+  card,
+  isFlipped,
+  onFlip,
+}: {
+  card: MetaProgramCard;
+  isFlipped: boolean;
+  onFlip: () => void;
+}) {
+  return (
+    <aside className="space-y-4 rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] xl:sticky xl:top-4">
+      <div className="flex flex-wrap items-center gap-2">
+        <Badge variant="signal">Selected card</Badge>
+        <Badge variant="outline">#{card.number}</Badge>
+        <Badge variant="secondary">{card.continuumType}</Badge>
+      </div>
+
+      <div>
+        <h2 className="text-xl font-semibold text-foreground">{card.title}</h2>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+          {card.oneLine}
+        </p>
+      </div>
+
+      <Button
+        className="w-full"
+        onClick={onFlip}
+        type="button"
+        variant="outline"
+      >
+        <RotateCcw />
+        {isFlipped ? "Show front" : "Flip for deeper view"}
+      </Button>
+
+      <div className="rounded-md border border-border/70 bg-background/75 p-3">
+        <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
+          <BookOpen className="size-4" />
+          {isFlipped ? "Back of card" : "Front of card"}
+        </div>
+        {isFlipped ? (
+          <div className="space-y-4">
+            <DetailSection title="Definition" values={[card.definition]} />
+            <DetailSection title="Language Cues" values={card.languageCues} />
+            <DetailSection
+              title="Behavioural Signs"
+              values={card.behaviouralSigns}
+            />
+            <DetailSection title="Strengths" values={card.strengths} />
+            <DetailSection title="Blind Spots" values={card.blindSpots} />
+            <DetailSection
+              title="Coaching Prompts"
+              values={card.coachingPrompts}
+            />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <p className="text-sm leading-6 text-muted-foreground">
+              {card.frontSummary}
+            </p>
+            <MetaProgramContinuum
+              continuum={card.continuum}
+              type={card.continuumType}
+            />
+            <DetailSection title="Example" values={[card.example]} />
+          </div>
+        )}
+      </div>
+
+      <div className="rounded-md border border-border/70 bg-muted/25 p-3">
+        <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
+          <ImageIcon className="size-4" />
+          Visual placeholder
+        </div>
+        <div className="rounded-md border border-dashed border-border/80 bg-background/70 p-4">
+          <p className="text-sm leading-6 text-muted-foreground">
+            {card.visualScene}
+          </p>
+        </div>
+      </div>
+
+      <DetailSection
+        title="Personal Notes"
+        values={[card.personalNotesPlaceholder]}
+      />
+    </aside>
+  );
+}
+
+function DetailSection({ title, values }: { title: string; values: string[] }) {
+  return (
+    <section>
+      <h3 className="text-xs font-semibold uppercase tracking-normal text-muted-foreground">
+        {title}
+      </h3>
+      <ul className="mt-2 space-y-2 text-sm leading-6 text-muted-foreground">
+        {values.map((value) => (
+          <li className="flex gap-2" key={value}>
+            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>{value}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
