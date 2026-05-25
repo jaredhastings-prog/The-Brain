@@ -1,6 +1,6 @@
 import categoriesJson from "../../../../docs/docs/nlp/meta-program-categories.json";
-import cardsJson from "../../../../docs/docs/nlp/meta-program-cards-starter.json";
-import visualScenesJson from "../../../../docs/docs/nlp/visual-scene-prompts-starter.json";
+import cardsJson from "../../../../docs/docs/nlp/meta-program-cards.json";
+import visualScenesJson from "../../../../docs/docs/nlp/visual-scene-prompts.json";
 
 import type {
   MetaProgramCard,
