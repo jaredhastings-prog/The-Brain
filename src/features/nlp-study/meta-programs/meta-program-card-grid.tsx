@@ -36,12 +36,12 @@ export function MetaProgramCardGrid({
         return (
           <article
             className={cn(
-              "rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] transition-colors",
+              "min-w-0 overflow-hidden rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] transition-colors",
               isSelected && "border-slate-400 bg-background",
             )}
             key={card.id}
           >
-            <div className="flex flex-wrap items-start justify-between gap-3">
+            <div className="grid min-w-0 gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge variant="outline">#{card.number}</Badge>
@@ -77,8 +77,10 @@ export function MetaProgramCardGrid({
             </div>
             <div className="mt-4">
               <MetaProgramContinuum
+                className="max-w-full"
                 continuum={card.continuum}
                 type={card.continuumType}
+                variant="compact"
               />
             </div>
             <div className="mt-4 rounded-md border border-dashed border-border/80 bg-background/70 p-3">

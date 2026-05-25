@@ -15,7 +15,7 @@ export function MetaProgramDetailPanel({
   onFlip: () => void;
 }) {
   return (
-    <aside className="space-y-4 rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] xl:sticky xl:top-4">
+    <aside className="min-w-0 space-y-4 overflow-hidden rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] xl:sticky xl:top-4">
       <div className="flex flex-wrap items-center gap-2">
         <Badge variant="signal">Selected card</Badge>
         <Badge variant="outline">#{card.number}</Badge>
@@ -65,8 +65,10 @@ export function MetaProgramDetailPanel({
               {card.frontSummary}
             </p>
             <MetaProgramContinuum
+              className="max-w-full"
               continuum={card.continuum}
               type={card.continuumType}
+              variant="comfortable"
             />
             <DetailSection title="Example" values={[card.example]} />
           </div>
