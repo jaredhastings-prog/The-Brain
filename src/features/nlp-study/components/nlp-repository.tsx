@@ -1,10 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Search } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Search } from "lucide-react";
 
 import { DashboardCard } from "@/components/dashboard/dashboard-card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { NlpFilterSelect } from "@/features/nlp-study/components/nlp-filter-select";
 import { NlpTopicGroupCard } from "@/features/nlp-study/components/nlp-topic-group-card";
@@ -84,6 +86,14 @@ export function NlpRepository() {
             "NLP is an attitude, backed up by a methodology that leaves behind
             it a trail of techniques." - Richard Bandler
           </p>
+          <div className="mt-6">
+            <Button asChild variant="outline">
+              <Link href="/study-learning/nlp/meta-programs-learning-deck">
+                Meta-Programs Learning Deck
+                <ArrowRight />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -93,6 +103,14 @@ export function NlpRepository() {
             description="Browse model families, pattern references, notes, diagrams, and resource placeholders."
             eyebrow="Knowledge map"
             title="NLP Reference Areas"
+            action={
+              <Button asChild size="sm" variant="outline">
+                <Link href="/study-learning/nlp/meta-programs-learning-deck">
+                  Deck
+                  <ArrowRight />
+                </Link>
+              </Button>
+            }
           >
             <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_240px]">
               <label className="space-y-2">
