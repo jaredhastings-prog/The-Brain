@@ -136,8 +136,8 @@ export function MetaProgramLearningDeck() {
         selectedCategoryId={selectedCategoryId}
       />
 
-      <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_420px]">
-        <div className="space-y-4">
+      <section className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_420px]">
+        <div className="min-w-0 space-y-4">
           <MetaProgramCardGrid
             cards={visibleCards}
             flippedCardIds={flippedCardIds}
