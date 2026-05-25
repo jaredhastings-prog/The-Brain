@@ -1,0 +1,34 @@
+{
+  "totalCards": 60,
+  "categories": [
+    {
+      "id": "cognitive-thinking",
+      "title": "Cognitive \u2014 Thinking",
+      "subtitle": "How we think, perceive, compare, filter, and organise information.",
+      "order": 1,
+      "cardCount": 18
+    },
+    {
+      "id": "emotional-feeling",
+      "title": "Emotional \u2014 Feeling",
+      "subtitle": "How we feel, relate, respond emotionally, and manage social-emotional experience.",
+      "order": 2,
+      "cardCount": 15
+    },
+    {
+      "id": "cognitive-choosing",
+      "title": "Cognitive \u2014 Choosing",
+      "subtitle": "How we decide, act, adapt, choose, and move toward outcomes.",
+      "order": 3,
+      "cardCount": 14
+    },
+    {
+      "id": "semantic-meta",
+      "title": "Semantic \u2014 Meta meta-programs",
+      "subtitle": "How we frame identity, meaning, time, values, responsibility, and selfhood.",
+      "order": 4,
+      "cardCount": 13
+    }
+  ],
+  "sourceNote": "Created from Jared's uploaded Meta Programs Overview and Meta-program Template handouts."
+}

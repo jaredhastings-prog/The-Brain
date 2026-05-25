@@ -1,0 +1,362 @@
+{
+  "representation": {
+    "number": 1,
+    "title": "Representation",
+    "visualScene": "A person choosing between a picture, headphones, a textured object, and a book.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person choosing between a picture, headphones, a textured object, and a book. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "epistemological": {
+    "number": 2,
+    "title": "Epistemological",
+    "visualScene": "A person comparing a clipboard of facts with a glowing inner compass.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person comparing a clipboard of facts with a glowing inner compass. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "scale-scope": {
+    "number": 3,
+    "title": "Scale / Scope",
+    "visualScene": "Three people examining the same project: a magnifier, a map, and puzzle links.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three people examining the same project: a magnifier, a map, and puzzle links. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "relationship-comparison": {
+    "number": 4,
+    "title": "Relationship Comparison",
+    "visualScene": "Two people comparing puzzle pieces: one aligns matches, one spots the odd piece.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Two people comparing puzzle pieces: one aligns matches, one spots the odd piece. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "information-staging": {
+    "number": 5,
+    "title": "Information Staging",
+    "visualScene": "A person placing wins on a front display while another pushes achievements into shadow.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person placing wins on a front display while another pushes achievements into shadow. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "scenario-type": {
+    "number": 6,
+    "title": "Scenario Type",
+    "visualScene": "A split scene: storm clouds and risk signs on one side, sunrise and open doors on the other.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A split scene: storm clouds and risk signs on one side, sunrise and open doors on the other. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "classification-scale": {
+    "number": 7,
+    "title": "Classification Scale",
+    "visualScene": "A person sorting blocks into two boxes, a slider scale, and a multi-axis map.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person sorting blocks into two boxes, a slider scale, and a multi-axis map. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "nature": {
+    "number": 8,
+    "title": "Nature",
+    "visualScene": "One person looking at a stone statue while another watches a flowing river and gears.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: One person looking at a stone statue while another watches a flowing river and gears. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "focus": {
+    "number": 9,
+    "title": "Focus",
+    "visualScene": "A focused person in a noisy cafe and a distracted person surrounded by lights and sounds.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A focused person in a noisy cafe and a distracted person surrounded by lights and sounds. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "philosophical": {
+    "number": 10,
+    "title": "Philosophical",
+    "visualScene": "A thinker examining roots of a tree while another builds a bridge forward.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A thinker examining roots of a tree while another builds a bridge forward. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "communication-channel": {
+    "number": 11,
+    "title": "Communication Channel",
+    "visualScene": "A conversation scene with speech bubbles on one side and posture/tone cues on the other.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A conversation scene with speech bubbles on one side and posture/tone cues on the other. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "durability-of-intent": {
+    "number": 12,
+    "title": "Durability of Intent",
+    "visualScene": "A flexible clay model beside a locked stone tablet.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A flexible clay model beside a locked stone tablet. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "causation": {
+    "number": 13,
+    "title": "Causation",
+    "visualScene": "A cause-effect map with seven pathways branching from an event.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A cause-effect map with seven pathways branching from an event. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "completion-sort": {
+    "number": 14,
+    "title": "Completion Sort",
+    "visualScene": "A person ticking a finished checklist beside another exploring open doors.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person ticking a finished checklist beside another exploring open doors. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "information-kind": {
+    "number": 15,
+    "title": "Information Kind",
+    "visualScene": "A person reading a dashboard of numbers beside another reflecting on meaning.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person reading a dashboard of numbers beside another reflecting on meaning. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "stream-of-consciousness": {
+    "number": 16,
+    "title": "Stream of Consciousness",
+    "visualScene": "A spotlight on one target beside a wide lantern lighting many objects.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A spotlight on one target beside a wide lantern lighting many objects. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "altitude-stage": {
+    "number": 17,
+    "title": "Altitude / Stage",
+    "visualScene": "Three figures: one outside the crowd, one inside the crowd, one viewing from a hill.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three figures: one outside the crowd, one inside the crowd, one viewing from a hill. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "speed": {
+    "number": 18,
+    "title": "Speed",
+    "visualScene": "A slow thoughtful chess player beside a quick improviser on stage.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A slow thoughtful chess player beside a quick improviser on stage. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "convincer-representation": {
+    "number": 19,
+    "title": "Convincer Representation",
+    "visualScene": "Four panels: diagram, report, conversation, hands-on demonstration.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Four panels: diagram, report, conversation, hands-on demonstration. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "movie-position": {
+    "number": 20,
+    "title": "Movie Position",
+    "visualScene": "A person inside a vivid scene beside another watching the same scene on a screen.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person inside a vivid scene beside another watching the same scene on a screen. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "exuberance": {
+    "number": 21,
+    "title": "Exuberance",
+    "visualScene": "A reserved person standing safely back beside an energetic person stepping onto a stage.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A reserved person standing safely back beside an energetic person stepping onto a stage. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "stress-coping": {
+    "number": 22,
+    "title": "Stress Coping",
+    "visualScene": "Three people facing pressure: stepping back, standing centred, charging forward.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three people facing pressure: stepping back, standing centred, charging forward. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "authority-source": {
+    "number": 23,
+    "title": "Authority Source",
+    "visualScene": "A person consulting an inner compass beside another asking a panel for feedback.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person consulting an inner compass beside another asking a panel for feedback. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "attention": {
+    "number": 24,
+    "title": "Attention",
+    "visualScene": "A person holding a boundary line beside another listening deeply to someone.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person holding a boundary line beside another listening deeply to someone. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "emotional-containment": {
+    "number": 25,
+    "title": "Emotional Containment",
+    "visualScene": "A jar holding coloured water beside paint spilling across several rooms.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A jar holding coloured water beside paint spilling across several rooms. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "rejuvenation": {
+    "number": 26,
+    "title": "Rejuvenation",
+    "visualScene": "A person reading alone, a balanced person choosing, and a group laughing together.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person reading alone, a balanced person choosing, and a group laughing together. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "somatic-response": {
+    "number": 27,
+    "title": "Somatic Response",
+    "visualScene": "Four figures on a spectrum from sitting still to impulsively jumping forward.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Four figures on a spectrum from sitting still to impulsively jumping forward. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "social-presentation": {
+    "number": 28,
+    "title": "Social Presentation",
+    "visualScene": "A polished person arranging a mask beside a candid person speaking openly.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A polished person arranging a mask beside a candid person speaking openly. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "dominance": {
+    "number": 29,
+    "title": "Dominance",
+    "visualScene": "Three leaders: one with a target, one connecting people, one at a command board.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three leaders: one with a target, one connecting people, one at a command board. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "work-style": {
+    "number": 30,
+    "title": "Work Style",
+    "visualScene": "A project room with five people each taking a different work role.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A project room with five people each taking a different work role. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "change-adopter": {
+    "number": 31,
+    "title": "Change Adopter",
+    "visualScene": "A person holding onto an old map beside another stepping onto a new path.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person holding onto an old map beside another stepping onto a new path. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "attitude-sort": {
+    "number": 32,
+    "title": "Attitude Sort",
+    "visualScene": "A serious planner at a desk beside a playful person using coloured ideas.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A serious planner at a desk beside a playful person using coloured ideas. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "persistence-sort": {
+    "number": 33,
+    "title": "Persistence Sort",
+    "visualScene": "A restless person pacing beside a calm person steadily climbing a hill.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A restless person pacing beside a calm person steadily climbing a hill. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "convincer-demonstration": {
+    "number": 34,
+    "title": "Convincer Demonstration",
+    "visualScene": "Four checkpoints showing immediate trust, repeated proof, time passing, and doubt.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Four checkpoints showing immediate trust, repeated proof, time passing, and doubt. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "motivation": {
+    "number": 35,
+    "title": "Motivation",
+    "visualScene": "One person walking toward a bright goal while another moves away from a warning sign.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: One person walking toward a bright goal while another moves away from a warning sign. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "organisational-style": {
+    "number": 36,
+    "title": "Organisational Style",
+    "visualScene": "A person opening many doors beside another following a checklist.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person opening many doors beside another following a checklist. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "adaptation": {
+    "number": 37,
+    "title": "Adaptation",
+    "visualScene": "A person arranging a calendar beside another walking freely through an open landscape.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person arranging a calendar beside another walking freely through an open landscape. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "modus-operandi": {
+    "number": 38,
+    "title": "Modus Operandi",
+    "visualScene": "A person moving through five gates labelled can\u2019t, must, want, can, choose.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person moving through five gates labelled can\u2019t, must, want, can, choose. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "preference": {
+    "number": 39,
+    "title": "Preference",
+    "visualScene": "Seven icons around a person: people, map, object, action, clock, book, system diagram.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Seven icons around a person: people, map, object, action, clock, book, system diagram. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "goal-striving": {
+    "number": 40,
+    "title": "Goal Striving",
+    "visualScene": "Three paths: stopped at start, steady progress, and unreachable perfect peak.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three paths: stopped at start, steady progress, and unreachable perfect peak. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "buying": {
+    "number": 41,
+    "title": "Buying",
+    "visualScene": "A buyer weighing price tag, quality badge, clock, quantity stack, and convenience button.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A buyer weighing price tag, quality badge, clock, quantity stack, and convenience button. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "social-convincer": {
+    "number": 42,
+    "title": "Social Convincer",
+    "visualScene": "Three people at a doorway: guarded, welcoming with discernment, overly open.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three people at a doorway: guarded, welcoming with discernment, overly open. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "interactive": {
+    "number": 43,
+    "title": "Interactive",
+    "visualScene": "Two people racing on one side and two people building a bridge together on the other.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Two people racing on one side and two people building a bridge together on the other. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "directness": {
+    "number": 44,
+    "title": "Directness",
+    "visualScene": "A subtle conversation with shared cues beside a direct message on a sign.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A subtle conversation with shared cues beside a direct message on a sign. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "management": {
+    "number": 45,
+    "title": "Management",
+    "visualScene": "A leader holding controls, handing off tasks, and gathering a team around a table.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A leader holding controls, handing off tasks, and gathering a team around a table. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "risk-taking": {
+    "number": 46,
+    "title": "Risk Taking",
+    "visualScene": "A person standing behind a safety rail beside another crossing a rope bridge.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person standing behind a safety rail beside another crossing a rope bridge. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "decision-making": {
+    "number": 47,
+    "title": "Decision Making",
+    "visualScene": "Three figures at a crossroads: hesitant, weighing scales, stepping forward.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three figures at a crossroads: hesitant, weighing scales, stepping forward. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "self-experience": {
+    "number": 48,
+    "title": "Self-Experience",
+    "visualScene": "A person surrounded by icons of mind, heart, will, body, role mask, spirit, and open space.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person surrounded by icons of mind, heart, will, body, role mask, spirit, and open space. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "self-instruction": {
+    "number": 49,
+    "title": "Self-Instruction",
+    "visualScene": "A person receiving instructions calmly, another pausing, another pushing back.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person receiving instructions calmly, another pausing, another pushing back. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "self-confidence": {
+    "number": 50,
+    "title": "Self-Confidence",
+    "visualScene": "A person hesitating before a task beside another standing confidently with tools.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person hesitating before a task beside another standing confidently with tools. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "self-esteem": {
+    "number": 51,
+    "title": "Self-Esteem",
+    "visualScene": "A person looking in a mirror with trophies on one side and calm acceptance on the other.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person looking in a mirror with trophies on one side and calm acceptance on the other. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "self-integrity": {
+    "number": 52,
+    "title": "Self-Integrity",
+    "visualScene": "A split figure pulled in two directions beside a centred figure aligned with a compass.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A split figure pulled in two directions beside a centred figure aligned with a compass. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "responsibility-sort": {
+    "number": 53,
+    "title": "Responsibility Sort",
+    "visualScene": "Three people: one dropping a ball, one holding their own, one carrying everyone\u2019s bags.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three people: one dropping a ball, one holding their own, one carrying everyone\u2019s bags. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "ego-strength": {
+    "number": 54,
+    "title": "Ego Strength",
+    "visualScene": "A person overwhelmed by storm waves beside another calmly steering a boat.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person overwhelmed by storm waves beside another calmly steering a boat. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "morality": {
+    "number": 55,
+    "title": "Morality",
+    "visualScene": "A moral compass with low, balanced, and over-tight tension settings.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A moral compass with low, balanced, and over-tight tension settings. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "self-monitoring": {
+    "number": 56,
+    "title": "Self-Monitoring",
+    "visualScene": "A person looking outward through binoculars beside another looking inward at a dashboard.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person looking outward through binoculars beside another looking inward at a dashboard. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "time-processing": {
+    "number": 57,
+    "title": "Time Processing",
+    "visualScene": "A timeline with a person facing backward, standing now, looking ahead, and floating above time.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A timeline with a person facing backward, standing now, looking ahead, and floating above time. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "time-experience": {
+    "number": 58,
+    "title": "Time Experience",
+    "visualScene": "A person standing inside a flowing timeline beside another viewing it from above.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person standing inside a flowing timeline beside another viewing it from above. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "quality-of-life": {
+    "number": 59,
+    "title": "Quality of Life",
+    "visualScene": "Three panels: meditation, productive work, and possessions/status.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: Three panels: meditation, productive work, and possessions/status. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  },
+  "values": {
+    "number": 60,
+    "title": "Values",
+    "visualScene": "A person placing glowing labels of meaning around people, ideas, and goals.",
+    "imagePrompt": "Clean premium illustration for an NLP meta-program flashcard: A person placing glowing labels of meaning around people, ideas, and goals. Minimal, calm, professional coaching style, soft colours, no text in the image."
+  }
+}

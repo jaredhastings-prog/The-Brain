@@ -1,0 +1,2342 @@
+[
+  {
+    "id": "representation",
+    "number": 1,
+    "title": "Representation",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Visual",
+      "Auditory",
+      "Kinaesthetic",
+      "Language"
+    ],
+    "oneLine": "Preferred way of representing information and experience.",
+    "frontSummary": "Preferred way of representing information and experience.",
+    "definition": "Representation describes how people take in external sensory information and reproduce it internally as images, sounds, body sensations, or words.",
+    "languageCues": [
+      "Visual: see, view, looks right, picture",
+      "Auditory: hear, sounds right, tone",
+      "Kinaesthetic: feel, handle, sense",
+      "Language: words, rules, criteria"
+    ],
+    "behaviouralSigns": [
+      "Visual: uses diagrams and images",
+      "Auditory: attends to tone and sound",
+      "Kinaesthetic: gestures and references feelings",
+      "Language: prefers words and concepts"
+    ],
+    "strengths": [
+      "Improves communication matching",
+      "Supports learning design",
+      "Builds sensory acuity"
+    ],
+    "blindSpots": [
+      "May overuse one channel",
+      "May miss other forms of information",
+      "May assume others process the same way"
+    ],
+    "coachingPrompts": [
+      "Do you need to see it, hear it, feel it, or put it into words?",
+      "How are you representing this internally?"
+    ],
+    "visualScene": "A person choosing between a picture, headphones, a textured object, and a book.",
+    "example": "A visual client may prefer a diagram; a language-oriented client may prefer written steps.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "epistemological",
+    "number": 2,
+    "title": "Epistemological",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Sensor",
+      "Intuitor"
+    ],
+    "oneLine": "Preferred way of gathering information: through sensory facts or inner intuition.",
+    "frontSummary": "Preferred way of gathering information: through sensory facts or inner intuition.",
+    "definition": "Epistemological sorting describes whether a person gathers information primarily through observable sensory data or through inner knowing, meaning, possibility, and intuition.",
+    "languageCues": [
+      "Sensor: facts, evidence, actual, demonstrate",
+      "Intuitor: possibility, meaning, pattern, gut feeling"
+    ],
+    "behaviouralSigns": [
+      "Sensor: checks what can be seen, heard, or measured",
+      "Intuitor: reads between the lines and infers meaning"
+    ],
+    "strengths": [
+      "Sensor: grounded and practical",
+      "Intuitor: pattern-aware and possibility-oriented"
+    ],
+    "blindSpots": [
+      "Sensor: may miss meaning or implication",
+      "Intuitor: may over-read or mind-read"
+    ],
+    "coachingPrompts": [
+      "What do you notice directly?",
+      "What do you intuit this means?"
+    ],
+    "visualScene": "A person comparing a clipboard of facts with a glowing inner compass.",
+    "example": "A sensor may want proof; an intuitor may sense what the pattern is pointing toward.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "scale-scope",
+    "number": 3,
+    "title": "Scale / Scope",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "three-point",
+    "continuum": [
+      "Detail",
+      "Lateral",
+      "Global"
+    ],
+    "oneLine": "Preferred level of information: specifics, sideways links, or big picture.",
+    "frontSummary": "Preferred level of information: specifics, sideways links, or big picture.",
+    "definition": "Scale describes the size of information a person prefers when thinking and learning: details first, global principles first, or lateral links through stories and analogy.",
+    "languageCues": [
+      "Detail: specifically, exactly, step-by-step",
+      "Global: big picture, overall, principle",
+      "Lateral: like, similar to, reminds me of"
+    ],
+    "behaviouralSigns": [
+      "Detail: asks for specifics",
+      "Global: asks for purpose or frame",
+      "Lateral: connects ideas through metaphor"
+    ],
+    "strengths": [
+      "Detail: precision",
+      "Global: vision",
+      "Lateral: creativity"
+    ],
+    "blindSpots": [
+      "Detail: can get lost in complexity",
+      "Global: may skip specifics",
+      "Lateral: may wander"
+    ],
+    "coachingPrompts": [
+      "Do you need the big picture or details first?",
+      "What does this connect to?"
+    ],
+    "visualScene": "Three people examining the same project: a magnifier, a map, and puzzle links.",
+    "example": "A global thinker asks why it matters; a detail thinker asks what the next step is.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "relationship-comparison",
+    "number": 4,
+    "title": "Relationship Comparison",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Matching Sameness",
+      "Mis-matching Differences"
+    ],
+    "oneLine": "Whether attention first goes to what is similar or what is different.",
+    "frontSummary": "Whether attention first goes to what is similar or what is different.",
+    "definition": "Relationship Comparison describes how people compare information by matching sameness or mis-matching differences, exceptions, and distinctions.",
+    "languageCues": [
+      "Matching: similar, same, agreement, mutual",
+      "Mis-matching: different, exception, problem, innovation"
+    ],
+    "behaviouralSigns": [
+      "Matching: notices common ground",
+      "Mis-matching: notices what does not fit"
+    ],
+    "strengths": [
+      "Matching: stability and rapport",
+      "Mis-matching: improvement and innovation"
+    ],
+    "blindSpots": [
+      "Matching: may resist change",
+      "Mis-matching: may over-focus on problems"
+    ],
+    "coachingPrompts": [
+      "What is similar here?",
+      "What is different or missing?"
+    ],
+    "visualScene": "Two people comparing puzzle pieces: one aligns matches, one spots the odd piece.",
+    "example": "A matcher says 'this is like before'; a mis-matcher says 'yes, but this part is different.'",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "information-staging",
+    "number": 5,
+    "title": "Information Staging",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Foregrounding / Counting",
+      "Backgrounding / Discounting"
+    ],
+    "oneLine": "Whether experience is mentally counted as significant or pushed to the background.",
+    "frontSummary": "Whether experience is mentally counted as significant or pushed to the background.",
+    "definition": "Information Staging describes how people position thoughts, successes, and events in the foreground or background of awareness.",
+    "languageCues": [
+      "Counting: credit, acknowledge, recognise",
+      "Discounting: should have, not enough, doesn\u2019t count"
+    ],
+    "behaviouralSigns": [
+      "Counting: validates small wins",
+      "Discounting: minimises progress or distractions"
+    ],
+    "strengths": [
+      "Counting: builds motivation",
+      "Discounting: can reduce noise"
+    ],
+    "blindSpots": [
+      "Counting: may overinflate minor events",
+      "Discounting: can undermine learning and confidence"
+    ],
+    "coachingPrompts": [
+      "What are you counting here?",
+      "What are you discounting?"
+    ],
+    "visualScene": "A person placing wins on a front display while another pushes achievements into shadow.",
+    "example": "Counting a small step can build momentum; discounting it may erase useful feedback.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "scenario-type",
+    "number": 6,
+    "title": "Scenario Type",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Pessimistic Worst Case",
+      "Optimistic Best Case"
+    ],
+    "oneLine": "Whether attention first goes to danger and difficulty or possibility and opportunity.",
+    "frontSummary": "Whether attention first goes to danger and difficulty or possibility and opportunity.",
+    "definition": "Scenario Type describes whether a person first imagines the worst-case or best-case pathway when responding to events.",
+    "languageCues": [
+      "Pessimistic: problem, danger, threat, difficulty",
+      "Optimistic: opportunity, solution, possibility, hope"
+    ],
+    "behaviouralSigns": [
+      "Pessimistic: anticipates obstacles",
+      "Optimistic: sees openings and solutions"
+    ],
+    "strengths": [
+      "Pessimistic: risk detection",
+      "Optimistic: hope and momentum"
+    ],
+    "blindSpots": [
+      "Pessimistic: can spiral into helplessness",
+      "Optimistic: can deny real problems"
+    ],
+    "coachingPrompts": [
+      "What could go wrong?",
+      "What could go right?"
+    ],
+    "visualScene": "A split scene: storm clouds and risk signs on one side, sunrise and open doors on the other.",
+    "example": "A worst-case thinker creates contingency plans; a best-case thinker energises action.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "classification-scale",
+    "number": 7,
+    "title": "Classification Scale",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "three-point",
+    "continuum": [
+      "Either\u2013Or",
+      "Continuum",
+      "Multi-Dimensionality"
+    ],
+    "oneLine": "How information is classified: clear categories, degrees, or multiple dimensions.",
+    "frontSummary": "How information is classified: clear categories, degrees, or multiple dimensions.",
+    "definition": "Classification Scale describes whether a person sorts experience into polar categories, fuzzy continuums, or multiple simultaneous dimensions.",
+    "languageCues": [
+      "Either-or: yes/no, right/wrong, clear",
+      "Continuum: degrees, percentage, spectrum",
+      "Multi-dimensional: both/and, layers, variables"
+    ],
+    "behaviouralSigns": [
+      "Either-or: decisive boundaries",
+      "Continuum: sees gradations",
+      "Multi-dimensional: holds complexity"
+    ],
+    "strengths": [
+      "Either-or: clarity",
+      "Continuum: nuance",
+      "Multi-dimensional: systems thinking"
+    ],
+    "blindSpots": [
+      "Either-or: black-and-white thinking",
+      "Continuum: indecision",
+      "Multi-dimensional: complexity overload"
+    ],
+    "coachingPrompts": [
+      "Is this a category, a spectrum, or a system?",
+      "Where is it on the continuum?"
+    ],
+    "visualScene": "A person sorting blocks into two boxes, a slider scale, and a multi-axis map.",
+    "example": "Under stress, someone may collapse a continuum into either-or thinking.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "nature",
+    "number": 8,
+    "title": "Nature",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Aristotelian Static",
+      "Non-Aristotelian Process"
+    ],
+    "oneLine": "Whether reality is perceived as fixed things or changing processes.",
+    "frontSummary": "Whether reality is perceived as fixed things or changing processes.",
+    "definition": "Nature describes whether a person maps the world as static objects and categories or as dynamic processes, relationships, and change.",
+    "languageCues": [
+      "Static: is, fixed, thing, permanent",
+      "Process: changing, evolving, interacting, becoming"
+    ],
+    "behaviouralSigns": [
+      "Static: describes what things are",
+      "Process: describes how things are changing"
+    ],
+    "strengths": [
+      "Static: clarity and structure",
+      "Process: flexibility and systems awareness"
+    ],
+    "blindSpots": [
+      "Static: may resist change",
+      "Process: may lack firm boundaries"
+    ],
+    "coachingPrompts": [
+      "Is this fixed or changing?",
+      "What process is happening here?"
+    ],
+    "visualScene": "One person looking at a stone statue while another watches a flowing river and gears.",
+    "example": "A static thinker says 'that is how it is'; a process thinker asks 'how is it changing?'",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "focus",
+    "number": 9,
+    "title": "Focus",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Screening",
+      "Non-Screening"
+    ],
+    "oneLine": "How much environmental stimulus is filtered out or taken in.",
+    "frontSummary": "How much environmental stimulus is filtered out or taken in.",
+    "definition": "Focus describes how much a person screens out stimuli. Screeners narrow attention; non-screeners notice more of the environment and can become overloaded.",
+    "languageCues": [
+      "Screening: focus, zone in, ignore distractions",
+      "Non-screening: noise, comfort, quiet, too much"
+    ],
+    "behaviouralSigns": [
+      "Screening: can study anywhere",
+      "Non-screening: notices lights, sounds, movement"
+    ],
+    "strengths": [
+      "Screening: concentration",
+      "Non-screening: environmental awareness"
+    ],
+    "blindSpots": [
+      "Screening: may miss cues",
+      "Non-screening: distractibility and overload"
+    ],
+    "coachingPrompts": [
+      "What are you screening out?",
+      "What stimuli are you taking in?"
+    ],
+    "visualScene": "A focused person in a noisy cafe and a distracted person surrounded by lights and sounds.",
+    "example": "A screener can work through noise; a non-screener may need a quiet room.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "philosophical",
+    "number": 10,
+    "title": "Philosophical",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Why",
+      "How"
+    ],
+    "oneLine": "Whether attention goes to origins and causes or process and application.",
+    "frontSummary": "Whether attention goes to origins and causes or process and application.",
+    "definition": "Philosophical sorting describes whether a person is more drawn to why something is as it is or how it works and can be used.",
+    "languageCues": [
+      "Why: cause, origin, purpose, reason",
+      "How: process, use, function, response"
+    ],
+    "behaviouralSigns": [
+      "Why: asks for meaning and source",
+      "How: moves toward action and application"
+    ],
+    "strengths": [
+      "Why: depth and causation",
+      "How: practicality and solution focus"
+    ],
+    "blindSpots": [
+      "Why: may stay in analysis",
+      "How: may skip deeper causes"
+    ],
+    "coachingPrompts": [
+      "Why is this happening?",
+      "How can you use or respond to this?"
+    ],
+    "visualScene": "A thinker examining roots of a tree while another builds a bridge forward.",
+    "example": "One client needs the cause; another needs the next practical move.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "communication-channel",
+    "number": 11,
+    "title": "Communication Channel",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Verbal / Digital",
+      "Non-Verbal / Analogue"
+    ],
+    "oneLine": "Whether communication is processed mainly through words or non-verbal signals.",
+    "frontSummary": "Whether communication is processed mainly through words or non-verbal signals.",
+    "definition": "Communication Channel describes whether a person attends more to what is said or how it is expressed through tone, posture, breathing, gesture, and congruence.",
+    "languageCues": [
+      "Verbal: words, content, phrases, said",
+      "Non-verbal: tone, posture, gesture, energy"
+    ],
+    "behaviouralSigns": [
+      "Verbal: tracks language precisely",
+      "Non-verbal: tracks signal cues and incongruence"
+    ],
+    "strengths": [
+      "Verbal: clarity of content",
+      "Non-verbal: relational acuity"
+    ],
+    "blindSpots": [
+      "Verbal: may miss body cues",
+      "Non-verbal: may mind-read"
+    ],
+    "coachingPrompts": [
+      "What did they say?",
+      "How did they say it?"
+    ],
+    "visualScene": "A conversation scene with speech bubbles on one side and posture/tone cues on the other.",
+    "example": "A verbal perceiver trusts the words; a non-verbal perceiver trusts the signal.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "durability-of-intent",
+    "number": 12,
+    "title": "Durability of Intent",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Permeable",
+      "Impermeable"
+    ],
+    "oneLine": "How flexible or rigid beliefs and mental constructs are.",
+    "frontSummary": "How flexible or rigid beliefs and mental constructs are.",
+    "definition": "Durability of Intent describes whether a person\u2019s beliefs and constructs are open to revision or held as fixed, solid, and unquestionable.",
+    "languageCues": [
+      "Permeable: maybe, can, question, doubt",
+      "Impermeable: must, can\u2019t, absolutely, no question"
+    ],
+    "behaviouralSigns": [
+      "Permeable: revises beliefs with new evidence",
+      "Impermeable: holds beliefs firmly"
+    ],
+    "strengths": [
+      "Permeable: learning and adaptability",
+      "Impermeable: certainty and commitment"
+    ],
+    "blindSpots": [
+      "Permeable: instability",
+      "Impermeable: rigidity"
+    ],
+    "coachingPrompts": [
+      "How open is this belief to revision?",
+      "What would update this belief?"
+    ],
+    "visualScene": "A flexible clay model beside a locked stone tablet.",
+    "example": "A permeable belief can adapt; an impermeable belief resists disturbance.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "causation",
+    "number": 13,
+    "title": "Causation",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "multi-point",
+    "continuum": [
+      "No Causation",
+      "Linear",
+      "Complex",
+      "Personal",
+      "External",
+      "Magical",
+      "Correlation"
+    ],
+    "oneLine": "How cause and effect are understood.",
+    "frontSummary": "How cause and effect are understood.",
+    "definition": "Causation describes the way a person explains why things happen: chance, direct cause, systems, personal influence, external forces, magical thinking, or mistaken correlation.",
+    "languageCues": [
+      "No cause: random, chance",
+      "Linear: because of X",
+      "Complex: multiple factors",
+      "Personal: my role",
+      "External: outside forces",
+      "Magical: wishes/fate",
+      "Correlation: this means that"
+    ],
+    "behaviouralSigns": [
+      "Looks for specific types of explanation",
+      "May simplify or complexify cause-effect links"
+    ],
+    "strengths": [
+      "Supports explanation and intervention",
+      "Can reveal responsibility patterns"
+    ],
+    "blindSpots": [
+      "May overclaim, underclaim, or distort causation"
+    ],
+    "coachingPrompts": [
+      "What caused this?",
+      "What factors contributed?",
+      "What part did you play?"
+    ],
+    "visualScene": "A cause-effect map with seven pathways branching from an event.",
+    "example": "A systems thinker asks for multiple contributors; a linear thinker seeks the direct cause.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "completion-sort",
+    "number": 14,
+    "title": "Completion Sort",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Closure",
+      "Non-Closure"
+    ],
+    "oneLine": "How much closure, certainty, and completion a person needs.",
+    "frontSummary": "How much closure, certainty, and completion a person needs.",
+    "definition": "Completion Sort describes how people handle closure or lack of closure. Some need things finished and contained; others are comfortable in open-endedness.",
+    "languageCues": [
+      "Closure: finish, complete, settle, decide",
+      "Non-closure: open, explore, ongoing, unfinished"
+    ],
+    "behaviouralSigns": [
+      "Closure: uneasy with ambiguity",
+      "Non-closure: comfortable in beginnings and middles"
+    ],
+    "strengths": [
+      "Closure: completion and clarity",
+      "Non-closure: exploration and flexibility"
+    ],
+    "blindSpots": [
+      "Closure: may rush certainty",
+      "Non-closure: may avoid finishing"
+    ],
+    "coachingPrompts": [
+      "What needs to be closed?",
+      "What can remain open?"
+    ],
+    "visualScene": "A person ticking a finished checklist beside another exploring open doors.",
+    "example": "A closure sorter wants the story completed; a non-closure sorter can leave it open.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "information-kind",
+    "number": 15,
+    "title": "Information Kind",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Quantitative",
+      "Qualitative"
+    ],
+    "oneLine": "Whether preferred information is numerical or meaning-based.",
+    "frontSummary": "Whether preferred information is numerical or meaning-based.",
+    "definition": "Information Kind describes whether a person prefers information in numbers, measurements, and facts or in qualities, meanings, principles, and experience.",
+    "languageCues": [
+      "Quantitative: numbers, rank, amount, measurement",
+      "Qualitative: meaning, quality, principle, experience"
+    ],
+    "behaviouralSigns": [
+      "Quantitative: asks for metrics",
+      "Qualitative: asks what it means"
+    ],
+    "strengths": [
+      "Quantitative: precision",
+      "Qualitative: depth and meaning"
+    ],
+    "blindSpots": [
+      "Quantitative: may miss human meaning",
+      "Qualitative: may lack measurement"
+    ],
+    "coachingPrompts": [
+      "What are the numbers?",
+      "What is the quality of the experience?"
+    ],
+    "visualScene": "A person reading a dashboard of numbers beside another reflecting on meaning.",
+    "example": "One person evaluates work by KPIs; another evaluates by impact and meaning.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "stream-of-consciousness",
+    "number": 16,
+    "title": "Stream of Consciousness",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "three-point",
+    "continuum": [
+      "Focused",
+      "In-Between",
+      "Diffused"
+    ],
+    "oneLine": "How concentrated or spread out awareness is.",
+    "frontSummary": "How concentrated or spread out awareness is.",
+    "definition": "Stream of Consciousness describes the pointedness of attention: concentrated on a singular object, diffused across many objects, or somewhere between.",
+    "languageCues": [
+      "Focused: concentrate, target, finish",
+      "Diffused: all over, scattered, many things"
+    ],
+    "behaviouralSigns": [
+      "Focused: stays on subject",
+      "Diffused: attention spreads widely"
+    ],
+    "strengths": [
+      "Focused: completion and precision",
+      "Diffused: broad awareness and ideation"
+    ],
+    "blindSpots": [
+      "Focused: tunnel vision",
+      "Diffused: distraction"
+    ],
+    "coachingPrompts": [
+      "How focused is your attention?",
+      "What is pulling your awareness?"
+    ],
+    "visualScene": "A spotlight on one target beside a wide lantern lighting many objects.",
+    "example": "A focused person finishes the task; a diffused person notices many possibilities.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "altitude-stage",
+    "number": 17,
+    "title": "Altitude / Stage",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "three-point",
+    "continuum": [
+      "Pre-Conformist",
+      "Conformist",
+      "Post-Conformist"
+    ],
+    "oneLine": "How a person relates to social fit, norms, and accepted behaviour.",
+    "frontSummary": "How a person relates to social fit, norms, and accepted behaviour.",
+    "definition": "Altitude or stage describes how a person positions themselves relative to social convention: before it, inside it, or beyond it.",
+    "languageCues": [
+      "Pre-conformist: rebel, independent, don\u2019t care",
+      "Conformist: accepted, fitting in, proper",
+      "Post-conformist: values-led, principled, beyond approval"
+    ],
+    "behaviouralSigns": [
+      "May resist, follow, or transcend group norms"
+    ],
+    "strengths": [
+      "Supports understanding social identity",
+      "Clarifies relationship to authority and belonging"
+    ],
+    "blindSpots": [
+      "Can become rebellion, conformity, or superiority"
+    ],
+    "coachingPrompts": [
+      "How important is fitting in here?",
+      "Are you resisting, conforming, or choosing from values?"
+    ],
+    "visualScene": "Three figures: one outside the crowd, one inside the crowd, one viewing from a hill.",
+    "example": "A conformist seeks acceptance; a post-conformist may act from principles.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "speed",
+    "number": 18,
+    "title": "Speed",
+    "categoryId": "cognitive-thinking",
+    "continuumType": "two-point",
+    "continuum": [
+      "Deliberate & Slow",
+      "Quick & Witty"
+    ],
+    "oneLine": "Speed of thought, speech, and mental processing.",
+    "frontSummary": "Speed of thought, speech, and mental processing.",
+    "definition": "Speed describes whether a person processes slowly and deliberately or quickly and wittily, with faster shifts and conclusions.",
+    "languageCues": [
+      "Slow: deliberate, steady, thoughtful",
+      "Quick: fast, witty, instant, jump"
+    ],
+    "behaviouralSigns": [
+      "Slow: takes time to decide",
+      "Quick: responds rapidly"
+    ],
+    "strengths": [
+      "Slow: depth and care",
+      "Quick: agility and responsiveness"
+    ],
+    "blindSpots": [
+      "Slow: rigidity or delay",
+      "Quick: rash decisions"
+    ],
+    "coachingPrompts": [
+      "How much time do you need to process?",
+      "Are you jumping to conclusions?"
+    ],
+    "visualScene": "A slow thoughtful chess player beside a quick improviser on stage.",
+    "example": "A quick thinker answers fast; a deliberate thinker wants time to reflect.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "convincer-representation",
+    "number": 19,
+    "title": "Convincer Representation",
+    "categoryId": "emotional-feeling",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Looks Right",
+      "Makes Sense",
+      "Sounds Right",
+      "Feels Right"
+    ],
+    "oneLine": "What representation creates the feeling of being convinced.",
+    "frontSummary": "What representation creates the feeling of being convinced.",
+    "definition": "Convincer Representation describes the sensory or symbolic form that makes something feel believable or significant.",
+    "languageCues": [
+      "Looks right: show me",
+      "Makes sense: data, facts",
+      "Sounds right: tone, hear",
+      "Feels right: hands-on, gut"
+    ],
+    "behaviouralSigns": [
+      "Visual aids convince some; data convinces others; tone or experience convinces others"
+    ],
+    "strengths": [
+      "Improves influence and teaching",
+      "Clarifies decision preferences"
+    ],
+    "blindSpots": [
+      "May reject valid evidence in the wrong form"
+    ],
+    "coachingPrompts": [
+      "What convinces you?",
+      "Does it need to look, sound, feel, or make sense?"
+    ],
+    "visualScene": "Four panels: diagram, report, conversation, hands-on demonstration.",
+    "example": "A person may need to see a chart before they feel sure.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "movie-position",
+    "number": 20,
+    "title": "Movie Position",
+    "categoryId": "emotional-feeling",
+    "continuumType": "two-point",
+    "continuum": [
+      "Inside / Associated",
+      "Outside / Dissociated"
+    ],
+    "oneLine": "Whether experience is processed from inside the scene or as an observer.",
+    "frontSummary": "Whether experience is processed from inside the scene or as an observer.",
+    "definition": "Movie Position describes whether a person steps into an internal movie and re-experiences it or steps outside and observes it from a distance.",
+    "languageCues": [
+      "Inside: in it, relive, feel it",
+      "Outside: observe, step back, view it"
+    ],
+    "behaviouralSigns": [
+      "Inside: strong sensory-emotional experience",
+      "Outside: psychological distance"
+    ],
+    "strengths": [
+      "Inside: emotional access",
+      "Outside: objectivity"
+    ],
+    "blindSpots": [
+      "Inside: overwhelm",
+      "Outside: disconnection"
+    ],
+    "coachingPrompts": [
+      "Are you inside the movie or watching it?",
+      "What happens if you step back?"
+    ],
+    "visualScene": "A person inside a vivid scene beside another watching the same scene on a screen.",
+    "example": "Stepping out of a painful memory can reduce emotional intensity.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "exuberance",
+    "number": 21,
+    "title": "Exuberance",
+    "categoryId": "emotional-feeling",
+    "continuumType": "two-point",
+    "continuum": [
+      "Desurgency / Timid",
+      "Surgency / Bold"
+    ],
+    "oneLine": "Degree of emotional energy, social boldness, and expressive intensity.",
+    "frontSummary": "Degree of emotional energy, social boldness, and expressive intensity.",
+    "definition": "Exuberance describes the intensity and outward surge of emotion, from restrained and threat-sensitive to bold, energetic, and outgoing.",
+    "languageCues": [
+      "Desurgency: cautious, sensitive, reserved",
+      "Surgency: bold, excited, fun, outgoing"
+    ],
+    "behaviouralSigns": [
+      "Desurgent: protective and cautious",
+      "Surgent: expressive and adventurous"
+    ],
+    "strengths": [
+      "Desurgency: sensitivity and care",
+      "Surgency: energy and social boldness"
+    ],
+    "blindSpots": [
+      "Desurgency: fearfulness",
+      "Surgency: overexcitement or recklessness"
+    ],
+    "coachingPrompts": [
+      "How strongly does emotion surge through you?",
+      "What level of boldness fits this context?"
+    ],
+    "visualScene": "A reserved person standing safely back beside an energetic person stepping onto a stage.",
+    "example": "One client protects themselves by withdrawing; another seeks excitement.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "stress-coping",
+    "number": 22,
+    "title": "Stress Coping",
+    "categoryId": "emotional-feeling",
+    "continuumType": "three-point",
+    "continuum": [
+      "Passive",
+      "Assertive",
+      "Aggressive"
+    ],
+    "oneLine": "How a person responds under pressure, threat, or stress.",
+    "frontSummary": "How a person responds under pressure, threat, or stress.",
+    "definition": "Stress Coping describes how people respond when threatened: moving away, staying present and choosing, or going at the stressor.",
+    "languageCues": [
+      "Passive: peace, avoid, harmony",
+      "Assertive: choose, pause, respond",
+      "Aggressive: confront, take on, challenge"
+    ],
+    "behaviouralSigns": [
+      "Passive: avoids conflict",
+      "Assertive: regulates and chooses",
+      "Aggressive: moves toward pressure"
+    ],
+    "strengths": [
+      "Passive: de-escalation",
+      "Assertive: choice",
+      "Aggressive: courage"
+    ],
+    "blindSpots": [
+      "Passive: people-pleasing",
+      "Assertive: requires regulation",
+      "Aggressive: intimidation"
+    ],
+    "coachingPrompts": [
+      "When stressed, do you move away, pause, or go at it?",
+      "What would assertive look like?"
+    ],
+    "visualScene": "Three people facing pressure: stepping back, standing centred, charging forward.",
+    "example": "A passive pattern avoids; an assertive pattern names the issue; an aggressive pattern attacks.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "authority-source",
+    "number": 23,
+    "title": "Authority Source",
+    "categoryId": "emotional-feeling",
+    "continuumType": "two-point",
+    "continuum": [
+      "Internal Referencing",
+      "External Referencing"
+    ],
+    "oneLine": "Where a person looks for permission, validation, and decision authority.",
+    "frontSummary": "Where a person looks for permission, validation, and decision authority.",
+    "definition": "Authority Source describes whether a person evaluates decisions through inner authority or through external rules, feedback, and approval.",
+    "languageCues": [
+      "Internal: I know, my sense, intuition",
+      "External: feedback, approval, proper, acceptable"
+    ],
+    "behaviouralSigns": [
+      "Internal: self-directed",
+      "External: seeks guidance and validation"
+    ],
+    "strengths": [
+      "Internal: autonomy",
+      "External: responsiveness to feedback"
+    ],
+    "blindSpots": [
+      "Internal: may ignore feedback",
+      "External: may over-depend on approval"
+    ],
+    "coachingPrompts": [
+      "How do you know you\u2019ve made the right decision?",
+      "Whose approval matters here?"
+    ],
+    "visualScene": "A person consulting an inner compass beside another asking a panel for feedback.",
+    "example": "An internal referencer decides from their own criteria; an external referencer seeks confirmation.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "attention",
+    "number": 24,
+    "title": "Attention",
+    "categoryId": "emotional-feeling",
+    "continuumType": "two-point",
+    "continuum": [
+      "Self",
+      "Other"
+    ],
+    "oneLine": "Where attention goes in relation to self and others.",
+    "frontSummary": "Where attention goes in relation to self and others.",
+    "definition": "Attention describes whether a person primarily references their own needs, values, and boundaries or the needs, feelings, and perspectives of others.",
+    "languageCues": [
+      "Self: I, me, my, mine",
+      "Other: you, yours, what do you need"
+    ],
+    "behaviouralSigns": [
+      "Self: strong self-reference",
+      "Other: empathy and second position"
+    ],
+    "strengths": [
+      "Self: boundaries",
+      "Other: connection"
+    ],
+    "blindSpots": [
+      "Self: may neglect relationships",
+      "Other: may neglect self"
+    ],
+    "coachingPrompts": [
+      "Where is your attention: self or other?",
+      "What do you need? What do they need?"
+    ],
+    "visualScene": "A person holding a boundary line beside another listening deeply to someone.",
+    "example": "Other-reference helps empathy; self-reference helps boundaries.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "emotional-containment",
+    "number": 25,
+    "title": "Emotional Containment",
+    "categoryId": "emotional-feeling",
+    "continuumType": "two-point",
+    "continuum": [
+      "Uni-directional",
+      "Multi-directional"
+    ],
+    "oneLine": "Whether emotions stay context-specific or spread across life areas.",
+    "frontSummary": "Whether emotions stay context-specific or spread across life areas.",
+    "definition": "Emotional Containment describes whether emotion remains focused in the relevant context or spreads into other areas and states.",
+    "languageCues": [
+      "Uni-directional: contained, specific, clean",
+      "Multi-directional: spills over, everything, mood"
+    ],
+    "behaviouralSigns": [
+      "Uni-directional: emotion stays in its lane",
+      "Multi-directional: one area affects many areas"
+    ],
+    "strengths": [
+      "Uni-directional: clarity",
+      "Multi-directional: intensity and emotional connection"
+    ],
+    "blindSpots": [
+      "Uni-directional: compartmentalisation",
+      "Multi-directional: mood spillover"
+    ],
+    "coachingPrompts": [
+      "Where does this emotion belong?",
+      "Is this emotion spreading beyond its context?"
+    ],
+    "visualScene": "A jar holding coloured water beside paint spilling across several rooms.",
+    "example": "Work frustration may stay at work or spill into home life.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "rejuvenation",
+    "number": 26,
+    "title": "Rejuvenation",
+    "categoryId": "emotional-feeling",
+    "continuumType": "three-point",
+    "continuum": [
+      "Introvert",
+      "Ambivert",
+      "Extrovert"
+    ],
+    "oneLine": "How a person recharges emotional and social energy.",
+    "frontSummary": "How a person recharges emotional and social energy.",
+    "definition": "Rejuvenation describes whether a person restores energy through solitude, a mix of solitude and connection, or social contact.",
+    "languageCues": [
+      "Introvert: alone, quiet, recharge",
+      "Extrovert: people, talk, go out",
+      "Ambivert: depends, balance"
+    ],
+    "behaviouralSigns": [
+      "Introvert: turns inward under stress",
+      "Extrovert: seeks people and activity"
+    ],
+    "strengths": [
+      "Introvert: depth and reflection",
+      "Extrovert: energy and engagement",
+      "Ambivert: flexibility"
+    ],
+    "blindSpots": [
+      "Introvert: isolation",
+      "Extrovert: fear of solitude"
+    ],
+    "coachingPrompts": [
+      "How do you recharge?",
+      "What kind of recovery does this situation need?"
+    ],
+    "visualScene": "A person reading alone, a balanced person choosing, and a group laughing together.",
+    "example": "After a hard day, one person needs solitude while another needs connection.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "somatic-response",
+    "number": 27,
+    "title": "Somatic Response",
+    "categoryId": "emotional-feeling",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Inactive",
+      "Reflective",
+      "Active",
+      "Reactive"
+    ],
+    "oneLine": "How quickly thinking becomes physical action.",
+    "frontSummary": "How quickly thinking becomes physical action.",
+    "definition": "Somatic Response describes whether a person remains inactive, reflects before action, acts quickly, or reacts impulsively.",
+    "languageCues": [
+      "Inactive: wait, not yet",
+      "Reflective: think first",
+      "Active: do, move",
+      "Reactive: immediately, impulse"
+    ],
+    "behaviouralSigns": [
+      "Inactive/Reflective: pauses",
+      "Active/Reactive: moves fast"
+    ],
+    "strengths": [
+      "Reflective: thoughtfulness",
+      "Active: execution"
+    ],
+    "blindSpots": [
+      "Inactive: procrastination",
+      "Reactive: impulsivity"
+    ],
+    "coachingPrompts": [
+      "Do you need to act or observe?",
+      "Are you responding or reacting?"
+    ],
+    "visualScene": "Four figures on a spectrum from sitting still to impulsively jumping forward.",
+    "example": "A reactive style gets things moving but may create mistakes.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "social-presentation",
+    "number": 28,
+    "title": "Social Presentation",
+    "categoryId": "emotional-feeling",
+    "continuumType": "two-point",
+    "continuum": [
+      "Artfully Shrewd",
+      "Artlessly Genuine"
+    ],
+    "oneLine": "How much a person manages image, impression, and social presentation.",
+    "frontSummary": "How much a person manages image, impression, and social presentation.",
+    "definition": "Social Presentation describes whether a person carefully manages social impression or prefers unfiltered authenticity with little concern for presentation.",
+    "languageCues": [
+      "Shrewd: tact, image, protocol, impression",
+      "Genuine: real, authentic, direct, natural"
+    ],
+    "behaviouralSigns": [
+      "Shrewd: manages impressions",
+      "Genuine: says it as it is"
+    ],
+    "strengths": [
+      "Shrewd: diplomacy",
+      "Genuine: authenticity"
+    ],
+    "blindSpots": [
+      "Shrewd: manipulation",
+      "Genuine: social crudeness"
+    ],
+    "coachingPrompts": [
+      "How much are you managing your image?",
+      "What would authentic and respectful look like?"
+    ],
+    "visualScene": "A polished person arranging a mask beside a candid person speaking openly.",
+    "example": "One person chooses tact; another chooses direct authenticity.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "dominance",
+    "number": 29,
+    "title": "Dominance",
+    "categoryId": "emotional-feeling",
+    "continuumType": "three-point",
+    "continuum": [
+      "Achievement",
+      "Affiliation",
+      "Power"
+    ],
+    "oneLine": "Primary social motive: results, relationship, or influence.",
+    "frontSummary": "Primary social motive: results, relationship, or influence.",
+    "definition": "Dominance describes whether social energy is organised around achievement, affiliation, or power and control.",
+    "languageCues": [
+      "Achievement: results, goals, success",
+      "Affiliation: relationship, cooperation",
+      "Power: influence, control, status"
+    ],
+    "behaviouralSigns": [
+      "Achievement: task focus",
+      "Affiliation: relationship focus",
+      "Power: influence focus"
+    ],
+    "strengths": [
+      "Achievement: productivity",
+      "Affiliation: harmony",
+      "Power: leadership drive"
+    ],
+    "blindSpots": [
+      "Achievement: neglects people",
+      "Affiliation: avoids conflict",
+      "Power: domination"
+    ],
+    "coachingPrompts": [
+      "What motive is strongest here: result, relationship, or influence?"
+    ],
+    "visualScene": "Three leaders: one with a target, one connecting people, one at a command board.",
+    "example": "A leader may optimise for performance, relationships, or influence.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "work-style",
+    "number": 30,
+    "title": "Work Style",
+    "categoryId": "emotional-feeling",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Independent",
+      "Team Player",
+      "Manager",
+      "Bureaucrat",
+      "Follower"
+    ],
+    "oneLine": "Preferred way of working with others to complete tasks.",
+    "frontSummary": "Preferred way of working with others to complete tasks.",
+    "definition": "Work Style describes how a person prefers to relate in task-oriented situations: independently, as a team player, as a manager, bureaucrat, or follower.",
+    "languageCues": [
+      "Independent: my work, autonomy",
+      "Team: together, family, camaraderie",
+      "Manager: take charge",
+      "Bureaucrat: role, process",
+      "Follower: tell me what to do"
+    ],
+    "behaviouralSigns": [
+      "Different comfort with autonomy, teamwork, authority, and structure"
+    ],
+    "strengths": [
+      "Clarifies collaboration fit",
+      "Improves role design"
+    ],
+    "blindSpots": [
+      "May clash with mismatched roles"
+    ],
+    "coachingPrompts": [
+      "How do you prefer to work in a group?",
+      "What role energises you?"
+    ],
+    "visualScene": "A project room with five people each taking a different work role.",
+    "example": "An independent worker may struggle in heavy collaboration; a team player may need belonging.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "change-adopter",
+    "number": 31,
+    "title": "Change Adopter",
+    "categoryId": "emotional-feeling",
+    "continuumType": "three-point",
+    "continuum": [
+      "Closed / Late",
+      "Medium",
+      "Open / Early"
+    ],
+    "oneLine": "How open or resistant a person is to change.",
+    "frontSummary": "How open or resistant a person is to change.",
+    "definition": "Change Adopter describes whether change is perceived as disruptive and threatening or exciting, adaptive, and enriching.",
+    "languageCues": [
+      "Closed: keep, protect, avoid change",
+      "Open: innovate, adapt, modify, improve"
+    ],
+    "behaviouralSigns": [
+      "Closed: follows later",
+      "Open: leads or welcomes change"
+    ],
+    "strengths": [
+      "Closed: continuity",
+      "Open: adaptability"
+    ],
+    "blindSpots": [
+      "Closed: resistance",
+      "Open: novelty-chasing"
+    ],
+    "coachingPrompts": [
+      "How do you respond to change?",
+      "What makes change feel safe or useful?"
+    ],
+    "visualScene": "A person holding onto an old map beside another stepping onto a new path.",
+    "example": "One person waits until change is proven; another moves early.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "attitude-sort",
+    "number": 32,
+    "title": "Attitude Sort",
+    "categoryId": "emotional-feeling",
+    "continuumType": "two-point",
+    "continuum": [
+      "Serious",
+      "Playful"
+    ],
+    "oneLine": "Whether life and work are coloured by seriousness or playfulness.",
+    "frontSummary": "Whether life and work are coloured by seriousness or playfulness.",
+    "definition": "Attitude Sort describes the emotional tone through which a person filters life: earnest and serious or light, humorous, and playful.",
+    "languageCues": [
+      "Serious: important, disciplined, earnest",
+      "Playful: fun, joke, light, playful"
+    ],
+    "behaviouralSigns": [
+      "Serious: focused and weighty",
+      "Playful: humorous and light"
+    ],
+    "strengths": [
+      "Serious: commitment",
+      "Playful: creativity and ease"
+    ],
+    "blindSpots": [
+      "Serious: heaviness",
+      "Playful: avoidance through humour"
+    ],
+    "coachingPrompts": [
+      "What tone fits this context?",
+      "Where would more lightness or seriousness help?"
+    ],
+    "visualScene": "A serious planner at a desk beside a playful person using coloured ideas.",
+    "example": "A playful reframe can loosen stress; seriousness can focus effort.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "persistence-sort",
+    "number": 33,
+    "title": "Persistence Sort",
+    "categoryId": "emotional-feeling",
+    "continuumType": "two-point",
+    "continuum": [
+      "Impatient",
+      "Patient"
+    ],
+    "oneLine": "How patience and persistence operate under pressure.",
+    "frontSummary": "How patience and persistence operate under pressure.",
+    "definition": "Persistence Sort describes whether a person becomes restless and urgent or remains steady, patient, and persistent.",
+    "languageCues": [
+      "Impatient: hurry, now, pressure",
+      "Patient: steady, long-term, persist"
+    ],
+    "behaviouralSigns": [
+      "Impatient: quick movement and scattered attention",
+      "Patient: calm persistence"
+    ],
+    "strengths": [
+      "Impatient: energy",
+      "Patient: endurance"
+    ],
+    "blindSpots": [
+      "Impatient: recklessness",
+      "Patient: passivity or slowness"
+    ],
+    "coachingPrompts": [
+      "How patient are you under pressure?",
+      "What pace serves this goal?"
+    ],
+    "visualScene": "A restless person pacing beside a calm person steadily climbing a hill.",
+    "example": "Impatience can start movement; patience sustains the process.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "convincer-demonstration",
+    "number": 34,
+    "title": "Convincer Demonstration",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Automatic",
+      "Repetitions",
+      "Time Period",
+      "Never"
+    ],
+    "oneLine": "How much evidence or time is needed before feeling convinced.",
+    "frontSummary": "How much evidence or time is needed before feeling convinced.",
+    "definition": "Convincer Demonstration describes how often or how long something must be demonstrated before a person feels convinced.",
+    "languageCues": [
+      "Automatic: immediately, trust",
+      "Repetition: again, several times",
+      "Time: over time, let it settle",
+      "Never: prove it, doubt"
+    ],
+    "behaviouralSigns": [
+      "Automatic: convinced quickly",
+      "Repetition: needs repeated exposure",
+      "Time: waits for duration",
+      "Never: keeps questioning"
+    ],
+    "strengths": [
+      "Automatic: fast trust",
+      "Repetition: stable learning",
+      "Time: durability",
+      "Never: strong scepticism"
+    ],
+    "blindSpots": [
+      "Automatic: naivety",
+      "Never: chronic distrust"
+    ],
+    "coachingPrompts": [
+      "How many times do you need to see this?",
+      "How long before you trust it?"
+    ],
+    "visualScene": "Four checkpoints showing immediate trust, repeated proof, time passing, and doubt.",
+    "example": "One person is convinced after one demo; another needs months of evidence.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "motivation",
+    "number": 35,
+    "title": "Motivation",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "two-point",
+    "continuum": [
+      "Toward",
+      "Away From"
+    ],
+    "oneLine": "Direction of motivational energy: toward desired outcomes or away from unwanted outcomes.",
+    "frontSummary": "Direction of motivational energy: toward desired outcomes or away from unwanted outcomes.",
+    "definition": "Motivation describes whether intent moves toward what is wanted or away from what is unwanted.",
+    "languageCues": [
+      "Toward: achieve, gain, create, reach",
+      "Away From: avoid, prevent, stop, remove"
+    ],
+    "behaviouralSigns": [
+      "Toward: talks goals and visions",
+      "Away From: notices risks and problems"
+    ],
+    "strengths": [
+      "Toward: vision and momentum",
+      "Away From: risk management"
+    ],
+    "blindSpots": [
+      "Toward: ignores risks",
+      "Away From: unclear positive goals"
+    ],
+    "coachingPrompts": [
+      "What do you want?",
+      "What do you want to avoid?"
+    ],
+    "visualScene": "One person walking toward a bright goal while another moves away from a warning sign.",
+    "example": "A Toward client acts for possibility; an Away From client acts to prevent pain.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "organisational-style",
+    "number": 36,
+    "title": "Organisational Style",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "two-point",
+    "continuum": [
+      "Options",
+      "Procedures"
+    ],
+    "oneLine": "Whether a person prefers choices and alternatives or proven steps.",
+    "frontSummary": "Whether a person prefers choices and alternatives or proven steps.",
+    "definition": "Organisational Style describes whether a person prefers to create options or follow procedures and correct sequences.",
+    "languageCues": [
+      "Options: choices, possibilities, alternatives",
+      "Procedures: steps, right way, proven way"
+    ],
+    "behaviouralSigns": [
+      "Options: improves or changes the process",
+      "Procedures: follows sequence"
+    ],
+    "strengths": [
+      "Options: innovation",
+      "Procedures: consistency"
+    ],
+    "blindSpots": [
+      "Options: rule-breaking",
+      "Procedures: rigidity"
+    ],
+    "coachingPrompts": [
+      "Do you need options or a process?",
+      "What is the next step?"
+    ],
+    "visualScene": "A person opening many doors beside another following a checklist.",
+    "example": "An options person designs a new method; a procedures person follows the proven method.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "adaptation",
+    "number": 37,
+    "title": "Adaptation",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "two-point",
+    "continuum": [
+      "Judging",
+      "Perceiving"
+    ],
+    "oneLine": "Whether a person makes life fit plans or adapts to life as it unfolds.",
+    "frontSummary": "Whether a person makes life fit plans or adapts to life as it unfolds.",
+    "definition": "Adaptation describes whether a person wants life to adapt to their plans and categories or prefers to observe, flow, and adapt to life.",
+    "languageCues": [
+      "Judging: plan, list, order, decide",
+      "Perceiving: spontaneous, flexible, open, accepting"
+    ],
+    "behaviouralSigns": [
+      "Judging: structures events",
+      "Perceiving: joins what emerges"
+    ],
+    "strengths": [
+      "Judging: order",
+      "Perceiving: flexibility"
+    ],
+    "blindSpots": [
+      "Judging: control",
+      "Perceiving: indecision"
+    ],
+    "coachingPrompts": [
+      "Do you need a plan or room to flow?",
+      "What needs structure here?"
+    ],
+    "visualScene": "A person arranging a calendar beside another walking freely through an open landscape.",
+    "example": "Planning helps control events; perceiving helps adapt to reality.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "modus-operandi",
+    "number": 38,
+    "title": "Modus Operandi",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Impossibility",
+      "Necessity",
+      "Desire",
+      "Possibility",
+      "Choice"
+    ],
+    "oneLine": "Modal operators that shape motivation, permission, and action.",
+    "frontSummary": "Modal operators that shape motivation, permission, and action.",
+    "definition": "Modus Operandi describes the conceptual world a person lives in through modal operator language such as can\u2019t, must, want, could, and choose.",
+    "languageCues": [
+      "Impossibility: can\u2019t, must not",
+      "Necessity: must, have to, should",
+      "Desire: want to, love to",
+      "Possibility: can, may, could",
+      "Choice: choose, my choice"
+    ],
+    "behaviouralSigns": [
+      "Language reveals perceived freedom or constraint"
+    ],
+    "strengths": [
+      "Clarifies motivational frame",
+      "Opens choice and agency"
+    ],
+    "blindSpots": [
+      "May create compulsion, helplessness, or fantasy"
+    ],
+    "coachingPrompts": [
+      "Are you operating from must, can\u2019t, want, can, or choose?"
+    ],
+    "visualScene": "A person moving through five gates labelled can\u2019t, must, want, can, choose.",
+    "example": "'I have to' creates a different state than 'I choose to.'",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "preference",
+    "number": 39,
+    "title": "Preference",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "multi-point",
+    "continuum": [
+      "People",
+      "Place",
+      "Things",
+      "Activity",
+      "Time",
+      "Information",
+      "Systems"
+    ],
+    "oneLine": "Primary area of interest and attention.",
+    "frontSummary": "Primary area of interest and attention.",
+    "definition": "Preference describes what a person naturally values and sorts for: people, place, things, activity, time, information, or systems.",
+    "languageCues": [
+      "People, place, things, activity, time, information, systems"
+    ],
+    "behaviouralSigns": [
+      "Attention naturally returns to the preferred domain"
+    ],
+    "strengths": [
+      "Clarifies values and motivation",
+      "Improves communication targeting"
+    ],
+    "blindSpots": [
+      "May neglect other important dimensions"
+    ],
+    "coachingPrompts": [
+      "What do you naturally become passionate about?",
+      "What matters most in this situation?"
+    ],
+    "visualScene": "Seven icons around a person: people, map, object, action, clock, book, system diagram.",
+    "example": "One person chooses a holiday for people; another chooses it for place or activity.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "goal-striving",
+    "number": 40,
+    "title": "Goal Striving",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "three-point",
+    "continuum": [
+      "Scepticism",
+      "Optimising",
+      "Perfectionism"
+    ],
+    "oneLine": "How a person relates to goals, striving, and standards.",
+    "frontSummary": "How a person relates to goals, striving, and standards.",
+    "definition": "Goal Striving describes whether a person avoids goals, does their best with optimisation, or pursues perfection.",
+    "languageCues": [
+      "Scepticism: pointless, doubt, why bother",
+      "Optimising: best I can, step, progress",
+      "Perfectionism: flawless, not enough, final product"
+    ],
+    "behaviouralSigns": [
+      "Sceptic: avoids goals",
+      "Optimiser: works in steps",
+      "Perfectionist: finds flaws"
+    ],
+    "strengths": [
+      "Scepticism: challenge assumptions",
+      "Optimising: sustainable progress",
+      "Perfectionism: high standards"
+    ],
+    "blindSpots": [
+      "Scepticism: defeatism",
+      "Perfectionism: frustration and procrastination"
+    ],
+    "coachingPrompts": [
+      "What would good enough look like?",
+      "Are you optimising or perfecting?"
+    ],
+    "visualScene": "Three paths: stopped at start, steady progress, and unreachable perfect peak.",
+    "example": "Optimising supports flow; perfectionism can delay action.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "buying",
+    "number": 41,
+    "title": "Buying",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Cost",
+      "Quality",
+      "Quantity",
+      "Time",
+      "Convenience"
+    ],
+    "oneLine": "What matters most when making a purchase or value decision.",
+    "frontSummary": "What matters most when making a purchase or value decision.",
+    "definition": "Buying describes the value a person sorts for first when making a purchase: cost, quality, quantity, time, convenience, or another overriding criterion.",
+    "languageCues": [
+      "Cost: how much?",
+      "Quality: will it last?",
+      "Quantity: how many?",
+      "Time: when?",
+      "Convenience: how easy?"
+    ],
+    "behaviouralSigns": [
+      "Different questions appear first in buying decisions"
+    ],
+    "strengths": [
+      "Improves persuasion and decision clarity"
+    ],
+    "blindSpots": [
+      "Can over-prioritise one value at the cost of others"
+    ],
+    "coachingPrompts": [
+      "What is the first value you check?",
+      "Which value overrides the others?"
+    ],
+    "visualScene": "A buyer weighing price tag, quality badge, clock, quantity stack, and convenience button.",
+    "example": "One buyer chooses lowest cost; another waits for higher quality.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "social-convincer",
+    "number": 42,
+    "title": "Social Convincer",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Distrusting",
+      "Balanced",
+      "Trusting",
+      "Naive"
+    ],
+    "oneLine": "How readily a person trusts others.",
+    "frontSummary": "How readily a person trusts others.",
+    "definition": "Social Convincer describes the trust pattern a person brings to others, from suspicion and guardedness to balanced trust to immediate over-trust.",
+    "languageCues": [
+      "Distrusting: suspicious, guarded, prove it",
+      "Balanced: friendly but discerning",
+      "Trusting: open, warm, connected"
+    ],
+    "behaviouralSigns": [
+      "Distrusting: holds back",
+      "Balanced: separates friendliness from trust",
+      "Trusting: opens quickly"
+    ],
+    "strengths": [
+      "Distrusting: protection",
+      "Balanced: discernment",
+      "Trusting: warmth"
+    ],
+    "blindSpots": [
+      "Distrusting: defensiveness",
+      "Trusting: manipulation risk"
+    ],
+    "coachingPrompts": [
+      "How quickly do you trust?",
+      "What evidence do you need to trust?"
+    ],
+    "visualScene": "Three people at a doorway: guarded, welcoming with discernment, overly open.",
+    "example": "Balanced trust can be friendly while waiting for evidence.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "interactive",
+    "number": 43,
+    "title": "Interactive",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "two-point",
+    "continuum": [
+      "Competitive / Win-Lose",
+      "Co-operative / Win-Win"
+    ],
+    "oneLine": "Whether interaction is framed as competition or cooperation.",
+    "frontSummary": "Whether interaction is framed as competition or cooperation.",
+    "definition": "Interactive describes whether a person engages others through comparison, winning, and outscoring or through cooperation, collaboration, and shared success.",
+    "languageCues": [
+      "Competitive: win, beat, better, fastest",
+      "Co-operative: together, share, collaborate, network"
+    ],
+    "behaviouralSigns": [
+      "Competitive: compares and competes",
+      "Co-operative: builds shared outcomes"
+    ],
+    "strengths": [
+      "Competitive: drive",
+      "Co-operative: relationship and synergy"
+    ],
+    "blindSpots": [
+      "Competitive: burnout or conflict",
+      "Co-operative: avoids necessary competition"
+    ],
+    "coachingPrompts": [
+      "Are you trying to win or co-create?",
+      "What would win-win look like?"
+    ],
+    "visualScene": "Two people racing on one side and two people building a bridge together on the other.",
+    "example": "A competitive frame seeks advantage; a cooperative frame seeks shared benefit.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "directness",
+    "number": 44,
+    "title": "Directness",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "two-point",
+    "continuum": [
+      "Inferential / High Context",
+      "Direct / Low Context"
+    ],
+    "oneLine": "How much context is assumed or explicitly stated in communication.",
+    "frontSummary": "How much context is assumed or explicitly stated in communication.",
+    "definition": "Directness describes whether communication relies on implied context and inference or direct explicit statement.",
+    "languageCues": [
+      "Inferential: you know, implied, context",
+      "Direct: clear, explicit, say it, direct"
+    ],
+    "behaviouralSigns": [
+      "Inferential: assumes shared context",
+      "Direct: names information plainly"
+    ],
+    "strengths": [
+      "Inferential: subtlety",
+      "Direct: clarity"
+    ],
+    "blindSpots": [
+      "Inferential: ambiguity",
+      "Direct: bluntness"
+    ],
+    "coachingPrompts": [
+      "What needs to be said directly?",
+      "What context is being assumed?"
+    ],
+    "visualScene": "A subtle conversation with shared cues beside a direct message on a sign.",
+    "example": "A high-context communicator hints; a low-context communicator states.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "management",
+    "number": 45,
+    "title": "Management",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "three-point",
+    "continuum": [
+      "Control",
+      "Delegation",
+      "Collaboration"
+    ],
+    "oneLine": "Preferred management style for tasks, projects, and goals.",
+    "frontSummary": "Preferred management style for tasks, projects, and goals.",
+    "definition": "Management describes whether a person handles work through control, delegation, or collaboration.",
+    "languageCues": [
+      "Control: I\u2019ll do it, take charge",
+      "Delegation: assign, hand over, empower",
+      "Collaboration: together, consensus, joint"
+    ],
+    "behaviouralSigns": [
+      "Control: acts directly",
+      "Delegation: distributes tasks",
+      "Collaboration: checks alignment"
+    ],
+    "strengths": [
+      "Control: ownership",
+      "Delegation: leverage",
+      "Collaboration: buy-in"
+    ],
+    "blindSpots": [
+      "Control: micromanagement",
+      "Delegation: abdication",
+      "Collaboration: slowness"
+    ],
+    "coachingPrompts": [
+      "Do you need to control, delegate, or collaborate?",
+      "What style fits this task?"
+    ],
+    "visualScene": "A leader holding controls, handing off tasks, and gathering a team around a table.",
+    "example": "Some managers delegate to empower; others delegate to maintain control.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "risk-taking",
+    "number": 46,
+    "title": "Risk Taking",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "two-point",
+    "continuum": [
+      "Aversive / Avoid",
+      "Approach / Embrace"
+    ],
+    "oneLine": "How a person relates to risk, novelty, and uncertainty.",
+    "frontSummary": "How a person relates to risk, novelty, and uncertainty.",
+    "definition": "Risk Taking describes whether a person avoids risk and prefers safety or approaches risk as adventure, discovery, and possibility.",
+    "languageCues": [
+      "Avoid: safe, proven, familiar",
+      "Approach: risk, adventure, discover, new"
+    ],
+    "behaviouralSigns": [
+      "Avoid: waits for proof",
+      "Approach: moves early into uncertainty"
+    ],
+    "strengths": [
+      "Avoid: safety and continuity",
+      "Approach: innovation and courage"
+    ],
+    "blindSpots": [
+      "Avoid: stagnation",
+      "Approach: recklessness"
+    ],
+    "coachingPrompts": [
+      "What level of risk is acceptable?",
+      "Are you avoiding or embracing the unknown?"
+    ],
+    "visualScene": "A person standing behind a safety rail beside another crossing a rope bridge.",
+    "example": "Risk aversion protects; risk approach discovers.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "decision-making",
+    "number": 47,
+    "title": "Decision Making",
+    "categoryId": "cognitive-choosing",
+    "continuumType": "three-point",
+    "continuum": [
+      "Cautious",
+      "Balanced",
+      "Bold"
+    ],
+    "oneLine": "How a person experiences and makes decisions.",
+    "frontSummary": "How a person experiences and makes decisions.",
+    "definition": "Decision Making describes whether a person is hesitant and cautious, pragmatic and balanced, or bold and fast in decision-making.",
+    "languageCues": [
+      "Cautious: wait, weigh, maybe, risk",
+      "Balanced: pros and cons, pragmatic",
+      "Bold: decide, trust, go"
+    ],
+    "behaviouralSigns": [
+      "Cautious: delays",
+      "Balanced: evaluates",
+      "Bold: acts quickly"
+    ],
+    "strengths": [
+      "Cautious: care",
+      "Balanced: judgement",
+      "Bold: decisiveness"
+    ],
+    "blindSpots": [
+      "Cautious: procrastination",
+      "Bold: impulsivity"
+    ],
+    "coachingPrompts": [
+      "What decision style is operating?",
+      "What would a balanced choice look like?"
+    ],
+    "visualScene": "Three figures at a crossroads: hesitant, weighing scales, stepping forward.",
+    "example": "A cautious person delays to avoid regret; a bold person moves and adjusts.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "self-experience",
+    "number": 48,
+    "title": "Self-Experience",
+    "categoryId": "semantic-meta",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Mind",
+      "Emotion",
+      "Will",
+      "Body",
+      "Role / Position",
+      "Spirit",
+      "Disidentified"
+    ],
+    "oneLine": "What aspect of self a person identifies with most strongly.",
+    "frontSummary": "What aspect of self a person identifies with most strongly.",
+    "definition": "Self-Experience describes how a person defines and experiences self through mind, emotion, will, body, role, spirit, or disidentification from all of these.",
+    "languageCues": [
+      "Mind: I think",
+      "Emotion: I feel",
+      "Will: I choose",
+      "Body: my body",
+      "Role: I am my role",
+      "Spirit: deeper self",
+      "Disidentified: I am more than this"
+    ],
+    "behaviouralSigns": [
+      "Identity language reveals the dominant self-experience"
+    ],
+    "strengths": [
+      "Clarifies identity frame",
+      "Supports self-awareness"
+    ],
+    "blindSpots": [
+      "Over-identification can limit flexibility"
+    ],
+    "coachingPrompts": [
+      "How do you define yourself?",
+      "Which part of you feels most real?"
+    ],
+    "visualScene": "A person surrounded by icons of mind, heart, will, body, role mask, spirit, and open space.",
+    "example": "A person may identify as a thinker, feeler, achiever, parent, or observer.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "self-instruction",
+    "number": 49,
+    "title": "Self-Instruction",
+    "categoryId": "semantic-meta",
+    "continuumType": "three-point",
+    "continuum": [
+      "Compliant",
+      "Balanced",
+      "Strong-Willed"
+    ],
+    "oneLine": "How a person responds to being told, instructed, or directed.",
+    "frontSummary": "How a person responds to being told, instructed, or directed.",
+    "definition": "Self-Instruction describes whether a person naturally complies with instruction, balances instruction with choice, or resists being told what to do.",
+    "languageCues": [
+      "Compliant: whatever you say, okay",
+      "Balanced: I\u2019ll consider it",
+      "Strong-willed: don\u2019t tell me, I resist"
+    ],
+    "behaviouralSigns": [
+      "Compliant: follows rules",
+      "Strong-willed: resists orders"
+    ],
+    "strengths": [
+      "Compliant: cooperation",
+      "Strong-willed: autonomy"
+    ],
+    "blindSpots": [
+      "Compliant: submission",
+      "Strong-willed: oppositional resistance"
+    ],
+    "coachingPrompts": [
+      "How do you respond to instructions?",
+      "What wording preserves choice?"
+    ],
+    "visualScene": "A person receiving instructions calmly, another pausing, another pushing back.",
+    "example": "A strong-willed client may need options rather than commands.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "self-confidence",
+    "number": 50,
+    "title": "Self-Confidence",
+    "categoryId": "semantic-meta",
+    "continuumType": "three-point",
+    "continuum": [
+      "Low",
+      "In-Between",
+      "High"
+    ],
+    "oneLine": "Sense of competence in ability, skill, and capacity.",
+    "frontSummary": "Sense of competence in ability, skill, and capacity.",
+    "definition": "Self-Confidence describes a person\u2019s felt competence in doing, performing, or applying a skill. It is about capacity, not inherent worth.",
+    "languageCues": [
+      "Low: unsure, doubt, confused",
+      "High: capable, skilled, confident"
+    ],
+    "behaviouralSigns": [
+      "Low: discounts ability",
+      "High: acknowledges competence"
+    ],
+    "strengths": [
+      "Low: humility and caution",
+      "High: action and self-trust"
+    ],
+    "blindSpots": [
+      "Low: avoidance",
+      "High: arrogance without skill"
+    ],
+    "coachingPrompts": [
+      "Where do you feel competent?",
+      "What evidence of ability can you count?"
+    ],
+    "visualScene": "A person hesitating before a task beside another standing confidently with tools.",
+    "example": "Confidence grows when competence is counted and embodied.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "self-esteem",
+    "number": 51,
+    "title": "Self-Esteem",
+    "categoryId": "semantic-meta",
+    "continuumType": "two-point",
+    "continuum": [
+      "Conditional",
+      "Unconditional"
+    ],
+    "oneLine": "Whether self-worth is treated as earned or inherent.",
+    "frontSummary": "Whether self-worth is treated as earned or inherent.",
+    "definition": "Self-Esteem describes how a person relates to their worth as a human being. Conditional self-esteem links value to performance; unconditional self-esteem recognises inherent worth.",
+    "languageCues": [
+      "Conditional: prove myself, only if, earn it",
+      "Unconditional: I have worth, I matter"
+    ],
+    "behaviouralSigns": [
+      "Conditional: achievement proving",
+      "Unconditional: stable self-regard"
+    ],
+    "strengths": [
+      "Conditional: drive",
+      "Unconditional: dignity and resilience"
+    ],
+    "blindSpots": [
+      "Conditional: shame and people-pleasing",
+      "Unconditional: can be misunderstood as no accountability"
+    ],
+    "coachingPrompts": [
+      "Is your worth conditional here?",
+      "What changes if worth is inherent?"
+    ],
+    "visualScene": "A person looking in a mirror with trophies on one side and calm acceptance on the other.",
+    "example": "A person can improve performance without making mistakes mean they are worthless.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "self-integrity",
+    "number": 52,
+    "title": "Self-Integrity",
+    "categoryId": "semantic-meta",
+    "continuumType": "two-point",
+    "continuum": [
+      "Conflicted Incongruity",
+      "Harmonious Integration"
+    ],
+    "oneLine": "Congruence between ideal self, values, and lived behaviour.",
+    "frontSummary": "Congruence between ideal self, values, and lived behaviour.",
+    "definition": "Self-Integrity describes whether a person feels internally conflicted and incongruent or aligned and integrated with their values and ideal self.",
+    "languageCues": [
+      "Conflicted: torn, inconsistent, at odds",
+      "Integrated: congruent, aligned, centred"
+    ],
+    "behaviouralSigns": [
+      "Conflicted: says one thing and lives another",
+      "Integrated: talk and behaviour fit"
+    ],
+    "strengths": [
+      "Conflicted: signals needed change",
+      "Integrated: energy and congruence"
+    ],
+    "blindSpots": [
+      "Conflicted: internal drain",
+      "Integrated: can become rigidity if idealised"
+    ],
+    "coachingPrompts": [
+      "Where are you out of alignment?",
+      "What would congruence look like?"
+    ],
+    "visualScene": "A split figure pulled in two directions beside a centred figure aligned with a compass.",
+    "example": "Integrity increases when behaviour matches values.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "responsibility-sort",
+    "number": 53,
+    "title": "Responsibility Sort",
+    "categoryId": "semantic-meta",
+    "continuumType": "three-point",
+    "continuum": [
+      "Under-Responsible",
+      "Healthy Responsibility",
+      "Over-Responsible"
+    ],
+    "oneLine": "How responsibility is owned, avoided, or over-assumed.",
+    "frontSummary": "How responsibility is owned, avoided, or over-assumed.",
+    "definition": "Responsibility Sort describes whether a person avoids responsibility, takes healthy responsibility for self and to others, or assumes too much responsibility.",
+    "languageCues": [
+      "Under: not mine, helpless",
+      "Healthy: my response, my part",
+      "Over: I must fix everyone"
+    ],
+    "behaviouralSigns": [
+      "Under: victim/passive",
+      "Healthy: owns responses",
+      "Over: caretakes and intrudes"
+    ],
+    "strengths": [
+      "Under: may reveal support needs",
+      "Healthy: accountability",
+      "Over: care and problem-solving"
+    ],
+    "blindSpots": [
+      "Under: avoidance",
+      "Over: burnout and intrusion"
+    ],
+    "coachingPrompts": [
+      "What part is yours?",
+      "What part is not yours?"
+    ],
+    "visualScene": "Three people: one dropping a ball, one holding their own, one carrying everyone\u2019s bags.",
+    "example": "Healthy responsibility separates responsibility for self from responsibility to others.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "ego-strength",
+    "number": 54,
+    "title": "Ego Strength",
+    "categoryId": "semantic-meta",
+    "continuumType": "two-point",
+    "continuum": [
+      "Unstable / Weak",
+      "Strong / Stable"
+    ],
+    "oneLine": "Capacity to face reality and respond without falling apart.",
+    "frontSummary": "Capacity to face reality and respond without falling apart.",
+    "definition": "Ego Strength describes the strength of mind to face reality, tolerate stress, and deal with facts constructively.",
+    "languageCues": [
+      "Weak: overwhelmed, panic, insecure",
+      "Strong: face facts, cope, problem-solve"
+    ],
+    "behaviouralSigns": [
+      "Weak: quickly frustrated",
+      "Strong: calm and objective"
+    ],
+    "strengths": [
+      "Weak: sensitivity",
+      "Strong: resilience and mastery"
+    ],
+    "blindSpots": [
+      "Weak: fight/flight collapse",
+      "Strong: emotional detachment if overused"
+    ],
+    "coachingPrompts": [
+      "Can you face the facts here?",
+      "What resource would strengthen your response?"
+    ],
+    "visualScene": "A person overwhelmed by storm waves beside another calmly steering a boat.",
+    "example": "Strong ego strength faces the problem and moves to problem-solving.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "morality",
+    "number": 55,
+    "title": "Morality",
+    "categoryId": "semantic-meta",
+    "continuumType": "three-point",
+    "continuum": [
+      "Weak Super-Ego",
+      "Strong Super-Ego",
+      "Overly Strong Super-Ego"
+    ],
+    "oneLine": "Degree of moral and ethical sorting.",
+    "frontSummary": "Degree of moral and ethical sorting.",
+    "definition": "Morality describes how strongly a person sorts for right, wrong, guilt, duty, ethics, and obligation.",
+    "languageCues": [
+      "Weak: no guilt, disregard",
+      "Strong: right thing, duty",
+      "Overly strong: guilt, shame, rigid"
+    ],
+    "behaviouralSigns": [
+      "Weak: little regard for rules",
+      "Strong: ethical discipline",
+      "Overly strong: self-punishing"
+    ],
+    "strengths": [
+      "Weak: freedom from guilt",
+      "Strong: responsibility",
+      "Overly strong: high conscience"
+    ],
+    "blindSpots": [
+      "Weak: harmful behaviour",
+      "Overly strong: shame and rigidity"
+    ],
+    "coachingPrompts": [
+      "What is the ethical frame?",
+      "Is guilt useful or excessive here?"
+    ],
+    "visualScene": "A moral compass with low, balanced, and over-tight tension settings.",
+    "example": "A strong moral frame guides behaviour; an overly strong one can create chronic guilt.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "self-monitoring",
+    "number": 56,
+    "title": "Self-Monitoring",
+    "categoryId": "semantic-meta",
+    "continuumType": "two-point",
+    "continuum": [
+      "Low / External",
+      "High / Internal"
+    ],
+    "oneLine": "Ability to notice internal thoughts, emotions, needs, and impulses.",
+    "frontSummary": "Ability to notice internal thoughts, emotions, needs, and impulses.",
+    "definition": "Self-Monitoring describes the degree of inward awareness and intra-personal intelligence a person uses to track their internal state.",
+    "languageCues": [
+      "Low: I don\u2019t know, outside focus",
+      "High: I notice, I feel, I need"
+    ],
+    "behaviouralSigns": [
+      "Low: difficulty naming inner state",
+      "High: easily tracks inner world"
+    ],
+    "strengths": [
+      "Low: external engagement",
+      "High: self-awareness"
+    ],
+    "blindSpots": [
+      "Low: disconnection",
+      "High: painful over-awareness"
+    ],
+    "coachingPrompts": [
+      "What are you feeling and thinking?",
+      "How aware are you of your inner world?"
+    ],
+    "visualScene": "A person looking outward through binoculars beside another looking inward at a dashboard.",
+    "example": "High self-monitoring helps emotional regulation; low self-monitoring may miss early signals.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "time-processing",
+    "number": 57,
+    "title": "Time Processing",
+    "categoryId": "semantic-meta",
+    "continuumType": "multi-point",
+    "continuum": [
+      "Past",
+      "Present",
+      "Future",
+      "Atemporal"
+    ],
+    "oneLine": "Where attention is placed in relation to time.",
+    "frontSummary": "Where attention is placed in relation to time.",
+    "definition": "Time Processing describes whether a person primarily references the past, present, future, or lives outside ordinary time consciousness.",
+    "languageCues": [
+      "Past: history, used to, remember",
+      "Present: now, today, here",
+      "Future: will, vision, next",
+      "Atemporal: timeless, outside time"
+    ],
+    "behaviouralSigns": [
+      "Past: uses history",
+      "Present: seizes now",
+      "Future: plans and dreams"
+    ],
+    "strengths": [
+      "Past: learning from experience",
+      "Present: presence",
+      "Future: direction"
+    ],
+    "blindSpots": [
+      "Past: stuck in history",
+      "Present: ignores consequences",
+      "Future: neglects today"
+    ],
+    "coachingPrompts": [
+      "Where is your attention in time?",
+      "What does past, present, or future teach here?"
+    ],
+    "visualScene": "A timeline with a person facing backward, standing now, looking ahead, and floating above time.",
+    "example": "A future-oriented client may need help grounding plans into today.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "time-experience",
+    "number": 58,
+    "title": "Time Experience",
+    "categoryId": "semantic-meta",
+    "continuumType": "three-point",
+    "continuum": [
+      "In Time",
+      "Through Time",
+      "Random Sequential"
+    ],
+    "oneLine": "How time is internally represented and experienced.",
+    "frontSummary": "How time is internally represented and experienced.",
+    "definition": "Time Experience describes whether a person is inside time, observing time from a meta position, or experiencing time in more random/sequential patterns.",
+    "languageCues": [
+      "In time: in the moment, lost in time",
+      "Through time: timeline, sequence, schedule",
+      "Random sequential: jumps, associations"
+    ],
+    "behaviouralSigns": [
+      "In time: less time constraint awareness",
+      "Through time: structured sequence",
+      "Random: jumps across memories"
+    ],
+    "strengths": [
+      "In time: immersion and creativity",
+      "Through time: planning and order"
+    ],
+    "blindSpots": [
+      "In time: lateness or disorganisation",
+      "Through time: rigidity"
+    ],
+    "coachingPrompts": [
+      "Are you in time or observing time?",
+      "How is your timeline arranged?"
+    ],
+    "visualScene": "A person standing inside a flowing timeline beside another viewing it from above.",
+    "example": "In-time experience can feel creative; through-time experience supports schedules.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "quality-of-life",
+    "number": 59,
+    "title": "Quality of Life",
+    "categoryId": "semantic-meta",
+    "continuumType": "three-point",
+    "continuum": [
+      "Being",
+      "Doing",
+      "Having"
+    ],
+    "oneLine": "Whether quality of life is framed through being, doing, or having.",
+    "frontSummary": "Whether quality of life is framed through being, doing, or having.",
+    "definition": "Quality of Life describes whether life value is centred in being, doing, or having.",
+    "languageCues": [
+      "Being: experience, presence, worth",
+      "Doing: achieve, perform, task",
+      "Having: own, status, wealth"
+    ],
+    "behaviouralSigns": [
+      "Being: values experience",
+      "Doing: values performance",
+      "Having: values possessions or status"
+    ],
+    "strengths": [
+      "Being: presence",
+      "Doing: achievement",
+      "Having: material security"
+    ],
+    "blindSpots": [
+      "Being: lack of action",
+      "Doing: overwork",
+      "Having: conditional worth"
+    ],
+    "coachingPrompts": [
+      "Are you organising life around being, doing, or having?",
+      "What would balance look like?"
+    ],
+    "visualScene": "Three panels: meditation, productive work, and possessions/status.",
+    "example": "A doing orientation values achievement; a being orientation values lived experience.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  },
+  {
+    "id": "values",
+    "number": 60,
+    "title": "Values",
+    "categoryId": "semantic-meta",
+    "continuumType": "two-point",
+    "continuum": [
+      "Low Value",
+      "High Value"
+    ],
+    "oneLine": "What a person treats as important, meaningful, and significant.",
+    "frontSummary": "What a person treats as important, meaningful, and significant.",
+    "definition": "Values describe what a person holds as important. Values energise representations and act as anchors for states, motivation, attention, and decision-making.",
+    "languageCues": [
+      "High value: important, meaningful, significant",
+      "Low value: not important, irrelevant, insignificant"
+    ],
+    "behaviouralSigns": [
+      "Values words carry emotional charge",
+      "People respond strongly to their own values"
+    ],
+    "strengths": [
+      "Guides motivation and communication",
+      "Reveals what matters"
+    ],
+    "blindSpots": [
+      "Can create conflict when values clash",
+      "May distort perception around valued topics"
+    ],
+    "coachingPrompts": [
+      "What is important here?",
+      "What values are being activated?"
+    ],
+    "visualScene": "A person placing glowing labels of meaning around people, ideas, and goals.",
+    "example": "Using a person\u2019s value words can immediately shift engagement and state.",
+    "personalNotesPlaceholder": "Add Jared\u2019s examples, client observations, metaphors, and teaching notes here."
+  }
+]
