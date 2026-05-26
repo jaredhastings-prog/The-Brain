@@ -11,9 +11,15 @@ import type {
 const visualScenesById = visualScenesJson as Record<string, VisualScenePrompt>;
 
 const imagePathsByCardId: Record<string, string> = {
+  "classification-scale": "/images/meta-programs/classification-scale.png",
+  epistemological: "/images/meta-programs/epistemological.png",
+  "information-staging": "/images/meta-programs/information-staging.png",
   motivation: "/images/meta-programs/motivation.png",
   representation: "/images/meta-programs/representational.png",
+  "relationship-comparison":
+    "/images/meta-programs/relationship-comparison.png",
   "scale-scope": "/images/meta-programs/scale.png",
+  "scenario-type": "/images/meta-programs/scenario-type.png",
   "self-esteem": "/images/meta-programs/self-esteem.png",
   "stress-coping": "/images/meta-programs/stress-coping.png",
 };
