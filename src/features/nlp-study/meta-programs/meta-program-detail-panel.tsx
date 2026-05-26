@@ -16,7 +16,7 @@ export function MetaProgramDetailPanel({
   onFlip: () => void;
 }) {
   return (
-    <aside className="min-w-0 space-y-4 overflow-hidden rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] xl:sticky xl:top-4">
+    <aside className="min-w-0 space-y-4 overflow-hidden rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] sm:p-5 xl:sticky xl:top-4 xl:p-4">
       <div className="flex flex-wrap items-center gap-2">
         <Badge variant="signal">Selected card</Badge>
         <Badge variant="outline">#{card.number}</Badge>
@@ -28,6 +28,14 @@ export function MetaProgramDetailPanel({
         <p className="mt-2 text-sm leading-6 text-muted-foreground">
           {card.oneLine}
         </p>
+      </div>
+
+      <div className="xl:hidden">
+        <MetaProgramVisual
+          imagePath={card.imagePath}
+          title={card.title}
+          visualScene={card.visualScene}
+        />
       </div>
 
       <Button
@@ -76,11 +84,13 @@ export function MetaProgramDetailPanel({
         )}
       </div>
 
-      <MetaProgramVisual
-        imagePath={card.imagePath}
-        title={card.title}
-        visualScene={card.visualScene}
-      />
+      <div className="hidden xl:block">
+        <MetaProgramVisual
+          imagePath={card.imagePath}
+          title={card.title}
+          visualScene={card.visualScene}
+        />
+      </div>
 
       <DetailSection
         title="Personal Notes"

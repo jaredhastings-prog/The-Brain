@@ -20,7 +20,7 @@ export function MetaProgramCategoryTabs({
   return (
     <div
       aria-label="Meta-program categories"
-      className="grid gap-3 md:grid-cols-2 xl:grid-cols-4"
+      className="flex max-w-full gap-2 overflow-x-auto pb-2 [scrollbar-width:none] md:grid md:grid-cols-2 md:overflow-visible xl:grid-cols-4 [&::-webkit-scrollbar]:hidden"
       role="tablist"
     >
       {categories.map((category) => {
@@ -33,7 +33,7 @@ export function MetaProgramCategoryTabs({
           <button
             aria-selected={isActive}
             className={cn(
-              "rounded-lg border border-border/80 bg-card/90 p-4 text-left shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] transition-colors hover:border-slate-300 hover:bg-card",
+              "min-w-[13rem] shrink-0 rounded-full border border-border/80 bg-card/90 px-3 py-2.5 text-left shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] transition-colors hover:border-slate-300 hover:bg-card md:min-w-0 md:rounded-lg md:p-4",
               isActive && "border-slate-400 bg-background shadow-sm",
             )}
             key={category.id}
@@ -41,7 +41,7 @@ export function MetaProgramCategoryTabs({
             role="tab"
             type="button"
           >
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center justify-between gap-2">
               <Badge variant={isActive ? "signal" : "outline"}>
                 {cardCount} cards
               </Badge>
@@ -52,10 +52,10 @@ export function MetaProgramCategoryTabs({
                 )}
               />
             </div>
-            <h2 className="mt-4 text-sm font-semibold text-foreground">
+            <h2 className="mt-2 text-xs font-semibold text-foreground md:mt-4 md:text-sm">
               {category.title}
             </h2>
-            <p className="mt-2 text-xs leading-5 text-muted-foreground">
+            <p className="mt-2 hidden text-xs leading-5 text-muted-foreground md:block">
               {category.subtitle}
             </p>
           </button>

@@ -16,18 +16,16 @@ export function MetaProgramContinuum({
     variant === "compact"
       ? isDense
         ? "5.75rem"
-        : "0rem"
+        : "7.25rem"
       : isDense
         ? "7rem"
-        : "0rem";
-  const gridTemplateColumns = isDense
-    ? `repeat(auto-fit, minmax(min(100%, ${minSegmentWidth}), 1fr))`
-    : `repeat(${continuum.length}, minmax(0, 1fr))`;
+        : "8.5rem";
+  const gridTemplateColumns = `repeat(auto-fit, minmax(min(100%, ${minSegmentWidth}), 1fr))`;
 
   return (
     <div className={cn("min-w-0 space-y-3", className)}>
       <div
-        className="grid min-w-0 gap-px overflow-hidden rounded-md border border-border/70 bg-border/70 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]"
+        className="grid min-w-0 auto-rows-fr gap-px overflow-hidden rounded-md border border-border/70 bg-border/70 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]"
         style={{ gridTemplateColumns }}
       >
         {continuum.map((position, index) => (
@@ -80,7 +78,7 @@ export function MetaProgramContinuum({
           </div>
         ))}
       </div>
-      <div className="flex min-w-0 flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+      <div className="flex min-w-0 flex-wrap items-center gap-2 text-xs text-muted-foreground sm:justify-between">
         <span>Continuum: {type}</span>
         <span>Context-dependent range, not a fixed trait</span>
       </div>
