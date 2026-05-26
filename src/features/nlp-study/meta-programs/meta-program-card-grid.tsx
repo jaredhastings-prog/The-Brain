@@ -29,7 +29,7 @@ export function MetaProgramCardGrid({
   }
 
   return (
-    <div className="grid gap-3">
+    <div className="grid min-w-0 max-w-full gap-3 overflow-hidden">
       {cards.map((card) => {
         const isSelected = card.id === selectedCardId;
         const isFlipped = flippedCardIds.has(card.id);
@@ -43,15 +43,15 @@ export function MetaProgramCardGrid({
             key={card.id}
           >
             <div className="grid min-w-0 gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
-              <div className="min-w-0">
+              <div className="min-w-0 max-w-full">
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge variant="outline">#{card.number}</Badge>
                   <Badge variant="secondary">{card.continuumType}</Badge>
                 </div>
-                <h3 className="mt-3 text-base font-semibold text-foreground">
+                <h3 className="mt-3 min-w-0 break-words text-base font-semibold text-foreground [overflow-wrap:anywhere]">
                   {card.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                <p className="mt-2 min-w-0 break-words text-sm leading-6 text-muted-foreground [overflow-wrap:anywhere]">
                   {isFlipped ? card.definition : card.frontSummary}
                 </p>
               </div>

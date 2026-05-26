@@ -124,34 +124,35 @@ export function MetaProgramLearningDeck() {
   }
 
   return (
-    <div className="space-y-5 pb-28 sm:pb-24 xl:space-y-6 xl:pb-20">
-      <section className="rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
+    <div className="min-w-0 max-w-full space-y-5 overflow-x-hidden pb-28 sm:pb-24 xl:space-y-6 xl:pb-20">
+      <section className="min-w-0 max-w-full overflow-hidden rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
         <Button asChild size="sm" variant="outline">
           <Link href="/study-learning/nlp">
             <ArrowLeft />
             NLP Repository
           </Link>
         </Button>
-        <div className="mt-6 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-4xl">
+        <div className="mt-6 flex min-w-0 flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div className="min-w-0 max-w-4xl">
             <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
               <Sparkles className="size-4" />
               Flashcard learning tool
             </div>
-            <h1 className="text-2xl font-semibold tracking-normal text-foreground md:text-5xl">
+            <h1 className="break-words text-2xl font-semibold tracking-normal text-foreground md:text-5xl">
               Meta-Programs Learning Deck
             </h1>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground md:mt-4 md:text-base md:leading-7">
+            <p className="mt-3 break-words text-sm leading-6 text-muted-foreground md:mt-4 md:text-base md:leading-7">
               A JSON-backed flashcard deck for learning contextual
               meta-program continuums without replacing the NLP Repository.
             </p>
           </div>
-          <label className="w-full space-y-2 lg:max-w-sm">
+          <label className="min-w-0 max-w-full space-y-2 lg:w-full lg:max-w-sm">
             <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
               <Search className="size-3" />
               Search cards
             </span>
             <Input
+              className="min-w-0 max-w-full"
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="Search cues, strengths, prompts..."
               value={searchQuery}
@@ -167,7 +168,7 @@ export function MetaProgramLearningDeck() {
         selectedCategoryId={selectedCategoryId}
       />
 
-      <section className="min-w-0">
+      <section className="min-w-0 max-w-full overflow-x-hidden">
         {selectedCard ? (
           <>
             <div className="space-y-3 xl:hidden">

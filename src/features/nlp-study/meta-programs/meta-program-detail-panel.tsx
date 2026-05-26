@@ -16,7 +16,7 @@ export function MetaProgramDetailPanel({
   onFlip: () => void;
 }) {
   return (
-    <aside className="min-w-0 space-y-4 overflow-hidden rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] sm:p-5 xl:sticky xl:top-4 xl:p-4">
+    <aside className="w-full min-w-0 max-w-full space-y-4 overflow-hidden rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] sm:p-5 xl:sticky xl:top-4 xl:p-4">
       <div className="flex flex-wrap items-center gap-2">
         <Badge variant="signal">Selected card</Badge>
         <Badge variant="outline">#{card.number}</Badge>
@@ -24,8 +24,10 @@ export function MetaProgramDetailPanel({
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold text-foreground">{card.title}</h2>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+        <h2 className="min-w-0 break-words text-xl font-semibold text-foreground [overflow-wrap:anywhere]">
+          {card.title}
+        </h2>
+        <p className="mt-2 min-w-0 break-words text-sm leading-6 text-muted-foreground [overflow-wrap:anywhere]">
           {card.oneLine}
         </p>
       </div>
@@ -39,7 +41,7 @@ export function MetaProgramDetailPanel({
       </div>
 
       <Button
-        className="w-full"
+        className="w-full min-w-0 max-w-full whitespace-normal text-center"
         onClick={onFlip}
         type="button"
         variant="outline"
@@ -48,10 +50,12 @@ export function MetaProgramDetailPanel({
         {isFlipped ? "Show front" : "Flip for deeper view"}
       </Button>
 
-      <div className="rounded-md border border-border/70 bg-background/75 p-3">
-        <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
-          <BookOpen className="size-4" />
-          {isFlipped ? "Back of card" : "Front of card"}
+      <div className="min-w-0 max-w-full overflow-hidden rounded-md border border-border/70 bg-background/75 p-3">
+        <div className="mb-3 flex min-w-0 items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
+          <BookOpen className="size-4 shrink-0" />
+          <span className="min-w-0 break-words [overflow-wrap:anywhere]">
+            {isFlipped ? "Back of card" : "Front of card"}
+          </span>
         </div>
         {isFlipped ? (
           <div className="space-y-4">
@@ -70,7 +74,7 @@ export function MetaProgramDetailPanel({
           </div>
         ) : (
           <div className="space-y-4">
-            <p className="text-sm leading-6 text-muted-foreground">
+            <p className="min-w-0 break-words text-sm leading-6 text-muted-foreground [overflow-wrap:anywhere]">
               {card.frontSummary}
             </p>
             <MetaProgramContinuum
@@ -102,15 +106,17 @@ export function MetaProgramDetailPanel({
 
 function DetailSection({ title, values }: { title: string; values: string[] }) {
   return (
-    <section>
-      <h3 className="text-xs font-semibold uppercase tracking-normal text-muted-foreground">
+    <section className="min-w-0 max-w-full">
+      <h3 className="min-w-0 break-words text-xs font-semibold uppercase tracking-normal text-muted-foreground [overflow-wrap:anywhere]">
         {title}
       </h3>
-      <ul className="mt-2 space-y-2 text-sm leading-6 text-muted-foreground">
+      <ul className="mt-2 min-w-0 max-w-full space-y-2 text-sm leading-6 text-muted-foreground">
         {values.map((value) => (
-          <li className="flex gap-2" key={value}>
+          <li className="flex min-w-0 max-w-full gap-2" key={value}>
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-            <span>{value}</span>
+            <span className="min-w-0 break-words [overflow-wrap:anywhere]">
+              {value}
+            </span>
           </li>
         ))}
       </ul>
