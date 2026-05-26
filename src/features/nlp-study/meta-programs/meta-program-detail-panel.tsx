@@ -1,8 +1,9 @@
-import { BookOpen, Image as ImageIcon, RotateCcw } from "lucide-react";
+import { BookOpen, RotateCcw } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MetaProgramContinuum } from "@/features/nlp-study/meta-programs/meta-program-continuum";
+import { MetaProgramVisual } from "@/features/nlp-study/meta-programs/meta-program-visual";
 import type { MetaProgramCard } from "@/features/nlp-study/meta-programs/meta-program-types";
 
 export function MetaProgramDetailPanel({
@@ -75,17 +76,11 @@ export function MetaProgramDetailPanel({
         )}
       </div>
 
-      <div className="rounded-md border border-border/70 bg-muted/25 p-3">
-        <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
-          <ImageIcon className="size-4" />
-          Visual placeholder
-        </div>
-        <div className="rounded-md border border-dashed border-border/80 bg-background/70 p-4">
-          <p className="text-sm leading-6 text-muted-foreground">
-            {card.visualScene}
-          </p>
-        </div>
-      </div>
+      <MetaProgramVisual
+        imagePath={card.imagePath}
+        title={card.title}
+        visualScene={card.visualScene}
+      />
 
       <DetailSection
         title="Personal Notes"

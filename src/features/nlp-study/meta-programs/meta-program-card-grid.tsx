@@ -3,6 +3,7 @@ import { Eye, RotateCcw } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MetaProgramContinuum } from "@/features/nlp-study/meta-programs/meta-program-continuum";
+import { MetaProgramVisual } from "@/features/nlp-study/meta-programs/meta-program-visual";
 import type { MetaProgramCard } from "@/features/nlp-study/meta-programs/meta-program-types";
 import { cn } from "@/lib/utils";
 
@@ -83,13 +84,12 @@ export function MetaProgramCardGrid({
                 variant="compact"
               />
             </div>
-            <div className="mt-4 rounded-md border border-dashed border-border/80 bg-background/70 p-3">
-              <div className="text-xs font-semibold uppercase tracking-normal text-muted-foreground">
-                Visual placeholder
-              </div>
-              <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                {card.visualScene}
-              </p>
+            <div className="mt-4">
+              <MetaProgramVisual
+                imagePath={card.imagePath}
+                title={card.title}
+                visualScene={card.visualScene}
+              />
             </div>
           </article>
         );
