@@ -52,7 +52,7 @@ export function MetaProgramCategoryTabs({
                 )}
               />
             </div>
-            <h2 className="mt-2 min-w-0 break-words text-xs font-semibold text-foreground [overflow-wrap:anywhere]">
+            <h2 className="mt-2 min-w-0 break-words text-xs font-semibold text-foreground [overflow-wrap:anywhere] md:mt-4 md:text-sm">
               {category.title}
             </h2>
             <p className="mt-2 hidden min-w-0 break-words text-xs leading-5 text-muted-foreground [overflow-wrap:anywhere] md:block">
