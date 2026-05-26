@@ -32,6 +32,7 @@ export type MetaProgramCard = {
   blindSpots: string[];
   coachingPrompts: string[];
   visualScene: string;
+  imagePath?: string;
   example: string;
   personalNotesPlaceholder: string;
 };

@@ -16,18 +16,16 @@ export function MetaProgramContinuum({
     variant === "compact"
       ? isDense
         ? "5.75rem"
-        : "0rem"
+        : "7.25rem"
       : isDense
         ? "7rem"
-        : "0rem";
-  const gridTemplateColumns = isDense
-    ? `repeat(auto-fit, minmax(min(100%, ${minSegmentWidth}), 1fr))`
-    : `repeat(${continuum.length}, minmax(0, 1fr))`;
+        : "8.5rem";
+  const gridTemplateColumns = `repeat(auto-fit, minmax(min(100%, ${minSegmentWidth}), 1fr))`;
 
   return (
-    <div className={cn("min-w-0 space-y-3", className)}>
+    <div className={cn("w-full min-w-0 max-w-full space-y-3", className)}>
       <div
-        className="grid min-w-0 gap-px overflow-hidden rounded-md border border-border/70 bg-border/70 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]"
+        className="grid w-full min-w-0 max-w-full auto-rows-fr gap-px overflow-hidden rounded-md border border-border/70 bg-border/70 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]"
         style={{ gridTemplateColumns }}
       >
         {continuum.map((position, index) => (
@@ -50,7 +48,7 @@ export function MetaProgramContinuum({
             />
             <div
               className={cn(
-                "grid min-w-0 items-start gap-2",
+                "grid min-w-0 max-w-full items-start gap-2",
                 variant === "compact"
                   ? "grid-cols-[1.375rem_minmax(0,1fr)]"
                   : "grid-cols-[1.5rem_minmax(0,1fr)]",
@@ -66,7 +64,7 @@ export function MetaProgramContinuum({
               </span>
               <span
                 className={cn(
-                  "min-w-0 whitespace-normal break-words font-semibold leading-snug text-foreground",
+                  "min-w-0 whitespace-normal break-words font-semibold leading-snug text-foreground [overflow-wrap:anywhere]",
                   variant === "compact"
                     ? "text-[11px]"
                     : isDense
@@ -80,9 +78,13 @@ export function MetaProgramContinuum({
           </div>
         ))}
       </div>
-      <div className="flex min-w-0 flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
-        <span>Continuum: {type}</span>
-        <span>Context-dependent range, not a fixed trait</span>
+      <div className="flex min-w-0 flex-wrap items-center gap-2 text-xs text-muted-foreground sm:justify-between">
+        <span className="min-w-0 break-words [overflow-wrap:anywhere]">
+          Continuum: {type}
+        </span>
+        <span className="min-w-0 break-words [overflow-wrap:anywhere]">
+          Context-dependent range, not a fixed trait
+        </span>
       </div>
     </div>
   );
