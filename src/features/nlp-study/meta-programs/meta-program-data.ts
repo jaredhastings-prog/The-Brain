@@ -12,9 +12,14 @@ const visualScenesById = visualScenesJson as Record<string, VisualScenePrompt>;
 
 const imagePathsByCardId: Record<string, string> = {
   "classification-scale": "/images/meta-programs/classification-scale.png",
+  "communication-channel":
+    "/images/meta-programs/communication-channel.png",
   epistemological: "/images/meta-programs/epistemological.png",
+  focus: "/images/meta-programs/focus.png",
   "information-staging": "/images/meta-programs/information-staging.png",
   motivation: "/images/meta-programs/motivation.png",
+  nature: "/images/meta-programs/nature.png",
+  philosophical: "/images/meta-programs/philosophical.png",
   representation: "/images/meta-programs/representational.png",
   "relationship-comparison":
     "/images/meta-programs/relationship-comparison.png",
