@@ -59,7 +59,7 @@ export function NlpTopicTabs({ topic }: { topic: NlpTopic }) {
     <div className="min-w-0 max-w-full space-y-4 overflow-hidden">
       <div
         aria-label={`${topic.title} repository sections`}
-        className="flex w-full min-w-0 max-w-full touch-pan-x gap-1 overflow-x-auto overscroll-x-contain rounded-md border border-border/70 bg-card/70 p-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="grid w-full min-w-0 max-w-full grid-cols-1 gap-2 overflow-hidden rounded-md border border-border/70 bg-card/70 p-2 sm:grid-cols-2 lg:flex lg:touch-pan-x lg:gap-1 lg:overflow-x-auto lg:overscroll-x-contain lg:p-1 lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden"
         role="tablist"
       >
         {topicTabs.map((topicTab) => {
@@ -71,8 +71,9 @@ export function NlpTopicTabs({ topic }: { topic: NlpTopic }) {
               aria-controls={`${topic.id}-${topicTab.id}-panel`}
               aria-selected={isActive}
               className={cn(
-                "inline-flex min-h-10 max-w-[72vw] shrink-0 items-center justify-center gap-2 whitespace-normal rounded-md px-3 py-2 text-center text-xs font-medium leading-tight text-muted-foreground transition-colors hover:bg-muted/55 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:min-h-9 sm:max-w-none sm:whitespace-nowrap",
-                isActive && "bg-background text-foreground shadow-sm",
+                "inline-flex min-h-11 w-full min-w-0 items-center justify-start gap-2 rounded-md border border-transparent px-3 py-2 text-left text-xs font-medium leading-tight text-muted-foreground transition-colors hover:bg-muted/55 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:min-h-9 lg:w-auto lg:max-w-none lg:shrink-0 lg:justify-center lg:whitespace-nowrap lg:border-0",
+                isActive &&
+                  "border-slate-300 bg-background text-foreground shadow-sm",
               )}
               id={`${topic.id}-${topicTab.id}-tab`}
               key={topicTab.id}
@@ -80,7 +81,7 @@ export function NlpTopicTabs({ topic }: { topic: NlpTopic }) {
               role="tab"
               type="button"
             >
-              <Icon className="size-3.5" />
+              <Icon className="size-3.5 shrink-0" />
               <span className="min-w-0 break-words [overflow-wrap:anywhere]">
                 {topicTab.label}
               </span>
