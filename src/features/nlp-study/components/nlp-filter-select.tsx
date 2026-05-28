@@ -12,13 +12,13 @@ export function NlpFilterSelect({
   value: string;
 }) {
   return (
-    <label className="space-y-2">
+    <label className="min-w-0 max-w-full space-y-2">
       <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
         <LayoutPanelLeft className="size-3" />
         {label}
       </span>
       <select
-        className="h-9 w-full rounded-md border border-input bg-card px-3 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="h-9 w-full min-w-0 max-w-full rounded-md border border-input bg-card px-3 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         onChange={(event) => onChange(event.target.value)}
         value={value}
       >

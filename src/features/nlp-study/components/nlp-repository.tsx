@@ -72,19 +72,19 @@ export function NlpRepository() {
   }
 
   return (
-    <div className="space-y-6 pb-20">
-      <section className="rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
+    <div className="min-w-0 max-w-full space-y-6 overflow-x-hidden pb-20">
+      <section className="min-w-0 max-w-full overflow-hidden rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="signal">Reference library</Badge>
           <Badge variant="outline">Knowledge repository</Badge>
         </div>
-        <div className="mt-8 max-w-4xl">
-          <h1 className="text-3xl font-semibold tracking-normal text-foreground md:text-5xl">
+        <div className="mt-8 min-w-0 max-w-4xl">
+          <h1 className="break-words text-3xl font-semibold tracking-normal text-foreground md:text-5xl">
             Neuro Linguistic Programming
           </h1>
-          <p className="mt-4 text-base leading-7 text-muted-foreground">
-            "NLP is an attitude, backed up by a methodology that leaves behind
-            it a trail of techniques." - Richard Bandler
+          <p className="mt-4 break-words text-base leading-7 text-muted-foreground">
+            &ldquo;NLP is an attitude, backed up by a methodology that leaves
+            behind it a trail of techniques.&rdquo; - Richard Bandler
           </p>
           <div className="mt-6">
             <Button asChild variant="outline">
@@ -97,8 +97,8 @@ export function NlpRepository() {
         </div>
       </section>
 
-      <section className="grid gap-4">
-        <div className="space-y-4">
+      <section className="grid min-w-0 max-w-full gap-4 overflow-hidden">
+        <div className="min-w-0 max-w-full space-y-4 overflow-hidden">
           <DashboardCard
             description="Browse model families, pattern references, notes, diagrams, and resource placeholders."
             eyebrow="Knowledge map"
@@ -112,13 +112,14 @@ export function NlpRepository() {
               </Button>
             }
           >
-            <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_240px]">
-              <label className="space-y-2">
+            <div className="grid min-w-0 max-w-full gap-3 lg:grid-cols-[minmax(0,1fr)_240px]">
+              <label className="min-w-0 max-w-full space-y-2">
                 <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">
                   <Search className="size-3" />
                   Search repository
                 </span>
                 <Input
+                  className="min-w-0 max-w-full"
                   onChange={(event) => setSearchQuery(event.target.value)}
                   placeholder="Search models, patterns, diagrams, notes..."
                   value={searchQuery}

@@ -22,22 +22,22 @@ export function NlpTopicGroupCard({
   openTopicId: string;
 }) {
   return (
-    <div className="rounded-lg border border-border/80 bg-card/90 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]">
+    <div className="min-w-0 max-w-full overflow-hidden rounded-lg border border-border/80 bg-card/90 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)]">
       <button
         aria-expanded={isOpen}
-        className="flex w-full items-start justify-between gap-4 px-4 py-4 text-left transition-colors hover:bg-muted/35"
+        className="flex w-full min-w-0 items-start justify-between gap-4 px-4 py-4 text-left transition-colors hover:bg-muted/35"
         onClick={onToggle}
         type="button"
       >
-        <div className="min-w-0">
+        <div className="min-w-0 max-w-full">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline">{group.topics.length} entries</Badge>
             <Badge variant="secondary">Reference area</Badge>
           </div>
-          <h2 className="mt-3 text-base font-semibold text-foreground">
+          <h2 className="mt-3 break-words text-base font-semibold text-foreground [overflow-wrap:anywhere]">
             {group.title}
           </h2>
-          <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">
+          <p className="mt-1 max-w-3xl break-words text-sm leading-6 text-muted-foreground [overflow-wrap:anywhere]">
             {group.description}
           </p>
         </div>
@@ -50,7 +50,7 @@ export function NlpTopicGroupCard({
       </button>
 
       {isOpen ? (
-        <div className="space-y-3 border-t border-border/70 p-3">
+        <div className="min-w-0 max-w-full space-y-3 overflow-hidden border-t border-border/70 p-2 sm:p-3">
           {group.topics.map((topic) => (
             <NlpTopicCard
               groupId={group.id}
@@ -81,22 +81,24 @@ function NlpTopicCard({
   topic: NlpTopic;
 }) {
   return (
-    <article className="rounded-md border border-border/70 bg-muted/25">
+    <article className="min-w-0 max-w-full overflow-hidden rounded-md border border-border/70 bg-muted/25">
       <button
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/40"
+        className="flex w-full min-w-0 items-start justify-between gap-3 px-3 py-3 text-left transition-colors hover:bg-muted/40 sm:px-4"
         onClick={() => onToggle(topic.id, groupId)}
         type="button"
       >
-        <div className="flex min-w-0 items-center gap-3">
+        <div className="flex min-w-0 max-w-full items-start gap-3">
           <span className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
             <FolderOpen className="size-4" />
           </span>
-          <div className="min-w-0">
-            <h3 className="truncate text-sm font-semibold text-foreground">
+          <div className="min-w-0 max-w-full">
+            <h3 className="break-words text-sm font-semibold leading-5 text-foreground [overflow-wrap:anywhere]">
               {topic.title}
             </h3>
-            <p className="mt-0.5 text-xs text-muted-foreground">{groupTitle}</p>
+            <p className="mt-0.5 break-words text-xs leading-5 text-muted-foreground [overflow-wrap:anywhere]">
+              {groupTitle}
+            </p>
           </div>
         </div>
         <ChevronDown
@@ -108,7 +110,7 @@ function NlpTopicCard({
       </button>
 
       {isOpen ? (
-        <div className="border-t border-border/70 px-4 py-4">
+        <div className="min-w-0 max-w-full overflow-hidden border-t border-border/70 p-3 sm:px-4 sm:py-4">
           <NlpTopicTabs topic={topic} />
         </div>
       ) : null}
