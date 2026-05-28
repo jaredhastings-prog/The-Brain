@@ -36,7 +36,7 @@ export function Sidebar({ isMobileOpen = false, onMobileClose }: SidebarProps) {
         )}
       >
         <div className="mb-3 flex items-center justify-between">
-          <BrandMark />
+          <BrandMark onNavigate={onMobileClose} />
           <Button
             aria-label="Close navigation"
             className="text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
@@ -47,16 +47,22 @@ export function Sidebar({ isMobileOpen = false, onMobileClose }: SidebarProps) {
             <X />
           </Button>
         </div>
-        <SidebarContent compactBrand />
+        <SidebarContent compactBrand onNavigate={onMobileClose} />
       </aside>
     </>
   );
 }
 
-function SidebarContent({ compactBrand = false }: { compactBrand?: boolean }) {
+function SidebarContent({
+  compactBrand = false,
+  onNavigate,
+}: {
+  compactBrand?: boolean;
+  onNavigate?: () => void;
+}) {
   return (
     <div className="flex h-full flex-col gap-5">
-      {!compactBrand ? <BrandMark /> : null}
+      {!compactBrand ? <BrandMark onNavigate={onNavigate} /> : null}
       <div className="px-2">
         <Badge className="border-cyan-300/25 bg-cyan-300/10 text-cyan-100" variant="outline">
           Brain OS
@@ -64,7 +70,7 @@ function SidebarContent({ compactBrand = false }: { compactBrand?: boolean }) {
       </div>
       <nav className="flex flex-1 flex-col gap-1 overflow-y-auto pr-1">
         {primaryNavigation.map((item) => (
-          <NavCluster item={item} key={item.href} />
+          <NavCluster item={item} key={item.href} onNavigate={onNavigate} />
         ))}
       </nav>
       <Separator className="bg-sidebar-accent/70" />
@@ -76,9 +82,13 @@ function SidebarContent({ compactBrand = false }: { compactBrand?: boolean }) {
   );
 }
 
-function BrandMark() {
+function BrandMark({ onNavigate }: { onNavigate?: () => void }) {
   return (
-    <Link className="flex items-center gap-3 rounded-md px-2 py-1.5" href="/dashboard">
+    <Link
+      className="flex items-center gap-3 rounded-md px-2 py-1.5"
+      href="/dashboard"
+      onClick={onNavigate}
+    >
       <div className="grid size-9 place-items-center rounded-md border border-cyan-200/20 bg-cyan-300/10 text-sm font-semibold text-cyan-100">
         JB
       </div>
@@ -92,7 +102,13 @@ function BrandMark() {
   );
 }
 
-function NavCluster({ item }: { item: NavItem }) {
+function NavCluster({
+  item,
+  onNavigate,
+}: {
+  item: NavItem;
+  onNavigate?: () => void;
+}) {
   const pathname = usePathname();
   const isActive =
     pathname === item.href ||
@@ -100,7 +116,7 @@ function NavCluster({ item }: { item: NavItem }) {
 
   return (
     <div>
-      <NavLink item={item} isActive={isActive} />
+      <NavLink item={item} isActive={isActive} onNavigate={onNavigate} />
       {item.items?.length ? (
         <div className="ml-4 mt-1 border-l border-sidebar-accent/70 pl-2">
           {item.items.map((child) => {
@@ -112,6 +128,7 @@ function NavCluster({ item }: { item: NavItem }) {
                 isActive={childActive}
                 item={child}
                 key={child.href}
+                onNavigate={onNavigate}
               />
             );
           })}
@@ -125,10 +142,12 @@ function NavLink({
   compact = false,
   isActive,
   item,
+  onNavigate,
 }: {
   compact?: boolean;
   isActive: boolean;
   item: NavItem;
+  onNavigate?: () => void;
 }) {
   const Icon = item.icon;
 
@@ -140,6 +159,7 @@ function NavLink({
         isActive && "bg-sidebar-accent text-sidebar-accent-foreground",
       )}
       href={item.href}
+      onClick={onNavigate}
     >
       <Icon className={cn("size-4", compact && "size-3.5")} />
       <span className="min-w-0 flex-1 truncate">{item.title}</span>
