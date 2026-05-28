@@ -270,10 +270,6 @@ export function MetaProgramLearningDeck() {
             <h1 className="break-words text-2xl font-semibold tracking-normal text-foreground md:text-5xl">
               Meta-Programs Learning Deck
             </h1>
-            <p className="mt-3 break-words text-sm leading-6 text-muted-foreground md:mt-4 md:text-base md:leading-7">
-              A JSON-backed flashcard deck for learning contextual
-              meta-program continuums without replacing the NLP Repository.
-            </p>
           </div>
           <label className="min-w-0 max-w-full space-y-2 lg:w-full lg:max-w-sm">
             <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-normal text-muted-foreground">

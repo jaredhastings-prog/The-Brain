@@ -5,12 +5,10 @@ import NextImage from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   BookOpen,
-  FileText,
   Image as ImageIcon,
   Layers3,
   Link2,
   MessageSquareText,
-  NotebookPen,
   Workflow,
 } from "lucide-react";
 
@@ -28,9 +26,7 @@ type TopicTabId =
   | "models-diagrams"
   | "patterns-techniques"
   | "examples"
-  | "personal-notes"
-  | "resources"
-  | "linked-captures";
+  | "resources";
 
 type TopicTab = {
   id: TopicTabId;
@@ -44,9 +40,7 @@ const topicTabs: TopicTab[] = [
   { id: "models-diagrams", icon: ImageIcon, label: "Models / Diagrams" },
   { id: "patterns-techniques", icon: Workflow, label: "Patterns / Techniques" },
   { id: "examples", icon: MessageSquareText, label: "Examples" },
-  { id: "personal-notes", icon: NotebookPen, label: "Personal Notes" },
   { id: "resources", icon: Link2, label: "Resources" },
-  { id: "linked-captures", icon: FileText, label: "Linked Captures" },
 ];
 
 export function NlpTopicTabs({ topic }: { topic: NlpTopic }) {
@@ -146,25 +140,11 @@ function TabContent({
           items={topic.examples}
         />
       );
-    case "personal-notes":
-      return (
-        <RepositoryList
-          description="Private notes, personal distinctions, coaching observations, and future repository additions can be collected here."
-          items={topic.personalNotes}
-        />
-      );
     case "resources":
       return (
         <RepositoryList
           description="Books, videos, citation notes, and supporting references can be organised here without exposing private source files in the app."
           items={topic.resources}
-        />
-      );
-    case "linked-captures":
-      return (
-        <RepositoryList
-          description="Future links from Global Capture Inbox entries, raw notes, and related personal brain records will appear here."
-          items={topic.linkedCaptures}
         />
       );
   }
