@@ -14,7 +14,116 @@ import {
 } from "@/features/nlp-study/meta-programs/meta-program-data";
 import { MetaProgramDetailPanel } from "@/features/nlp-study/meta-programs/meta-program-detail-panel";
 import { MetaProgramMobileDeckControls } from "@/features/nlp-study/meta-programs/meta-program-mobile-deck-controls";
-import type { MetaProgramCategoryId } from "@/features/nlp-study/meta-programs/meta-program-types";
+import type {
+  MetaProgramCard,
+  MetaProgramCategory,
+  MetaProgramCategoryId,
+} from "@/features/nlp-study/meta-programs/meta-program-types";
+
+const metaProgramCategoryById = new Map<
+  MetaProgramCategoryId,
+  MetaProgramCategory
+>(
+  metaProgramCategories.map((category) => [category.id, category] as const),
+);
+
+function normalizeSearchText(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function getSearchQueryVariants(value: string) {
+  const query = normalizeSearchText(value);
+  const variants = new Set([query]);
+
+  if (query.endsWith("s") && query.length > 3) {
+    variants.add(query.slice(0, -1));
+  }
+
+  return [...variants].filter(Boolean);
+}
+
+function includesNormalized(value: string, query: string) {
+  return normalizeSearchText(value).includes(query);
+}
+
+function hasExactWordMatch(value: string, query: string) {
+  return normalizeSearchText(value).split(" ").includes(query);
+}
+
+function getSearchRank(card: MetaProgramCard, query: string): number | null {
+  const category = metaProgramCategoryById.get(card.categoryId);
+  const title = normalizeSearchText(card.title);
+  const cardId = normalizeSearchText(card.id);
+  const continuumLabels = card.continuum.join(" ");
+  const categoryText = [category?.title, category?.subtitle].join(" ");
+  const summaryText = [
+    card.oneLine,
+    card.frontSummary,
+    card.definition,
+  ].join(" ");
+  const deeperText = [
+    card.languageCues.join(" "),
+    card.behaviouralSigns.join(" "),
+    card.strengths.join(" "),
+    card.blindSpots.join(" "),
+    card.coachingPrompts.join(" "),
+    card.example,
+    card.visualScene,
+  ].join(" ");
+
+  if (title === query) {
+    return 10;
+  }
+
+  if (cardId === query) {
+    return 20;
+  }
+
+  if (title.startsWith(query)) {
+    return 30;
+  }
+
+  if (hasExactWordMatch(card.title, query)) {
+    return 35;
+  }
+
+  if (title.includes(query)) {
+    return 40;
+  }
+
+  if (cardId.includes(query)) {
+    return 45;
+  }
+
+  if (includesNormalized(continuumLabels, query)) {
+    return 50;
+  }
+
+  if (includesNormalized(categoryText, query)) {
+    return 60;
+  }
+
+  if (includesNormalized(summaryText, query)) {
+    return 70;
+  }
+
+  if (includesNormalized(deeperText, query)) {
+    return 80;
+  }
+
+  return null;
+}
+
+function getBestSearchRank(card: MetaProgramCard, queries: string[]) {
+  const ranks = queries
+    .map((query) => getSearchRank(card, query))
+    .filter((rank): rank is number => rank !== null);
+
+  return ranks.length ? Math.min(...ranks) : null;
+}
 
 export function MetaProgramLearningDeck() {
   const initialCategoryId = metaProgramCategories[0].id;
@@ -26,39 +135,59 @@ export function MetaProgramLearningDeck() {
   const [flippedCardIds, setFlippedCardIds] = React.useState<Set<string>>(
     () => new Set(),
   );
+  const previousSearchQuery = React.useRef(searchQuery);
 
   const visibleCards = React.useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
+    const queries = getSearchQueryVariants(searchQuery);
+    const hasActiveSearch = queries.length > 0;
 
-    return metaProgramCards.filter((card) => {
-      const matchesCategory = card.categoryId === selectedCategoryId;
-      const searchText = [
-        card.title,
-        card.oneLine,
-        card.frontSummary,
-        card.definition,
-        card.continuum.join(" "),
-        card.languageCues.join(" "),
-        card.behaviouralSigns.join(" "),
-        card.visualScene,
-      ]
-        .join(" ")
-        .toLowerCase();
+    if (hasActiveSearch) {
+      return metaProgramCards
+        .flatMap((card) => {
+          const rank = getBestSearchRank(card, queries);
 
-      return matchesCategory && (!query || searchText.includes(query));
-    });
+          return rank === null ? [] : [{ card, rank }];
+        })
+        .sort(
+          (first, second) =>
+            first.rank - second.rank ||
+            first.card.number - second.card.number,
+        )
+        .map((result) => result.card);
+    }
+
+    return metaProgramCards.filter(
+      (card) => card.categoryId === selectedCategoryId,
+    );
   }, [searchQuery, selectedCategoryId]);
+
+  const isSearching = searchQuery.trim().length > 0;
+  const selectedCategoryTitle =
+    metaProgramCategoryById.get(selectedCategoryId)?.title ??
+    "the selected category";
+  const visibleCategoryCount = new Set(
+    visibleCards.map((card) => card.categoryId),
+  ).size;
+  const visibleCategoryLabel =
+    visibleCategoryCount === 1 ? "category" : "categories";
 
   React.useEffect(() => {
     const firstVisibleCard = visibleCards[0];
+    const searchQueryChanged = previousSearchQuery.current !== searchQuery;
+
+    previousSearchQuery.current = searchQuery;
+
+    if (!firstVisibleCard) {
+      return;
+    }
 
     if (
-      firstVisibleCard &&
+      searchQueryChanged ||
       !visibleCards.some((card) => card.id === selectedCardId)
     ) {
       setSelectedCardId(firstVisibleCard.id);
     }
-  }, [selectedCardId, visibleCards]);
+  }, [searchQuery, selectedCardId, visibleCards]);
 
   const selectedCard =
     visibleCards.find((card) => card.id === selectedCardId) ??
@@ -167,6 +296,18 @@ export function MetaProgramLearningDeck() {
         onSelectCategory={handleCategorySelect}
         selectedCategoryId={selectedCategoryId}
       />
+
+      {isSearching ? (
+        <div className="min-w-0 max-w-full rounded-lg border border-border/80 bg-card/80 px-4 py-3 text-sm leading-6 text-muted-foreground">
+          <span className="font-medium text-foreground">
+            Global search active:
+          </span>{" "}
+          showing {visibleCards.length} matching card
+          {visibleCards.length === 1 ? "" : "s"} across {visibleCategoryCount}{" "}
+          {visibleCategoryLabel}. Clear search to return to{" "}
+          {selectedCategoryTitle}.
+        </div>
+      ) : null}
 
       <section className="min-w-0 max-w-full overflow-x-hidden">
         {selectedCard ? (
