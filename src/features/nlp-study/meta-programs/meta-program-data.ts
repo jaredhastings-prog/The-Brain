@@ -11,11 +11,15 @@ import type {
 const visualScenesById = visualScenesJson as Record<string, VisualScenePrompt>;
 
 const imagePathsByCardId: Record<string, string> = {
+  causation: "/images/meta-programs/causation.png",
   "classification-scale": "/images/meta-programs/classification-scale.png",
   "communication-channel":
     "/images/meta-programs/communication-channel.png",
+  "completion-sort": "/images/meta-programs/completion.png",
+  "durability-of-intent": "/images/meta-programs/durability.png",
   epistemological: "/images/meta-programs/epistemological.png",
   focus: "/images/meta-programs/focus.png",
+  "information-kind": "/images/meta-programs/information-kind.png",
   "information-staging": "/images/meta-programs/information-staging.png",
   motivation: "/images/meta-programs/motivation.png",
   nature: "/images/meta-programs/nature.png",
@@ -27,6 +31,8 @@ const imagePathsByCardId: Record<string, string> = {
   "scenario-type": "/images/meta-programs/scenario-type.png",
   "self-esteem": "/images/meta-programs/self-esteem.png",
   "stress-coping": "/images/meta-programs/stress-coping.png",
+  "stream-of-consciousness":
+    "/images/meta-programs/stream-of-consciousness.png",
 };
 
 export const metaProgramCategories = (
