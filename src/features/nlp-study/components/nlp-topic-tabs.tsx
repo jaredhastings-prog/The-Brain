@@ -16,6 +16,8 @@ import communicationModelImage from "../../../../docs/nlp/NLP-Commsmodel-Image.p
 import type { NlpTopic } from "@/features/nlp-study/data/nlp-repository-content";
 import {
   getNlpTopicReferenceContent,
+  type NlpContentSection,
+  type NlpContentStep,
   type NlpModelDiagramNode,
 } from "@/features/nlp-study/data/nlp-reference-overrides";
 import { cn } from "@/lib/utils";
@@ -125,6 +127,9 @@ function TabContent({
             description="Model maps, process diagrams, visual tables, and image references can be collected here."
             items={referenceContent.models ?? topic.models}
           />
+          {referenceContent.modelSections ? (
+            <ContentSections sections={referenceContent.modelSections} />
+          ) : null}
           {showCommunicationModelImage ? <CommunicationModelImage /> : null}
           {referenceContent.modelDiagram ? (
             <ModelDiagram nodes={referenceContent.modelDiagram} />
@@ -132,7 +137,14 @@ function TabContent({
         </div>
       );
     case "patterns-techniques":
-      return <BulletList items={topic.patterns} />;
+      return (
+        <div className="space-y-4">
+          <BulletList items={referenceContent.patterns ?? topic.patterns} />
+          {referenceContent.patternSections ? (
+            <ContentSections sections={referenceContent.patternSections} />
+          ) : null}
+        </div>
+      );
     case "examples":
       return (
         <RepositoryList
@@ -177,6 +189,94 @@ function BulletList({ items }: { items: string[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+function ContentSections({ sections }: { sections: NlpContentSection[] }) {
+  return (
+    <div className="grid min-w-0 max-w-full gap-3">
+      {sections.map((section) => (
+        <section
+          className="min-w-0 overflow-hidden rounded-md border border-border/70 bg-background/70 p-3 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] sm:p-4"
+          key={section.heading}
+        >
+          <h4 className="mb-3 min-w-0 break-words text-sm font-semibold leading-5 text-foreground [overflow-wrap:anywhere]">
+            {section.heading}
+          </h4>
+          {section.body?.length ? (
+            <div className="space-y-2 text-sm leading-6 text-muted-foreground">
+              {section.body.map((paragraph) => (
+                <p
+                  className="min-w-0 break-words [overflow-wrap:anywhere]"
+                  key={paragraph}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ) : null}
+          {section.bullets?.length ? (
+            <div className="mt-3">
+              <BulletList items={section.bullets} />
+            </div>
+          ) : null}
+          {section.steps?.length ? (
+            <StepList steps={section.steps} />
+          ) : null}
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function StepList({ steps }: { steps: NlpContentStep[] }) {
+  return (
+    <ol className="min-w-0 max-w-full space-y-3 text-sm leading-6 text-muted-foreground">
+      {steps.map((step, index) => (
+        <li
+          className="grid min-w-0 grid-cols-[2rem_minmax(0,1fr)] gap-2"
+          key={`${index}-${step.text}`}
+        >
+          <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-md border border-border bg-card text-xs font-semibold text-foreground">
+            {index + 1}
+          </span>
+          <div className="min-w-0 space-y-2">
+            <p className="min-w-0 break-words text-foreground [overflow-wrap:anywhere]">
+              {step.text}
+            </p>
+            <StepPrompts step={step} />
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function StepPrompts({ step }: { step: NlpContentStep }) {
+  if (!step.prompts?.length && !step.promptBullets?.length) {
+    return null;
+  }
+
+  return (
+    <div className="min-w-0 space-y-2 rounded-md border border-border/60 bg-muted/35 p-3 text-xs leading-5 text-muted-foreground">
+      {step.prompts?.map((prompt) => (
+        <p className="min-w-0 break-words [overflow-wrap:anywhere]" key={prompt}>
+          <em>{prompt}</em>
+        </p>
+      ))}
+      {step.promptBullets?.length ? (
+        <ul className="min-w-0 space-y-1">
+          {step.promptBullets.map((prompt) => (
+            <li className="flex min-w-0 gap-2" key={prompt}>
+              <span className="mt-2 size-1 shrink-0 rounded-full bg-muted-foreground/70" />
+              <span className="min-w-0 break-words [overflow-wrap:anywhere]">
+                <em>{prompt}</em>
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
   );
 }
 
