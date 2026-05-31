@@ -8,11 +8,27 @@ export type NlpModelDiagramNode = {
   detail: string;
 };
 
+export type NlpContentStep = {
+  text: string;
+  prompts?: string[];
+  promptBullets?: string[];
+};
+
+export type NlpContentSection = {
+  heading: string;
+  body?: string[];
+  bullets?: string[];
+  steps?: NlpContentStep[];
+};
+
 type NlpTopicReferenceContent = {
   overview?: string;
   overviewItems?: string[];
   models?: string[];
+  modelSections?: NlpContentSection[];
   modelDiagram?: NlpModelDiagramNode[];
+  patterns?: string[];
+  patternSections?: NlpContentSection[];
 };
 
 const NLP_PRESUPPOSITIONS = [
@@ -121,7 +137,173 @@ const NLP_COMMUNICATION_MODEL_DIAGRAM: NlpModelDiagramNode[] = [
   },
 ];
 
+const WHAT_IS_NLP_MODEL_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Neuro",
+    body: [
+      "The voluntary and autonomic nervous system through which experiences are processed by means of the five senses: visual, auditory, kinaesthetic, olfactory, and gustatory.",
+      "Neurology is the physical foundation for the nervous system's abstracting process. It begins the mapping of the world outside by using non-linguistic sensory maps.",
+    ],
+    bullets: [
+      "Visual - sights",
+      "Auditory - sounds",
+      "Kinaesthetic - feelings / sensations",
+      "Olfactory - smell",
+      "Gustatory - taste",
+    ],
+  },
+  {
+    heading: "Linguistic",
+    body: [
+      "Linguistic mapping is the symbolic mapping created inside about the territory outside.",
+      "It involves higher cortical functions that make it possible to use symbols, create language, and map experience linguistically. This gives order and meaning to sensory representations through more abstract categories.",
+    ],
+    bullets: [
+      "Language - words, sentences, syntax, grammar, and related symbolic structures",
+      "Mathematics",
+      "Music",
+      "Non-propositional language - poetry, stories, narrative, and metaphor",
+    ],
+  },
+  {
+    heading: "Programming",
+    body: [
+      "Programming describes the processes and patterns used to order and sequence internal mapping.",
+      "These patterns generate strategies for functioning and show up as skills, abilities, habits, and repeatable ways of communicating, leading, parenting, working, and relating.",
+    ],
+  },
+];
+
+const NLP_COMMUNICATION_MODEL_CONVERSATION: NlpContentSection[] = [
+  {
+    heading: "NLP Communications Model Conversation",
+    steps: [
+      {
+        text: "Identify a challenge you are having now.",
+        prompts: ["(How do you know it's a challenge?)"],
+      },
+      {
+        text: "Practitioner to ask questions to explore client's map.",
+        prompts: ["(Inquire into beliefs, values, memories.)"],
+      },
+      {
+        text: "What is the movie that plays in mind when this stimulus occurs?",
+        prompts: [
+          "(If I was to peek into your movie mind what would I see, hear or feel.)",
+        ],
+      },
+      {
+        text: "How does the movie inform your State of Mind?",
+        prompts: [
+          "(What is the state you experience? How you experience it in the body? In your physiology?)",
+        ],
+      },
+      {
+        text: "How does it play out in your behaviour?",
+      },
+      {
+        text: "If you could represent this differently what could you shift?",
+        prompts: ["(How would that change the movie?)"],
+      },
+      {
+        text: "What are you aware of now?",
+        prompts: [
+          "(That you were not aware before we had this conversation?)",
+        ],
+      },
+    ],
+  },
+];
+
+const EXPANDING_META_PROGRAMS_PATTERNS: NlpContentSection[] = [
+  {
+    heading: "Awareness of Meta Programs",
+    steps: [
+      {
+        text: "Become aware of the meta-program.",
+        prompts: [
+          "(- What meta program do you suspect you run, where, when and with whom?)",
+        ],
+      },
+      {
+        text: "Identify contexts where you want to use a different meta-program filter.",
+        prompts: [
+          "(Then check the ecology and value of the meta program in those contexts.",
+        ],
+        promptBullets: [
+          'Ask yourself; "Does it functionally fit for me to lean onto a different meta programs?")',
+        ],
+      },
+      {
+        text: "Give yourself permission to try it on for a day.",
+        prompts: ["(- Do you have permission to shift it?)"],
+      },
+      {
+        text: "Shift your consciousness to the other side of the continuum as you try on the other meta programs.",
+      },
+      {
+        text: "Set multiple frames that will support using the preferred meta program.",
+        prompts: ["(- What ideas or beliefs would support this filter?)"],
+      },
+    ],
+  },
+  {
+    heading: "Expand the Meta-Program",
+    steps: [
+      {
+        text: "Identify and check the ecology of the meta-program filter.",
+        prompts: [
+          "(- When, where, and how do you use this meta-program that does not serve you well?",
+        ],
+        promptBullets: [
+          "How does it undermine your effectiveness in some way?)",
+        ],
+      },
+      {
+        text: "Describe the preferred Meta-program filter.",
+        prompts: [
+          "(- What Meta-level processing would you prefer to run your perceiving and valuing?",
+        ],
+        promptBullets: [
+          "When, where, and how do you want this meta-program to govern your consciousness?)",
+        ],
+      },
+      {
+        text: "Try it out.",
+        prompts: [
+          "(Imaginatively adopt the new meta program, pretend to use it in sorting, perceiving, attending, etc. Notice how it seems, feels, works, etc. in some contexts where you think it would serve you better.",
+          'Even if it seems a little "weird" and strange due to your unfamiliarity with looking at the world with that particular perceptual filter, notice what other feelings, beside discomfort, may arise with it.)',
+        ],
+      },
+      {
+        text: "Model it.",
+        prompts: [
+          "(- Do you know someone who uses this meta program?",
+          "If so, then explore with that person his or her experience until you can fully step into that position. When you can, then step into 2nd position, so that you can see the world out of that person's Meta-program eyes, hearing what he or she hears, self-talking as he or she engages in self-dialogue and feeling what that person feels.",
+        ],
+        promptBullets: ["What's that like?)"],
+      },
+      {
+        text: "Run a systems-check on the meta-program filter.",
+        prompts: [
+          "(Go Meta to an even higher level and consider what this meta program will do to you and for you in terms of perception, valuing, believing, behaving, etc.",
+        ],
+        promptBullets: [
+          "What kind of a person would it begin to make you?",
+          "What effect would it have on various aspects of your life?)",
+        ],
+      },
+    ],
+  },
+];
+
 const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
+  "What is NLP?": {
+    models: [
+      "NLP can be read through three connected layers: Neuro, Linguistic, and Programming.",
+    ],
+    modelSections: WHAT_IS_NLP_MODEL_SECTIONS,
+  },
   "NLP Communication Model": {
     overview:
       "The NLP Communication Model explains how people map reality, filter experience, create internal movies, generate states, and respond through physiology and behaviour.",
@@ -132,6 +314,10 @@ const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
       "Use the model to locate the intervention point: sensory coding, language, belief, value, memory, decision, state, physiology, or feedback loop.",
     ],
     modelDiagram: NLP_COMMUNICATION_MODEL_DIAGRAM,
+    patternSections: NLP_COMMUNICATION_MODEL_CONVERSATION,
+  },
+  "Expanding Meta Programs": {
+    patternSections: EXPANDING_META_PROGRAMS_PATTERNS,
   },
   "NLP Presuppositions": {
     overview:
@@ -151,6 +337,27 @@ export function getNlpTopicReferenceContent(topic: NlpTopic) {
 
 export function getNlpTopicSearchText(topic: NlpTopic) {
   const referenceContent = getNlpTopicReferenceContent(topic);
+  const contentSections = [
+    ...(referenceContent.modelSections ?? []),
+    ...(referenceContent.patternSections ?? []),
+  ]
+    .map((section) =>
+      [
+        section.heading,
+        section.body?.join(" ") ?? "",
+        section.bullets?.join(" ") ?? "",
+        section.steps
+          ?.map((step) =>
+            [
+              step.text,
+              step.prompts?.join(" ") ?? "",
+              step.promptBullets?.join(" ") ?? "",
+            ].join(" "),
+          )
+          .join(" ") ?? "",
+      ].join(" "),
+    )
+    .join(" ");
 
   return [
     topic.title,
@@ -161,7 +368,8 @@ export function getNlpTopicSearchText(topic: NlpTopic) {
     referenceContent.modelDiagram
       ?.map((node) => `${node.label} ${node.detail}`)
       .join(" ") ?? "",
-    topic.patterns.join(" "),
+    (referenceContent.patterns ?? topic.patterns).join(" "),
+    contentSections,
     topic.examples.join(" "),
     topic.personalNotes.join(" "),
     topic.resources.join(" "),
