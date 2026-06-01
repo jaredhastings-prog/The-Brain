@@ -21,9 +21,18 @@ export type NlpContentSection = {
   steps?: NlpContentStep[];
 };
 
+export type NlpOverviewCallout = {
+  quote: string;
+  source: string;
+};
+
 type NlpTopicReferenceContent = {
   overview?: string;
+  overviewCallout?: NlpOverviewCallout;
   overviewItems?: string[];
+  coreConceptIntro?: string[];
+  coreConcepts?: string[];
+  coreConceptSections?: NlpContentSection[];
   models?: string[];
   modelSections?: NlpContentSection[];
   modelDiagram?: NlpModelDiagramNode[];
@@ -297,6 +306,33 @@ const EXPANDING_META_PROGRAMS_PATTERNS: NlpContentSection[] = [
   },
 ];
 
+const FOUNDATIONS_OF_LISTENING_CORE_CONCEPTS: NlpContentSection[] = [
+  {
+    heading: "Sensory awareness",
+    body: [
+      "To notice and detect the person's state of mind. We call this calibrating to the person's experience and mental-emotional state.",
+    ],
+  },
+  {
+    heading: "Representational system understanding",
+    body: [
+      "To detect, recognise, and record the sensory representational and meta-representational systems that a person uses to make sense of things.",
+    ],
+  },
+  {
+    heading: "Eye accessing cue awareness and acuity",
+    body: [
+      "To be able to see in and experience how a person is processing information and the states that are being accessed.",
+    ],
+  },
+  {
+    heading: "Linguistic awareness",
+    body: [
+      "To detect the kind of language patterns a person is using.",
+    ],
+  },
+];
+
 const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
   "What is NLP?": {
     models: [
@@ -318,6 +354,20 @@ const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
   },
   "Expanding Meta Programs": {
     patternSections: EXPANDING_META_PROGRAMS_PATTERNS,
+  },
+  "Foundations of Listening": {
+    coreConceptIntro: [
+      "Listening is attending to a person and paying attention to the key elements in the person's communicating.",
+      "Listening actively and effectively involves:",
+    ],
+    coreConcepts: [],
+    coreConceptSections: FOUNDATIONS_OF_LISTENING_CORE_CONCEPTS,
+  },
+  "Sensory Acuity Skills": {
+    overviewCallout: {
+      quote: "The meaning of your communication is the response you get.",
+      source: "NLP Presupposition #3",
+    },
   },
   "NLP Presuppositions": {
     overview:
@@ -363,13 +413,22 @@ export function getNlpTopicSearchText(topic: NlpTopic) {
     topic.title,
     referenceContent.overview ?? topic.overview,
     referenceContent.overviewItems?.join(" ") ?? "",
-    topic.coreConcepts.join(" "),
+    referenceContent.overviewCallout
+      ? `${referenceContent.overviewCallout.quote} ${referenceContent.overviewCallout.source}`
+      : "",
+    (referenceContent.coreConcepts ?? topic.coreConcepts).join(" "),
     (referenceContent.models ?? topic.models).join(" "),
     referenceContent.modelDiagram
       ?.map((node) => `${node.label} ${node.detail}`)
       .join(" ") ?? "",
     (referenceContent.patterns ?? topic.patterns).join(" "),
+    referenceContent.coreConceptIntro?.join(" ") ?? "",
     contentSections,
+    referenceContent.coreConceptSections
+      ?.map((section) =>
+        [section.heading, section.body?.join(" ") ?? ""].join(" "),
+      )
+      .join(" ") ?? "",
     topic.examples.join(" "),
     topic.personalNotes.join(" "),
     topic.resources.join(" "),
@@ -377,8 +436,53 @@ export function getNlpTopicSearchText(topic: NlpTopic) {
   ].join(" ");
 }
 
+function withListeningReferenceOverrides(group: NlpTopicGroup) {
+  if (group.id !== "listening") {
+    return group;
+  }
+
+  const benchmarksTopic = group.topics.find(
+    (topic) => topic.title === "Benchmarks for Listening",
+  );
+
+  const foundationsTopic: NlpTopic = {
+    ...(benchmarksTopic ?? group.topics[0]),
+    id: "listening-foundations-of-listening",
+    title: "Foundations of Listening",
+    overview:
+      "Attending to a person and paying attention to the key elements in their communication. It sharpens presence, calibration, and sensory accuracy so interventions are based on what is actually occurring.",
+    coreConcepts: [],
+    patterns: [
+      "Track state, representation, eye accessing cues, and language patterns before choosing the next practitioner move.",
+      "Listen first for structure before content: sensory channel, state shift, presupposition, deletion, generalisation, or distortion.",
+      "Applied reflection: map one real example, identify the structure, and write the next clean practitioner move.",
+    ],
+    examples: [
+      "A practitioner notices a client's words, breathing shift, eye movement, and language pattern before asking the next question.",
+      "A small change in breathing or tempo can reveal more than the headline content of the sentence.",
+      "Conversation cue: listen for the exact words, sensory predicates, attention shifts, state changes, and next useful question.",
+    ],
+  };
+
+  const remainingTopics = group.topics
+    .filter((topic) => topic.title !== "Benchmarks for Listening")
+    .map((topic) =>
+      topic.title === "Sensory Acuity"
+        ? {
+            ...topic,
+            id: "listening-sensory-acuity-skills",
+            title: "Sensory Acuity Skills",
+          }
+        : topic,
+    );
+
+  return { ...group, topics: [foundationsTopic, ...remainingTopics] };
+}
+
 export function withNlpReferenceOverrides(groups: NlpTopicGroup[]) {
-  return groups.map((group) => {
+  return groups.map((sourceGroup) => {
+    const group = withListeningReferenceOverrides(sourceGroup);
+
     if (group.id !== "nlp-foundations") {
       return group;
     }
