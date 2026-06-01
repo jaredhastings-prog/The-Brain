@@ -13,23 +13,20 @@ import {
 } from "lucide-react";
 
 import communicationModelImage from "../../../../docs/nlp/NLP-Commsmodel-Image.png";
+import eyeAccessingCuesImage from "../../../../docs/docs/nlp/eye-acessing-cues.png";
 import type { NlpTopic } from "@/features/nlp-study/data/nlp-repository-content";
 import {
   getNlpTopicReferenceContent,
   type NlpContentSection,
   type NlpContentStep,
   type NlpModelDiagramNode,
+  type NlpModelImage,
   type NlpOverviewCallout,
+  type NlpTopicReferenceTabId,
 } from "@/features/nlp-study/data/nlp-reference-overrides";
 import { cn } from "@/lib/utils";
 
-type TopicTabId =
-  | "overview"
-  | "core-concepts"
-  | "models-diagrams"
-  | "patterns-techniques"
-  | "examples"
-  | "resources";
+type TopicTabId = NlpTopicReferenceTabId;
 
 type TopicTab = {
   id: TopicTabId;
@@ -46,10 +43,22 @@ const topicTabs: TopicTab[] = [
   { id: "resources", icon: Link2, label: "Resources" },
 ];
 
+const modelImageByKey = {
+  "eye-accessing-cues": eyeAccessingCuesImage,
+} satisfies Record<NlpModelImage["imageKey"], typeof eyeAccessingCuesImage>;
+
 export function NlpTopicTabs({ topic }: { topic: NlpTopic }) {
   const [activeTab, setActiveTab] = React.useState<TopicTabId>("overview");
+  const referenceContent = getNlpTopicReferenceContent(topic);
+  const visibleTopicTabs = referenceContent.tabs?.length
+    ? referenceContent.tabs
+        .map((tabId) => topicTabs.find((topicTab) => topicTab.id === tabId))
+        .filter((topicTab): topicTab is TopicTab => Boolean(topicTab))
+    : topicTabs;
   const activeTopicTab =
-    topicTabs.find((topicTab) => topicTab.id === activeTab) ?? topicTabs[0];
+    visibleTopicTabs.find((topicTab) => topicTab.id === activeTab) ??
+    visibleTopicTabs[0] ??
+    topicTabs[0]!;
   const ActiveIcon = activeTopicTab.icon;
 
   return (
@@ -59,7 +68,7 @@ export function NlpTopicTabs({ topic }: { topic: NlpTopic }) {
         className="grid w-full min-w-0 max-w-full grid-cols-1 gap-2 overflow-hidden rounded-md border border-border/70 bg-card/70 p-2 sm:grid-cols-2 lg:flex lg:touch-pan-x lg:gap-1 lg:overflow-x-auto lg:overscroll-x-contain lg:p-1 lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden"
         role="tablist"
       >
-        {topicTabs.map((topicTab) => {
+        {visibleTopicTabs.map((topicTab) => {
           const Icon = topicTab.icon;
           const isActive = activeTab === topicTab.id;
 
@@ -125,6 +134,7 @@ function TabContent({
           intro={referenceContent.coreConceptIntro}
           items={referenceContent.coreConcepts ?? topic.coreConcepts}
           sections={referenceContent.coreConceptSections}
+          steps={referenceContent.coreConceptSteps}
         />
       );
     case "models-diagrams":
@@ -136,6 +146,9 @@ function TabContent({
           />
           {referenceContent.modelSections ? (
             <ContentSections sections={referenceContent.modelSections} />
+          ) : null}
+          {referenceContent.modelImage ? (
+            <ModelImageFigure modelImage={referenceContent.modelImage} />
           ) : null}
           {showCommunicationModelImage ? <CommunicationModelImage /> : null}
           {referenceContent.modelDiagram ? (
@@ -204,12 +217,14 @@ function CoreConceptContent({
   intro,
   items,
   sections,
+  steps,
 }: {
   intro?: string[];
   items: string[];
   sections?: NlpContentSection[];
+  steps?: NlpContentStep[];
 }) {
-  if (!intro?.length && !sections?.length) {
+  if (!intro?.length && !sections?.length && !steps?.length) {
     return <BulletList items={items} />;
   }
 
@@ -228,6 +243,7 @@ function CoreConceptContent({
         </div>
       ) : null}
       {items.length ? <BulletList items={items} /> : null}
+      {steps?.length ? <StepList steps={steps} /> : null}
       {sections?.length ? <ContentSections sections={sections} /> : null}
     </div>
   );
@@ -277,7 +293,7 @@ function ContentSections({ sections }: { sections: NlpContentSection[] }) {
             </div>
           ) : null}
           {section.steps?.length ? (
-            <StepList steps={section.steps} />
+            <StepList start={section.start} steps={section.steps} />
           ) : null}
         </section>
       ))}
@@ -285,7 +301,13 @@ function ContentSections({ sections }: { sections: NlpContentSection[] }) {
   );
 }
 
-function StepList({ steps }: { steps: NlpContentStep[] }) {
+function StepList({
+  start = 1,
+  steps,
+}: {
+  start?: number;
+  steps: NlpContentStep[];
+}) {
   return (
     <ol className="min-w-0 max-w-full space-y-3 text-sm leading-6 text-muted-foreground">
       {steps.map((step, index) => (
@@ -294,7 +316,7 @@ function StepList({ steps }: { steps: NlpContentStep[] }) {
           key={`${index}-${step.text}`}
         >
           <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-md border border-border bg-card text-xs font-semibold text-foreground">
-            {index + 1}
+            {index + start}
           </span>
           <div className="min-w-0 space-y-2">
             <p className="min-w-0 break-words text-foreground [overflow-wrap:anywhere]">
@@ -365,6 +387,21 @@ function CommunicationModelImage() {
         placeholder="blur"
         priority={false}
         src={communicationModelImage}
+        sizes="(min-width: 1280px) 820px, (min-width: 768px) 70vw, 100vw"
+      />
+    </figure>
+  );
+}
+
+function ModelImageFigure({ modelImage }: { modelImage: NlpModelImage }) {
+  return (
+    <figure className="min-w-0 max-w-full overflow-hidden rounded-md border border-border/70 bg-background/70 p-2 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] sm:p-3">
+      <NextImage
+        alt={modelImage.alt}
+        className="h-auto max-h-[72vh] w-full rounded-sm object-contain"
+        placeholder="blur"
+        priority={false}
+        src={modelImageByKey[modelImage.imageKey]}
         sizes="(min-width: 1280px) 820px, (min-width: 768px) 70vw, 100vw"
       />
     </figure>
