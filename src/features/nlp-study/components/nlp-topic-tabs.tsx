@@ -19,6 +19,7 @@ import {
   type NlpContentSection,
   type NlpContentStep,
   type NlpModelDiagramNode,
+  type NlpOverviewCallout,
 } from "@/features/nlp-study/data/nlp-reference-overrides";
 import { cn } from "@/lib/utils";
 
@@ -119,7 +120,13 @@ function TabContent({
     case "overview":
       return <OverviewContent topic={topic} />;
     case "core-concepts":
-      return <BulletList items={topic.coreConcepts} />;
+      return (
+        <CoreConceptContent
+          intro={referenceContent.coreConceptIntro}
+          items={referenceContent.coreConcepts ?? topic.coreConcepts}
+          sections={referenceContent.coreConceptSections}
+        />
+      );
     case "models-diagrams":
       return (
         <div className="space-y-4">
@@ -167,12 +174,61 @@ function OverviewContent({ topic }: { topic: NlpTopic }) {
 
   return (
     <div className="space-y-4">
+      {referenceContent.overviewCallout ? (
+        <OverviewCallout callout={referenceContent.overviewCallout} />
+      ) : null}
       <p className="text-sm leading-6 text-muted-foreground">
         {referenceContent.overview ?? topic.overview}
       </p>
       {referenceContent.overviewItems?.length ? (
         <NumberedList items={referenceContent.overviewItems} />
       ) : null}
+    </div>
+  );
+}
+
+function OverviewCallout({ callout }: { callout: NlpOverviewCallout }) {
+  return (
+    <figure className="min-w-0 max-w-full rounded-md border border-border/70 bg-background/80 p-3 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] sm:p-4">
+      <blockquote className="min-w-0 break-words text-sm font-medium leading-6 text-foreground [overflow-wrap:anywhere]">
+        &ldquo;{callout.quote}&rdquo;
+      </blockquote>
+      <figcaption className="mt-2 text-xs font-medium tracking-normal text-muted-foreground">
+        - {callout.source}
+      </figcaption>
+    </figure>
+  );
+}
+
+function CoreConceptContent({
+  intro,
+  items,
+  sections,
+}: {
+  intro?: string[];
+  items: string[];
+  sections?: NlpContentSection[];
+}) {
+  if (!intro?.length && !sections?.length) {
+    return <BulletList items={items} />;
+  }
+
+  return (
+    <div className="min-w-0 max-w-full space-y-4">
+      {intro?.length ? (
+        <div className="space-y-2 text-sm leading-6 text-muted-foreground">
+          {intro.map((paragraph) => (
+            <p
+              className="min-w-0 break-words [overflow-wrap:anywhere]"
+              key={paragraph}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      ) : null}
+      {items.length ? <BulletList items={items} /> : null}
+      {sections?.length ? <ContentSections sections={sections} /> : null}
     </div>
   );
 }
