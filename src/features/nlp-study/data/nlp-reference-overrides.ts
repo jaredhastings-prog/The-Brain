@@ -19,6 +19,7 @@ export type NlpContentSection = {
   body?: string[];
   bullets?: string[];
   steps?: NlpContentStep[];
+  start?: number;
 };
 
 export type NlpOverviewCallout = {
@@ -26,14 +27,30 @@ export type NlpOverviewCallout = {
   source: string;
 };
 
+export type NlpTopicReferenceTabId =
+  | "overview"
+  | "core-concepts"
+  | "models-diagrams"
+  | "patterns-techniques"
+  | "examples"
+  | "resources";
+
+export type NlpModelImage = {
+  alt: string;
+  imageKey: "eye-accessing-cues";
+};
+
 type NlpTopicReferenceContent = {
+  tabs?: NlpTopicReferenceTabId[];
   overview?: string;
   overviewCallout?: NlpOverviewCallout;
   overviewItems?: string[];
   coreConceptIntro?: string[];
   coreConcepts?: string[];
   coreConceptSections?: NlpContentSection[];
+  coreConceptSteps?: NlpContentStep[];
   models?: string[];
+  modelImage?: NlpModelImage;
   modelSections?: NlpContentSection[];
   modelDiagram?: NlpModelDiagramNode[];
   patterns?: string[];
@@ -333,6 +350,120 @@ const FOUNDATIONS_OF_LISTENING_CORE_CONCEPTS: NlpContentSection[] = [
   },
 ];
 
+const EYE_ACCESSING_CUES_CORE_CONCEPT_STEPS: NlpContentStep[] = [
+  {
+    text: "To be able to see in and experience how a person is processing information and the states that are being accessed.",
+  },
+  {
+    text: "By tracking someone's eye movement, we can also track their internal movies.",
+  },
+  {
+    text: "Eye chatter can include constructed and remembered information, along with feeling / emotion and self-talk.",
+  },
+];
+
+const EYE_ACCESSING_CUES_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Questions that cause eye chatter",
+    body: [
+      "Use these prompts to invite specific kinds of internal processing and observe the person's eye accessing patterns.",
+    ],
+  },
+  {
+    heading: "Vr: Visual Remembered",
+    body: ["Recalling an image or picture."],
+    start: 1,
+    steps: [
+      {
+        text: "What was your favourite colour as a child? Go ahead and see it now.",
+      },
+      {
+        text: "What colour was your bedroom in your childhood home of 12?",
+      },
+      {
+        text: "What did you wear yesterday?",
+      },
+    ],
+  },
+  {
+    heading: "Vc: Visual Constructed",
+    body: ["Making up pictures you have never seen."],
+    start: 4,
+    steps: [
+      {
+        text: "What is it like when you imagine your car as green with yellow dots on it?",
+      },
+      {
+        text: "What if you had bright flaming red hair? What would you look like?",
+      },
+      {
+        text: "What if a traffic light had the green light at the top and the red light at the bottom?",
+      },
+    ],
+  },
+  {
+    heading: "Ar: Auditory Remembered",
+    body: ["Remembering sounds or voices previously heard."],
+    start: 7,
+    steps: [
+      {
+        text: "What does your favourite song sound like?",
+      },
+      {
+        text: "Are you able to listen again, in your head, to the very last statement I made?",
+      },
+      {
+        text: "What is the sound of ocean waves lapping on the shore?",
+      },
+    ],
+  },
+  {
+    heading: "Ac: Auditory Constructed",
+    body: ["Creating and inventing new sounds."],
+    start: 10,
+    steps: [
+      {
+        text: "What would I sound like if I sounded like Mickey Mouse?",
+      },
+      {
+        text: "What would I sound like if I spoke 4 times slower or faster?",
+      },
+    ],
+  },
+  {
+    heading: "K: Kinaesthetic",
+    body: ["Feelings, sensations, emotions."],
+    start: 12,
+    steps: [
+      {
+        text: "What does it feel like to rub your hand over a cat or dog?",
+      },
+      {
+        text: "What is the feel of the warm sun shining on your skin like?",
+      },
+      {
+        text: "Have you ever dived into a cold stream or an icy sea?",
+      },
+    ],
+  },
+  {
+    heading: "Ad: Auditory Digital",
+    body: ["Internal talk, dialogue, self-conversation."],
+    start: 15,
+    steps: [
+      {
+        text: "What did you say to yourself the last time you made a major decision?",
+      },
+      {
+        text: "Can you recite the words of your favourite song or poem to yourself... now?",
+      },
+      {
+        text: "What do you say to yourself about what you really want out of life?",
+      },
+    ],
+  },
+];
+
 const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
   "What is NLP?": {
     models: [
@@ -368,6 +499,30 @@ const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
       quote: "The meaning of your communication is the response you get.",
       source: "NLP Presupposition #3",
     },
+  },
+  "Eye Accessing Cues": {
+    tabs: [
+      "overview",
+      "models-diagrams",
+      "core-concepts",
+      "patterns-techniques",
+    ],
+    overview:
+      "We generally all move our eyes in a recognisable and patterned way. This patterning gives some indication about what a person is processing on the inside, as he or she is thinking. If we face a person and watch the way his or her eyes move, then the following diagram gives us a way to make sense of what's happening for most people. This is, however, only a map, and can be different for differently wired people.",
+    coreConceptIntro: [
+      "The power of listening for eye chatter is that it enables us to listen for what is not being said. Maybe someone is sharing something that seems emotional for them, yet they do not access the lower right of feelings. We can hear that, and maybe even ask about it. Purposely watching for eye movement is also a great way to stay present to the other.",
+    ],
+    coreConcepts: [],
+    coreConceptSteps: EYE_ACCESSING_CUES_CORE_CONCEPT_STEPS,
+    models: [
+      "Eye accessing cues map likely eye movements to visual remembered, visual constructed, auditory remembered, auditory constructed, kinaesthetic, and auditory digital processing.",
+      "Use the diagram as a calibration aid. It is a map for most people, not an absolute rule for every nervous system.",
+    ],
+    modelImage: {
+      alt: "Eye accessing cues diagram showing visual remembered, visual constructed, auditory remembered, auditory constructed, kinaesthetic, and auditory digital eye movement positions",
+      imageKey: "eye-accessing-cues",
+    },
+    patternSections: EYE_ACCESSING_CUES_PATTERN_SECTIONS,
   },
   "NLP Presuppositions": {
     overview:
@@ -417,7 +572,9 @@ export function getNlpTopicSearchText(topic: NlpTopic) {
       ? `${referenceContent.overviewCallout.quote} ${referenceContent.overviewCallout.source}`
       : "",
     (referenceContent.coreConcepts ?? topic.coreConcepts).join(" "),
+    referenceContent.coreConceptSteps?.map((step) => step.text).join(" ") ?? "",
     (referenceContent.models ?? topic.models).join(" "),
+    referenceContent.modelImage?.alt ?? "",
     referenceContent.modelDiagram
       ?.map((node) => `${node.label} ${node.detail}`)
       .join(" ") ?? "",
@@ -464,8 +621,30 @@ function withListeningReferenceOverrides(group: NlpTopicGroup) {
     ],
   };
 
+  const eyeAccessingCuesTopic: NlpTopic = {
+    id: "listening-eye-accessing-cues",
+    title: "Eye Accessing Cues",
+    overview: referenceContentByTitle["Eye Accessing Cues"].overview ?? "",
+    coreConcepts: [],
+    models: referenceContentByTitle["Eye Accessing Cues"].models ?? [],
+    patterns: [
+      "Use sensory questions to invite remembered, constructed, kinaesthetic, and auditory digital processing, then calibrate the person's eye movements without over-certainty.",
+    ],
+    examples: [
+      "A client talks about an emotional event but does not access kinaesthetic cues, prompting a gentle question about what they notice in the body.",
+      "A practitioner asks a visual remembered question, observes the eye movement pattern, and uses it as calibration rather than diagnosis.",
+    ],
+    personalNotes: [],
+    resources: ["Source: NLP Practitioner Manual eye accessing cues material."],
+    linkedCaptures: [],
+  };
+
   const remainingTopics = group.topics
-    .filter((topic) => topic.title !== "Benchmarks for Listening")
+    .filter(
+      (topic) =>
+        topic.title !== "Benchmarks for Listening" &&
+        topic.title !== "Eye Accessing Cues",
+    )
     .map((topic) =>
       topic.title === "Sensory Acuity"
         ? {
@@ -476,7 +655,10 @@ function withListeningReferenceOverrides(group: NlpTopicGroup) {
         : topic,
     );
 
-  return { ...group, topics: [foundationsTopic, ...remainingTopics] };
+  return {
+    ...group,
+    topics: [foundationsTopic, eyeAccessingCuesTopic, ...remainingTopics],
+  };
 }
 
 export function withNlpReferenceOverrides(groups: NlpTopicGroup[]) {
