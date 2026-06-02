@@ -514,6 +514,205 @@ const RELEASING_NEGATIVE_EMOTIONS_PATTERN_SECTIONS: NlpContentSection[] = [
   },
 ];
 
+const DECISION_DESTROYER_OVERVIEW =
+  "Decision Destroyer works with old limiting decisions that still organise present meaning, emotion, behaviour, and choice. The pattern helps a person identify the decision, preserve any useful learning, return to the time before it was made, and install a more resourceful decision that can travel forward through the time-line.";
+
+const DECISION_DESTROYER_CORE_CONCEPTS = [
+  "Some present limitations are organised around past decisions that once made sense in a specific context but no longer serve the person.",
+  "Old decisions can become unconscious frames or meta-states that continue to give instructions about what to expect, how to feel, and what actions are available.",
+  "Time-line work helps the person access the decision point without treating the old decision as fixed, final, or identity-defining.",
+  "The work preserves useful learning while updating the meaning, emotional charge, and future direction attached to the old decision.",
+  "The aim is to loosen the grip of an outdated decision and create room for a more resourceful one that fits the person's present values and future ecology.",
+  "Ecology and client safety matter. The practitioner checks the new decision, future pacing, and any consequences before treating the change as complete.",
+];
+
+const DECISION_DESTROYER_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Decision Destroyer",
+    steps: [
+      {
+        text: "Identify the limiting decision.",
+        prompts: [
+          "Ask what the person decided, when they adopted the decision, how long they have lived with it, and how it has become limiting.",
+          "Elicit the words, meanings, emotional quality, and present effects of the decision clearly enough to work with the actual frame.",
+        ],
+      },
+      {
+        text: "Identify the enhancing decision.",
+        prompts: [
+          "Ask what decision would serve the person better now and in the future.",
+          "Have them describe the empowering decision fully, associate into it, and anchor the decision state strongly.",
+        ],
+      },
+      {
+        text: "Preserve the learnings.",
+        prompts: [
+          "Guide the person to float above the time-line and return to when the limiting decision was made.",
+          "Invite them to notice and keep any useful learnings from that experience before changing the old decision structure.",
+        ],
+      },
+      {
+        text: "Move to a time before the limiting decision.",
+        prompts: [
+          "From above the time-line, float further back to a comfortable point before the decision event.",
+          "Associate into that prior time and look forward from before the old decision existed, noticing that the future is open.",
+          "Re-access the enhancing decision fully from this position.",
+        ],
+      },
+      {
+        text: "Let the empowering decision transform the time-line.",
+        prompts: [
+          "Bring the enhancing decision into the younger self and move forward through time with that new resourceful decision active.",
+          "Allow memories, meanings, and feelings to update as the person moves from the decision point toward the present.",
+        ],
+      },
+      {
+        text: "Integrate, future pace, and check ecology.",
+        prompts: [
+          "Return to the present, let the experience integrate, and invite the person to imagine future contexts with the new decision in place.",
+          "Check whether the new decision is useful, safe, congruent, and enhancing across relevant life contexts.",
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Meta-stating a New Decision in Time",
+    steps: [
+      {
+        text: "Identify the person's time-line.",
+        prompts: [
+          "Use a simple activity across past and future times to discover where the person locates memories and imaginations.",
+          "Notice whether their time coding appears as a line, circle, drawer, filing system, or another configuration, and gather sensory differences.",
+        ],
+      },
+      {
+        text: "Float above the time-line.",
+        prompts: [
+          "Have the person float above their sense of time, move back to a specific memory, then move forward through the present into the future.",
+        ],
+      },
+      {
+        text: "Identify the old map to update.",
+        prompts: [
+          "Choose a limiting decision, limiting belief, or hurtful experience that still creates an unhelpful map.",
+          "Keep the target specific enough to work with one decision or belief structure at a time.",
+        ],
+      },
+      {
+        text: "Access, anchor, and amplify resources.",
+        prompts: [
+          "Ask what states, ideas, understandings, or decisions would have transformed the old experience.",
+          "Elicit and anchor those resources strongly before returning to the event.",
+        ],
+      },
+      {
+        text: "Move before the event and bring resources through it.",
+        prompts: [
+          "Float above the time-line and back to a comfortable point before the old experience.",
+          "Prepare the person to re-enter the time-line with the resources active, then float down before the event and carry those resources through the experience to the present.",
+        ],
+      },
+      {
+        text: "Future pace and check ecology.",
+        prompts: [
+          "Invite the person to imagine future situations with the new decision and resources available.",
+          "Check whether the updated decision supports effectiveness, empowerment, and safety.",
+        ],
+      },
+    ],
+  },
+];
+
+const REIMPRINTING_OVERVIEW =
+  "Reimprinting works with formative experiences that shaped meaning, identity, state, or behaviour. The pattern helps a person revisit an imprint from a more resourced perspective, update the beliefs and learnings that formed around it, and integrate new resources without denying or erasing personal history.";
+
+const REIMPRINTING_CORE_CONCEPTS = [
+  "Imprint experiences can be single events or repeated experiences that organise later responses, beliefs, identity patterns, and emotional reactions.",
+  "A person may carry beliefs from significant others, intense childhood experiences, or later interpretations that became attached to the original imprint.",
+  "Returning to the imprint can be useful because it reaches the experience before years of later confirmation made the belief feel like reality.",
+  "The person can revisit the imprint from a more resourced, dissociated, and multiple-perspective position rather than being overwhelmed inside the old state.",
+  "Resources can be given to the younger self and to other participants in the memory, not to excuse harm, but to update the internal map with choices, boundaries, understanding, and new meanings.",
+  "The aim is integration, not denial or erasure of history. The experience remains part of the person's story, but it no longer has to organise identity or behaviour in the same limiting way.",
+  "The practitioner maintains ecology, pacing, and safety by anchoring resources, interrupting overwhelm, using dissociation when needed, and checking the updated future response.",
+];
+
+const REIMPRINTING_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Reimprinting Pattern",
+    steps: [
+      {
+        text: "Identify the problem.",
+        prompts: [
+          "Ask what belief, behaviour, emotion, or response the person wants to change.",
+          "Elicit the associated feelings and explore what has stood in the way of changing it so far.",
+        ],
+      },
+      {
+        text: "Locate the imprint experience.",
+        prompts: [
+          "Anchor the associated feeling and use a historical search or time-line process to find the earlier experience connected to the imprint.",
+        ],
+      },
+      {
+        text: "Travel back with the emotion.",
+        prompts: [
+          "Guide the person back with the feeling while maintaining the anchor and looking for the earliest or most relevant experience.",
+          "When they arrive, have them notice the people involved and verbalise the beliefs, meanings, and generalisations formed from the experience.",
+        ],
+      },
+      {
+        text: "Break state and review the experience.",
+        prompts: [
+          "Bring the person back to the present and have them step off the time-line.",
+          "Invite them to review the imprint like a movie from outside it, identifying the younger self, the situation, other participants, and any beliefs formed during or after the event.",
+        ],
+      },
+      {
+        text: "Find positive intentions in the feeling or belief.",
+        prompts: [
+          "Explore what each part, feeling, belief, or participant was trying to accomplish, protect, avoid, or express.",
+          "Keep the inquiry focused on intention and function rather than excusing harmful behaviour.",
+        ],
+      },
+      {
+        text: "Identify and anchor needed resources.",
+        prompts: [
+          "Ask what resources, choices, insights, abilities, or understandings the younger self needed but did not have.",
+          "Ask what resources the other significant participants would have needed to respond differently.",
+          "Elicit and anchor each needed resource strongly enough to use in the update process.",
+        ],
+      },
+      {
+        text: "Apply the resources.",
+        prompts: [
+          "From outside the time-line, review the imprint from the perspectives of the important participants.",
+          "Give each character the resources they would have needed to create a better outcome, then notice what changes in behaviour, meaning, and belief.",
+        ],
+      },
+      {
+        text: "Associate and relive the imprint with resources.",
+        prompts: [
+          "Have the person step into the time-line as each relevant character while holding the resource anchor.",
+          "Let the experience update from the inside with the new resources available, and modify the beliefs associated with the imprint.",
+        ],
+      },
+      {
+        text: "Receive resources as the younger self.",
+        prompts: [
+          "Ask the person to step into the time-line as the younger self and receive the needed qualities, choices, and resources from each significant character.",
+        ],
+      },
+      {
+        text: "Review, integrate, and future pace.",
+        prompts: [
+          "Step off the time-line and review the changed experience until the person is satisfied with the outcome.",
+          "Then step back onto the time-line and move quickly into the future, using the resources to notice how they can think, feel, and live differently.",
+        ],
+      },
+    ],
+  },
+];
+
 const NLP_PRESUPPOSITIONS = [
   "The map is not the territory; it is a symbolic representation of the territory.",
   "People respond according to their map of reality, not reality itself.",
@@ -1050,6 +1249,20 @@ const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
       coreConcepts: RELEASING_NEGATIVE_EMOTIONS_CORE_CONCEPTS,
       patterns: [],
       patternSections: RELEASING_NEGATIVE_EMOTIONS_PATTERN_SECTIONS,
+    },
+    "time-lines-pattern-decision-destroyer": {
+      tabs: ["overview", "core-concepts", "patterns-techniques"],
+      overview: DECISION_DESTROYER_OVERVIEW,
+      coreConcepts: DECISION_DESTROYER_CORE_CONCEPTS,
+      patterns: [],
+      patternSections: DECISION_DESTROYER_PATTERN_SECTIONS,
+    },
+    "time-lines-pattern-reimprinting": {
+      tabs: ["overview", "core-concepts", "patterns-techniques"],
+      overview: REIMPRINTING_OVERVIEW,
+      coreConcepts: REIMPRINTING_CORE_CONCEPTS,
+      patterns: [],
+      patternSections: REIMPRINTING_PATTERN_SECTIONS,
     },
   };
 
