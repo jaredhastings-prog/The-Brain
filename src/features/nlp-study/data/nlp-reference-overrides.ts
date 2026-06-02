@@ -377,6 +377,143 @@ const CHANGING_TIMELINE_PATTERN_SECTIONS: NlpContentSection[] = [
   },
 ];
 
+const CHANGE_PERSONAL_HISTORY_OVERVIEW =
+  "Change Personal History helps a person update remembered experiences that still influence present emotion, meaning, or behaviour. The pattern works with the way a memory is represented now, then brings needed resources into earlier experiences so the person can relate to the past with more choice and less old-state reactivity.";
+
+const CHANGE_PERSONAL_HISTORY_CORE_CONCEPTS = [
+  "Past memories can continue to shape present responses when they remain linked to strong states, limiting meanings, or old decisions.",
+  "The work focuses on the current internal representation of remembered experience rather than trying to change historical facts.",
+  "Resources such as confidence, self-worth, assertiveness, compassion, boundaries, or safety can be accessed in the present and brought into earlier memories.",
+  "Changing the meaning and state connected to a remembered experience can change its present impact, so the memory becomes a reference for learning rather than a trigger for feeling bad or defining self negatively.",
+  "The practitioner keeps the process structured: identify the state, trace related memories, build sufficient resources, apply them through the memory chain, test, and future pace.",
+];
+
+const CHANGE_PERSONAL_HISTORY_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Change Personal History Pattern",
+    steps: [
+      {
+        text: "Access the problematic memory.",
+        prompts: [
+          "Ask whether the person has a past memory that feels problematic, unwanted, or still carries strong unpleasant feelings.",
+          "Invite them to access the memory lightly and signal when the feeling begins, then establish an anchor for that state.",
+        ],
+      },
+      {
+        text: "Search back through time for earlier related events.",
+        prompts: [
+          "Fire the anchor and ask the person to let the next earlier time they felt something like this come to mind.",
+          "Have them signal when another instance appears and identify the age or time of that experience.",
+        ],
+      },
+      {
+        text: "Continue searching backwards through time.",
+        prompts: [
+          "Repeat the backward search to find several isomorphic experiences of the same negative state, calibrating carefully as the person identifies each one.",
+        ],
+      },
+      {
+        text: "Break state and elicit needed resources.",
+        prompts: [
+          "Bring the person back to the present moment.",
+          "Ask what resources would have allowed them to be more effective, empowered, supported, or safe in those earlier situations.",
+          "Elicit and anchor each resource state strongly enough to use in the change process.",
+        ],
+      },
+      {
+        text: "Collapse the resource anchor into the old experiences.",
+        prompts: [
+          "Return to the oldest remembered experience, fire the resource anchor, then introduce the old-state anchor and release it while maintaining the resource.",
+          "Ask what the memory is like now with the resource present, and move through each related memory with the resource anchor.",
+        ],
+      },
+      {
+        text: "Break state and test.",
+        prompts: [
+          "After updating the memory sequence, break state and invite the person to think about the old problematic feeling.",
+          "Ask what happens now and how the memories have changed.",
+        ],
+      },
+      {
+        text: "Future pace the resources.",
+        prompts: [
+          "Invite the person to imagine moving into future contexts while carrying the resources with them.",
+          "Check whether the new response would enhance their life and feel useful going forward.",
+        ],
+      },
+    ],
+  },
+];
+
+const RELEASING_NEGATIVE_EMOTIONS_OVERVIEW =
+  "Releasing Negative Emotions uses time-line work to change how old emotional learnings are held in present awareness. The pattern helps a person find the source or contributing factors of an emotion, preserve useful learning, create distance and perspective, and return to the present with more resourceful choice.";
+
+const RELEASING_NEGATIVE_EMOTIONS_CORE_CONCEPTS = [
+  "Emotions can remain connected to past events through the way those events are represented internally, especially when the person keeps re-entering the old state from the present.",
+  "Time-line work can create distance, perspective, and access to new resources by helping the person float above the event, move before it, and view the future from a different vantage point.",
+  "The aim is release, learning, and integration, not erasing personal history. Useful information, values, accountability, and lessons are preserved.",
+  "Negative emotions are not treated as inherently bad. They may contain valid information, warnings, boundaries, or feedback that should be evaluated before release.",
+  "Ecology and client safety matter. The practitioner checks whether the emotion is accurate, useful, complete, and ready to release before inviting the person to disconnect from old intensity.",
+];
+
+const RELEASING_NEGATIVE_EMOTIONS_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Releasing Negative Emotions Pattern",
+    steps: [
+      {
+        text: "Determine the kind and quality of the emotion.",
+        prompts: [
+          "Clarify whether the emotion is guilt, anger, fear, resentment, grief, self-pity, or another state.",
+          "Ask what information the feeling may contain and whether it is valid, invalid, accurate, or inaccurate.",
+        ],
+      },
+      {
+        text: "Elicit and use the person's time-line.",
+        prompts: [
+          "Identify where the person places past events, future events, and today's happenings so the process can use their own time coding.",
+        ],
+      },
+      {
+        text: "Identify the cause or contributing factors.",
+        prompts: [
+          "Ask for the original source of the negative feeling and any other influences that contributed to it.",
+          "Explore what the person has learned, or could learn, that will serve them in the future.",
+          "Check whether they are ready to release the emotion and disconnect from the old intensity.",
+        ],
+      },
+      {
+        text: "Float back to the original event.",
+        prompts: [
+          "Guide the person to float above the time-line and go back to the original source or time when the feeling began.",
+          "From that higher-level perspective, ask what they can learn from the experience and preserve those learnings in a resourceful way.",
+        ],
+      },
+      {
+        text: "Float back a little further in time.",
+        prompts: [
+          "Invite the person to float to a comfortable point before the event, then look forward toward the present from that earlier position.",
+          "Ask whether the old emotion is present from this vantage point and whether it needs to be created this time.",
+          "If responsibility, apology, amends, or changed action is relevant, include that ecology before inviting release.",
+        ],
+      },
+      {
+        text: "Zoom forward to the present.",
+        prompts: [
+          "With the future open and the useful learnings preserved, guide the person to move quickly forward through time to the present.",
+          "Invite the feeling of release to move with them into the future while the past representation updates in a useful way.",
+        ],
+      },
+      {
+        text: "Future pace and test.",
+        prompts: [
+          "Have the person associate into a future context that would previously have triggered the old emotion.",
+          "Check whether the dated emotional intensity is gone or reduced enough, and repeat the process if needed.",
+        ],
+      },
+    ],
+  },
+];
+
 const NLP_PRESUPPOSITIONS = [
   "The map is not the territory; it is a symbolic representation of the territory.",
   "People respond according to their map of reality, not reality itself.",
@@ -899,6 +1036,20 @@ const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
       coreConcepts: CHANGING_TIMELINE_CORE_CONCEPTS,
       patterns: [],
       patternSections: CHANGING_TIMELINE_PATTERN_SECTIONS,
+    },
+    "time-lines-pattern-change-personal-history": {
+      tabs: ["overview", "core-concepts", "patterns-techniques"],
+      overview: CHANGE_PERSONAL_HISTORY_OVERVIEW,
+      coreConcepts: CHANGE_PERSONAL_HISTORY_CORE_CONCEPTS,
+      patterns: [],
+      patternSections: CHANGE_PERSONAL_HISTORY_PATTERN_SECTIONS,
+    },
+    "time-lines-pattern-releasing-negative-emotions": {
+      tabs: ["overview", "core-concepts", "patterns-techniques"],
+      overview: RELEASING_NEGATIVE_EMOTIONS_OVERVIEW,
+      coreConcepts: RELEASING_NEGATIVE_EMOTIONS_CORE_CONCEPTS,
+      patterns: [],
+      patternSections: RELEASING_NEGATIVE_EMOTIONS_PATTERN_SECTIONS,
     },
   };
 
