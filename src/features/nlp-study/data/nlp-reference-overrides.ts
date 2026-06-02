@@ -73,7 +73,7 @@ type NlpTopicReferenceContent = {
   patternSections?: NlpContentSection[];
 };
 
-const NLP_MANUAL_PLACEHOLDER = "Content coming from NLP Practitioner Manual.";
+const NLP_MANUAL_PLACEHOLDER = "Content coming soon.";
 
 function slugify(value: string) {
   return value
@@ -97,7 +97,7 @@ const TIME_LINES_TOPIC_TITLES = [
 ] as const;
 
 const TIME_LINES_MODEL_OVERVIEW =
-  "Page 163 frames time-lines as a meta-level map for how people sort experience into past, present, and future. The manual treats time as a human construction rather than an external object: people encode memories, present awareness, and imagined futures through internal representations, often arranged as a line or other spatial configuration. The location, size, colour, organisation, distance, and shape of that coding influences how events feel and how available they seem. In NLP and coaching, a time-line is therefore not reality itself; it is a blueprint of how the person currently represents time, causality, identity, expectation, and change.";
+  "Time-lines describe how people internally organise past, present, and future. In NLP, time is treated as a human construction rather than an external object: people encode memories, present awareness, and imagined futures through internal representations, often arranged as a line or other spatial configuration. The location, size, colour, organisation, distance, and shape of that coding influence how events feel and how available they seem. In coaching, a time-line is therefore not reality itself; it is a blueprint of how the person currently represents time, causality, identity, expectation, and change.";
 
 const TIME_LINES_MODEL_OVERVIEW_ITEMS = [
   "People encode past, present, and future through sensory and spatial distinctions. Many people organise these distinctions linearly, while others use shapes, metaphors, or multiple configurations for different life contexts.",
@@ -116,7 +116,7 @@ const TIME_LINES_MODEL_IMAGES: NlpContentImage[] = [
   },
   {
     alt: "Diagram explaining in-time orientation and through-time orientation with body and arrow examples",
-    caption: "In-time and through-time orientation examples from the NLP Practitioner Manual.",
+    caption: "In-time and through-time orientation examples.",
     height: 370,
     src: "/images/nlp/in-through-time.png",
     width: 615,
@@ -127,9 +127,9 @@ const ELICITING_TIME_OVERVIEW =
   'Sometimes the problem we struggle with does not concern anything in today\'s reality, but something that occurred in "the past." Thus, the problem exists about how we keep our thoughts and feelings from the past in our current awareness.';
 
 const ELICITING_TIME_CORE_CONCEPTS = [
-  "Page 166 debriefs time-lines by focusing on location as one of the most important coding variables. People often store time sequentially and linearly, and location gives the mind an analogue way to represent sequence, relationship, and order.",
+  "Location is one of the most important coding variables in time-line work. People often store time sequentially and linearly, and location gives the mind an analogue way to represent sequence, relationship, and order.",
   "A practitioner should listen and look for how the person represents past, present, and future through size, distance, direction, position, and overall configuration. The person may describe events as behind, ahead, above, below, near, far, around them, or arranged as a line, shape, picture, calendar, filing cabinet, or other metaphor.",
-  "The debrief distinguishes in-time orientation from through-time orientation. In-time experience is associated with being absorbed in the moment and losing awareness of time. Through-time experience is associated with knowing what time it is, sequencing activities, valuing punctuality, and ordering events effectively.",
+  "A useful distinction in time-line work is the difference between in-time and through-time orientation. In-time experience is associated with being absorbed in the moment and losing awareness of time. Through-time experience is associated with knowing what time it is, sequencing activities, valuing punctuality, and ordering events effectively.",
   "Time coding affects present emotion, meaning, behaviour, and state because it supports cause-effect thinking, order, structure, cultural time concepts, and the felt reality of memories or future possibilities. Changing the coding can change how a person relates to an event or outcome.",
 ];
 
@@ -197,6 +197,182 @@ const ELICITING_TIME_MODEL_TABLES: NlpContentTable[] = [
       ["Values and likes time", "Dis-values and dislikes time", "Neutral to time"],
       ["On time; punctual", "Frequently late, non-prompt", ""],
       ["Aware of time", "Lost in the now, the moment, the memory", ""],
+    ],
+  },
+];
+
+const TIMELINE_AWARENESS_OVERVIEW =
+  "Timeline awareness helps a person notice how they internally organise past, present, and future. The pattern invites them to step back from the content of events and observe the structure of time itself, so they can see what feels close, distant, heavy, light, clear, distorted, fixed, or available to change.";
+
+const TIMELINE_AWARENESS_CORE_CONCEPTS = [
+  "A person can learn to become aware of how time is represented internally rather than only reacting from inside remembered or imagined events.",
+  "Time may be experienced spatially, visually, kinaesthetically, symbolically, or through a personal metaphor such as a line, field, calendar, path, spiral, or set of locations.",
+  "When a person changes their awareness of time, they may also change state, meaning, choice, emotional intensity, and their sense of what can happen next.",
+  "Kinaesthetic timeline work uses the body and physical space to make time organisation experiential. This is especially useful when a person does not easily work with internal pictures or when a previous event still feels present in the body.",
+  "The practitioner keeps attention on context, process, and structure rather than getting pulled into the story. The client does the internal work and determines the changes that fit.",
+];
+
+const TIMELINE_AWARENESS_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Time-Line Awareness Pattern",
+    steps: [
+      {
+        text: "Identify the time-line or time-lines.",
+        prompts: [
+          "After eliciting how the person represents past, present, and future, invite them to imagine floating above the time-line and looking down on it.",
+        ],
+      },
+      {
+        text: "Float back along the time-line.",
+        prompts: [
+          "Guide the person to move back in time while noticing the younger versions of themselves and the way past events are represented.",
+        ],
+      },
+      {
+        text: "Move forward through time.",
+        prompts: [
+          "Invite the person to observe both the represented events and the way those remembered or imagined events are coded.",
+        ],
+      },
+      {
+        text: "Identify time problems worth addressing.",
+        prompts: [
+          "Ask what events seem to carry too much importance, too little impact, or unusual coding such as dark areas, pits, twists, turns, gaps, or distortions.",
+        ],
+      },
+      {
+        text: "Explore preferred changes to the time-line.",
+        prompts: [
+          "Ask what the person may want to alter about the time-line, such as shape, configuration, tilt, colour, distance, or other structural qualities.",
+        ],
+      },
+      {
+        text: "Re-edit the representations.",
+        prompts: [
+          "Help the person notice the editorial frames and submodalities, then adjust qualities such as distance, size, brightness, colour, and position so the situation is represented in a more useful way.",
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Kinaesthetic Time-Line Pattern",
+    steps: [
+      {
+        text: "Lay the time-line on the floor.",
+        prompts: [
+          "Ask the person to stand, sense the direction of their past and future, point to each, then physically mark and walk the line through recent and more distant time.",
+        ],
+      },
+      {
+        text: "Identify the configuration of the time-line.",
+        prompts: [
+          "Have the person walk through present, past, and future, then step aside into a meta-position to notice the line's shape, size, direction, and felt quality.",
+        ],
+      },
+      {
+        text: "Identify a behaviour to change.",
+        prompts: [
+          "Invite the person to notice the kinaesthetic feelings linked to the unwanted behaviour, carefully amplify enough to recognise them, and anchor the problematic state.",
+        ],
+      },
+      {
+        text: "Step back to earlier occurrences of the same sensation.",
+        prompts: [
+          "Use the anchor to guide the person backward in small steps, noticing when the same feeling arises, identifying the age or time, and continuing toward the first occurrence.",
+        ],
+      },
+      {
+        text: "Move to meta-position after the earliest experience.",
+        prompts: [
+          "Once the earliest point is reached, invite the person to step off the time-line and ask what resources they need so they no longer have to re-experience life in the old way.",
+          "If needed, help them construct or access references for the missing resources until the resources feel sufficient.",
+        ],
+      },
+      {
+        text: "Anchor and stack resources.",
+        prompts: [
+          "Anchor the resources as they arise from meta-position, reframe limiting meanings that appear, and build a stronger resource state for moving forward.",
+        ],
+      },
+      {
+        text: "View the younger self from several positions.",
+        prompts: [
+          "Return to the first occurrence with the new resources, gather additional perspectives, then quickly walk forward through the time-line while firing the resource anchors.",
+        ],
+      },
+      {
+        text: "Move up to the present and integrate.",
+        prompts: [
+          "Pause in the present so the learnings can integrate, then invite the person to look back and notice how the past now appears different.",
+        ],
+      },
+      {
+        text: "Face the future with new hope.",
+        prompts: [
+          "Turn toward the future and notice how it has changed, what feels brighter or more hopeful, and how the altered time-line can support movement forward.",
+        ],
+      },
+      {
+        text: "Take another meta-position.",
+        prompts: [
+          "Step aside from the time-line again, or to the end of it, and review present and future from an out-of-time perspective. Repeat from one or two additional perspectives if useful.",
+        ],
+      },
+      {
+        text: "Reorient to the present.",
+        prompts: [
+          "Bring the person fully back to the present with simple process instructions and a grounded final step.",
+        ],
+      },
+    ],
+  },
+];
+
+const CHANGING_TIMELINE_OVERVIEW =
+  "Changing a time orientation means experimenting with how past, present, and future are arranged in awareness. A person's orientation to time can influence planning, presence, emotional distance, memory, and future pacing, so changing the coding can create new ways to relate to experiences and choices.";
+
+const CHANGING_TIMELINE_CORE_CONCEPTS = [
+  "A through-time orientation usually places time in front of the person or across their field of awareness, making sequence, planning, punctuality, and overview easier to access.",
+  "An in-time orientation usually places time through or around the body, with the future and past often arranged front-to-back. This can support immersion, spontaneity, and being absorbed in the moment.",
+  "Changing a through-time orientation invites the person to try on a more in-time arrangement, with the past behind and the future in front.",
+  "Changing an in-time orientation invites the person to try on a more through-time arrangement, with past, present, and future placed in front of them as an observable sequence.",
+  "The goal is not to prescribe one orientation as right. The purpose is to increase flexibility, choice, and usefulness so the person can access the time coding that best serves the context.",
+];
+
+const CHANGING_TIMELINE_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Changing a Through-Time Orientation",
+    steps: [
+      {
+        text: "Float above the time-line.",
+        prompts: [
+          "From above the line, straighten it so it runs left to right, then rotate either the line or the body ninety degrees.",
+        ],
+      },
+      {
+        text: "Drop down into the time-line.",
+        prompts: [
+          "Invite the person to experience the past behind them, the present directly in front of their face, and the future at arm's length or further ahead. Pause and ask how the new arrangement feels.",
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Changing an In-Time Orientation",
+    steps: [
+      {
+        text: "Float above time.",
+        prompts: [
+          "From above the time-line, straighten it and rotate either the line or the body ninety degrees.",
+        ],
+      },
+      {
+        text: "Drop behind the time-line.",
+        prompts: [
+          "Arrange time so it lies directly in front of the person: past images about an arm's length to one side, future images on the other side, and the present about a foot in front at eye level.",
+          "Invite the person to notice what changes when they temporarily experience a through-time style of coding, and ask how it feels.",
+        ],
+      },
     ],
   },
 ];
@@ -709,6 +885,20 @@ const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
       modelTables: ELICITING_TIME_MODEL_TABLES,
       patterns: [],
       patternSections: ELICITING_TIME_PATTERN_SECTIONS,
+    },
+    "time-lines-pattern-timeline-awareness": {
+      tabs: ["overview", "core-concepts", "patterns-techniques"],
+      overview: TIMELINE_AWARENESS_OVERVIEW,
+      coreConcepts: TIMELINE_AWARENESS_CORE_CONCEPTS,
+      patterns: [],
+      patternSections: TIMELINE_AWARENESS_PATTERN_SECTIONS,
+    },
+    "time-lines-pattern-changing-your-timeline": {
+      tabs: ["overview", "core-concepts", "patterns-techniques"],
+      overview: CHANGING_TIMELINE_OVERVIEW,
+      coreConcepts: CHANGING_TIMELINE_CORE_CONCEPTS,
+      patterns: [],
+      patternSections: CHANGING_TIMELINE_PATTERN_SECTIONS,
     },
   };
 
