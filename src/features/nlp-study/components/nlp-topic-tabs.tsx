@@ -17,8 +17,10 @@ import eyeAccessingCuesImage from "../../../../docs/docs/nlp/eye-acessing-cues.p
 import type { NlpTopic } from "@/features/nlp-study/data/nlp-repository-content";
 import {
   getNlpTopicReferenceContent,
+  type NlpContentImage,
   type NlpContentSection,
   type NlpContentStep,
+  type NlpContentTable,
   type NlpModelDiagramNode,
   type NlpModelImage,
   type NlpOverviewCallout,
@@ -124,6 +126,8 @@ function TabContent({
   const referenceContent = getNlpTopicReferenceContent(topic);
   const showCommunicationModelImage =
     topic.title === "NLP Communication Model" && referenceContent.modelDiagram;
+  const modelItems = referenceContent.models ?? topic.models;
+  const patternItems = referenceContent.patterns ?? topic.patterns;
 
   switch (tabId) {
     case "overview":
@@ -140,12 +144,17 @@ function TabContent({
     case "models-diagrams":
       return (
         <div className="space-y-4">
-          <RepositoryList
-            description="Model maps, process diagrams, visual tables, and image references can be collected here."
-            items={referenceContent.models ?? topic.models}
-          />
+          {modelItems.length ? (
+            <RepositoryList
+              description="Model maps, process diagrams, visual tables, and image references can be collected here."
+              items={modelItems}
+            />
+          ) : null}
           {referenceContent.modelSections ? (
             <ContentSections sections={referenceContent.modelSections} />
+          ) : null}
+          {referenceContent.modelTables?.length ? (
+            <ContentTables tables={referenceContent.modelTables} />
           ) : null}
           {referenceContent.modelImage ? (
             <ModelImageFigure modelImage={referenceContent.modelImage} />
@@ -159,7 +168,7 @@ function TabContent({
     case "patterns-techniques":
       return (
         <div className="space-y-4">
-          <BulletList items={referenceContent.patterns ?? topic.patterns} />
+          {patternItems.length ? <BulletList items={patternItems} /> : null}
           {referenceContent.patternSections ? (
             <ContentSections sections={referenceContent.patternSections} />
           ) : null}
@@ -195,6 +204,13 @@ function OverviewContent({ topic }: { topic: NlpTopic }) {
       </p>
       {referenceContent.overviewItems?.length ? (
         <NumberedList items={referenceContent.overviewItems} />
+      ) : null}
+      {referenceContent.overviewImages?.length ? (
+        <div className="grid min-w-0 max-w-full gap-3">
+          {referenceContent.overviewImages.map((image) => (
+            <ContentImageFigure image={image} key={image.src} />
+          ))}
+        </div>
       ) : null}
     </div>
   );
@@ -378,6 +394,61 @@ function NumberedList({ items }: { items: string[] }) {
   );
 }
 
+function ContentTables({ tables }: { tables: NlpContentTable[] }) {
+  return (
+    <div className="grid min-w-0 max-w-full gap-3">
+      {tables.map((table) => (
+        <section
+          className="min-w-0 overflow-hidden rounded-md border border-border/70 bg-background/70 p-3 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] sm:p-4"
+          key={table.title}
+        >
+          <h4 className="mb-3 min-w-0 break-words text-sm font-semibold leading-5 text-foreground [overflow-wrap:anywhere]">
+            {table.title}
+          </h4>
+          <div className="min-w-0 max-w-full overflow-x-auto rounded-md border border-border/70">
+            <table className="w-full min-w-[560px] table-fixed border-collapse text-left text-xs leading-5 sm:text-sm">
+              <thead className="bg-muted/55 text-foreground">
+                <tr>
+                  {table.columns.map((column) => (
+                    <th
+                      className="border-r border-border/70 px-3 py-2 font-semibold last:border-r-0"
+                      key={column}
+                      scope="col"
+                    >
+                      <span className="block min-w-0 break-words [overflow-wrap:anywhere]">
+                        {column}
+                      </span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                {table.rows.map((row, rowIndex) => (
+                  <tr
+                    className="border-t border-border/70"
+                    key={`${table.title}-${rowIndex}`}
+                  >
+                    {table.columns.map((column, columnIndex) => (
+                      <td
+                        className="border-r border-border/70 px-3 py-2 align-top last:border-r-0"
+                        key={`${column}-${rowIndex}`}
+                      >
+                        <span className="block min-w-0 break-words [overflow-wrap:anywhere]">
+                          {row[columnIndex] ?? ""}
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
+
 function CommunicationModelImage() {
   return (
     <figure className="min-w-0 max-w-full overflow-hidden rounded-md border border-border/70 bg-background/70 p-2 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] sm:p-3">
@@ -389,6 +460,27 @@ function CommunicationModelImage() {
         src={communicationModelImage}
         sizes="(min-width: 1280px) 820px, (min-width: 768px) 70vw, 100vw"
       />
+    </figure>
+  );
+}
+
+function ContentImageFigure({ image }: { image: NlpContentImage }) {
+  return (
+    <figure className="min-w-0 max-w-full overflow-hidden rounded-md border border-border/70 bg-background/70 p-2 shadow-[0_1px_2px_rgb(24_24_27_/_0.03)] sm:p-3">
+      <NextImage
+        alt={image.alt}
+        className="h-auto max-h-[72vh] w-full rounded-sm object-contain"
+        height={image.height}
+        priority={false}
+        src={image.src}
+        width={image.width}
+        sizes="(min-width: 1280px) 820px, (min-width: 768px) 70vw, 100vw"
+      />
+      {image.caption ? (
+        <figcaption className="mt-2 min-w-0 break-words text-xs leading-5 text-muted-foreground [overflow-wrap:anywhere]">
+          {image.caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
