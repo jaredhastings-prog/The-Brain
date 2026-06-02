@@ -95,6 +95,24 @@ function createSubModules(titles: string[]) {
   return titles.map((title) => createSubModule(title));
 }
 
+function createPlaceholderSubModule(title: string): WeeklySubModule {
+  return {
+    id: slugify(title),
+    title,
+    notes: ["Content to be added."],
+    keyConcepts: ["Content to be added."],
+    screenshots: ["Content to be added."],
+    videos: ["Content to be added."],
+    readings: ["Content to be added."],
+    reflections: ["Content to be added."],
+    linkedCaptures: ["Content to be added."],
+  };
+}
+
+function createPlaceholderSubModules(titles: string[]) {
+  return titles.map((title) => createPlaceholderSubModule(title));
+}
+
 const healthyWorkWeekOneSummary: WeeklySummarySection[] = [
   {
     id: "overview",
@@ -385,7 +403,13 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 1,
     title: "Foundations of human thinking",
     summary:
-      "Introduces the core questions, assumptions, and cognitive foundations of human information processing.",
+      "Introduces the foundations of cognitive psychology and how humans think, process information, and make sense of experience.",
+    subModules: createPlaceholderSubModules([
+      "1.1 Introduction to cognitive psychology",
+      "1.2 Human information processing",
+      "1.3 Thinking, attention, and mental representation",
+      "1.4 Applying cognitive psychology to performance",
+    ]),
     keyConcepts: [
       "Human thinking",
       "Cognition",
@@ -401,7 +425,13 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 2,
     title: "How do we obtain knowledge?",
     summary:
-      "Explores attention, perception, learning, and the ways people gather information from the environment.",
+      "Explores perception, attention, learning, and the ways people acquire knowledge from the world and from experience.",
+    subModules: createPlaceholderSubModules([
+      "2.1 Perception and attention",
+      "2.2 Learning from experience",
+      "2.3 Cognitive biases and errors",
+      "2.4 Knowledge acquisition in applied settings",
+    ]),
     keyConcepts: ["Knowledge acquisition", "Attention", "Perception", "Learning"],
     assessmentLinks: [
       "Add assessment links, rubric notes, and study priorities for this week.",
@@ -412,7 +442,13 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 3,
     title: "How do we store knowledge (memory)?",
     summary:
-      "Covers memory systems, encoding, storage, retrieval, and the structure of remembered knowledge.",
+      "Examines memory systems, storage, retrieval, forgetting, and the role of memory in performance and learning.",
+    subModules: createPlaceholderSubModules([
+      "3.1 Memory systems",
+      "3.2 Encoding, storage, and retrieval",
+      "3.3 Forgetting and distortion",
+      "3.4 Memory and skilled performance",
+    ]),
     keyConcepts: ["Memory", "Encoding", "Storage", "Retrieval"],
     assessmentLinks: [
       "Add assessment links, rubric notes, and study priorities for this week.",
@@ -423,7 +459,13 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 4,
     title: "Verbal and visual knowledge",
     summary:
-      "Examines how people represent, process, and use verbal and visual forms of knowledge.",
+      "Compares how verbal and visual information is represented, organised, and used in thinking and problem-solving.",
+    subModules: createPlaceholderSubModules([
+      "4.1 Verbal representation",
+      "4.2 Visual representation",
+      "4.3 Mental imagery and language",
+      "4.4 Using representation for problem-solving",
+    ]),
     keyConcepts: [
       "Verbal knowledge",
       "Visual knowledge",
@@ -439,7 +481,13 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 5,
     title: "Information processing (executive functions)",
     summary:
-      "Maps executive functions such as planning, inhibition, working memory, cognitive control, and flexible thinking.",
+      "Focuses on executive functions such as attention control, inhibition, cognitive flexibility, planning, and decision-making.",
+    subModules: createPlaceholderSubModules([
+      "5.1 Executive functions",
+      "5.2 Attention control and inhibition",
+      "5.3 Cognitive flexibility and planning",
+      "5.4 Executive functioning and performance",
+    ]),
     keyConcepts: [
       "Executive functions",
       "Working memory",
@@ -455,7 +503,13 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 6,
     title: "Higher-order thinking",
     summary:
-      "Focuses on reasoning, problem solving, decision making, creativity, and complex thought.",
+      "Examines reasoning, problem-solving, judgement, creativity, and other complex cognitive processes.",
+    subModules: createPlaceholderSubModules([
+      "6.1 Reasoning and judgement",
+      "6.2 Problem-solving",
+      "6.3 Creativity and insight",
+      "6.4 Higher-order thinking in applied contexts",
+    ]),
     keyConcepts: [
       "Reasoning",
       "Problem solving",
