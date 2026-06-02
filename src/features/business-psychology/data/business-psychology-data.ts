@@ -421,7 +421,7 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-4-verbal-and-visual-knowledge",
     week: 4,
-    title: "Verbal and Visual knowledge",
+    title: "Verbal and visual knowledge",
     summary:
       "Examines how people represent, process, and use verbal and visual forms of knowledge.",
     keyConcepts: [
@@ -649,19 +649,18 @@ export const businessPsychologyUnits: StudyUnit[] = [
     ],
     overview: {
       description:
-        "Structured placeholder for migrating Jared's Notion material into a unit workspace.",
+        "In this unit, you will learn about core concepts, principles and theories of cognitive psychology, learning and language.",
       learningOutcomes: [
-        "Add official learning outcomes from the university unit outline.",
+        "Information processing",
+        "Cognitive biases and errors",
+        "Learning and skills acquisition",
+        "Memory and executive functioning",
       ],
       unitContent: [
-        "Add weekly topics, readings, lecture notes, and assessment links.",
+        "You will also consider the application of cognitive psychology theories and principles to maximising human performance across a range of contemporary applications.",
       ],
-      unitPresentation: [
-        "Add presentation decks, screenshots, diagrams, and lecture media.",
-      ],
-      assessmentOverview: [
-        "Add assessment names, due dates, rubric notes, grades, and feedback.",
-      ],
+      unitPresentation: [],
+      assessmentOverview: [],
     },
   },
   {
