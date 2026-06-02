@@ -529,6 +529,12 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     title: "Biopsychosocial models of wellbeing",
     summary:
       "Introduces wellbeing through biological, psychological, and social lenses.",
+    subModules: createPlaceholderSubModules([
+      "1.1 Defining wellbeing",
+      "1.2 Subjective and psychological wellbeing",
+      "1.3 Wellbeing, health, and functioning",
+      "1.4 Applying wellbeing science",
+    ]),
     keyConcepts: [
       "Biopsychosocial model",
       "Wellbeing",
@@ -545,6 +551,12 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     title: "Resiliency models of wellbeing across the lifespan",
     summary:
       "Explores resilience, development, protective factors, and wellbeing across life stages.",
+    subModules: createPlaceholderSubModules([
+      "2.1 Hedonic and eudaimonic wellbeing",
+      "2.2 Flourishing and life satisfaction",
+      "2.3 Positive psychology models",
+      "2.4 Critiques and limitations of wellbeing models",
+    ]),
     keyConcepts: [
       "Resilience",
       "Lifespan development",
@@ -561,6 +573,12 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     title: "Positive psychology for wellbeing",
     summary:
       "Examines positive psychology concepts and interventions that support wellbeing.",
+    subModules: createPlaceholderSubModules([
+      "3.1 Personality and wellbeing",
+      "3.2 Motivation, values, and meaning",
+      "3.3 Emotion regulation and wellbeing",
+      "3.4 Individual wellbeing profiles",
+    ]),
     keyConcepts: [
       "Positive psychology",
       "Strengths",
@@ -577,6 +595,12 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     title: "Goals and motivation",
     summary:
       "Connects motivation, goal pursuit, values, and wellbeing-related behaviour.",
+    subModules: createPlaceholderSubModules([
+      "4.1 Wellbeing at work",
+      "4.2 Relationships and social connection",
+      "4.3 Community, culture, and belonging",
+      "4.4 Environmental and systemic influences",
+    ]),
     keyConcepts: ["Goals", "Motivation", "Values", "Behaviour change"],
     assessmentLinks: [
       "Add assessment links, rubric notes, and study priorities for this week.",
@@ -588,6 +612,12 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     title: "Self-regulation and emotion",
     summary:
       "Focuses on emotion, self-regulation, coping, and psychological wellbeing.",
+    subModules: createPlaceholderSubModules([
+      "5.1 Measuring wellbeing",
+      "5.2 Wellbeing interventions",
+      "5.3 Behaviour change and habit formation",
+      "5.4 Evaluating wellbeing outcomes",
+    ]),
     keyConcepts: [
       "Self-regulation",
       "Emotion",
@@ -604,6 +634,12 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     title: "Psychological science, academic achievement and personal wellbeing",
     summary:
       "Integrates psychological science with academic achievement, sustainable study habits, and personal wellbeing.",
+    subModules: createPlaceholderSubModules([
+      "6.1 Wellbeing and resilience",
+      "6.2 Wellbeing and sustainable performance",
+      "6.3 Coaching and wellbeing practice",
+      "6.4 Integrating wellbeing science into applied settings",
+    ]),
     keyConcepts: [
       "Academic achievement",
       "Personal wellbeing",
@@ -732,19 +768,11 @@ export const businessPsychologyUnits: StudyUnit[] = [
     ],
     overview: {
       description:
-        "Structured placeholder for building a wellbeing unit workspace from Jared's existing Notion study system.",
-      learningOutcomes: [
-        "Add official learning outcomes from the university unit outline.",
-      ],
-      unitContent: [
-        "Add weekly topics, models, readings, lecture notes, and assessment links.",
-      ],
-      unitPresentation: [
-        "Add lecture decks, screenshots, videos, and concept diagrams.",
-      ],
-      assessmentOverview: [
-        "Add assessment names, due dates, rubric notes, grades, and feedback.",
-      ],
+        "This unit explores psychological theories, research, and applications related to wellbeing, flourishing, resilience, and human functioning. It considers how wellbeing is defined, measured, influenced, and supported across individual, relational, organisational, and applied contexts.",
+      learningOutcomes: [],
+      unitContent: [],
+      unitPresentation: [],
+      assessmentOverview: [],
     },
   },
 ];
