@@ -73,8 +73,6 @@ type NlpTopicReferenceContent = {
   patternSections?: NlpContentSection[];
 };
 
-const NLP_MANUAL_PLACEHOLDER = "Content coming soon.";
-
 function slugify(value: string) {
   return value
     .toLowerCase()
@@ -713,6 +711,246 @@ const REIMPRINTING_PATTERN_SECTIONS: NlpContentSection[] = [
   },
 ];
 
+const FINISHING_UNFINISHED_BUSINESS_OVERVIEW =
+  "Finishing Unfinished Business helps a person complete unresolved inner material that still keeps attention, emotion, or meaning tied to the past. It is useful when old experiences, unexpressed communication, incomplete emotional processing, or unfinished developmental tasks continue to affect present choices, relationships, and self-concept.";
+
+const FINISHING_UNFINISHED_BUSINESS_CORE_CONCEPTS = [
+  "Unfinished business can keep a person organised around the past, especially when an experience still feels unresolved, unaccepted, unspoken, or incomplete inside.",
+  "The pattern helps the person complete what was left incomplete internally. Completion may involve expression, perspective, resource, release, forgiveness, acceptance, updated meaning, or a stronger relationship with reality.",
+  "The work supports integration and present-time freedom rather than denial or erasure of history. The facts do not have to be approved, minimised, or made acceptable; they can be recognised as facts while the person stops carrying them as unfinished internal work.",
+  "Developmental themes may be involved, including trust, autonomy, initiative, competence, identity, intimacy, contribution, and life integration. The practitioner listens for which kind of completion the person is ready to update.",
+  "Ecology, pacing, and client safety matter. The practitioner helps the person access adult resources, stay oriented to present choice, and complete only what can be completed in a useful and respectful way.",
+];
+
+const FINISHING_UNFINISHED_BUSINESS_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Finishing Unfinished Business Pattern",
+    steps: [
+      {
+        text: "Adopt a commitment to reality.",
+        prompts: [
+          "Invite the person to take an adult, observant position toward past events: what happened can be recognised clearly without approving it, excusing it, or continuing to organise life around it.",
+          "Help them distinguish accepting reality from endorsing what happened. The goal is a grounded relationship to facts, not resignation.",
+        ],
+      },
+      {
+        text: "Access and anchor adult acceptance.",
+        prompts: [
+          "Ask the person to remember a simple situation where they accepted something they did not particularly like, then notice the images, feelings, values, and beliefs that made acceptance possible.",
+          "Anchor the state once it is available and stable enough to use.",
+        ],
+      },
+      {
+        text: "Access and anchor friendship with reality.",
+        prompts: [
+          "Guide the person to a state of facing what actually exists with maturity, steadiness, and willingness, instead of wishing, regretting, or fighting with the fact that it occurred.",
+          "Notice the inner representations and supporting beliefs, then anchor this reality-friendly orientation.",
+        ],
+      },
+      {
+        text: "Access and anchor a finishing state.",
+        prompts: [
+          "Have the person recall a time when they completed a task, project, relationship, or chapter and could release it while keeping the useful learning.",
+          "Anchor the felt sense of positive completion, closure, and forward movement.",
+        ],
+      },
+      {
+        text: "Identify the unfinished developmental task.",
+        prompts: [
+          "From a position above the time-line, invite the person to notice what unfinished business remains and which life task it seems connected to, such as trust, autonomy, identity, intimacy, contribution, or integration.",
+          "Keep the exploration specific and paced; the person only needs to identify the completion that matters now.",
+        ],
+      },
+      {
+        text: "Move into a future where the task is finished.",
+        prompts: [
+          "Guide the person forward along the time-line to a point where the task has been completed in a healthy and ecological way.",
+          "Fire the finishing and reality-friendly anchors, then invite them to experience what they see, hear, feel, believe, value, and do from that completed future.",
+        ],
+      },
+      {
+        text: "Integrate the completion into present life.",
+        prompts: [
+          "Bring the person back to the present with the completed feeling and meaning available.",
+          "Ask them to look forward and notice the day-by-day steps, choices, and behaviours that naturally lead into that more complete future.",
+        ],
+      },
+    ],
+  },
+];
+
+const HYPNOTIC_LANGUAGE_OVERVIEW =
+  "Hypnotic Language Patterns, often taught through the Milton Model, show how language can guide attention, invite internal experience, and open space for new meanings. In NLP communication, these patterns support pacing, suggestion, state change, internal representation, and resource access by engaging the listener's own imagination and meaning-making processes.";
+
+const HYPNOTIC_LANGUAGE_CORE_CONCEPTS = [
+  "Language can direct attention. A phrase can invite someone to notice a feeling, imagine a possibility, remember a resource, or organise experience in a new way.",
+  "Hypnotic language often uses ambiguity, suggestion, pacing, permissive phrasing, metaphor, and presupposition to create room for the listener's own meanings rather than forcing a narrow interpretation.",
+  "The Milton Model uses many of the same linguistic distinctions as the Meta-Model, but in the opposite direction. Instead of challenging vague language for precision, the practitioner may use artful vagueness to invite useful inner processing.",
+  "Effective use begins with pacing the person's current experience, then gently leading attention toward resourceful states, choices, learnings, or future possibilities.",
+  "These patterns should be used ethically and transparently, with respect for autonomy, consent, ecology, and the person's outcomes. The aim is to support resourcefulness, not manipulate.",
+];
+
+const HYPNOTIC_LANGUAGE_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Artful Vagueness Patterns",
+    body: [
+      "These patterns give the listener enough structure to begin an inner search while leaving space for their own unconscious associations, memories, and resources.",
+    ],
+    steps: [
+      {
+        text: "Use comparative deletions to invite improvement without over-specifying the standard.",
+        prompts: [
+          'Example: "You may find yourself becoming more comfortable in the way that works for you."',
+        ],
+      },
+      {
+        text: "Use unspecified references so the person can supply their own relevant meaning.",
+        prompts: [
+          'Example: "A part of you can begin learning something useful now."',
+        ],
+      },
+      {
+        text: "Use nominalisations to point toward inner processes as if they are available objects.",
+        prompts: [
+          'Example: "That sense of confidence can continue to develop."',
+        ],
+      },
+      {
+        text: "Use universal quantifiers and lost performatives carefully to soften or amplify expectation.",
+        prompts: [
+          'Example: "Many people discover that change can happen naturally."',
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Suggestion and Meaning Patterns",
+    body: [
+      "These patterns shape the frame around an experience by implying relationships, possibilities, or meanings that the listener can explore internally.",
+    ],
+    steps: [
+      {
+        text: "Use cause-effect language to link a present experience with a useful direction.",
+        prompts: [
+          'Example: "As you notice your breathing, you can begin to settle into the learning."',
+        ],
+      },
+      {
+        text: "Use complex equivalence to connect behaviour, attention, or response with a resourceful meaning.",
+        prompts: [
+          'Example: "That curiosity can be a sign that your mind is already exploring new options."',
+        ],
+      },
+      {
+        text: "Use presuppositions to assume useful movement without arguing for it.",
+        prompts: [
+          'Example: "When you notice the first small shift, you can let it teach you something."',
+        ],
+      },
+      {
+        text: "Use tag questions and conversational postulates as gentle invitations.",
+        prompts: [
+          'Example: "You can take a moment to notice what changes, can you not?"',
+          'Example: "Can you allow that resource to become a little clearer?"',
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Attention and Trance Process",
+    body: [
+      "Hypnotic communication works best when it follows the person's actual experience, uses what happens in the moment, and leads gradually toward the desired resource or learning.",
+    ],
+    steps: [
+      {
+        text: "Pace current experience before leading.",
+        prompts: [
+          "Name verifiable features of the present context, such as sitting, breathing, listening, or noticing, then connect that pacing to the state or learning you want to invite.",
+        ],
+      },
+      {
+        text: "Use double binds to make several responses useful.",
+        prompts: [
+          "Frame options so either path supports the intended direction, such as relaxing quickly or gradually, noticing a shift now or discovering it in a moment.",
+        ],
+      },
+      {
+        text: "Utilise what happens.",
+        prompts: [
+          "Incorporate sounds, movements, pauses, questions, or interruptions as part of the process rather than treating them as distractions.",
+        ],
+      },
+      {
+        text: "Use voice and marking intentionally.",
+        prompts: [
+          "Tone, pause, emphasis, and rhythm can mark embedded suggestions or distinguish statements, questions, and invitations.",
+        ],
+      },
+      {
+        text: "Build short resource chains.",
+        prompts: [
+          "Identify three to five useful states, then link them in sequence so one naturally leads to the next, such as calm to curiosity to learning to practical action.",
+        ],
+      },
+    ],
+  },
+];
+
+const HYPNOTIC_LANGUAGE_MODEL_TABLES: NlpContentTable[] = [
+  {
+    title: "Milton Model Language Families",
+    columns: ["Family", "Purpose", "Common patterns"],
+    rows: [
+      [
+        "Structure",
+        "Organise attention through stories, assumptions, and levels of meaning.",
+        "Metaphor, presupposition, multi-ordinal language, identification.",
+      ],
+      [
+        "Distortion",
+        "Invite new meaning by shaping relationships, causality, identity, and interpretation.",
+        "Mind-reading, cause-effect, complex equivalence, nominalisation, lost performative, personalising.",
+      ],
+      [
+        "Generalisation",
+        "Open or narrow expectation by using broad frames and category-level language.",
+        "Universal quantifiers, modal operators, either-or frames, evaluative language, over-defined or under-defined terms.",
+      ],
+      [
+        "Deletion",
+        "Leave space for the listener to fill in relevant internal content.",
+        "Simple deletions, comparative deletions, superlative deletions, unspecified referents, unspecified processes.",
+      ],
+    ],
+  },
+  {
+    title: "Application Flow",
+    columns: ["Move", "What the practitioner is doing", "What it supports"],
+    rows: [
+      [
+        "Pace",
+        "Match the person's current sensory experience, language, state, or context.",
+        "Rapport, safety, and attention.",
+      ],
+      [
+        "Invite",
+        "Use permissive language, ambiguity, metaphor, or suggestion.",
+        "Internal search and resource access.",
+      ],
+      [
+        "Lead",
+        "Connect present awareness to a useful state, meaning, behaviour, or future possibility.",
+        "Choice, integration, and action.",
+      ],
+      [
+        "Check ecology",
+        "Respect consent, autonomy, and outcomes while testing whether the response is useful.",
+        "Ethical change work and client safety.",
+      ],
+    ],
+  },
+];
+
 const NLP_PRESUPPOSITIONS = [
   "The map is not the territory; it is a symbolic representation of the territory.",
   "People respond according to their map of reality, not reality itself.",
@@ -1194,15 +1432,6 @@ const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
 
 const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
   {
-    ...Object.fromEntries(
-      TIME_LINES_TOPIC_TITLES.map((title) => [
-        `time-lines-${slugify(title)}`,
-        {
-          tabs: ["overview"],
-          overview: NLP_MANUAL_PLACEHOLDER,
-        },
-      ]),
-    ),
     "time-lines-the-time-lines-model": {
       tabs: ["overview"],
       overview: TIME_LINES_MODEL_OVERVIEW,
@@ -1263,6 +1492,26 @@ const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
       coreConcepts: REIMPRINTING_CORE_CONCEPTS,
       patterns: [],
       patternSections: REIMPRINTING_PATTERN_SECTIONS,
+    },
+    "time-lines-pattern-finishing-unfinished-business": {
+      tabs: ["overview", "core-concepts", "patterns-techniques"],
+      overview: FINISHING_UNFINISHED_BUSINESS_OVERVIEW,
+      coreConcepts: FINISHING_UNFINISHED_BUSINESS_CORE_CONCEPTS,
+      patterns: [],
+      patternSections: FINISHING_UNFINISHED_BUSINESS_PATTERN_SECTIONS,
+    },
+    "time-lines-hypnotic-language-patterns": {
+      tabs: [
+        "overview",
+        "core-concepts",
+        "patterns-techniques",
+        "models-diagrams",
+      ],
+      overview: HYPNOTIC_LANGUAGE_OVERVIEW,
+      coreConcepts: HYPNOTIC_LANGUAGE_CORE_CONCEPTS,
+      modelTables: HYPNOTIC_LANGUAGE_MODEL_TABLES,
+      patterns: [],
+      patternSections: HYPNOTIC_LANGUAGE_PATTERN_SECTIONS,
     },
   };
 
@@ -1411,7 +1660,7 @@ function createTimeLinesTopic(title: (typeof TIME_LINES_TOPIC_TITLES)[number]) {
   return {
     id: `time-lines-${slugify(title)}`,
     title,
-    overview: NLP_MANUAL_PLACEHOLDER,
+    overview: "",
     coreConcepts: [],
     models: [],
     patterns: [],
