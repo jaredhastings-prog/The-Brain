@@ -57,6 +57,29 @@ type NlpTopicReferenceContent = {
   patternSections?: NlpContentSection[];
 };
 
+const NLP_MANUAL_PLACEHOLDER = "Content coming from NLP Practitioner Manual.";
+
+function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+const TIME_LINES_TOPIC_TITLES = [
+  "The Time-Lines Model",
+  'Eliciting the Encoding of "Time"',
+  "Pattern: Timeline Awareness",
+  "Pattern: Changing Your Timeline",
+  "Pattern: Change Personal History",
+  "Pattern: Releasing Negative Emotions",
+  "Pattern: Decision Destroyer",
+  "Pattern: Reimprinting",
+  "Pattern: Finishing Unfinished Business",
+  "Hypnotic Language Patterns",
+] as const;
+
 const NLP_PRESUPPOSITIONS = [
   "The map is not the territory; it is a symbolic representation of the territory.",
   "People respond according to their map of reality, not reality itself.",
@@ -536,8 +559,23 @@ const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
   },
 };
 
+const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
+  Object.fromEntries(
+    TIME_LINES_TOPIC_TITLES.map((title) => [
+      `time-lines-${slugify(title)}`,
+      {
+        tabs: ["overview"],
+        overview: NLP_MANUAL_PLACEHOLDER,
+      },
+    ]),
+  );
+
 export function getNlpTopicReferenceContent(topic: NlpTopic) {
-  return referenceContentByTitle[topic.title] ?? {};
+  return (
+    referenceContentByTopicId[topic.id] ??
+    referenceContentByTitle[topic.title] ??
+    {}
+  );
 }
 
 export function getNlpTopicSearchText(topic: NlpTopic) {
@@ -661,9 +699,37 @@ function withListeningReferenceOverrides(group: NlpTopicGroup) {
   };
 }
 
+function createTimeLinesTopic(title: (typeof TIME_LINES_TOPIC_TITLES)[number]) {
+  return {
+    id: `time-lines-${slugify(title)}`,
+    title,
+    overview: NLP_MANUAL_PLACEHOLDER,
+    coreConcepts: [],
+    models: [],
+    patterns: [],
+    examples: [],
+    personalNotes: [],
+    resources: [],
+    linkedCaptures: [],
+  } satisfies NlpTopic;
+}
+
+function withTimeLinesReferenceOverrides(group: NlpTopicGroup) {
+  if (group.id !== "time-lines") {
+    return group;
+  }
+
+  return {
+    ...group,
+    topics: TIME_LINES_TOPIC_TITLES.map(createTimeLinesTopic),
+  };
+}
+
 export function withNlpReferenceOverrides(groups: NlpTopicGroup[]) {
   return groups.map((sourceGroup) => {
-    const group = withListeningReferenceOverrides(sourceGroup);
+    const group = withTimeLinesReferenceOverrides(
+      withListeningReferenceOverrides(sourceGroup),
+    );
 
     if (group.id !== "nlp-foundations") {
       return group;
