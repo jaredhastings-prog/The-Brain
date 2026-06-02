@@ -27,6 +27,20 @@ export type NlpOverviewCallout = {
   source: string;
 };
 
+export type NlpContentImage = {
+  alt: string;
+  caption?: string;
+  height: number;
+  src: string;
+  width: number;
+};
+
+export type NlpContentTable = {
+  columns: string[];
+  rows: string[][];
+  title: string;
+};
+
 export type NlpTopicReferenceTabId =
   | "overview"
   | "core-concepts"
@@ -44,6 +58,7 @@ type NlpTopicReferenceContent = {
   tabs?: NlpTopicReferenceTabId[];
   overview?: string;
   overviewCallout?: NlpOverviewCallout;
+  overviewImages?: NlpContentImage[];
   overviewItems?: string[];
   coreConceptIntro?: string[];
   coreConcepts?: string[];
@@ -53,6 +68,7 @@ type NlpTopicReferenceContent = {
   modelImage?: NlpModelImage;
   modelSections?: NlpContentSection[];
   modelDiagram?: NlpModelDiagramNode[];
+  modelTables?: NlpContentTable[];
   patterns?: string[];
   patternSections?: NlpContentSection[];
 };
@@ -79,6 +95,111 @@ const TIME_LINES_TOPIC_TITLES = [
   "Pattern: Finishing Unfinished Business",
   "Hypnotic Language Patterns",
 ] as const;
+
+const TIME_LINES_MODEL_OVERVIEW =
+  "Page 163 frames time-lines as a meta-level map for how people sort experience into past, present, and future. The manual treats time as a human construction rather than an external object: people encode memories, present awareness, and imagined futures through internal representations, often arranged as a line or other spatial configuration. The location, size, colour, organisation, distance, and shape of that coding influences how events feel and how available they seem. In NLP and coaching, a time-line is therefore not reality itself; it is a blueprint of how the person currently represents time, causality, identity, expectation, and change.";
+
+const TIME_LINES_MODEL_OVERVIEW_ITEMS = [
+  "People encode past, present, and future through sensory and spatial distinctions. Many people organise these distinctions linearly, while others use shapes, metaphors, or multiple configurations for different life contexts.",
+  "Time-lines shape memory and expectation because the past supplies remembered references and the future supplies hopes, plans, fears, and imagined outcomes. Those encodings can influence state, behaviour, self-concept, and what feels possible now.",
+  "Advanced time awareness means being able to step back and notice the time map as a representation. Being caught inside time experience means living as if the remembered past or imagined future is present reality.",
+  "Time-line awareness matters because it lets a practitioner listen for temporal words and metaphors, elicit the structure behind them, and help the client gain more choice in how memories, expectations, states, and future actions are represented.",
+];
+
+const TIME_LINES_MODEL_IMAGES: NlpContentImage[] = [
+  {
+    alt: "Summary diagram contrasting in-time and through-time orientation around a person",
+    caption: "Time-line summary: common spatial coding for in-time and through-time experience.",
+    height: 309,
+    src: "/images/nlp/timeline-summary.png",
+    width: 455,
+  },
+  {
+    alt: "Diagram explaining in-time orientation and through-time orientation with body and arrow examples",
+    caption: "In-time and through-time orientation examples from the NLP Practitioner Manual.",
+    height: 370,
+    src: "/images/nlp/in-through-time.png",
+    width: 615,
+  },
+];
+
+const ELICITING_TIME_OVERVIEW =
+  'Sometimes the problem we struggle with does not concern anything in today\'s reality, but something that occurred in "the past." Thus, the problem exists about how we keep our thoughts and feelings from the past in our current awareness.';
+
+const ELICITING_TIME_CORE_CONCEPTS = [
+  "Page 166 debriefs time-lines by focusing on location as one of the most important coding variables. People often store time sequentially and linearly, and location gives the mind an analogue way to represent sequence, relationship, and order.",
+  "A practitioner should listen and look for how the person represents past, present, and future through size, distance, direction, position, and overall configuration. The person may describe events as behind, ahead, above, below, near, far, around them, or arranged as a line, shape, picture, calendar, filing cabinet, or other metaphor.",
+  "The debrief distinguishes in-time orientation from through-time orientation. In-time experience is associated with being absorbed in the moment and losing awareness of time. Through-time experience is associated with knowing what time it is, sequencing activities, valuing punctuality, and ordering events effectively.",
+  "Time coding affects present emotion, meaning, behaviour, and state because it supports cause-effect thinking, order, structure, cultural time concepts, and the felt reality of memories or future possibilities. Changing the coding can change how a person relates to an event or outcome.",
+];
+
+const ELICITING_TIME_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: 'Eliciting the Encoding of "Time"',
+    steps: [
+      {
+        text: "Identify a low-emotion, regular referent activity.",
+        prompts: [
+          "Choose something simple and repeated, such as driving to work, brushing teeth, dressing, or combing hair.",
+          "Invite the person to remember doing it five years ago, two years ago, last week, and this morning; then imagine doing it next week, two years from now, and five years from now.",
+        ],
+      },
+      {
+        text: "Notice how the person has encoded awareness of time.",
+        prompts: [
+          "Ask how they are aware of the activity across past, present, and future.",
+          "Explore what they see, hear, or sense that lets them distinguish one time zone from another.",
+        ],
+        promptBullets: [
+          "Look for colour or black-and-white, movie or still picture, 3D or flat, associated or dissociated viewpoint, framed or panoramic, brightness, distance, focus, and location in the field of vision.",
+        ],
+      },
+      {
+        text: "Step back and identify the overall configuration.",
+        prompts: [
+          "Ask whether the structure looks like a line, boomerang, spiral, calendar, filing cabinet, or another metaphor.",
+          "Check whether there is more than one time-line or time configuration, and whether different lines apply to business, personal, recreational, spiritual, or other life areas.",
+        ],
+      },
+      {
+        text: "Elicit the spatial sorting of the time zones.",
+        prompts: [
+          "Ask how the person distinguishes past, present, and future.",
+          "Identify where in space they sort memories of the past, their sense of the present, and imaginations of the future.",
+        ],
+      },
+    ],
+  },
+];
+
+const ELICITING_TIME_MODEL_TABLES: NlpContentTable[] = [
+  {
+    title: "Orientation to Time",
+    columns: ["Past", "Present", "Future"],
+    rows: [
+      ["Memories", "Sensory awareness", "Possibilities/plans"],
+      ["Solid/real", "Flexible", "Anticipation"],
+      ["Fixed, rigid, stuck", "Some fixedness", "Primarily movement"],
+      ["Limited", "Choice", "Opportunities/expansive"],
+      ["Predestination", "Responsibility", "Visions/dreams"],
+      ["Consequential", "Impulsivity thinking", "Anticipatory thinking"],
+      ["Already", "Now", "Then, one of these days"],
+      ["Sense of reality", "Sense of today; the now", "Sense of hope/desire"],
+    ],
+  },
+  {
+    title: "Time Styles",
+    columns: ["Out of time", "In time", "A-temporal"],
+    rows: [
+      ["Dissociated", "Associated", "Timelessness"],
+      ["Out of the body", "In/through the body", "Above the body"],
+      ["Sequential", "Random, simultaneous, synthetic", "Meta-position"],
+      ["Values and likes time", "Dis-values and dislikes time", "Neutral to time"],
+      ["On time; punctual", "Frequently late, non-prompt", ""],
+      ["Aware of time", "Lost in the now, the moment, the memory", ""],
+    ],
+  },
+];
 
 const NLP_PRESUPPOSITIONS = [
   "The map is not the territory; it is a symbolic representation of the territory.",
@@ -560,15 +681,36 @@ const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
 };
 
 const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
-  Object.fromEntries(
-    TIME_LINES_TOPIC_TITLES.map((title) => [
-      `time-lines-${slugify(title)}`,
-      {
-        tabs: ["overview"],
-        overview: NLP_MANUAL_PLACEHOLDER,
-      },
-    ]),
-  );
+  {
+    ...Object.fromEntries(
+      TIME_LINES_TOPIC_TITLES.map((title) => [
+        `time-lines-${slugify(title)}`,
+        {
+          tabs: ["overview"],
+          overview: NLP_MANUAL_PLACEHOLDER,
+        },
+      ]),
+    ),
+    "time-lines-the-time-lines-model": {
+      tabs: ["overview"],
+      overview: TIME_LINES_MODEL_OVERVIEW,
+      overviewImages: TIME_LINES_MODEL_IMAGES,
+      overviewItems: TIME_LINES_MODEL_OVERVIEW_ITEMS,
+    },
+    "time-lines-eliciting-the-encoding-of-time": {
+      tabs: [
+        "overview",
+        "core-concepts",
+        "patterns-techniques",
+        "models-diagrams",
+      ],
+      overview: ELICITING_TIME_OVERVIEW,
+      coreConcepts: ELICITING_TIME_CORE_CONCEPTS,
+      modelTables: ELICITING_TIME_MODEL_TABLES,
+      patterns: [],
+      patternSections: ELICITING_TIME_PATTERN_SECTIONS,
+    },
+  };
 
 export function getNlpTopicReferenceContent(topic: NlpTopic) {
   return (
@@ -609,12 +751,24 @@ export function getNlpTopicSearchText(topic: NlpTopic) {
     referenceContent.overviewCallout
       ? `${referenceContent.overviewCallout.quote} ${referenceContent.overviewCallout.source}`
       : "",
+    referenceContent.overviewImages
+      ?.map((image) => `${image.alt} ${image.caption ?? ""}`)
+      .join(" ") ?? "",
     (referenceContent.coreConcepts ?? topic.coreConcepts).join(" "),
     referenceContent.coreConceptSteps?.map((step) => step.text).join(" ") ?? "",
     (referenceContent.models ?? topic.models).join(" "),
     referenceContent.modelImage?.alt ?? "",
     referenceContent.modelDiagram
       ?.map((node) => `${node.label} ${node.detail}`)
+      .join(" ") ?? "",
+    referenceContent.modelTables
+      ?.map((table) =>
+        [
+          table.title,
+          table.columns.join(" "),
+          table.rows.map((row) => row.join(" ")).join(" "),
+        ].join(" "),
+      )
       .join(" ") ?? "",
     (referenceContent.patterns ?? topic.patterns).join(" "),
     referenceContent.coreConceptIntro?.join(" ") ?? "",
