@@ -507,7 +507,7 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     subModules: createPlaceholderSubModules([
       "6.1 Reasoning and judgement",
       "6.2 Problem-solving",
-      "3.3 Creativity and insight",
+      "6.3 Creativity and insight",
       "6.4 Higher-order thinking in applied contexts",
     ]),
     keyConcepts: [
