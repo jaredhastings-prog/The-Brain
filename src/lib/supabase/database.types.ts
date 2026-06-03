@@ -138,6 +138,42 @@ export type Database = {
         };
         Relationships: [];
       };
+      study_submodule_content: {
+        Row: {
+          content: string;
+          created_at: string;
+          field_name: string;
+          id: string;
+          submodule_slug: string;
+          unit_slug: string;
+          updated_at: string;
+          user_id: string;
+          week_slug: string;
+        };
+        Insert: {
+          content?: string;
+          created_at?: string;
+          field_name: string;
+          id?: string;
+          submodule_slug: string;
+          unit_slug: string;
+          updated_at?: string;
+          user_id: string;
+          week_slug: string;
+        };
+        Update: {
+          content?: string;
+          created_at?: string;
+          field_name?: string;
+          id?: string;
+          submodule_slug?: string;
+          unit_slug?: string;
+          updated_at?: string;
+          user_id?: string;
+          week_slug?: string;
+        };
+        Relationships: [];
+      };
       projects: {
         Row: {
           created_at: string;

@@ -20,6 +20,7 @@ import {
 import { DashboardCard } from "@/components/dashboard/dashboard-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { HealthyWorkSubModuleContentEditor } from "@/features/business-psychology/components/healthy-work-submodule-content-editor";
 import { StudyTabs } from "@/features/business-psychology/components/study-tabs";
 import type {
   StudyUnit,
@@ -66,7 +67,11 @@ export function BusinessPsychologyWeekPage({
         title="Weekly Study Structure"
         description="Open a sub-module to organise notes, concepts, screenshots, videos, readings, reflections, and linked captures."
       >
-        <SubModuleAccordion subModules={week.subModules ?? []} />
+        <SubModuleAccordion
+          subModules={week.subModules ?? []}
+          unit={unit}
+          week={week}
+        />
       </DashboardCard>
 
       <DashboardCard
@@ -258,8 +263,17 @@ function SummaryTable({
   );
 }
 
-function SubModuleAccordion({ subModules }: { subModules: WeeklySubModule[] }) {
+function SubModuleAccordion({
+  subModules,
+  unit,
+  week,
+}: {
+  subModules: WeeklySubModule[];
+  unit: StudyUnit;
+  week: WeeklyTopic;
+}) {
   const [openSubModuleId, setOpenSubModuleId] = React.useState("");
+  const isHealthyWorkPilot = unit.id === "healthy-work-wellbeing";
 
   if (!subModules.length) {
     return (
@@ -293,7 +307,14 @@ function SubModuleAccordion({ subModules }: { subModules: WeeklySubModule[] }) {
                 <span className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
                   <Layers3 className="size-4" />
                 </span>
-                <h3 className="truncate text-sm font-semibold text-foreground">
+                <h3
+                  className={cn(
+                    "min-w-0 text-sm font-semibold text-foreground",
+                    isHealthyWorkPilot
+                      ? "whitespace-normal break-words leading-5"
+                      : "truncate",
+                  )}
+                >
                   {subModule.title}
                 </h3>
               </div>
@@ -306,7 +327,15 @@ function SubModuleAccordion({ subModules }: { subModules: WeeklySubModule[] }) {
             </button>
             {isOpen ? (
               <div className="border-t border-border/70 p-4">
-                <SubModulePlaceholderGrid subModule={subModule} />
+                {isHealthyWorkPilot ? (
+                  <HealthyWorkSubModuleContentEditor
+                    subModuleSlug={subModule.id}
+                    unitSlug={unit.id}
+                    weekSlug={week.id}
+                  />
+                ) : (
+                  <SubModulePlaceholderGrid subModule={subModule} />
+                )}
               </div>
             ) : null}
           </article>
