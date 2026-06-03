@@ -25,6 +25,7 @@ export type WeeklySummarySection = {
 export type WeeklySubModule = {
   id: string;
   title: string;
+  learningBlocks?: WeeklyLearningBlock[];
   notes: string[];
   keyConcepts: string[];
   screenshots: string[];
@@ -32,6 +33,44 @@ export type WeeklySubModule = {
   readings: string[];
   reflections: string[];
   linkedCaptures: string[];
+};
+
+export type WeeklyLearningBlockKind =
+  | "activity"
+  | "definition"
+  | "discussion"
+  | "journal"
+  | "note"
+  | "objectives"
+  | "purpose"
+  | "reflection"
+  | "resource"
+  | "summary";
+
+export type WeeklyLearningBlock = {
+  id: string;
+  kind: WeeklyLearningBlockKind;
+  title: string;
+  body?: string;
+  definitions?: {
+    definition: string;
+    term: string;
+  }[];
+  items?: string[];
+  links?: {
+    href: string;
+    label: string;
+  }[];
+  steps?: {
+    body: string;
+    id: string;
+    items?: string[];
+    links?: {
+      href: string;
+      label: string;
+    }[];
+    title: string;
+  }[];
 };
 
 export type Assessment = {
@@ -93,6 +132,16 @@ function createSubModule(title: string, keyConcepts: string[] = []): WeeklySubMo
 
 function createSubModules(titles: string[]) {
   return titles.map((title) => createSubModule(title));
+}
+
+function createLearningSubModule(
+  title: string,
+  learningBlocks: WeeklyLearningBlock[],
+): WeeklySubModule {
+  return {
+    ...createSubModule(title),
+    learningBlocks,
+  };
 }
 
 function createPlaceholderSubModule(title: string): WeeklySubModule {
@@ -241,6 +290,642 @@ const healthyWorkWeekOneSummary: WeeklySummarySection[] = [
   },
 ];
 
+const healthyWorkWeekOneSubModules: WeeklySubModule[] = [
+  createLearningSubModule("Week 1 Introduction", [
+    {
+      id: "overview",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Welcome to Week 1 of Healthy Work and Wellbeing. This week is all about understanding how wellbeing can be defined both in life and in the workplace. It will involve some personal reflection on what wellbeing means to you, as well as an identification of wellbeing and related factors in the workplace in preparation for the upcoming assessments. We will also be looking at an example case and how healthy work and wellbeing factors can be assessed and related to this context.",
+    },
+    {
+      id: "learning-objectives",
+      kind: "objectives",
+      title: "Learning Objectives",
+      body: "By the end of this week, you should be able to:",
+      items: [
+        "Define and contrast individual wellbeing and wellbeing at work.",
+        "Critically review the different dimensions of wellbeing and apply these dimensions to a workplace context.",
+        "Identify the role of wellbeing factors at work.",
+      ],
+    },
+  ]),
+  createLearningSubModule(
+    "1.1 Discussion: Why is workplace wellbeing important?",
+    [
+      {
+        id: "purpose",
+        kind: "purpose",
+        title: "Purpose",
+        body:
+          "Wellbeing is a general term that is used often, across many facets of life. In this activity you will consider how wellness at work relates to wellness generally, connecting these concepts to your own experiences. This will help you to define and contrast individual wellbeing with wellbeing at work and start to build a picture of interrelated concepts which we will further refine over the coming activities.",
+      },
+      {
+        id: "activity-steps",
+        kind: "activity",
+        title: "Activity Steps",
+        steps: [
+          {
+            id: "step-1",
+            title: "Step 1",
+            body:
+              "Watch the video below and complete the short exercise it describes, the wellness wheel.",
+            links: [
+              {
+                href: "https://youtu.be/VJNMxYNzSUE",
+                label: "Wellness wheel video",
+              },
+            ],
+          },
+          {
+            id: "step-2",
+            title: "Step 2",
+            body: "Consider your wheel: Did you include work? Why or why not?",
+          },
+          {
+            id: "step-3",
+            title: "Step 3",
+            body:
+              "Review the definition for wellbeing below and copy it into your journal for future reference. You might like to start a note for definitions as you will be prompted to keep track of them in later activities.",
+          },
+          {
+            id: "step-4",
+            title: "Step 4",
+            body:
+              "On the discussion board, discuss the relationship between general wellbeing and the role of wellbeing at work.",
+          },
+        ],
+      },
+      {
+        id: "definition",
+        kind: "definition",
+        title: "Definition Callout",
+        definitions: [
+          {
+            term: "Wellbeing",
+            definition:
+              "An individual experience of feeling happy, fulfilled or content.",
+          },
+        ],
+      },
+      {
+        id: "discussion-prompt",
+        kind: "discussion",
+        title: "Discussion Prompt",
+        body:
+          "Why does wellbeing at work matter, or not matter, to you? Give up to three supporting points.",
+      },
+    ],
+  ),
+  createLearningSubModule("1.2 The concept of wellbeing", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Wellbeing isn't a new concept. Through reading this chapter, you'll be exposed to the concept and philosophies of wellbeing in a broad academic sense. By understanding how wellbeing is defined outside of the work context, you'll be able to better apply ideas about wellbeing in your later work.",
+    },
+    {
+      id: "image-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Image placeholder.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1",
+          body: "Read the article by Straume and Vitterso (2012).",
+        },
+        {
+          id: "step-2",
+          title: "Step 2",
+          body:
+            "Return to your wellbeing wheel. Are there changes to make based on what you've read?",
+        },
+        {
+          id: "step-3",
+          title: "Step 3",
+          body:
+            "View the chat topic below and add your comment, referring to the reading to support your response.",
+        },
+      ],
+    },
+    {
+      id: "reading-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Reading material placeholder.",
+    },
+    {
+      id: "journal-prompt",
+      kind: "journal",
+      title: "Journal Prompt",
+      body:
+        "Record any changes you would now make to your wellbeing wheel after completing the reading.",
+    },
+    {
+      id: "discussion-prompt",
+      kind: "discussion",
+      title: "Discussion Prompt",
+      body:
+        "Add a comment that connects your thinking about wellbeing to the Straume and Vitterso reading.",
+    },
+  ]),
+  createLearningSubModule("1.3 Dimensions of wellbeing", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Wellbeing is multifaceted, with key dimensions including hedonic, eudaimonic and social wellbeing. These different dimensions of wellbeing have different implications for individuals generally, and in the workplace. This activity will introduce these foundational dimensions, to help you bring different perspectives to your thinking as you analyse workplace wellness. Building on previous activities, this reading will enable you to further link the dimensions of wellbeing to personal examples, both in work and in life.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1",
+          body: "Read the chapter by Fisher et al. (2014).",
+        },
+        {
+          id: "step-2",
+          title: "Step 2",
+          body:
+            "Return to the three wellbeing dimensions - hedonic, eudaimonic and social - as they appear in the text. Using the text as reference, use your journal to jot your own definitions. You can use this journal to keep track of any unfamiliar terms.",
+        },
+        {
+          id: "step-3",
+          title: "Step 3",
+          body: "View the Facilitator's definitions below.",
+        },
+      ],
+    },
+    {
+      id: "reading-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Reading material placeholder.",
+    },
+    {
+      id: "journal-prompt",
+      kind: "journal",
+      title: "Journal Prompt",
+      body:
+        "Write your own definitions for hedonic wellbeing, eudaimonic wellbeing, and social wellbeing.",
+    },
+    {
+      id: "definition-callouts",
+      kind: "definition",
+      title: "Definition Callouts",
+      definitions: [
+        {
+          term: "Hedonic wellbeing",
+          definition:
+            "A state in which decreased pleasure and decreased pain is seen to lead to happiness.",
+        },
+        {
+          term: "Eudaimonic wellbeing",
+          definition:
+            "The subjective experiences associated with eudaimonia or living a life of virtue in pursuit of human excellence.",
+        },
+      ],
+    },
+  ]),
+  createLearningSubModule("1.4 Wellbeing at work", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Definitions and understandings of wellbeing can differ depending on context, as well as individual perspective. This is why it's important to engage with different sources to explore the concept of wellbeing, so we can further understand the commonalities and differences in how it can be conceptualised. The reading in this task is designed to deepen your understanding of wellbeing dimensions. After this reading, you'll engage in a category sorting exercise which helps to apply the dimensions of hedonic, social and eudaimonic wellbeing to the workplace.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1",
+          body:
+            "Consider the reading and definitions you wrote in the previous activity, then review the reading by Henderson and Knight (2012). Also read Conceptual Focus 3.1, pages 203-209. Take note of the author's discussion of wellbeing at work.",
+        },
+        {
+          id: "step-2",
+          title: "Step 2",
+          body:
+            "Using your new knowledge, sort the examples below as they relate to each of the dimensions.",
+        },
+        {
+          id: "step-3",
+          title: "Step 3",
+          body:
+            "Review the figure and definition below, using your journal to record any definitions you'd like to save for later.",
+        },
+      ],
+    },
+    {
+      id: "reading-placeholder-1",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Reading material placeholder.",
+    },
+    {
+      id: "reading-placeholder-2",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Reading material placeholder.",
+    },
+    {
+      id: "exercise-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Exercise image placeholder.",
+    },
+    {
+      id: "image-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Image placeholder.",
+    },
+    {
+      id: "definition",
+      kind: "definition",
+      title: "Definition Callout",
+      definitions: [
+        {
+          term: "Social Wellbeing",
+          definition:
+            "The extent to which we experience positive relationships and connectedness to others.",
+        },
+      ],
+    },
+  ]),
+  createLearningSubModule("1.5 The case of Minecorp", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Case studies can provide a helpful context for concepts that you will study. This activity will introduce our guiding case study which we will return to throughout the unit. By considering this case, you'll build skills you can apply in assessment.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1",
+          body: "Carefully read the case below. We will return to it in the coming weeks.",
+        },
+        {
+          id: "step-2",
+          title: "Step 2",
+          body:
+            "Watch the video below and read the Submission to the Western Australian Government Inquiry into Mental Health Impacts of FIFO Work Arrangements. As you read and watch, jot down ideas to prepare for the next activity.",
+        },
+      ],
+    },
+    {
+      id: "case-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Case study slides placeholder.",
+    },
+    {
+      id: "video-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "YouTube video placeholder.",
+    },
+    {
+      id: "journal-prompt",
+      kind: "journal",
+      title: "Journal Prompt",
+      body: "Make notes on:",
+      items: [
+        "Potential workplace wellness risks at Minecorp.",
+        "Potential wellness strategies.",
+        "Your own response: Do you have related personal experiences to share?",
+      ],
+    },
+  ]),
+  createLearningSubModule("1.6 Discussion: Your take on Minecorp", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "It is important to identify the factors in a particular context that may pose unique risks or challenges to health and wellbeing. This allows us to think more strategically about the methods and practices that may work to support health and wellbeing in that particular context, rather than only applying universal methods and approaches that may not always be relevant or apply. This activity gives you an opportunity to practise this process, which you will also undertake in both Assessment 2 and Assessment 3.",
+    },
+    {
+      id: "logo-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Minecorp logo placeholder.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1",
+          body:
+            "If required, revisit the Minecorp case study, then watch the videos below to expand on your understanding of the wellbeing risks associated with FIFO miners.",
+        },
+        {
+          id: "step-2",
+          title: "Step 2",
+          body:
+            "Return to your thoughts on Minecorp and post them in the discussion board. Before you comment, scan other responses from your peers and see if you can add a unique idea or extend an idea you read in another comment.",
+        },
+      ],
+    },
+    {
+      id: "video-placeholder-1",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "YouTube video placeholder 1.",
+    },
+    {
+      id: "video-placeholder-2",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "YouTube video placeholder 2.",
+    },
+    {
+      id: "discussion-prompt",
+      kind: "discussion",
+      title: "Discussion Prompt",
+      body: "Respond to the following:",
+      items: [
+        "What is one risk to wellbeing in this context and why?",
+        "What kinds of strategies might help ensure a healthy and safe workplace at Minecorp?",
+        "In your response, include any relevant personal insights or ideas based on your own workplace experiences.",
+      ],
+    },
+  ]),
+  createLearningSubModule("1.7 Brainstorming wellbeing concepts", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "One of the challenges of managing workplace wellbeing is understanding the individual complexity of different settings, which each have their own unique characteristics and issues. In this task, you will start to identify and explore the relationship between concepts presented throughout this week. This will help to inform what you submit in later assessments, where you will need to explain how different concepts interplay in your chosen workplace setting.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1",
+          body:
+            "Add concepts to the word cloud below that relate to wellbeing at work. If there are no concepts, then you're first. Help your peers by adding concepts to get the cloud started. For inspiration, view the list provided.",
+        },
+        {
+          id: "step-2",
+          title: "Step 2",
+          body:
+            "Consider the word cloud generated by yourself and peers and use one of the following methods to create a mind-map to show the relationships between different concepts and sub-concepts. How might they be influenced or affected by each other?",
+          items: [
+            "Work with pen and paper, using arrows, shapes and/or different colours.",
+            "Use PowerPoint to create your map, using different shapes and connectors.",
+            "Experiment with an online mind-mapping tool such as Coggle.",
+          ],
+        },
+        {
+          id: "step-3",
+          title: "Step 3",
+          body:
+            "Save a digital version of your mind-map that you can share and return to. This could be a screenshot or a photo.",
+        },
+        {
+          id: "step-4",
+          title: "Step 4",
+          body:
+            "Review the Facilitator's definitions below and record them in your journal for later review.",
+        },
+      ],
+    },
+    {
+      id: "word-map-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Screenshot of word map placeholder.",
+    },
+    {
+      id: "concept-ideas",
+      kind: "note",
+      title: "Concept Ideas",
+      items: [
+        "Hedonic wellbeing",
+        "Eudaimonic wellbeing",
+        "Social wellbeing",
+        "Safety culture",
+        "Risk factors",
+        "Hazards",
+        "Health and safety policy",
+        "Wellbeing plan / strategy",
+      ],
+    },
+    {
+      id: "definition-callouts",
+      kind: "definition",
+      title: "Definition Callouts",
+      definitions: [
+        {
+          term: "Safety Culture",
+          definition:
+            "Organisational culture that places a high level of importance on safety beliefs, values and attitudes.",
+        },
+        {
+          term: "Hazard",
+          definition: "A potential source of harm.",
+        },
+        {
+          term: "Risk Factor",
+          definition:
+            "Factors that can adversely impact an individual's mental or physical health.",
+        },
+      ],
+    },
+  ]),
+  createLearningSubModule("1.8 Understanding risks", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Part of understanding wellbeing in the workplace is identifying the factors that may influence it. The reading in this task introduces key psychosocial risks to wellbeing, which help us broaden our knowledge of both wellbeing and its associated factors.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1",
+          body: "Read the article by Dollard (2007).",
+        },
+        {
+          id: "step-2",
+          title: "Step 2",
+          body:
+            "Look at the collage below. The images relate to psychosocial risks mentioned in the article. Choose three images and leave a comment on each to explain.",
+        },
+        {
+          id: "step-3",
+          title: "Step 3",
+          body:
+            "Review the Facilitator's definition for psychosocial safety and record it into your journal.",
+        },
+      ],
+    },
+    {
+      id: "reading-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Reading material placeholder.",
+    },
+    {
+      id: "collage-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Collage image placeholder.",
+    },
+    {
+      id: "discussion-prompt",
+      kind: "discussion",
+      title: "Discussion Prompt",
+      body: "For each selected image, consider:",
+      items: [
+        "How does it relate to a risk or risks from the article?",
+        "What could be some of the outcomes related to these risks?",
+        "Did the comments of your peers spark new ideas?",
+      ],
+    },
+    {
+      id: "note",
+      kind: "note",
+      title: "Note",
+      body:
+        "There are no exact right or wrong answers as to what image relates to what, so feel free to be creative in your associations while also justifying your choices.",
+    },
+    {
+      id: "definition",
+      kind: "definition",
+      title: "Definition Callout",
+      definitions: [
+        {
+          term: "Psychosocial safety climate",
+          definition:
+            "Shared perceptions of organisational policies, practices and procedures for the protection of worker psychological health and safety.",
+        },
+      ],
+    },
+  ]),
+  createLearningSubModule("1.9 Discussion: Exploring wellbeing factors", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Now that we have brainstormed the concepts related to health and wellbeing at work and started to map these relationships, it's time to explore the relationship between these concepts in terms of how they might influence or be affected by each other. We will be referring to concepts that might influence wellbeing as factors from here on.",
+    },
+    {
+      id: "image-placeholder",
+      kind: "resource",
+      title: "Resource Placeholder",
+      body: "Image placeholder.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1",
+          body:
+            "Revisit your mind-map from the previous brainstorming activity and see what improvements you can make based on your more recent learning.",
+          items: [
+            "Use a visual indicator, such as colour or shape, to highlight wellbeing enablers in your map.",
+            "If desired, make a new version of your mind-map to better capture your ideas.",
+          ],
+        },
+        {
+          id: "step-2",
+          title: "Step 2",
+          body: "Go to the discussion below. Share your mind-map and share your thoughts.",
+        },
+        {
+          id: "step-3",
+          title: "Step 3",
+          body:
+            "Reflect on the discussion. What factors or interrelationships are interesting to you, and what questions might they spark? This thinking will help you when you consider what factors to focus on for assessment.",
+        },
+      ],
+    },
+    {
+      id: "discussion-prompt",
+      kind: "discussion",
+      title: "Discussion Prompt",
+      items: [
+        "What similarities and differences do you see?",
+        "How might you tweak your own mind-map or the mind-map of a peer?",
+      ],
+    },
+    {
+      id: "journal-prompt",
+      kind: "journal",
+      title: "Journal Prompt",
+      body: "Record your response in your journal.",
+    },
+  ]),
+  createLearningSubModule("Week 1 Summary", [
+    {
+      id: "summary",
+      kind: "summary",
+      title: "Summary",
+      body:
+        "This week we were introduced to the key dimensions of wellbeing, and we started the process of applying related concepts to the workplace context. In particular, we looked at:",
+      items: [
+        "hedonic, eudaimonic and social wellbeing",
+        "how industry might play a role in an organisation's response to wellbeing",
+        "workplace wellbeing, including relevant concepts and factors",
+      ],
+    },
+    {
+      id: "next-week",
+      kind: "summary",
+      title: "Next Week",
+      body:
+        "Next week we will start exploring more deeply the factors in the workplace that relate to wellbeing, including factors that support, or hinder, wellbeing at work. We will be applying the theoretical framework of job demands and resources to develop this understanding.",
+    },
+    {
+      id: "assessment-checklist",
+      kind: "reflection",
+      title: "Reflection Prompt",
+      body:
+        "Before you go, work through the checklist to ensure you're on track for your upcoming assessments.",
+    },
+  ]),
+];
+
 const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-1-defining-wellbeing-at-work",
@@ -249,17 +934,7 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
     summary:
       "Establishes the language of workplace wellbeing, including how wellbeing is defined, measured, and connected to healthy work.",
     summarySections: healthyWorkWeekOneSummary,
-    subModules: createSubModules([
-      "1.1 Discussion: Why is workplace wellbeing important?",
-      "1.2 The concept of wellbeing",
-      "1.3 Dimensions of wellbeing",
-      "1.4 Wellbeing at work",
-      "1.5 The case of Minecorp",
-      "1.6 Discussion: Your take on Minecorp",
-      "1.7 Brainstorming wellbeing concepts",
-      "1.8 Understanding risks",
-      "1.9 Discussion: Exploring wellbeing factors",
-    ]),
+    subModules: healthyWorkWeekOneSubModules,
     keyConcepts: [
       "Employee wellbeing",
       "Healthy work",

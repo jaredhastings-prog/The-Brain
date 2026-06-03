@@ -7,6 +7,7 @@ import {
   BookOpen,
   ChevronDown,
   ClipboardList,
+  ExternalLink,
   FileText,
   Image,
   Layers3,
@@ -23,6 +24,8 @@ import { Button } from "@/components/ui/button";
 import { StudyTabs } from "@/features/business-psychology/components/study-tabs";
 import type {
   StudyUnit,
+  WeeklyLearningBlock,
+  WeeklyLearningBlockKind,
   WeeklySubModule,
   WeeklySummarySection,
   WeeklyTopic,
@@ -293,7 +296,14 @@ function SubModuleAccordion({ subModules }: { subModules: WeeklySubModule[] }) {
                 <span className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
                   <Layers3 className="size-4" />
                 </span>
-                <h3 className="truncate text-sm font-semibold text-foreground">
+                <h3
+                  className={cn(
+                    "min-w-0 text-sm font-semibold text-foreground",
+                    subModule.learningBlocks?.length
+                      ? "whitespace-normal break-words leading-5"
+                      : "truncate",
+                  )}
+                >
                   {subModule.title}
                 </h3>
               </div>
@@ -306,7 +316,11 @@ function SubModuleAccordion({ subModules }: { subModules: WeeklySubModule[] }) {
             </button>
             {isOpen ? (
               <div className="border-t border-border/70 p-4">
-                <SubModulePlaceholderGrid subModule={subModule} />
+                {subModule.learningBlocks?.length ? (
+                  <LearningBlockStack blocks={subModule.learningBlocks} />
+                ) : (
+                  <SubModulePlaceholderGrid subModule={subModule} />
+                )}
               </div>
             ) : null}
           </article>
@@ -314,6 +328,127 @@ function SubModuleAccordion({ subModules }: { subModules: WeeklySubModule[] }) {
       })}
     </div>
   );
+}
+
+function LearningBlockStack({ blocks }: { blocks: WeeklyLearningBlock[] }) {
+  return (
+    <div className="min-w-0 space-y-3">
+      {blocks.map((block) => (
+        <LearningBlockCard block={block} key={block.id} />
+      ))}
+    </div>
+  );
+}
+
+function LearningBlockCard({ block }: { block: WeeklyLearningBlock }) {
+  return (
+    <section
+      className={cn(
+        "min-w-0 rounded-md border p-4 text-sm leading-6",
+        getLearningBlockClassName(block.kind),
+      )}
+    >
+      <h4 className="text-xs font-medium uppercase tracking-normal text-muted-foreground">
+        {block.title}
+      </h4>
+      {block.body ? (
+        <p className="mt-2 break-words text-sm leading-6 text-muted-foreground">
+          {block.body}
+        </p>
+      ) : null}
+      {block.items?.length ? (
+        <BulletList className="mt-3" items={block.items} />
+      ) : null}
+      {block.steps?.length ? <ActivitySteps steps={block.steps} /> : null}
+      {block.definitions?.length ? (
+        <div className="mt-3 grid gap-3 md:grid-cols-2">
+          {block.definitions.map((definition) => (
+            <div
+              className="min-w-0 rounded-md border border-primary/20 bg-primary/5 p-3"
+              key={definition.term}
+            >
+              <h5 className="text-sm font-semibold text-foreground">
+                {definition.term}
+              </h5>
+              <p className="mt-2 break-words text-sm leading-6 text-muted-foreground">
+                {definition.definition}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : null}
+      {block.links?.length ? <ResourceLinks links={block.links} /> : null}
+    </section>
+  );
+}
+
+function ActivitySteps({
+  steps,
+}: {
+  steps: NonNullable<WeeklyLearningBlock["steps"]>;
+}) {
+  return (
+    <ol className="mt-3 space-y-3">
+      {steps.map((step) => (
+        <li
+          className="min-w-0 rounded-md border border-border/70 bg-background/70 p-3"
+          key={step.id}
+        >
+          <h5 className="text-sm font-semibold text-foreground">{step.title}</h5>
+          <p className="mt-1 break-words text-sm leading-6 text-muted-foreground">
+            {step.body}
+          </p>
+          {step.items?.length ? (
+            <BulletList className="mt-2" items={step.items} />
+          ) : null}
+          {step.links?.length ? <ResourceLinks links={step.links} /> : null}
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function ResourceLinks({
+  links,
+}: {
+  links: NonNullable<WeeklyLearningBlock["links"]>;
+}) {
+  return (
+    <div className="mt-3 flex min-w-0 flex-col gap-2">
+      {links.map((link) => (
+        <a
+          className="inline-flex min-w-0 items-center gap-2 rounded-md border border-border/70 bg-background/70 px-3 py-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
+          href={link.href}
+          key={link.href}
+          rel="noreferrer"
+          target="_blank"
+        >
+          <ExternalLink className="size-4 shrink-0" />
+          <span className="min-w-0 break-words">{link.label}</span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function getLearningBlockClassName(kind: WeeklyLearningBlockKind) {
+  if (kind === "definition") {
+    return "border-primary/25 bg-primary/5";
+  }
+
+  if (kind === "discussion" || kind === "journal" || kind === "reflection") {
+    return "border-accent/60 bg-accent/10";
+  }
+
+  if (kind === "resource") {
+    return "border-dashed border-border bg-muted/20";
+  }
+
+  if (kind === "summary" || kind === "objectives") {
+    return "border-border/70 bg-card/80";
+  }
+
+  return "border-border/70 bg-muted/25";
 }
 
 function SubModulePlaceholderGrid({
@@ -358,9 +493,9 @@ function BulletList({
   return (
     <ul className={cn("space-y-2 text-sm leading-6 text-muted-foreground", className)}>
       {items.map((item) => (
-        <li className="flex gap-2" key={item}>
+        <li className="flex min-w-0 gap-2" key={item}>
           <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-          <span>{item}</span>
+          <span className="min-w-0 break-words">{item}</span>
         </li>
       ))}
     </ul>
