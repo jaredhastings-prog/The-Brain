@@ -9,7 +9,7 @@ import {
   ClipboardList,
   FileText,
   GraduationCap,
-  Image,
+  Image as ImageIcon,
   Landmark,
   Link2,
   NotebookPen,
@@ -128,7 +128,7 @@ export function BusinessPsychologyUnitPage({ unit }: { unit: StudyUnit }) {
                   title="Linked Captures"
                   items={[
                     "Future: show capture inbox items connected to this unit.",
-                    "Useful captures may include assignment ideas, reading notes, lecture screenshots, reflection notes, and voice dumps.",
+                    "Useful captures may include assignment ideas, reading notes, lecture screenshots, and voice dumps.",
                   ]}
                 />
               ),
@@ -141,13 +141,26 @@ export function BusinessPsychologyUnitPage({ unit }: { unit: StudyUnit }) {
 }
 
 function OverviewTab({ unit }: { unit: StudyUnit }) {
+  const isHumanInformationProcessing = unit.id === "human-information-processing";
+  const blocks = [
+    { title: "Description", items: [unit.overview.description] },
+    {
+      title: isHumanInformationProcessing ? "This includes" : "Learning Outcomes",
+      items: unit.overview.learningOutcomes,
+    },
+    {
+      title: isHumanInformationProcessing ? "Application" : "Unit Content",
+      items: unit.overview.unitContent,
+    },
+    { title: "Unit Presentation", items: unit.overview.unitPresentation },
+    { title: "Assessments", items: unit.overview.assessmentOverview },
+  ].filter((block) => block.items.length);
+
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <StudyBlock title="Description" items={[unit.overview.description]} />
-      <StudyBlock title="Learning Outcomes" items={unit.overview.learningOutcomes} />
-      <StudyBlock title="Unit Content" items={unit.overview.unitContent} />
-      <StudyBlock title="Unit Presentation" items={unit.overview.unitPresentation} />
-      <StudyBlock title="Assessments" items={unit.overview.assessmentOverview} />
+      {blocks.map((block) => (
+        <StudyBlock items={block.items} key={block.title} title={block.title} />
+      ))}
     </div>
   );
 }
@@ -232,7 +245,7 @@ function ResourceTab({ unit }: { unit: StudyUnit }) {
           key={resource}
         >
           <span className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
-            <Image className="size-4" />
+            <ImageIcon className="size-4" />
           </span>
           <div>
             <div className="text-sm font-medium text-foreground">{resource}</div>

@@ -95,6 +95,24 @@ function createSubModules(titles: string[]) {
   return titles.map((title) => createSubModule(title));
 }
 
+function createPlaceholderSubModule(title: string): WeeklySubModule {
+  return {
+    id: slugify(title),
+    title,
+    notes: ["Content to be added."],
+    keyConcepts: ["Content to be added."],
+    screenshots: ["Content to be added."],
+    videos: ["Content to be added."],
+    readings: ["Content to be added."],
+    reflections: ["Content to be added."],
+    linkedCaptures: ["Content to be added."],
+  };
+}
+
+function createPlaceholderSubModules(titles: string[]) {
+  return titles.map((title) => createPlaceholderSubModule(title));
+}
+
 const healthyWorkWeekOneSummary: WeeklySummarySection[] = [
   {
     id: "overview",
@@ -385,7 +403,17 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 1,
     title: "Foundations of human thinking",
     summary:
-      "Introduces the core questions, assumptions, and cognitive foundations of human information processing.",
+      "Introduces cognition, cognitive perspectives, mental concepts, categorisation, and knowledge networks.",
+    subModules: createPlaceholderSubModules([
+      "Week 1 introduction",
+      "1.1 The importance of cognition",
+      "1.2 Different cognitive perspectives",
+      "1.3 Basic building blocks of cognition: Mental concepts",
+      "1.4 Categorising via prototypes and exemplars",
+      "1.5 Knowledge networks: Part 1",
+      "1.6 Knowledge networks: Part 2",
+      "Week 1 summary",
+    ]),
     keyConcepts: [
       "Human thinking",
       "Cognition",
@@ -401,7 +429,16 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 2,
     title: "How do we obtain knowledge?",
     summary:
-      "Explores attention, perception, learning, and the ways people gather information from the environment.",
+      "Explores how knowledge is obtained through perception, object and face recognition, attention, and priming.",
+    subModules: createPlaceholderSubModules([
+      "Week 2 introduction",
+      "2.1 Perceiving and recognising objects: Word and object recognition",
+      "2.2 Perceiving and recognising objects: Face recognition",
+      "2.3 Attention: Selective attention",
+      "2.4 Attention: Divided attention",
+      "2.5 Attention: Priming",
+      "Week 2 summary",
+    ]),
     keyConcepts: ["Knowledge acquisition", "Attention", "Perception", "Learning"],
     assessmentLinks: [
       "Add assessment links, rubric notes, and study priorities for this week.",
@@ -412,7 +449,19 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 3,
     title: "How do we store knowledge (memory)?",
     summary:
-      "Covers memory systems, encoding, storage, retrieval, and the structure of remembered knowledge.",
+      "Examines memory architecture, long-term memory, retrieval, consolidation, bias, and context.",
+    subModules: createPlaceholderSubModules([
+      "Week 3 introduction",
+      "3.1 The architecture of memory",
+      "3.2 Long-term memory",
+      "3.3 Retrieving memories",
+      "3.4 Memory and the brain",
+      "3.5 Rehearsal and consolidatory strategies",
+      "3.6 Biases in memory processing—part 1",
+      "3.7 Biases in memory processing—part 2",
+      "3.8 The importance of context",
+      "Week 3 summary",
+    ]),
     keyConcepts: ["Memory", "Encoding", "Storage", "Retrieval"],
     assessmentLinks: [
       "Add assessment links, rubric notes, and study priorities for this week.",
@@ -421,9 +470,20 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-4-verbal-and-visual-knowledge",
     week: 4,
-    title: "Verbal and Visual knowledge",
+    title: "Verbal and visual knowledge",
     summary:
-      "Examines how people represent, process, and use verbal and visual forms of knowledge.",
+      "Explores verbal and visual knowledge, language, language disorders, mental imagery, and applied uses.",
+    subModules: createPlaceholderSubModules([
+      "Week 4 introduction",
+      "4.1 The fundamental structure of language",
+      "4.2 Acquiring and interpreting language",
+      "4.3 Disorders of language—part 1",
+      "4.4 Disorders of language—part 2",
+      "4.5 Mental imagery",
+      "4.6 The extremes of imagery",
+      "4.7 Applications beyond the lab",
+      "Week 4 summary",
+    ]),
     keyConcepts: [
       "Verbal knowledge",
       "Visual knowledge",
@@ -439,7 +499,17 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 5,
     title: "Information processing (executive functions)",
     summary:
-      "Maps executive functions such as planning, inhibition, working memory, cognitive control, and flexible thinking.",
+      "Focuses on executive functions, development, adulthood, assessment, and common testing considerations.",
+    subModules: createPlaceholderSubModules([
+      "Week 5 Introduction",
+      "5.1 What are executive functions?",
+      "5.2 Executive functions in early development",
+      "5.3 Adulthood and beyond",
+      "5.4 Measuring executive functions",
+      "5.5 Common issues with cognitive tests",
+      "5.6 Additional assessment considerations",
+      "Week 5 summary",
+    ]),
     keyConcepts: [
       "Executive functions",
       "Working memory",
@@ -455,7 +525,16 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     week: 6,
     title: "Higher-order thinking",
     summary:
-      "Focuses on reasoning, problem solving, decision making, creativity, and complex thought.",
+      "Examines mental shortcuts, cognitive biases, reasoning, problem-solving, and skill acquisition.",
+    subModules: createPlaceholderSubModules([
+      "Week 6 introduction",
+      "6.1 Mental shortcuts",
+      "6.2 Cognitive biases",
+      "6.3 Reasoning and thinking",
+      "6.4 Problem-solving strategies",
+      "6.5 Skill acquisition and learning",
+      "Week 6 summary",
+    ]),
     keyConcepts: [
       "Reasoning",
       "Problem solving",
@@ -472,9 +551,20 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-1-biopsychosocial-models-of-wellbeing",
     week: 1,
-    title: "Biopsychosocial models of wellbeing",
+    title: "Biopsychosocial models of Wellbeing",
     summary:
-      "Introduces wellbeing through biological, psychological, and social lenses.",
+      "Explores wellbeing through biological, psychological, social, cultural, and resilience-based perspectives.",
+    subModules: createPlaceholderSubModules([
+      "Week 1 Introduction",
+      "1.1 What is wellbeing?",
+      "1.2 Historical concepts of wellbeing",
+      "1.3 Introduction to the biopsychosocial model",
+      "1.4 Current theoretical understanding from a biopsychosocial perspective",
+      "1.5 Diverse views, values, beliefs and knowledge about wellbeing",
+      "1.6 Aboriginal and Torres Strait Islander peoples' perception and expression of wellbeing",
+      "1.7 Biopsychosocial risk and resilience factors for wellbeing",
+      "Week 1 Summary",
+    ]),
     keyConcepts: [
       "Biopsychosocial model",
       "Wellbeing",
@@ -488,9 +578,21 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-2-resiliency-models-of-wellbeing-across-the-lifespan",
     week: 2,
-    title: "Resiliency models of wellbeing across the lifespan",
+    title: "Resilliency models of wellbeing across the lifespan",
     summary:
-      "Explores resilience, development, protective factors, and wellbeing across life stages.",
+      "Examines resilience across the lifespan, including individual, community, academic, risk, and protective factors.",
+    subModules: createPlaceholderSubModules([
+      "Week 2 Introduction",
+      "2.1 What is resilience?",
+      "2.2 Theoretical models of resilience factors",
+      "2.3 Individual resilience",
+      "2.4 Community resilience",
+      "2.5 Academic resilience",
+      "2.6 Identifying risk and resilience indicators",
+      "2.7 Increasing resilience and reducing risk indicators",
+      "2.8 Communicating risk and resilience factors",
+      "Week 2 summary",
+    ]),
     keyConcepts: [
       "Resilience",
       "Lifespan development",
@@ -506,7 +608,17 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     week: 3,
     title: "Positive psychology for wellbeing",
     summary:
-      "Examines positive psychology concepts and interventions that support wellbeing.",
+      "Introduces positive psychology approaches to wellbeing, including optimism, gratitude, PERMA, and applied recommendations.",
+    subModules: createPlaceholderSubModules([
+      "Week 3 Introduction",
+      "3.1 Stress and coping - what does the literature say?",
+      "3.2 Positive psychology and optimism for wellbeing",
+      "3.2.1 Psychological research on positive psychology and optimism for wellbeing",
+      "3.3 Impact of gratitude on wellbeing",
+      "3.4 The PERMA model of wellbeing",
+      "3.5 Develop and communicate wellbeing recommendations for groups/organisations",
+      "Week 3 summary",
+    ]),
     keyConcepts: [
       "Positive psychology",
       "Strengths",
@@ -522,7 +634,20 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     week: 4,
     title: "Goals and motivation",
     summary:
-      "Connects motivation, goal pursuit, values, and wellbeing-related behaviour.",
+      "Explores goals, goal-setting, motivation, barriers, and evidence-based approaches to wellbeing-related behaviour change.",
+    subModules: createPlaceholderSubModules([
+      "Week 4 Introduction",
+      "4.1 Your experience of goals and motivations",
+      "4.2 Evidence-based goal setting",
+      "4.3 SMART goals",
+      "4.4 SWOT analysis of strengths and weaknesses",
+      "4.5 Barriers to achieving goals",
+      "4.6 Goal-achievement plan",
+      "4.7 Intrinsic and extrinsic motivation",
+      "4.8 Theories of motivation",
+      "4.9 Applying motivation theory to wellbeing",
+      "Week 4 summary",
+    ]),
     keyConcepts: ["Goals", "Motivation", "Values", "Behaviour change"],
     assessmentLinks: [
       "Add assessment links, rubric notes, and study priorities for this week.",
@@ -533,7 +658,19 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     week: 5,
     title: "Self-regulation and emotion",
     summary:
-      "Focuses on emotion, self-regulation, coping, and psychological wellbeing.",
+      "Examines emotion, emotional wellbeing, self-regulation, CBT, mindfulness, motivation, and individual differences.",
+    subModules: createPlaceholderSubModules([
+      "Week 5 Introduction",
+      "5.1 What is emotion? What is the role of emotion in wellbeing?",
+      "5.2 Indicators of emotional wellbeing",
+      "5.3 Therapeutic interventions for emotion regulation management - CBT and mindfulness",
+      "5.4 How emotion impacts motivation",
+      "5.5 Self-regulation theory",
+      "5.5.1 Character strengths",
+      "5.6 Managing internal factors in self-regulation",
+      "5.7 Individual differences in self-regulation",
+      "Week 5 summary",
+    ]),
     keyConcepts: [
       "Self-regulation",
       "Emotion",
@@ -549,7 +686,16 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
     week: 6,
     title: "Psychological science, academic achievement and personal wellbeing",
     summary:
-      "Integrates psychological science with academic achievement, sustainable study habits, and personal wellbeing.",
+      "Integrates psychological science with academic achievement, personal wellbeing, connectedness, and reflective practice.",
+    subModules: createPlaceholderSubModules([
+      "Week 6 introduction",
+      "6.1 Strategies to support academic achievement",
+      "6.2 How evidence-based strategies support personal wellbeing",
+      "6.3 Connectedness and wellbeing",
+      "6.4 Using psychological science to support Aboriginal and Torres Strait Islander peoples' social and emotional wellbeing",
+      "6.5 Reflection on unit learning",
+      "Week 6 summary",
+    ]),
     keyConcepts: [
       "Academic achievement",
       "Personal wellbeing",
@@ -649,19 +795,18 @@ export const businessPsychologyUnits: StudyUnit[] = [
     ],
     overview: {
       description:
-        "Structured placeholder for migrating Jared's Notion material into a unit workspace.",
+        "In this unit, you will learn about core concepts, principles and theories of cognitive psychology, learning and language.",
       learningOutcomes: [
-        "Add official learning outcomes from the university unit outline.",
+        "Information processing",
+        "Cognitive biases and errors",
+        "Learning and skills acquisition",
+        "Memory and executive functioning",
       ],
       unitContent: [
-        "Add weekly topics, readings, lecture notes, and assessment links.",
+        "You will also consider the application of cognitive psychology theories and principles to maximising human performance across a range of contemporary applications.",
       ],
-      unitPresentation: [
-        "Add presentation decks, screenshots, diagrams, and lecture media.",
-      ],
-      assessmentOverview: [
-        "Add assessment names, due dates, rubric notes, grades, and feedback.",
-      ],
+      unitPresentation: [],
+      assessmentOverview: [],
     },
   },
   {
@@ -679,19 +824,11 @@ export const businessPsychologyUnits: StudyUnit[] = [
     ],
     overview: {
       description:
-        "Structured placeholder for building a wellbeing unit workspace from Jared's existing Notion study system.",
-      learningOutcomes: [
-        "Add official learning outcomes from the university unit outline.",
-      ],
-      unitContent: [
-        "Add weekly topics, models, readings, lecture notes, and assessment links.",
-      ],
-      unitPresentation: [
-        "Add lecture decks, screenshots, videos, and concept diagrams.",
-      ],
-      assessmentOverview: [
-        "Add assessment names, due dates, rubric notes, grades, and feedback.",
-      ],
+        "This unit explores psychological theories, research, and applications related to wellbeing, flourishing, resilience, and human functioning. It considers how wellbeing is defined, measured, influenced, and supported across individual, relational, organisational, and applied contexts.",
+      learningOutcomes: [],
+      unitContent: [],
+      unitPresentation: [],
+      assessmentOverview: [],
     },
   },
 ];
