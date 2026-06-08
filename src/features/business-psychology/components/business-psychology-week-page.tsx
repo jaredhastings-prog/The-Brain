@@ -35,7 +35,10 @@ import { cn } from "@/lib/utils";
 
 type LearningLink = NonNullable<WeeklyLearningBlock["links"]>[number];
 type LearningTable = NonNullable<WeeklySummarySection["table"]>;
-type RenderableLearningBlock = WeeklyLearningBlock & { table?: LearningTable };
+type RenderableLearningBlock = WeeklyLearningBlock & {
+  activityVariant?: "timeline";
+  table?: LearningTable;
+};
 type RenderableSubModule = Omit<WeeklySubModule, "learningBlocks"> & {
   learningBlocks?: RenderableLearningBlock[];
 };
@@ -67,7 +70,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.1 Discussion: Why is workplace wellbeing important?": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     items: [
       "Wellbeing is both an employee health issue and an organisational performance issue.",
       "Poor wellbeing can show up as stress, disengagement, absence, safety incidents, turnover, or reduced work quality.",
@@ -77,7 +80,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.2 The concept of wellbeing": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "Wellbeing is a multi-dimensional state rather than a single mood or metric. It includes how people feel, function, relate, cope, and make meaning in the contexts where they live and work.",
     items: [
@@ -89,7 +92,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.3 Dimensions of wellbeing": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "Wellbeing can be mapped across connected dimensions. The dimensions are not isolated: strain in one area can affect the others.",
     table: {
@@ -111,7 +114,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.4 Wellbeing at work": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "Wellbeing at work is influenced by job demands, available resources, management behaviour, workplace culture, safety systems, role clarity, workload, relationships, and the wider organisational environment.",
     items: [
@@ -123,7 +126,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.5 The case of Minecorp": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "Minecorp acts as the applied case for examining workplace wellbeing in context. The case invites analysis of how work design, safety, leadership, stress, culture, and organisational responses interact.",
     items: [
@@ -135,7 +138,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.6 Discussion: Your take on Minecorp": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "The Minecorp discussion asks how wellbeing concepts apply to a realistic organisational setting. The useful move is to translate concepts into observable risks, needs, trade-offs, and intervention points.",
     items: [
@@ -147,7 +150,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.7 Brainstorming wellbeing concepts": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "This section expands the vocabulary for analysing wellbeing. The goal is to build a broad concept map before narrowing to assessment-relevant factors.",
     items: [
@@ -159,7 +162,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.8 Understanding risks": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "Risk analysis connects wellbeing concepts to likely harm. Risks may be psychosocial, physical, cultural, relational, procedural, or leadership-related.",
     items: [
@@ -171,7 +174,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "1.9 Discussion: Exploring wellbeing factors": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "Wellbeing factors interact. Workload may affect stress, stress may affect safety, safety climate may affect trust, and trust may affect whether employees report issues early.",
     items: [
@@ -183,7 +186,7 @@ const healthyWorkWeekOneSummaries: Record<string, RenderableLearningBlock> = {
   "Week 1 Summary": {
     id: "summary",
     kind: "summary",
-    title: "Summary",
+    title: "Key Summary",
     body:
       "Week 1 frames workplace wellbeing as a multi-dimensional, system-shaped, evidence-informed area of business psychology. The practical task is to define wellbeing clearly, identify relevant risks and resources, and connect those factors to realistic organisational action.",
     items: [
@@ -386,9 +389,10 @@ function enrichHealthyWorkWeekOneBlocks(
   subModule: WeeklySubModule,
 ): RenderableLearningBlock[] {
   const enrichedBlocks =
-    subModule.learningBlocks?.map((block) =>
-      enrichHealthyWorkWeekOneBlock(subModule, block),
-    ) ?? [];
+    subModule.learningBlocks
+      ?.map((block) => enrichHealthyWorkWeekOneBlock(subModule, block))
+      .filter((block) => shouldKeepHealthyWorkWeekOneBlock(subModule, block)) ??
+    [];
   const summaryBlock = healthyWorkWeekOneSummaries[subModule.title];
 
   if (!summaryBlock) {
@@ -419,6 +423,42 @@ function enrichHealthyWorkWeekOneBlocks(
     ...enrichedBlocks.slice(purposeIndex + 1),
   ];
 }
+
+function shouldKeepHealthyWorkWeekOneBlock(
+  subModule: WeeklySubModule,
+  block: RenderableLearningBlock,
+) {
+  if (
+    subModule.title === "1.2 The concept of wellbeing" &&
+    block.id === "reading-placeholder"
+  ) {
+    return false;
+  }
+
+  if (
+    subModule.title === "1.3 Dimensions of wellbeing" &&
+    block.id === "reading-placeholder"
+  ) {
+    return false;
+  }
+
+  if (
+    subModule.title === "1.4 Wellbeing at work" &&
+    block.id === "reading-placeholder-1"
+  ) {
+    return false;
+  }
+
+  if (
+    subModule.title === "1.8 Understanding risks" &&
+    block.id === "reading-placeholder"
+  ) {
+    return false;
+  }
+
+  return true;
+}
+
 function enrichHealthyWorkWeekOneBlock(
   subModule: WeeklySubModule,
   block: RenderableLearningBlock,
@@ -427,6 +467,7 @@ function enrichHealthyWorkWeekOneBlock(
     if (block.id === "activity-steps" && block.steps?.length) {
       return {
         ...block,
+        activityVariant: "timeline",
         steps: block.steps.map((step) =>
           step.id === "step-1"
             ? withLinks(step, healthyWorkWeekOneReadingLinks.straume)
@@ -444,6 +485,7 @@ function enrichHealthyWorkWeekOneBlock(
     if (block.id === "activity-steps" && block.steps?.length) {
       return {
         ...block,
+        activityVariant: "timeline",
         steps: block.steps.map((step) =>
           step.id === "step-1"
             ? withLinks(
@@ -479,6 +521,7 @@ function enrichHealthyWorkWeekOneBlock(
     if (block.id === "activity-steps" && block.steps?.length) {
       return {
         ...block,
+        activityVariant: "timeline",
         steps: block.steps.map((step) =>
           step.id === "step-1"
             ? withLinks(step, healthyWorkWeekOneReadingLinks.henderson)
@@ -496,6 +539,7 @@ function enrichHealthyWorkWeekOneBlock(
     if (block.id === "activity-steps" && block.steps?.length) {
       return {
         ...block,
+        activityVariant: "timeline",
         steps: block.steps.map((step) =>
           step.id === "step-1"
             ? withLinks(step, healthyWorkWeekOneReadingLinks.dollard)
@@ -507,6 +551,10 @@ function enrichHealthyWorkWeekOneBlock(
     if (block.id === "reading-placeholder") {
       return withLinks(block, healthyWorkWeekOneReadingLinks.dollard);
     }
+  }
+
+  if (block.id === "activity-steps") {
+    return { ...block, activityVariant: "timeline" };
   }
 
   return block;
@@ -693,7 +741,9 @@ function LearningBlockCard({ block }: { block: RenderableLearningBlock }) {
         <BulletList className="mt-3" items={block.items} />
       ) : null}
       {block.table ? <LearningBlockTable table={block.table} /> : null}
-      {block.steps?.length ? <ActivitySteps steps={block.steps} /> : null}
+      {block.steps?.length ? (
+        <ActivitySteps steps={block.steps} variant={block.activityVariant} />
+      ) : null}
       {block.definitions?.length ? (
         <div className="mt-3 grid gap-3 md:grid-cols-2">
           {block.definitions.map((definition) => (
@@ -760,9 +810,40 @@ function LearningBlockTable({ table }: { table: LearningTable }) {
 
 function ActivitySteps({
   steps,
+  variant = "cards",
 }: {
   steps: NonNullable<WeeklyLearningBlock["steps"]>;
+  variant?: "cards" | "timeline";
 }) {
+  if (variant === "timeline") {
+    return (
+      <ol className="mt-4 space-y-0">
+        {steps.map((step, index) => (
+          <li
+            className="relative min-w-0 border-l border-border/70 pb-5 pl-5 last:border-l-0 last:pb-0"
+            key={step.id}
+          >
+            <span className="absolute -left-3 grid size-6 place-items-center rounded-full border border-border bg-background text-[11px] font-semibold text-muted-foreground">
+              {index + 1}
+            </span>
+            <div className="min-w-0">
+              <h5 className="text-sm font-semibold text-foreground">
+                {step.title}
+              </h5>
+              <p className="mt-1 break-words text-sm leading-6 text-muted-foreground">
+                {step.body}
+              </p>
+              {step.items?.length ? (
+                <BulletList className="mt-2" items={step.items} />
+              ) : null}
+              {step.links?.length ? <ResourceLinks links={step.links} /> : null}
+            </div>
+          </li>
+        ))}
+      </ol>
+    );
+  }
+
   return (
     <ol className="mt-3 space-y-3">
       {steps.map((step) => (
@@ -820,7 +901,11 @@ function getLearningBlockClassName(kind: WeeklyLearningBlockKind) {
     return "border-dashed border-border bg-muted/20";
   }
 
-  if (kind === "summary" || kind === "objectives") {
+  if (kind === "summary") {
+    return "border-primary/20 bg-primary/5";
+  }
+
+  if (kind === "objectives") {
     return "border-border/70 bg-card/80";
   }
 
