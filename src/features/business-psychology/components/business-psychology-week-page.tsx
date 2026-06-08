@@ -33,6 +33,31 @@ import type {
 import { getUnitHref } from "@/features/business-psychology/data/business-psychology-data";
 import { cn } from "@/lib/utils";
 
+type LearningLink = NonNullable<WeeklyLearningBlock["links"]>[number];
+
+const healthyWorkWeekOneReadingLinks: Record<
+  "dollard" | "fisher" | "henderson" | "straume",
+  LearningLink
+> = {
+  dollard: {
+    href: "https://onedrive.live.com/?sortField=LinkFilename&isAscending=true&viewid=21523cd0%2D1147%2D4e12%2Db379%2D79b70de4a413&id=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU%2FNational%20surveillance%20of%20psychosocial%20risk%20factors%20in%20the%20workplace%20%20An%20international%20overview%2Epdf&parent=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU",
+    label: "Dollard (2007)",
+  },
+  fisher: {
+    href: "https://onedrive.live.com/personal/7ee6e2db905242ea/_layouts/15/doc.aspx?sourcedoc={aee54e4e-6e8e-4a19-a148-159d5856e5c7}&action=edit",
+    label:
+      "Part 1., Chapter 2: Conceptualizing and measuring wellbeing at work. Fisher et al. (2014).",
+  },
+  henderson: {
+    href: "https://onedrive.live.com/?sortField=LinkFilename&isAscending=true&viewid=21523cd0%2D1147%2D4e12%2Db379%2D79b70de4a413&id=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU%2FIntegrating%20the%20hedonic%20and%20eudaimonic%20perspectives%20to%20more%20comprehensively%20understand%20wellbeing%20and%20pathways%20to%20wellbeing%2Epdf&parent=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU",
+    label: "Henderson and Knight (2012)",
+  },
+  straume: {
+    href: "https://onedrive.live.com/?sortField=LinkFilename&isAscending=true&viewid=21523cd0%2D1147%2D4e12%2Db379%2D79b70de4a413&id=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU%2FHappiness%20%20inspiration%20and%20the%20fully%20functioning%20person%20%20Separating%20hedonic%20and%20%2Epdf&parent=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU",
+    label: "Straume and Vitterso (2012)",
+  },
+};
+
 export function BusinessPsychologyWeekPage({
   unit,
   week,
@@ -40,6 +65,8 @@ export function BusinessPsychologyWeekPage({
   unit: StudyUnit;
   week: WeeklyTopic;
 }) {
+  const subModules = getRenderableSubModules(unit, week);
+
   return (
     <div className="space-y-6 pb-20">
       <Button asChild size="sm" variant="ghost">
@@ -69,7 +96,7 @@ export function BusinessPsychologyWeekPage({
         title="Weekly Study Structure"
         description="Open a sub-module to organise notes, concepts, screenshots, videos, readings, reflections, and linked captures."
       >
-        <SubModuleAccordion subModules={week.subModules ?? []} />
+        <SubModuleAccordion subModules={subModules} />
       </DashboardCard>
 
       <DashboardCard
@@ -192,6 +219,138 @@ export function BusinessPsychologyWeekPage({
       </DashboardCard>
     </div>
   );
+}
+
+function getRenderableSubModules(unit: StudyUnit, week: WeeklyTopic) {
+  const subModules = week.subModules ?? [];
+
+  if (
+    unit.id !== "healthy-work-wellbeing" ||
+    week.id !== "week-1-defining-wellbeing-at-work"
+  ) {
+    return subModules;
+  }
+
+  return subModules.map((subModule) => {
+    if (!subModule.learningBlocks?.length) {
+      return subModule;
+    }
+
+    return {
+      ...subModule,
+      learningBlocks: subModule.learningBlocks.map((block) =>
+        enrichHealthyWorkWeekOneBlock(subModule, block),
+      ),
+    };
+  });
+}
+
+function enrichHealthyWorkWeekOneBlock(
+  subModule: WeeklySubModule,
+  block: WeeklyLearningBlock,
+): WeeklyLearningBlock {
+  if (subModule.title === "1.2 The concept of wellbeing") {
+    if (block.id === "activity-steps" && block.steps?.length) {
+      return {
+        ...block,
+        steps: block.steps.map((step) =>
+          step.id === "step-1"
+            ? withLinks(step, healthyWorkWeekOneReadingLinks.straume)
+            : step,
+        ),
+      };
+    }
+
+    if (block.id === "reading-placeholder") {
+      return withLinks(block, healthyWorkWeekOneReadingLinks.straume);
+    }
+  }
+
+  if (subModule.title === "1.3 Dimensions of wellbeing") {
+    if (block.id === "activity-steps" && block.steps?.length) {
+      return {
+        ...block,
+        steps: block.steps.map((step) =>
+          step.id === "step-1"
+            ? withLinks(
+                { ...step, body: "Read the chapter below." },
+                healthyWorkWeekOneReadingLinks.fisher,
+              )
+            : step,
+        ),
+      };
+    }
+
+    if (block.id === "reading-placeholder") {
+      return withLinks(block, healthyWorkWeekOneReadingLinks.fisher);
+    }
+
+    if (block.id === "definition-callouts" && block.definitions?.length) {
+      return {
+        ...block,
+        definitions: block.definitions.map((definition) =>
+          definition.term === "Hedonic wellbeing"
+            ? {
+                ...definition,
+                definition:
+                  "A state in which increased pleasure and decreased pain is seen to lead to happiness.",
+              }
+            : definition,
+        ),
+      };
+    }
+  }
+
+  if (subModule.title === "1.4 Wellbeing at work") {
+    if (block.id === "activity-steps" && block.steps?.length) {
+      return {
+        ...block,
+        steps: block.steps.map((step) =>
+          step.id === "step-1"
+            ? withLinks(step, healthyWorkWeekOneReadingLinks.henderson)
+            : step,
+        ),
+      };
+    }
+
+    if (block.id === "reading-placeholder-1") {
+      return withLinks(block, healthyWorkWeekOneReadingLinks.henderson);
+    }
+  }
+
+  if (subModule.title === "1.8 Understanding risks") {
+    if (block.id === "activity-steps" && block.steps?.length) {
+      return {
+        ...block,
+        steps: block.steps.map((step) =>
+          step.id === "step-1"
+            ? withLinks(step, healthyWorkWeekOneReadingLinks.dollard)
+            : step,
+        ),
+      };
+    }
+
+    if (block.id === "reading-placeholder") {
+      return withLinks(block, healthyWorkWeekOneReadingLinks.dollard);
+    }
+  }
+
+  return block;
+}
+
+function withLinks<T extends { links?: LearningLink[] }>(
+  item: T,
+  ...links: LearningLink[]
+): T {
+  const mergedLinks = [...(item.links ?? [])];
+
+  for (const link of links) {
+    if (!mergedLinks.some((existingLink) => existingLink.href === link.href)) {
+      mergedLinks.push(link);
+    }
+  }
+
+  return { ...item, links: mergedLinks };
 }
 
 function WeekSummaryContent({ week }: { week: WeeklyTopic }) {
