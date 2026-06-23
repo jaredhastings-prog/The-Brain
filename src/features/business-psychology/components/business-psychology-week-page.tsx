@@ -34,9 +34,21 @@ import { getUnitHref } from "@/features/business-psychology/data/business-psycho
 import { cn } from "@/lib/utils";
 
 type LearningLink = NonNullable<WeeklyLearningBlock["links"]>[number];
+type LearningStep = NonNullable<WeeklyLearningBlock["steps"]>[number];
 type LearningTable = NonNullable<WeeklySummarySection["table"]>;
-type RenderableLearningBlock = WeeklyLearningBlock & {
+type LearningImage = {
+  alt: string;
+  caption?: string;
+  src: string;
+};
+type RenderableLearningStep = LearningStep & {
+  detailTitle?: string;
+  paragraphs?: string[];
+};
+type RenderableLearningBlock = Omit<WeeklyLearningBlock, "steps"> & {
   activityVariant?: "timeline";
+  images?: LearningImage[];
+  steps?: RenderableLearningStep[];
   table?: LearningTable;
 };
 type RenderableSubModule = Omit<WeeklySubModule, "learningBlocks"> & {
@@ -44,7 +56,13 @@ type RenderableSubModule = Omit<WeeklySubModule, "learningBlocks"> & {
 };
 
 const healthyWorkWeekOneReadingLinks: Record<
-  "dollard" | "fisher" | "henderson" | "straume",
+  | "dollard"
+  | "fisher"
+  | "henderson"
+  | "minecorpDiscussionOne"
+  | "minecorpDiscussionTwo"
+  | "minecorpFifo"
+  | "straume",
   LearningLink
 > = {
   dollard: {
@@ -60,9 +78,59 @@ const healthyWorkWeekOneReadingLinks: Record<
     href: "https://onedrive.live.com/?sortField=LinkFilename&isAscending=true&viewid=21523cd0%2D1147%2D4e12%2Db379%2D79b70de4a413&id=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU%2FIntegrating%20the%20hedonic%20and%20eudaimonic%20perspectives%20to%20more%20comprehensively%20understand%20wellbeing%20and%20pathways%20to%20wellbeing%2Epdf&parent=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU",
     label: "Henderson and Knight (2012)",
   },
+  minecorpDiscussionOne: {
+    href: "https://www.youtube.com/watch?v=rOoJj054pCg",
+    label: "Minecorp discussion video 1",
+  },
+  minecorpDiscussionTwo: {
+    href: "https://www.youtube.com/watch?v=B4SVlGO7itA",
+    label: "Minecorp discussion video 2",
+  },
+  minecorpFifo: {
+    href: "https://www.youtube.com/watch?v=doFHEqwRLyY",
+    label: "Minecorp / FIFO wellbeing video",
+  },
   straume: {
     href: "https://onedrive.live.com/?sortField=LinkFilename&isAscending=true&viewid=21523cd0%2D1147%2D4e12%2Db379%2D79b70de4a413&id=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU%2FHappiness%20%20inspiration%20and%20the%20fully%20functioning%20person%20%20Separating%20hedonic%20and%20%2Epdf&parent=%2Fpersonal%2F7ee6e2db905242ea%2FDocuments%2FECU",
     label: "Straume and Vitterso (2012)",
+  },
+};
+
+const healthyWorkWeekOneImages = {
+  wellbeingDimensionsModel: {
+    alt: "Wellbeing dimensions model",
+    caption: "Wellbeing dimensions model",
+    src: "/images/business-psychology/wellbeing-dimensions-model.png",
+  },
+  wellbeingWorkDimensionsTable: {
+    alt: "Wellbeing at work dimensions table",
+    caption: "Wellbeing at work dimensions table",
+    src: "/images/business-psychology/wellbeing-work-dimensions-table.png",
+  },
+} satisfies Record<string, LearningImage>;
+
+const healthyWorkWeekOneMinecorpCaseStudy = [
+  "Minecorp is a mining company with the majority of its workers working on mine sites in a fly-in-fly-out (FIFO) capacity.",
+  "Minecorp is part of an industry which has set itself the ambitious goal of becoming free of fatalities. Its number-one value and commitment is the safety and health of its workforce, where everyone who goes to work in the industry returns home safe and healthy.",
+  "The Australian mining workforce, and the workforce of Minecorp specifically, is characterised as a high income, predominantly male workforce. Weekly salaries at Minecorp are nearly double the national average with even higher salaries for those working under fly-in fly-out (FIFO) or drive-in drive-out (DIDO) arrangements.",
+  "The median age of the mining workforce is 40 years old and approximately 10 per cent are under 25 years old (ABS, 2013). In addition to physical hazards and risks, there is also a degree of correlation between the industries demographics and those of at-risk groups in the Australian community, thereby warranting closer attention to the risk of mental illness.",
+];
+
+const healthyWorkWeekOneMinecorpNotes = [
+  "In the case of Minecorp, and Mining organisations in general, I see the overarching risk to employee wellbeing as the cultural acceptance to often cut corners in the interest of meeting targets and deadlines. Each time a procedure is not followed or a band-aid solution is applied, culminates into an accepted way-of-working.",
+  "As seen in the video, an inexperienced worker was put in a position to ultimately fail. Directly because of decisions made by supervisors feeling they were torn between production targets and worker shortages.",
+  "The impact on the inexperienced worker in this case will be mental and physical, clearly displaying signs of stress before the incident happened.",
+  "Along with wanting to impress as a new employee, those with an external validation bias are going to do what it takes to earn approval of others regardless of their internal congruence. Leading to mistakes and further risks.",
+  "A strategy for Minecorp that pertains to the risk I have highlighted is to de-stigmatise pushing back on requests that don't feel right. I see hierarchical expectations that when someone more experienced makes a request that it must be met — regardless of whether procedure is being followed.",
+  "This could be achieved by embedding a shared understanding that it is OK to speak up if it doesn't feel right. With the ultimate goal of building a psychologically safe culture where workers at all levels can question unsafe practices without fear of negative repercussions such as judgement, discrimination, or social isolation.",
+];
+
+const healthyWorkWeekOneInsertedBlocks: Record<string, RenderableLearningBlock> = {
+  "1.6 Discussion: Your take on Minecorp": {
+    id: "my-notes",
+    kind: "note",
+    title: "My Notes",
+    items: healthyWorkWeekOneMinecorpNotes,
   },
 };
 
@@ -388,11 +456,29 @@ function getRenderableSubModules(
 function enrichHealthyWorkWeekOneBlocks(
   subModule: WeeklySubModule,
 ): RenderableLearningBlock[] {
-  const enrichedBlocks =
+  let enrichedBlocks =
     subModule.learningBlocks
       ?.map((block) => enrichHealthyWorkWeekOneBlock(subModule, block))
       .filter((block) => shouldKeepHealthyWorkWeekOneBlock(subModule, block)) ??
     [];
+  const insertedBlock = healthyWorkWeekOneInsertedBlocks[subModule.title];
+
+  if (insertedBlock && !enrichedBlocks.some((block) => block.id === insertedBlock.id)) {
+    const activityIndex = enrichedBlocks.findIndex(
+      (block) => block.id === "activity-steps",
+    );
+
+    if (activityIndex === -1) {
+      enrichedBlocks = [...enrichedBlocks, insertedBlock];
+    } else {
+      enrichedBlocks = [
+        ...enrichedBlocks.slice(0, activityIndex + 1),
+        insertedBlock,
+        ...enrichedBlocks.slice(activityIndex + 1),
+      ];
+    }
+  }
+
   const summaryBlock = healthyWorkWeekOneSummaries[subModule.title];
 
   if (!summaryBlock) {
@@ -444,7 +530,22 @@ function shouldKeepHealthyWorkWeekOneBlock(
 
   if (
     subModule.title === "1.4 Wellbeing at work" &&
-    block.id === "reading-placeholder-1"
+    (block.id === "reading-placeholder-1" ||
+      block.id === "image-placeholder")
+  ) {
+    return false;
+  }
+
+  if (
+    subModule.title === "1.5 The case of Minecorp" &&
+    (block.id === "case-placeholder" || block.id === "video-placeholder")
+  ) {
+    return false;
+  }
+
+  if (
+    subModule.title === "1.6 Discussion: Your take on Minecorp" &&
+    (block.id === "video-placeholder-1" || block.id === "video-placeholder-2")
   ) {
     return false;
   }
@@ -478,6 +579,19 @@ function enrichHealthyWorkWeekOneBlock(
 
     if (block.id === "reading-placeholder") {
       return withLinks(block, healthyWorkWeekOneReadingLinks.straume);
+    }
+
+    if (block.id === "journal-prompt") {
+      return {
+        ...block,
+        body: undefined,
+        items: [
+          "Hedonic = feelings of pleasure",
+          "Eudaimonic = pursuing happiness by finding meaning and purpose",
+        ],
+        kind: "note",
+        title: "My Notes",
+      };
     }
   }
 
@@ -532,6 +646,58 @@ function enrichHealthyWorkWeekOneBlock(
 
     if (block.id === "reading-placeholder-1") {
       return withLinks(block, healthyWorkWeekOneReadingLinks.henderson);
+    }
+
+    if (block.id === "exercise-placeholder") {
+      return {
+        ...block,
+        body: "Wellbeing at work dimensions and model diagrams.",
+        images: [
+          healthyWorkWeekOneImages.wellbeingWorkDimensionsTable,
+          healthyWorkWeekOneImages.wellbeingDimensionsModel,
+        ],
+        title: "Resource",
+      };
+    }
+  }
+
+  if (subModule.title === "1.5 The case of Minecorp") {
+    if (block.id === "activity-steps" && block.steps?.length) {
+      return {
+        ...block,
+        activityVariant: "timeline",
+        steps: block.steps.map((step) => {
+          if (step.id === "step-1") {
+            return {
+              ...step,
+              detailTitle: "Case Study",
+              paragraphs: healthyWorkWeekOneMinecorpCaseStudy,
+            };
+          }
+
+          return step.id === "step-2"
+            ? withLinks(step, healthyWorkWeekOneReadingLinks.minecorpFifo)
+            : step;
+        }),
+      };
+    }
+  }
+
+  if (subModule.title === "1.6 Discussion: Your take on Minecorp") {
+    if (block.id === "activity-steps" && block.steps?.length) {
+      return {
+        ...block,
+        activityVariant: "timeline",
+        steps: block.steps.map((step) =>
+          step.id === "step-1"
+            ? withLinks(
+                step,
+                healthyWorkWeekOneReadingLinks.minecorpDiscussionOne,
+                healthyWorkWeekOneReadingLinks.minecorpDiscussionTwo,
+              )
+            : step,
+        ),
+      };
     }
   }
 
@@ -741,6 +907,7 @@ function LearningBlockCard({ block }: { block: RenderableLearningBlock }) {
         <BulletList className="mt-3" items={block.items} />
       ) : null}
       {block.table ? <LearningBlockTable table={block.table} /> : null}
+      {block.images?.length ? <LearningBlockImages images={block.images} /> : null}
       {block.steps?.length ? (
         <ActivitySteps steps={block.steps} variant={block.activityVariant} />
       ) : null}
@@ -763,6 +930,31 @@ function LearningBlockCard({ block }: { block: RenderableLearningBlock }) {
       ) : null}
       {block.links?.length ? <ResourceLinks links={block.links} /> : null}
     </section>
+  );
+}
+
+function LearningBlockImages({ images }: { images: LearningImage[] }) {
+  return (
+    <div className="mt-3 grid min-w-0 gap-3">
+      {images.map((image) => (
+        <figure
+          className="min-w-0 overflow-hidden rounded-md border border-border/70 bg-background/80 p-3"
+          key={image.src}
+        >
+          <img
+            alt={image.alt}
+            className="max-h-[520px] w-full object-contain"
+            loading="lazy"
+            src={image.src}
+          />
+          {image.caption ? (
+            <figcaption className="mt-2 break-words text-xs leading-5 text-muted-foreground">
+              {image.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      ))}
+    </div>
   );
 }
 
@@ -812,7 +1004,7 @@ function ActivitySteps({
   steps,
   variant = "cards",
 }: {
-  steps: NonNullable<WeeklyLearningBlock["steps"]>;
+  steps: NonNullable<RenderableLearningBlock["steps"]>;
   variant?: "cards" | "timeline";
 }) {
   if (variant === "timeline") {
@@ -833,6 +1025,25 @@ function ActivitySteps({
               <p className="mt-1 break-words text-sm leading-6 text-muted-foreground">
                 {step.body}
               </p>
+              {step.paragraphs?.length ? (
+                <div className="mt-3 min-w-0 rounded-md border border-border/70 bg-muted/20 p-3">
+                  {step.detailTitle ? (
+                    <h6 className="text-xs font-medium uppercase tracking-normal text-muted-foreground">
+                      {step.detailTitle}
+                    </h6>
+                  ) : null}
+                  <div className="mt-2 space-y-3">
+                    {step.paragraphs.map((paragraph) => (
+                      <p
+                        className="break-words text-sm leading-6 text-muted-foreground"
+                        key={paragraph}
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
               {step.items?.length ? (
                 <BulletList className="mt-2" items={step.items} />
               ) : null}
@@ -893,7 +1104,12 @@ function getLearningBlockClassName(kind: WeeklyLearningBlockKind) {
     return "border-primary/25 bg-primary/5";
   }
 
-  if (kind === "discussion" || kind === "journal" || kind === "reflection") {
+  if (
+    kind === "discussion" ||
+    kind === "journal" ||
+    kind === "note" ||
+    kind === "reflection"
+  ) {
     return "border-accent/60 bg-accent/10";
   }
 
