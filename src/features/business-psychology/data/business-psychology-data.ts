@@ -1383,6 +1383,57 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
   },
 ];
 
+const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
+  {
+    id: slugify("Week 1: Motivation and Performance Management"),
+    week: 1,
+    title: "Motivation and Performance Management",
+    summary: "",
+    keyConcepts: [],
+    assessmentLinks: [],
+  },
+  {
+    id: slugify("Week 2: Impact of Diversity on Performance Management"),
+    week: 2,
+    title: "Impact of Diversity on Performance Management",
+    summary: "",
+    keyConcepts: [],
+    assessmentLinks: [],
+  },
+  {
+    id: slugify("Week 3: Rewarding Performance"),
+    week: 3,
+    title: "Rewarding Performance",
+    summary: "",
+    keyConcepts: [],
+    assessmentLinks: [],
+  },
+  {
+    id: slugify("Week 4: Managing Individual and Team Performance"),
+    week: 4,
+    title: "Managing Individual and Team Performance",
+    summary: "",
+    keyConcepts: [],
+    assessmentLinks: [],
+  },
+  {
+    id: slugify("Week 5: Job Design and its Impact on Performance Management"),
+    week: 5,
+    title: "Job Design and its Impact on Performance Management",
+    summary: "",
+    keyConcepts: [],
+    assessmentLinks: [],
+  },
+  {
+    id: slugify("Week 6: The Future of Performance Management"),
+    week: 6,
+    title: "The Future of Performance Management",
+    summary: "",
+    keyConcepts: [],
+    assessmentLinks: [],
+  },
+];
+
 export const businessPsychologyUnits: StudyUnit[] = [
   {
     id: "healthy-work-wellbeing",
@@ -1504,6 +1555,64 @@ export const businessPsychologyUnits: StudyUnit[] = [
       unitContent: [],
       unitPresentation: [],
       assessmentOverview: [],
+    },
+  },
+  {
+    id: "managing-and-rewarding-performance",
+    name: "Managing and Rewarding Performance",
+    code: "HRM6005",
+    status: "Active",
+    result: "",
+    weeklyTopics: managingRewardingPerformanceWeeklyTopics,
+    assessments: [
+      {
+        id: "assessment-1-presentation",
+        title: "Assessment 1: Presentation",
+        grade: "",
+        notes: "Team based performance review. Worth 30%.",
+      },
+      {
+        id: "assessment-2-exercise",
+        title: "Assessment 2: Exercise",
+        grade: "",
+        notes: "Individual role play. Worth 30%.",
+      },
+      {
+        id: "assessment-3-report",
+        title: "Assessment 3: Report",
+        grade: "",
+        notes: "Final report. Worth 40%.",
+      },
+    ],
+    keyResources: [
+      "Unit outline to add",
+      "Weekly lecture notes to add",
+      "Assessment briefs to add",
+    ],
+    overview: {
+      description:
+        "Motivating and rewarding employees provides benefits not only for the employee, but also the organization. These are important aspects of performance management, a process that is required to obtain the best from employees, providing a stimulating and interesting work environment, and achieving organizational goals. In this unit, students explore the processes involved in managing employee performance within an organization from both an individual and team perspective.",
+      learningOutcomes: [
+        "Analyse the strategic link between performance management and reward processes and organisational outcomes.",
+        "Critique the different issues related to managing employee performance.",
+        "Analyse a performance management and reward system for an organisation.",
+        "Communicate knowledge of performance management and reward processes in the workplace.",
+        "Collaborate effectively in team settings to develop practical, theory-driven, and ethically responsible solutions to managing employee performance.",
+      ],
+      unitContent: [
+        "Motivation and Performance Management",
+        "Impact of Diversity on Performance Management",
+        "Rewarding Performance",
+        "Managing Individual and Team Performance",
+        "Job Design and its Impact on Performance Management",
+        "The Future of Performance Management",
+      ],
+      unitPresentation: [],
+      assessmentOverview: [
+        "Assessment 1: Presentation — Team based performance review (30%)",
+        "Assessment 2: Exercise — Individual role play (30%)",
+        "Assessment 3: Report — Final report (40%)",
+      ],
     },
   },
 ];
