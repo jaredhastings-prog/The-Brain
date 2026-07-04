@@ -74,6 +74,48 @@ export const recipes: Recipe[] = [
       "https://www.makingthymeforhealth.com/wp-content/uploads/2024/07/Biscoff-Protein-Donuts-dairy-free-gluten-free-_-2-700x1050.jpg",
     tags: ["High protein", "Gluten-free", "Dairy-free"],
   },
+  {
+    id: "gluten-free-chocolate-chip-cookies",
+    title: "Gluten-Free Chocolate Chip Cookies",
+    description:
+      "Chewy cookies with crisp golden edges and gooey centers, featuring brown butter, almond flour, and a 30-minute rest for optimal flavor development.",
+    category: "Snacks",
+    prepTime: "15 min (+30 min rest)",
+    cookTime: "10 min",
+    servings: 18,
+    ingredients: [
+      "1 1/3 cups (200g) gluten-free measure-for-measure flour",
+      "1/4 cup (25g) almond flour",
+      "1 teaspoon baking soda",
+      "1/2 teaspoon kosher salt",
+      "1/2 cup (113g) butter",
+      "1 tablespoon milk",
+      "3/4 cup (160g) brown sugar",
+      "1/4 cup (50g) granulated sugar",
+      "1 large egg",
+      "2 teaspoons vanilla extract",
+      "1 cup (170g) chocolate chips",
+      "Sea salt (optional, for sprinkling)",
+    ],
+    method: [
+      "Whisk together gluten-free flour, almond flour, baking soda, and salt; set aside.",
+      "Melt butter in a medium skillet over medium-low heat, stirring occasionally.",
+      "Once foaming, stir continuously until the butter turns golden brown with a nutty aroma; pour into a bowl immediately.",
+      "Add milk, brown sugar, and granulated sugar to the brown butter; whisk to combine.",
+      "Whisk in egg and vanilla until smooth and creamy.",
+      "Using a rubber spatula, mix in the dry ingredients until combined; stir in chocolate chips.",
+      "Cover the bowl and let the dough rest at room temperature for 30 minutes (or refrigerate up to 5 days).",
+      "Preheat oven to 350°F (175°C); line baking sheets with parchment paper.",
+      "Scoop dough into 2-tablespoon balls, spacing 2 inches apart.",
+      "Bake 10-12 minutes until the edges are golden and the center is set.",
+      "Cool on the baking sheet for 5 minutes; sprinkle with sea salt if desired; transfer to a wire rack.",
+    ],
+    source:
+      "https://meaningfuleats.com/the-best-gluten-free-chocolate-chip-cookies/",
+    imageUrl:
+      "https://meaningfuleats.com/wp-content/uploads/2024/04/gluten-free-chocolate-chip-cookies.jpg",
+    tags: ["Gluten-free", "Baking"],
+  },
 ];
 
 export function getRecipe(id: string): Recipe | undefined {
