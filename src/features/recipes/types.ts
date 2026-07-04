@@ -20,6 +20,7 @@ export type Recipe = {
   source?: string;
   imageUrl?: string;
   imagePath?: string;
+  galleryImages?: string[];
   tags?: string[];
 };
 

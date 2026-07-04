@@ -52,18 +52,18 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
               {recipe.servings} serving{recipe.servings !== 1 ? "s" : ""}
             </span>
           )}
-          {recipe.source && (
-            <a
-              href={recipe.source}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-foreground transition-colors"
-            >
-              <ExternalLink className="size-4" />
-              Source
-            </a>
-          )}
         </div>
+        {recipe.source && (
+          <a
+            href={recipe.source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 flex w-fit items-center gap-1.5 text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline transition-colors"
+          >
+            <ExternalLink className="size-4 shrink-0" />
+            <span className="break-all">{recipe.source}</span>
+          </a>
+        )}
       </div>
 
       {imageSrc && (
@@ -76,6 +76,25 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
             sizes="(max-width: 768px) 100vw, 800px"
             priority
           />
+        </div>
+      )}
+
+      {recipe.galleryImages && recipe.galleryImages.length > 0 && (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {recipe.galleryImages.map((src, i) => (
+            <div
+              key={src}
+              className="relative aspect-square overflow-hidden rounded-lg bg-muted/60"
+            >
+              <Image
+                src={src}
+                alt={`${recipe.title} — step photo ${i + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 50vw, 33vw"
+              />
+            </div>
+          ))}
         </div>
       )}
 
