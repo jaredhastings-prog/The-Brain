@@ -3,6 +3,7 @@ import {
   GraduationCap,
   LayoutDashboard,
   Sparkles,
+  UtensilsCrossed,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -38,5 +39,11 @@ export const primaryNavigation: NavItem[] = [
         icon: Sparkles,
       },
     ],
+  },
+  {
+    title: "Recipes",
+    href: "/recipes",
+    icon: UtensilsCrossed,
+    description: "Your recipe collection",
   },
 ];
