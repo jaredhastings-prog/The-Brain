@@ -79,6 +79,25 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
         </div>
       )}
 
+      {recipe.galleryImages && recipe.galleryImages.length > 0 && (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {recipe.galleryImages.map((src, i) => (
+            <div
+              key={src}
+              className="relative aspect-square overflow-hidden rounded-lg bg-muted/60"
+            >
+              <Image
+                src={src}
+                alt={`${recipe.title} — step photo ${i + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 50vw, 33vw"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
       <Separator />
 
       <div className="grid gap-8 md:grid-cols-[1fr_2fr]">
