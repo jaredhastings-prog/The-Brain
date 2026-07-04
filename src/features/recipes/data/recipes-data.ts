@@ -279,7 +279,8 @@ export const recipes: Recipe[] = [
       "Serve: scatter with fresh parsley and serve immediately with the cooked carrots and onion — eat fresh rather than storing, since histamine climbs the longer cooked meat sits.",
       "Notes: skip mustard, vinegar-based pickling spice, and tomato paste — all common corned beef additions but histamine-heavy. Serve same-day; if you must store leftovers, freeze portions immediately rather than refrigerating for days.",
     ],
-    imagePath: "images/recipes/low-histamine-corned-beef.jpg",
+    imageUrl:
+      "https://www.yourhomebasedmom.com/wp-content/uploads/2014/03/slow-cooker-corned-beef-10.jpg",
     tags: ["Low-histamine", "Slow cooker", "Eat fresh"],
   },
 ];
