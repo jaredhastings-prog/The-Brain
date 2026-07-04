@@ -248,6 +248,40 @@ export const recipes: Recipe[] = [
       "https://www.freshoffthegrid.com/wp-content/uploads/5-ingredient-vegan-taco-sq.jpg",
     tags: ["Vegan", "Quick", "Camping"],
   },
+  {
+    id: "low-histamine-slow-cooker-corned-beef",
+    title: "Low-Histamine Slow Cooker Corned Beef",
+    description:
+      "Corned beef is cured, so histamine is already baked in — the trick is boosting flavour with fresh, low-histamine ingredients instead of vinegar, tomato, or aged extras, and eating it fresh rather than as leftovers.",
+    category: "Dinner",
+    prepTime: "15 min",
+    cookTime: "Slow cook on low until fork-tender",
+    servings: 6,
+    ingredients: [
+      "1.5 kilograms corned beef brisket (rinse well to remove excess brine)",
+      "4 fresh garlic cloves, smashed",
+      "1 tablespoon fresh ginger, sliced",
+      "2 bay leaves",
+      "1 teaspoon whole black peppercorns",
+      "1 yellow onion, quartered",
+      "3 carrots, chopped",
+      "4 fresh thyme sprigs",
+      "2 tablespoons maple syrup",
+      "750 millilitres filtered water (enough to just cover meat)",
+      "2 tablespoons fresh parsley, chopped, for serving",
+    ],
+    method: [
+      "Rinse the beef: rinse the corned beef brisket thoroughly under cold water to wash off surface brine — this cuts sodium and some histamine load.",
+      "Load the slow cooker: place the quartered onion, chopped carrots, smashed garlic, sliced ginger, bay leaves, thyme sprigs, and peppercorns in the bottom of the slow cooker. Sit the beef on top.",
+      "Add liquid and syrup: pour in the filtered water until the meat is just covered, then drizzle over the maple syrup for depth without vinegar or tomato.",
+      "Slow cook: cover and cook on low until fork-tender.",
+      "Rest and slice: lift the beef out, rest 10 minutes, then slice against the grain.",
+      "Serve: scatter with fresh parsley and serve immediately with the cooked carrots and onion — eat fresh rather than storing, since histamine climbs the longer cooked meat sits.",
+      "Notes: skip mustard, vinegar-based pickling spice, and tomato paste — all common corned beef additions but histamine-heavy. Serve same-day; if you must store leftovers, freeze portions immediately rather than refrigerating for days.",
+    ],
+    imagePath: "images/recipes/low-histamine-corned-beef.jpg",
+    tags: ["Low-histamine", "Slow cooker", "Eat fresh"],
+  },
 ];
 
 export function getRecipe(id: string): Recipe | undefined {
