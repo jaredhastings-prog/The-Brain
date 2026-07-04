@@ -368,6 +368,41 @@ export const recipes: Recipe[] = [
     ],
     tags: ["Low-histamine", "Gluten-free", "Quick"],
   },
+  {
+    id: "keto-nutella-fat-bombs",
+    title: "Keto Nutella Fat Bombs (Sugar-Free, Low-Carb)",
+    description:
+      "Creamy keto Nutella fudge — a simple, decadent treat to cut cravings, perfect for holidays or everyday indulgence. 97 kcal per piece.",
+    category: "Snacks",
+    prepTime: "10 min (+1 hr chill)",
+    cookTime: "",
+    servings: 24,
+    ingredients: [
+      "8 ounces raw cacao paste or baker's chocolate",
+      "8 tablespoons butter",
+      "1/2 cup powdered monkfruit sweetener",
+      "1/4 cup heavy whipping cream",
+      "1/2 teaspoon vanilla extract",
+      "1/4 cup chopped hazelnuts",
+    ],
+    method: [
+      "Melt cacao and butter in a small saucepan or double boiler over low heat.",
+      "Remove from heat and mix in sweetener, cream, and vanilla. Fold in the nuts.",
+      "Line an 8x8-inch dish with parchment paper and fill with the melted chocolate mixture.",
+      "Chill in the refrigerator for one hour until firm.",
+      "Pull up the parchment paper and place flat on the counter. Cut the fudge into 24 pieces with a sharp knife (4 columns x 6 rows). Dip the knife in warm water between slices if the chocolate sticks.",
+      "Store in the refrigerator or freezer in an airtight container.",
+    ],
+    source: "https://www.primaledgehealth.com/keto-nutella-fat-bombs/",
+    imageUrl:
+      "https://www.primaledgehealth.com/wp-content/uploads/2022/06/nutella-fudge.jpg",
+    galleryImages: [
+      "https://www.primaledgehealth.com/wp-content/uploads/2017/09/Keto-Nutella-Fat-Bombs-2-745x1024.jpg",
+      "https://www.primaledgehealth.com/wp-content/uploads/2017/09/Keto-Nutella-Fat-Bombs-3-745x1024.jpg",
+      "https://www.primaledgehealth.com/wp-content/uploads/2017/09/Keto-Nutella-Fat-Bombs-4-745x1024.jpg",
+    ],
+    tags: ["Keto", "Sugar-free", "Low-carb"],
+  },
 ];
 
 export function getRecipe(id: string): Recipe | undefined {
