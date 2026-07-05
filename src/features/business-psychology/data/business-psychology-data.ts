@@ -52,6 +52,11 @@ export type WeeklyLearningBlock = {
   kind: WeeklyLearningBlockKind;
   title: string;
   body?: string;
+  images?: {
+    alt: string;
+    caption?: string;
+    src: string;
+  }[];
   definitions?: {
     definition: string;
     term: string;
@@ -1392,14 +1397,595 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
     keyConcepts: [],
     assessmentLinks: [],
     subModules: [
-      createSubModule("1.1 Get to Know Your Assessment / Project Group"),
-      createSubModule("1.2 Performance Management Systems"),
-      createSubModule("1.3 Performance Management — A Multilevel Interpretation"),
-      createSubModule("1.4 Performance Management — A Process"),
-      createSubModule("1.5 Goal Setting"),
-      createSubModule("1.6 Performance Management — Formality"),
-      createSubModule("1.7 Performance Management — A Critique (Part 1)"),
-      createSubModule("1.8 Performance Management — A Critique (Part 2)"),
+      createLearningSubModule("1.1 Get to Know Your Assessment / Project Group", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "You will be working with your project group over weeks 1 and 2 to develop a presentation for Assessment 1.",
+        },
+        {
+          id: "task",
+          kind: "activity",
+          title: "Task",
+          body: "Each project group has its own dedicated discussion board. Visit this to introduce yourself to the rest of your group and organise your first meeting. You can use any method to coordinate and communicate with your team — you don't need to use the discussion board after the initial meeting.",
+        },
+      ]),
+      createLearningSubModule("1.2 Performance Management Systems", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Performance management systems, like any systems, contain a set of principles and procedures that determine the way something is done. The aim of the activity is to become familiar with a PMS by examining its components.",
+        },
+        {
+          id: "pms-diagram",
+          kind: "activity",
+          title: "The Components of a Performance Management System",
+          body: "The image below presents an outline of the various components that make up a PMS.",
+          images: [
+            {
+              alt: "Components of a performance management system",
+              caption: "Components of a performance management system",
+              src: "/images/business-psychology/hrm6005/week-1/pms-components.png",
+            },
+          ],
+        },
+        {
+          id: "pms-component-definitions",
+          kind: "definition",
+          title: "PMS Component Definitions",
+          definitions: [
+            {
+              term: "Performance management",
+              definition:
+                "Isn't the whole thing 'performance management'? Yes and no! 'Performance management' can also refer to the action of a manager 'managing' the performance of an individual or team that may not be performing. In essence, when someone isn't performing a manager may adopt a formal 'performance improvement plan' — a negotiated set of actions that the employee and manager agree on, so as to get the employee's output and/or behaviour back into appropriate alignment. This action is also referred to as 'performance management' — though in this case, it is framed in the negative. Managing underperformance needs to be done in a way that is appropriate and fair, and there is legislation to govern this (see the Fair Work legal framework note below).",
+            },
+            {
+              term: "Performance management systems",
+              definition:
+                "Encompasses everything! The main emphasis on a performance management system is on the policies and processes; importantly however, it needs to be appropriately resourced by the organisation. By conceptualising performance management as a multi-level system — from the organisation (macro) to the manager (meso), to the employees (micro) — senior managers can see where there may be particular strengths or weaknesses in the system, and put in place interventions to improve things. For example, senior managers may get a report noting that female employees receive fewer financial bonuses than their male equivalents — and they can investigate whether there are gaps in the way performance is being measured, or inherent biases present in line managers, or poorly worded policies or processes. Systems are sometimes classed as 'formal' or 'informal' — but in truth, all systems have elements of formal (bureaucratic) and informal practices.",
+            },
+            {
+              term: "The performance appraisal",
+              definition:
+                "The most 'visible' and 'applied' element of a performance management system. A performance appraisal is a process whereby an employee (usually) sits down with their manager, every six months or on an annual basis, and receives feedback about how they have performed. The appraisal never quite captures a full account of the actual performance of an employee, and can be subject to significant bias, which can make the whole process disempowering and, ironically, de-motivating. At the same time, it is an important step to ensure an employee is doing the job they are paid to do. In some contexts it may include an 'overall score' and potentially a stated financial bonus or reward — though whether an employee receives a reward is very much tied to their work context.",
+            },
+            {
+              term: "Employee performance",
+              definition:
+                "The full account of an employee's output, both good and bad. Over the course of a year, it would be normal for an employee to have 'a few success stories' — where they have overdelivered on a target or KPI. At the same time, some KPIs may have been too ambitious (often referred to as 'stretch goals') and may not have been achieved in full. Performance encompasses both success and failure — but ideally the scale is tipped much more towards the success column. Performance is usually measured on reductionist, quantitative metrics — profit generated, widgets created — and in more and more work contexts such quantitative measures are a poor reflection of what performance is; occasionally narratives or case examples are used as discussion points in the appraisal process.",
+            },
+            {
+              term: "Work behaviour and attitude",
+              definition:
+                "An account of how an employee 'operates' at work. Some organisations place great emphasis on people dressing professionally, being on time, being seen to work diligently; others are more results-oriented and give staff great freedom. Importantly, sometimes great performers can have negative work attitudes and poor behaviour, and poor performers may present with the right 'look and feel'. Accounting for behaviour and attitude is important to ensure bias isn't negatively affecting the result. Employees may also conduct corrupt, inappropriate, or negative work acts such as bullying, sexual harassment, or embezzlement. Irrespective of how good they are at performing, one of the roles of HRM is to keep such behaviour in check — mitigate it where possible and apply disciplinary actions where it is uncovered.",
+            },
+            {
+              term: "Employee motivation",
+              definition:
+                "Captures the things that drive an employee to work. Motivation is a complex thing — influenced by the self (the employee themselves), the organisation and job design, as well as the reward and recognition structures that are put in place to drive employees' efforts and behaviours towards certain actions. Deep dive in week three.",
+            },
+            {
+              term: "Work design (job design)",
+              definition:
+                "Has a huge impact on employee motivation and ultimately performance. Work design captures how, when, and where a person undertakes their work — the tasks that person does, the tools they use to do it (computers, phones, internet), the hours they work, the regularity of work. When exploring work design, we often use the Job Demands-Resources Model.",
+            },
+            {
+              term: "Line manager support",
+              definition:
+                "It may seem like a small thing, but studies show that the way a line manager engages with their employees can predict between 50-80% of employee performance. Line managers have a fundamental role in negotiating and setting goals with their staff, and then monitoring and appraising their performance over time. However, there is an obvious power difference in the relationship, and for this reason biases, power struggles, politics, personality pathologies and office dynamics can get in the way of a constructive, supportive, and effective relationship.",
+            },
+            {
+              term: "Performance management policies and processes",
+              definition:
+                "Most large organisations will have a performance management policy and associated processes — a set of formal parameters that articulate who does what to ensure performance against goals is being effectively set, monitored, and ideally met. The policies will detail processes for managing underperformance and employment termination. The policy may also detail actions related to employee misconduct — or such considerations may be dealt with in a separate policy (such as a code of conduct policy). Employee performance is sometimes linked with behaviour, and thus misconduct and underperformance are sometimes considered in tandem.",
+            },
+            {
+              term: "Organisational support and resourcing",
+              definition:
+                "Many organisations have performance management policies, however, not all organisations will perform! For a performance management system to really work, it needs to be appropriately resourced — remuneration of staff, bonuses, other non-financial incentives, training for managers and employees. Without this organisational support, irrespective of how good 'on paper' any policy, process or action is, it will fail.",
+            },
+          ],
+        },
+        {
+          id: "fair-work-legal-framework",
+          kind: "note",
+          title: "Fair Work Legal Framework (applies across the whole unit)",
+          body: "Underperformance = not doing the job properly, breaching policies, or unacceptable/disruptive behaviour. It's distinct from serious misconduct (safety/reputation risk, or deliberate incompatible behaviour) — that's handled differently, via notice and final pay. Process an employer should follow:",
+          items: [
+            "Check the award, agreement, contract or policy first for any specific rules.",
+            "Hold a private meeting — explain the issue, offer a support person, agree on clear improvement steps, document it.",
+            "If needed, issue a written warning — clear reason, documented details, clear expectations, fair and reasonable.",
+            "Follow up with regular check-ins.",
+            "If no improvement, consider another meeting, further warning, changed duties/training, or (as a last resort) termination.",
+            "Key legal point: there's no fixed rule requiring 1 or 3 warnings before dismissal — but the employee should generally get a genuine chance to improve. If they're later dismissed and claim unfair dismissal, the Fair Work Commission considers whether this process was followed.",
+            "Best practice: employers should create and share a written performance management policy outlining what underperformance is, how it will be managed, and the possible consequences — kept up to date and applied consistently. It helps make expectations clear and prevents employees feeling treated unfairly.",
+          ],
+          links: [
+            {
+              href: "https://www.fairwork.gov.au/employment-conditions/performance-in-the-workplace#what-is-underperformance",
+              label: "Fair Work — Managing underperformance",
+            },
+          ],
+        },
+        {
+          id: "jdr-reading",
+          kind: "resource",
+          title: "Optional Additional Reading: Schaufeli & Taris (2014)",
+          body: "Schaufeli, W., & Taris, T. (2014). A Critical Review of the Job Demands-Resources Model: Implications for Improving Work and Health. In Bridging Occupational, Organizational and Public Health: A Transdisciplinary Approach (pp. 43-68).",
+        },
+        {
+          id: "jdr-summary",
+          kind: "summary",
+          title: "Article Summary: Job Demands-Resources (JD-R) Model",
+          body: "Core idea: two processes drive employee wellbeing. Health impairment process: high job demands → strain/burnout → health problems. Motivational process: high job resources → engagement → positive performance outcomes. Job demands = aspects requiring effort with physical/psychological costs (workload, conflict, job insecurity). Job resources = aspects that help achieve goals, reduce demands, or drive growth (feedback, autonomy, support).",
+          items: [
+            "History: 2001 (Demerouti et al.) original model focused on burnout only; 2004 (Schaufeli & Bakker) revised model added work engagement as the positive counterpart; later extended to include personal resources (self-efficacy, optimism, resilience).",
+            "Evidence: strong, consistent support across countries/industries. Resources reliably predict engagement; demands reliably predict burnout. Some evidence of reciprocal causation — engagement can build future resources ('gain spirals'). Buffering interaction effects are real but weaker than direct effects.",
+            "Unresolved issue 1 — Epistemological status: it's a descriptive/heuristic model, not explanatory — it doesn't say why specific resources work.",
+            "Unresolved issue 2 — Demands vs. resources isn't clean: a 'challenge' demand can motivate; a 'resource' can feel threatening. Authors suggest redefining by valence.",
+            "Unresolved issue 3 — Personal resources' role is inconsistent — mediator, moderator, or third variable across studies.",
+            "Unresolved issue 4 — Health impairment and motivational processes may not be fully separate — they seem to interact/overlap.",
+            "Unresolved issue 5 — Reciprocal causation: demands/resources and outcomes influence each other over time, not just one-way.",
+            "Unresolved issue 6 — Multilevel issues: applying the model to teams/organisations requires matching the level of measurement, which many studies get wrong.",
+            "Practical value: the model's flexibility is its main strength. The JD-R Monitor is used in an 8-step cycle: define problem → design survey → communicate → run survey/give individual feedback → analyse/report → discuss results → intervene → evaluate and repeat.",
+            "Bottom line: JD-R is popular because it's broad and practical, but that breadth means it lacks precision — using it well requires pairing it with more specific psychological theories.",
+          ],
+          images: [
+            {
+              alt: "The revised Job Demands-Resources (JD-R) model",
+              caption: "The revised Job Demands-Resources (JD-R) model (Fig 4.1)",
+              src: "/images/business-psychology/hrm6005/week-1/jdr-model.png",
+            },
+          ],
+        },
+        {
+          id: "my-notes",
+          kind: "journal",
+          title: "My Notes from Week 1",
+          items: [
+            "The way that a line manager engages with their employees can predict between 50-80% of employee performance.",
+            "Effort Reward Imbalance (ERI) model.",
+            "The revised JD-R model included work engagement in addition to burnout and considered burnout and work engagement to be mediators of the relation between job demands and health problems, and job resources and turnover intention, respectively.",
+            "Work engagement refers to a positive, fulfilling, work-related state of mind characterised by vigor (high levels of energy and mental resilience while working), dedication (a sense of significance, enthusiasm, and challenge), and absorption (being focused and happily engrossed in one's work).",
+            "Burnout will lead to health problems, such as depression, cardiovascular disease, or psychosomatic complaints.",
+            "Job resources have inherently motivational qualities (effort-recovery theory).",
+            "Offering many resources fosters workers' willingness to dedicate their efforts and abilities to the work task (extrinsic motivation).",
+            "They also play an intrinsic motivational role because they satisfy basic human needs for autonomy and relatedness.",
+            "Personal resources = psychological characteristics or aspects of the self that are generally associated with resiliency and state management (inner game).",
+          ],
+        },
+      ]),
+      createLearningSubModule(
+        "1.3 Performance Management — A Multilevel Interpretation",
+        [
+          {
+            id: "purpose",
+            kind: "purpose",
+            title: "Purpose",
+            body: "At a conceptual level, understanding how an organisation develops strategies and how these strategies translate into employee actions at the bottom of the hierarchy are important for seeing how PMSs work in practice. This task provides the cognitive tools to conceptualise organisational actions from the macro to the meso and the micro then back again.",
+          },
+          {
+            id: "why-we-work",
+            kind: "activity",
+            title: "Let's Get High Level",
+            steps: [
+              {
+                id: "why-do-we-work",
+                title: "Why do we work?",
+                body: "Rather than being a rhetorical question, the purpose of asking why we work is an important one. We need to ask it to understand why we have organisations, departments, teams, bosses, colleagues, targets, objectives, computers, the internet, etc. Organisations have emerged, particularly within the last 800 years, for specific purposes and generally to create value of some kind (money, profit, societal health, knowledge, faith, etc.).",
+              },
+              {
+                id: "notion-of-company",
+                title: "Where does the notion of a company come from?",
+                body: "The word 'company' was derived to describe a group of wheat farmers on the island of Sardinia. The biggest trading bloc at the time, the Genovese, sent their ships to Sardinia each year to collect wheat. The Sardinian families realised they could negotiate a better deal if they combined forces and negotiated as a collective. 'Company' derives from 'com' (Latin for 'with or together') and 'pania' ('the making of bread'). The Sardinians' organisation was derived to create value from making bread — the etymology gives an indirect answer as to why work and organisations exist.",
+              },
+              {
+                id: "purpose-fit",
+                title: "How does purpose fit in?",
+                body: "Knowing that all organisations exist to create a particular sort of value is key to understanding how work is structured and how we measure whether that work generates the desired value (i.e. performance management). This also allows us to consider the macro force of the organisation itself and the role of micro forces, such as employees, in generating outcomes.",
+              },
+            ],
+          },
+          {
+            id: "top-down-bottom-up",
+            kind: "activity",
+            title: "Top-Down and Bottom-Up Management",
+            body: "Examine the two management styles known as the top-down and bottom-up management approaches. See also Lee (2021), Top-down or bottom-up management: which is best for your business?",
+            images: [
+              {
+                alt: "Top-down vs bottom-up management approaches",
+                caption: "Top-down vs bottom-up management approaches",
+                src: "/images/business-psychology/hrm6005/week-1/top-down-bottom-up.png",
+              },
+            ],
+          },
+          {
+            id: "how-it-ties-in",
+            kind: "summary",
+            title: "How This Ties Into Performance Management",
+            items: [
+              "Organisations generally form strategies from the top-down but have important feedback loops (heuristics) for getting new ideas from employees at the bottom of the hierarchy and championing them up the line.",
+              "Performance management is almost always a top-down process. It starts with senior leaders setting broad targets for the organisation and often for each division or function — termed a 'strategy'. A strategy has objectives (statements of desired functional performance) and objectives have KPIs (quantifiable metrics that evidence the objective has been met).",
+              "Division managers receive the objectives and KPIs, decide which KPIs go to which work team, and pass these to team leaders. Team leaders bring their KPIs into performance planning meetings and apportion targets and goals to team members. Bureaucracy in action!",
+              "This varies across contexts and industries. Performance in some organisations is difficult to quantify, particularly in knowledge-intensive and service sectors (education, health, scientific research). A nurse can't be told to save 100 lives a year — instead they get goals about how to treat patients and deploy their time.",
+              "Goals are generally set top-down, but performance cascades up: individual output combines into team performance, teams into divisions, and divisional performance aggregates into the organisation's overall performance.",
+            ],
+          },
+          {
+            id: "flow-diagram",
+            kind: "activity",
+            title: "My Flow Diagram: Goals Down, Performance Up",
+            body: "Task: draw a flow diagram showing how goals and KPIs flow from the top of the organisation down to the employee and how performance cascades from the employees to the whole organisation.",
+            images: [
+              {
+                alt: "Flow diagram of goals and KPIs flowing down and performance cascading up",
+                caption: "Goals & KPIs flow down; performance cascades up",
+                src: "/images/business-psychology/hrm6005/week-1/goals-kpi-flow-diagram.png",
+              },
+            ],
+          },
+        ],
+      ),
+      createLearningSubModule("1.4 Performance Management — A Process", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Performance management systems involve a series of components that interlock to manage performance. The act of performance management should also be conceived of as a flow or cycle. In this activity, you explore a process (or flow) model of performance management.",
+        },
+        {
+          id: "process-order",
+          kind: "activity",
+          title: "Ordering the Process",
+          body: "A well-designed and executed performance management process has a flow-on effect from the employee to the manager, team, and ultimately the organisation. The individual processes below are ordered into a performance management process as a whole.",
+          images: [
+            {
+              alt: "Performance management process steps",
+              caption: "Performance management process steps",
+              src: "/images/business-psychology/hrm6005/week-1/pm-process-steps.png",
+            },
+          ],
+        },
+        {
+          id: "process-steps",
+          kind: "summary",
+          title: "The Steps Explained",
+          items: [
+            "Induction and socialisation — happens in the first days, weeks and months of joining. Formal elements include a sit-down with the line manager where broad expectations and supports are outlined; informal engagement comes from interactions with peers and observing how things get done. Important for orienting the employee to the written and unwritten rules of the place.",
+            "Performance planning — a regular, formal process between employee and line manager. Goals are decided and negotiated, with delivery dates stipulated. May happen annually, six-monthly or more frequently. The power difference means the process is open to abuse, coercion, corruption and unfairness; happening behind closed doors can also create inequity between colleagues.",
+            "Informal monitoring — not always conducted, but managers are generally expected to check in on progress. Can be supportive and collaborative, or malicious surveillance and micromanagement — the latter is detrimental to performance because it strips autonomy. If done incorrectly (even unintentionally) it undermines its own purpose.",
+            "Performance appraisal — every six or twelve months, the employee examines performance against previously defined goals with their manager. Necessarily formal, can be subject to legal deliberations, so some account is generally recorded.",
+            "Reward and recognition — in some contexts the appraisal is tied to rewards, particularly retail bonus structures. Where there is no bonus structure, past appraisals may be tied to promotion opportunities.",
+            "A hidden step: career development — managers are expected to counsel subordinates on career development. With the power imbalance, this is fraught: an instrumentalist manager has a conflict of interest in keeping an excellent employee, while a supportive manager knows guiding an employee's next stage positively impacts their current motivation.",
+            "'Bring us back to do' — performance management is a cycle. When work has been appraised, planning for the next cycle happens all over again, until you leave the organisation.",
+          ],
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "The purpose of reflecting on this process is to bring to the consciousness that which has been unconscious. By exploring how organisational actions (formal and informal) have shaped our feelings, emotions and experiences, we can gain enhanced abilities in planning, strategising and improving our organisations.",
+        },
+      ]),
+      createLearningSubModule("1.5 Goal Setting", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Examine goal-setting templates commonly used in organisations as part of their performance planning process. Context: there is a motivation theory called goal-setting theory, which states that people who set goals achieve goals, even if they don't achieve the goals they set out to achieve. (Have a go at memorising that.) Goal setting has become entrenched in standard organisational behaviour, particularly as it applies to performance management.",
+        },
+        {
+          id: "smart-goals",
+          kind: "activity",
+          title: "SMART Goals",
+          body: "In every course, workshop or seminar on performance management, goal setting is given narrow but explicit attention — generally the part of performance planning where goals are set between supervisor and employee. Such goals should be SMART. The figures below show the acronym and pointers on how SMART goals provide parameters and eliminate guesswork. All of these things are true, but they are not the whole truth as to how work is conducted and how work performance is generated — for that we must delve into the critical perspective of performance management.",
+          images: [
+            {
+              alt: "SMART goals acronym",
+              caption: "SMART goals",
+              src: "/images/business-psychology/hrm6005/week-1/smart-goals.png",
+            },
+            {
+              alt: "SMART goal pointers",
+              caption: "How SMART goals eliminate guesswork",
+              src: "/images/business-psychology/hrm6005/week-1/smart-goals-pointers.png",
+            },
+          ],
+        },
+        {
+          id: "sap-article",
+          kind: "resource",
+          title: "SAP: 10 Ways to Improve the Performance Management Process",
+          body: "Article summary — Performance management process (3 stages): plan/set goals → monitor performance → evaluate/recognise. Cycle repeats.",
+          items: [
+            "Cadence: traditional = quarterly/annual reviews only. Continuous = ongoing, real-time.",
+            "Goal tracking: continuous checks off goals as completed, in-system, visible to manager/team in real time — not saved up for a review.",
+            "Cascading goals: set at corporate level, broken down through functions to individuals; continuous systems let these be adjusted live if strategy shifts, rather than locked for the year.",
+            "Documentation: continuous captures achievements and 1:1s as they happen, so the annual review 'writes itself'.",
+            "Feedback: continuous = ongoing coaching and feedback loops. Traditional = feedback saved for the periodic review.",
+            "Business impact per SAP: better retention, clearer internal mobility/promotion paths, higher productivity, and a more direct link from review to compensation planning.",
+            "One caution: don't jump straight from no process (or traditional) to full continuous overnight — it's a shift best made gradually.",
+          ],
+          images: [
+            {
+              alt: "SAP performance management process",
+              caption: "SAP performance management process",
+              src: "/images/business-psychology/hrm6005/week-1/sap-performance-management.png",
+            },
+          ],
+        },
+        {
+          id: "history-videos",
+          kind: "resource",
+          title: "Where Do These Notions Come From? (Videos)",
+          body: "More and more organisations are implementing app-based performance management systems with built-in goal setting. But where do these notions of work, goal setting and performance come from, and are they a true reflection of how work happens? Watch these two short clips.",
+          links: [
+            {
+              href: "https://www.youtube.com/watch?v=kNrvxh8R1KU",
+              label: "Classical History of Management (Lachina Creative, 2016)",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=6O9T7bqGAgI",
+              label: "Frederick Taylor | Scientific Management Explained (Two Teachers, 2021)",
+            },
+          ],
+          images: [
+            {
+              alt: "Classical History of Management video",
+              caption: "Classical History of Management",
+              src: "/images/business-psychology/hrm6005/week-1/video-classical-history-management.png",
+            },
+            {
+              alt: "Frederick Taylor Scientific Management video",
+              caption: "Frederick Taylor | Scientific Management Explained",
+              src: "/images/business-psychology/hrm6005/week-1/video-taylor-scientific-management.png",
+            },
+          ],
+        },
+        {
+          id: "taylorism",
+          kind: "note",
+          title: "Taylorism and Counterintuitive Goals",
+          body: "Goal setting and SMART goals are tied to a somewhat archaic notion of work termed 'scientific management', often referred to as Taylorism. Taylorism has received a lot of criticism — the most discussed example being its application to the US forces in the Vietnam War by Robert McNamara. There are many anecdotal examples of poor goal setting applied to work: bus drivers paid for arriving at each stop on time who decided not to pick up some customers; truck drivers paid for delivering at a set time who race dangerously through traffic, drive fatigued, and cause accidents. Most of us have worked in contexts where set goals or performance expectations seem counterintuitive to the actual function of work.",
+        },
+        {
+          id: "bad-goals",
+          kind: "summary",
+          title: "Ben Taylor (2018): 7 Examples of Bad Goals, and How to Fix Them",
+          items: [
+            "Picking numbers on a whim — base targets on past performance, not guesses.",
+            "Ignoring other teams' dependencies — goals should be within your own team's control; if multi-team, agree on top-level objectives upfront.",
+            "Missing a middle step — the path from step 1 to the end result needs to be as clear as the start and finish.",
+            "Overly aggressive goals — can demotivate and crowd out other responsibilities; base goals on what's realistically achievable.",
+            "Goals disconnected from org strategy — regularly check goals still align with what the wider business actually needs.",
+            "Too many goals at once — focus on 1-2 big priorities at a time rather than juggling a long list.",
+            "Skipping the review — don't just tick goals off; review what worked/didn't, since that makes setting the next round much easier.",
+          ],
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "We covered SMART goals in one quick-action 'band aid rip'. It is important to understand goal setting, but equally there are some gaping limitations to it as an approach. As Einstein said, 'Not everything that counts can be counted.'",
+        },
+      ]),
+      createLearningSubModule("1.6 Performance Management — Formality", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Explore the formality-informality paradigm as it relates to performance management.",
+        },
+        {
+          id: "formal-informal-activity",
+          kind: "activity",
+          title: "Formal, Informal, or Either?",
+          body: "Correctly identify the following actions as either being formal, informal, or either.",
+          images: [
+            {
+              alt: "Formal vs informal actions activity",
+              caption: "Formal vs informal actions",
+              src: "/images/business-psychology/hrm6005/week-1/formal-informal-activity.png",
+            },
+          ],
+          steps: [
+            {
+              id: "handshake",
+              title: "Shaking your boss's hand at the start of a job interview",
+              body: "Formal — it forms part of the formal recruitment process. If the handshake were considered inappropriate (coerced and/or a basis of harassment), it could be used against the boss in legal proceedings. As job interviews are formal, all engagements associated with them should be considered formal.",
+            },
+            {
+              id: "coffee",
+              title: "Grabbing a coffee with your boss at the local café to discuss a problem with a report",
+              body: "Generally informal — but context counts. If you are raising issues of pertinent concern (such as an ethical issue), it could become a formal meeting. Asking your boss for advice is generally not a formal process, particularly outside a performance appraisal.",
+            },
+            {
+              id: "closed-door",
+              title: "A closed-door meeting to appraise your performance with your boss",
+              body: "Formal — closed-door meetings and performance appraisals are part of a formal process of work.",
+            },
+            {
+              id: "cat-email",
+              title: "Sending an email to your boss regarding your cat",
+              body: "Formal — any email forms part of a workplace's communication platform, even if the tone is lighter or informal. Emails can form part of legal or disciplinary proceedings against parties who violate laws or workplace communication policies.",
+            },
+            {
+              id: "staff-meeting",
+              title: "Raising concerns about resourcing in a monthly staff meeting",
+              body: "Formal — any staff meeting, whether minuted or not, is a formal action.",
+            },
+            {
+              id: "hallway-chat",
+              title: "Chatting to your boss's boss in the hallway about their weekend",
+              body: "Informal — simply chatting to people higher in the hierarchy doesn't make the process formal, though you will perceivably shape your interaction according to the other person's status.",
+            },
+          ],
+        },
+        {
+          id: "formal-informal-summary",
+          kind: "summary",
+          title: "Formal vs Informal Processes",
+          items: [
+            "Formal processes may be written down, subject to legal proceedings and/or form part of the standard operations of a workplace. A lot of work processes are formal.",
+            "Informal processes are off the record and potentially more social. They are essential to a good working environment — a humanising aspect of work is when employees feel they have a voice to unofficially share ideas, concerns, happiness, and pain without fear it will reflect badly on their measured performance.",
+          ],
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "While the performance appraisal process is formal, good managers know that the secret to successfully promoting performance in the employees they manage relies on setting up effective informal support and communication channels.",
+        },
+        {
+          id: "networks-reading",
+          kind: "resource",
+          title: "Optional Reading: The Role of Informal and Formal Networks",
+          body: "Study: 272 Australian engineers/asset managers (public & private sector) surveyed to test how workplace relationships affect access to resources and innovative behaviour. Key idea: alongside the usual formal relationships (supervisor-employee = LMX, employee-organisation = POS), the authors identify a third, informal relationship — ILMX (Informal Leader-Member Exchange) — a bond with a non-line senior manager, often built through shared professional networks outside the direct reporting line.",
+          items: [
+            "POS and ILMX both significantly predicted employees' perception of having adequate resources (staff, time, support).",
+            "LMX (direct supervisor relationship) did not significantly predict resource adequacy — surprising, since it's usually the assumed driver.",
+            "Resource adequacy strongly predicted a proactive culture (60.5% variance explained) and, together with that culture, explained 28.1% of innovative behaviour.",
+            "No significant difference between public and private sector employees — the two sectors have converged, likely due to outsourcing and shared accountability pressures.",
+            "Practical takeaway: when your direct manager can't or won't unlock resources, an informal ally elsewhere in senior management — someone who shares your professional values — can be just as, or more, effective at getting you what you need to be proactive and innovative. Organisations should recognise and support these informal networks rather than relying solely on the formal chain of command.",
+          ],
+        },
+      ]),
+      createLearningSubModule("1.7 Performance Management — A Critique (Part 1)", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "What if, in trying to measure an employee's performance, we were in fact negatively affecting it? Does measuring an employee's performance and potentially assigning them a reward actually stimulate performance? Or is it an ethically ambiguous managerial action that can lead to negative outcomes of biblical proportions like the global financial crisis? The purpose of this topic is to navigate and review a critique of performance management.",
+        },
+        {
+          id: "assessment-note",
+          kind: "note",
+          title: "Assessment Relevance",
+          body: "This topic requires engagement with three academic texts. The topic and the texts may be directly relevant for the third major assignment (final report). Take notes in the weekly learning journal, highlighting and reflecting on sections of the texts of interest.",
+        },
+        {
+          id: "qiu-summary",
+          kind: "summary",
+          title: "Qiu et al. (2015): Appraisal Purpose and Proactive Behavior",
+          body: "Study: Qiu, Hu, Zhang & Li (2015), Social Behavior and Personality, n=512 Chinese employees. Question: does performance appraisal purpose (evaluative vs. developmental) affect employee proactive behavior, and what mediates this?",
+          items: [
+            "Evaluative appraisal (past-focused, tied to pay/promotion) → no direct effect on proactive behavior, but hurts it indirectly by lowering psychological ownership.",
+            "Developmental appraisal (future-focused, training/growth) → direct positive effect on proactive behavior, plus indirect positive effects via higher psychological ownership and higher self-efficacy.",
+            "Self-efficacy boosts psychological ownership, which in turn drives proactive behavior (organizational, interpersonal, and personal types).",
+            "Practical takeaway: appraisals framed around growth/development build employees' sense of ownership and confidence, which drives initiative-taking. Purely evaluative, backward-looking appraisals can quietly undermine ownership even without an obvious direct hit to proactivity.",
+            "Caveats: self-report data, single cognitive/individual-level lens, moderate model fit (CFI .882, RMSEA .064) — authors flag need for broader factors (autonomy, culture) in future work.",
+          ],
+        },
+        {
+          id: "psychological-ownership",
+          kind: "definition",
+          title: "Definition",
+          definitions: [
+            {
+              term: "Psychological ownership",
+              definition:
+                "A state in which individuals feel as though the target of the ownership — material or immaterial in nature — or a piece of it, is theirs (Pierce, Kostova, & Dirks, 2001; Pierce, Rubenfeld, & Morgan, 2001).",
+            },
+          ],
+        },
+        {
+          id: "figure-analysis",
+          kind: "activity",
+          title: "Reading the Model (Figure, p. 1106)",
+          body: "The figure on page 1106 links the study's variables. Key path coefficients:",
+          images: [
+            {
+              alt: "Qiu et al. (2015) model figure with path coefficients",
+              caption: "Qiu et al. (2015) — path model, p. 1106",
+              src: "/images/business-psychology/hrm6005/week-1/qiu-model-figure.png",
+            },
+          ],
+          steps: [
+            {
+              id: "path-negative-11",
+              title: "−.11** — EPA → psychological ownership",
+              body: "The relationship linking evaluatively focused performance appraisal and psychological ownership. The asterisks mean statistical significance — 95% of the time there was a consistent trend across the sample. Negative: for every one-unit increase in evaluative focus, an 11% reduction in psychological ownership. The more evaluatively focused the appraisal, the less the employee felt it reflected the work they did.",
+            },
+            {
+              id: "path-30",
+              title: ".30** — psychological ownership → personal proactive behaviour",
+              body: "Positive: when people felt psychological ownership over the appraisal, they were more proactive at work — the desired outcome. But a positive relationship cuts both ways: if psychological ownership is low (as per the path from EPA), personal proactive behaviour will also be low.",
+            },
+            {
+              id: "path-49",
+              title: ".49** — DPA → self-efficacy",
+              body: "The link between developmentally focused performance appraisal and self-efficacy is positive (.49 is a big deal in this kind of analysis). Developmentally focused appraisals correlated with increased feelings of self-efficacy — belief in one's ability to achieve their goals.",
+            },
+          ],
+        },
+        {
+          id: "summary",
+          kind: "summary",
+          title: "Summary",
+          body: "When an appraisal is evaluatively focused, employees tend to disassociate themselves from it (reduced psychological ownership). This is a really bad outcome, because psychological ownership is correlated with proactive behaviour — a person will be less proactive as a result of their evaluatively focused performance appraisal.",
+        },
+      ]),
+      createLearningSubModule("1.8 Performance Management — A Critique (Part 2)", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "This activity is a continuation of our research into critiquing performance management.",
+        },
+        {
+          id: "hbr-summary",
+          kind: "summary",
+          title: "Cappelli & Tavis (2016): The Performance Management Revolution (HBR)",
+          body: "Core argument: companies are dropping annual appraisals in favor of frequent, informal check-ins — shifting focus from accountability to development.",
+          items: [
+            "History (accountability ↔ development pendulum): WWI/WWII appraisals built for weeding out/ranking (military origin); 1950s-60s McGregor pushed employee-led goal-setting and GE split accountability from development discussions; 1970s-90s inflation, Jack Welch's forced ranking, exec pay rules and the 'War for Talent' pulled focus back to accountability; 2011+ Adobe, then Deloitte/PwC/Accenture/GE dropped annual reviews for frequent feedback.",
+            "Three business drivers: faster employee development (especially professional services); agility — goals set annually don't survive changing projects/markets; teamwork over individual ranking (e.g., Gap, Sears).",
+            "Persistent challenges: aligning individual goals with fast-shifting company goals; still needing a way to reward/differentiate performance; identifying poor performers without annual documentation; legal/discrimination risk without 'objective' scores; feedback systems/tech not built for continuous input.",
+            "Some firms (Deloitte, PwC, New York Life) reintroduced a 'third way' — informal feedback plus periodic multi-dimension ratings — after going fully numberless caused problems.",
+            "Bottom line: not a fad — driven by real business need for speed and development — but full removal of ratings has proven hard to sustain; hybrid models are emerging.",
+            "Connection: Qiu et al. gives the psychological mechanism (ownership/self-efficacy) for why developmental appraisal works; this article gives the industry trend and practical models companies are using.",
+          ],
+        },
+        {
+          id: "debate",
+          kind: "discussion",
+          title: "Debate: Drop or Keep Evaluative Appraisals?",
+          body: "Cappelli & Tavis identify three reasons why evaluative performance appraisals have been dropped: a return of people development, the need for agility, and the centrality of teamwork. They also identify reasons for retaining them: appraisals align individual and company goals, reward performance, identify poor performers, avoid legal troubles, and manage the feedback firehose. Consider whether the reasons for dropping outweigh the reasons to keep them.",
+        },
+        {
+          id: "tweedie-summary",
+          kind: "summary",
+          title: "Tweedie et al. (2019): How Does Performance Management Affect Workers?",
+          body: "Literature review (IJMR) on how PM affects workers, across three stages. Core argument: HRM and Critical HRM both under-theorise worker wellbeing as an end in itself — HRM subordinates it to org performance, CHRM focuses on power but not psychic harm. Recognition theory fills this gap by giving vocabulary for how (mis)recognition damages or sustains self-identity through work.",
+          items: [
+            "1. Mainstream HRM — three phases, each more socially aware but more organization-focused, not worker-focused: Phase I (1920s-90s) fixing rating accuracy (trait scales, MBO, BARS) — never solved; Phase II (80s-90s) PM's 'social context' — justice perceptions, fairness — but still to serve org performance; Phase III fully integrating PM into strategy/profit — worker wellbeing recedes further.",
+            "2. Critical HRM — three theoretical lenses: labour process theory (Marxist, Braverman) — PM as class control tool; Foucauldian theory — PM as discursive power that disciplines workers into 'docile', self-monitoring subjects; conflicting rationalities (Habermas) — 'relational' (communicative, consent-based) vs 'transactional' (instrumental) PM, with instrumental logic tending to 'colonise' the relational.",
+            "3. Recognition theory (the paper's proposed advance) — Axel Honneth: three recognition types — love (self-confidence), rights (self-respect), esteem (self-esteem, tied to work); PM = proxy judgment of a worker's social contribution. Christophe Dejours: esteem from management/clients (usefulness) vs colleagues (quality/'beauty'); misrecognition → suffering, breakdown of collegial bonds, even linked to workplace suicides.",
+            "Reading tip: it's a big reading — the essential stuff is in the first six pages (up to page 82).",
+          ],
+        },
+        {
+          id: "journal",
+          kind: "journal",
+          title: "My Journal Entries",
+          items: [
+            "Three phases of HRM research — Mainstream HRM. Core question: does PM help the org? This phase is organisation-focused, not worker-focused. Research focuses on eliminating measurement error, understanding PM's social context, and integrating PM into org strategy. HRM research considers workers' perceptions and experiences, but leans towards a performative lens. Worker wellbeing only matters insofar as it affects org performance, never as an end in itself.",
+            "Critical HRM research. Core question: does PM exert power/control over workers? Frames PM as a disciplinary, coercive or inequitable management device; generally ignores employee wellbeing or development. Overwhelmingly qualitative and viewed as anti-performative. Three influential approaches: labour process theory (PM as class control to extract more effort), Foucauldian theories (PM as discourse shaping workers into 'docile', self-monitoring subjects), and conflicting rationalities (relational vs transactional PM).",
+            "Recognition theory. Core question: does PM protect or damage the worker's basic sense of self? Being properly acknowledged for your work is essential to psychological wellbeing — not just a 'nice to have'. Honneth: three types of recognition tied to parts of the self — love (close relationships) = self-confidence; rights (legal/civil equality) = self-respect; esteem (work) = self-esteem. At work, esteem = having your specific contribution acknowledged as valuable; appraisals are essentially judgements about this (appreciation for loyal service, admiration for skill/talent). Dejours: work is inherently a struggle against resistant reality, which causes stress; esteem makes that stress bearable and turns it into growth instead of harm. Two sources: management/clients recognise usefulness; colleagues/peers recognise quality — only people who do the same work can really judge if it's good. Core risk: 'misrecognition' — when PM systems fail to see or value real contribution (e.g., a call centre only measuring call times, ignoring actual customer care) — can cause genuine psychological harm; Dejours links this to burnout and even workplace suicides.",
+            "Labour process theory (80 words): a Marxist approach to work in organisations — workplaces as sites of class struggle over control of labour. Applied to PM, managers use it as a control mechanism to extract effort and maintain dominance — not just through direct oversight, but by getting workers to monitor and regulate their own behaviour and making output more visible so it's easier to control. Real-world example: Amazon warehouse workers — pick rates, scan times and 'time off task' tracked minute by minute. Visibility (every action tracked), self-regulation (workers speed up on their own to avoid flags), extraction (the system squeezes maximum output; those who fall short get warnings or fired). The theory says this PM system exists purely to serve efficiency/profit goals — not to help workers develop or feel valued.",
+            "What is pleasing about Phase 3 (80 words): it invites the worker into the process by seeking feedback (procedural justice). Individual performance data is linked directly to firm-level metrics like profitability — less about the rating tool and more about whether aggregating everyone's performance moves the business numbers.",
+            "Why have HRM scholars paid scant attention to an employee-centric model (80 words): HRM was primarily a performance function designed to ensure workers are performing, with initial models taken from the World Wars where performance meant life or death. Org growth was the primary goal at executive level, so anything not attributing to that goal was seen as wastage that could be removed — a replaceability culture.",
+          ],
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "You survived! The purpose of the final activity was to see that, although there are strong criticisms of performance management, it serves as a necessary evil in organisations. The truth is less absolute — performance management that is too evaluative and in the wrong context can be disastrous. But a none-at-all approach also poses problems.",
+        },
+      ]),
     ],
   },
   {
