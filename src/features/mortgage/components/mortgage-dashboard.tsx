@@ -84,6 +84,9 @@ export function MortgageDashboard() {
           Balance as of {formatDate(latestSnapshot.date)} · loan ends{" "}
           {formatDate(mortgageLoan.loanEndDate)} on minimum repayments
         </p>
+
+        <PayoffProgress currentBalance={latestSnapshot.balance} />
+
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <StatTile
             icon={<Landmark className="size-4" />}
@@ -273,6 +276,76 @@ export function MortgageDashboard() {
           ))}
         </div>
       </section>
+    </div>
+  );
+}
+
+function PayoffProgress({ currentBalance }: { currentBalance: number }) {
+  const principalPaid = mortgageLoan.originalAmount - currentBalance;
+  const principalPct = (principalPaid / mortgageLoan.originalAmount) * 100;
+
+  const estLifetimeInterest =
+    mortgageLoan.interestPaidToDate + mortgageLoan.estTotalInterestIfUnchanged;
+  const interestPct = (mortgageLoan.interestPaidToDate / estLifetimeInterest) * 100;
+
+  const yearsIn =
+    (Date.now() - new Date(mortgageLoan.loanStartDate).getTime()) /
+    (1000 * 60 * 60 * 24 * 365.25);
+
+  return (
+    <div className="mt-6 space-y-5 rounded-md border border-border/70 bg-muted/30 p-4 md:p-5">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="text-sm font-semibold text-foreground">Payoff progress</h2>
+        <span className="text-xs text-muted-foreground">
+          {currency.format(mortgageLoan.originalAmount)} · {mortgageLoan.termYears}-year
+          loan · started {formatDate(mortgageLoan.loanStartDate)} (
+          {yearsIn.toFixed(1)} years in)
+        </span>
+      </div>
+
+      <div>
+        <div className="flex items-baseline justify-between text-sm">
+          <span className="font-semibold text-foreground">
+            Principal · {principalPct.toFixed(1)}% paid off
+          </span>
+          <span className="text-xs text-muted-foreground">
+            {currency.format(principalPaid)} paid · {currency.format(currentBalance)} to
+            go
+          </span>
+        </div>
+        <div className="mt-2 flex h-4 overflow-hidden rounded-full bg-muted">
+          <div
+            className="h-full rounded-l-full bg-emerald-500"
+            style={{ width: `${principalPct}%` }}
+          />
+        </div>
+      </div>
+
+      <div>
+        <div className="flex items-baseline justify-between text-sm">
+          <span className="font-semibold text-foreground">
+            Interest · {interestPct.toFixed(0)}% of lifetime est.
+            {mortgageLoan.interestPaidIsEstimate ? " *" : ""}
+          </span>
+          <span className="text-xs text-muted-foreground">
+            ~{currency.format(mortgageLoan.interestPaidToDate)} paid · ~
+            {currency.format(mortgageLoan.estTotalInterestIfUnchanged)} to go
+          </span>
+        </div>
+        <div className="mt-2 flex h-4 overflow-hidden rounded-full bg-muted">
+          <div
+            className="h-full rounded-l-full bg-amber-500"
+            style={{ width: `${interestPct}%` }}
+          />
+        </div>
+      </div>
+
+      {mortgageLoan.interestPaidIsEstimate && (
+        <p className="text-xs leading-5 text-muted-foreground">
+          * Interest paid to date is an estimate — rate history since 2021 hasn&apos;t
+          been confirmed. Update with the actual figure from statements.
+        </p>
+      )}
     </div>
   );
 }

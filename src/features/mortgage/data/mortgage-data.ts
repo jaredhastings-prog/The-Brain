@@ -1,4 +1,11 @@
 export type MortgageLoan = {
+  originalAmount: number;
+  loanStartDate: string;
+  termYears: number;
+  // Estimate — actual figure depends on rate history since 2021.
+  // Replace with the real number from statements when available.
+  interestPaidToDate: number;
+  interestPaidIsEstimate: boolean;
   balance: number;
   balanceAsOf: string;
   annualRate: number;
@@ -30,6 +37,11 @@ export type Scenario = {
 };
 
 export const mortgageLoan: MortgageLoan = {
+  originalAmount: 601342,
+  loanStartDate: "2021-07-01",
+  termYears: 30,
+  interestPaidToDate: 125000,
+  interestPaidIsEstimate: true,
   balance: 547495.61,
   balanceAsOf: "2026-07-01",
   annualRate: 0.0574,
