@@ -47,7 +47,7 @@ export const mortgageLoan: MortgageLoan = {
   annualRate: 0.0574,
   fixedUntil: "2027-01-29",
   loanEndDate: "2051-08-07",
-  monthlyRepayment: 3437,
+  monthlyRepayment: 3442.92,
   estTotalInterestIfUnchanged: 487000,
   // Placeholder — confirm exact cap and offset terms with the lender before
   // treating these as hard limits.
@@ -60,7 +60,30 @@ export const extraRepayments: ExtraRepayment[] = [];
 
 // Log actual balances over time to plot progress against the baseline.
 export const balanceSnapshots: BalanceSnapshot[] = [
+  { date: "2025-01-01", balance: 562574.8 },
+  { date: "2025-07-01", balance: 558313.58 },
+  { date: "2025-08-01", balance: 557777 },
+  { date: "2026-01-01", balance: 553447 },
   { date: "2026-07-01", balance: 547495.61 },
+];
+
+export type RateChange = {
+  date: string;
+  annualRate: number;
+  instalment: number;
+  note?: string;
+};
+
+export const rateHistory: RateChange[] = [
+  { date: "2025-01-01", annualRate: 0.0633, instalment: 3686.42 },
+  { date: "2025-07-01", annualRate: 0.0583, instalment: 3512.46 },
+  { date: "2025-08-01", annualRate: 0.0558, instalment: 3480.93 },
+  {
+    date: "2026-01-01",
+    annualRate: 0.0574,
+    instalment: 3442.92,
+    note: "Moved to 1-year fixed",
+  },
 ];
 
 export const scenarios: Scenario[] = [

@@ -10,6 +10,7 @@ import {
   balanceSnapshots,
   extraRepayments,
   mortgageLoan,
+  rateHistory,
   scenarios,
   type Scenario,
 } from "@/features/mortgage/data/mortgage-data";
@@ -259,6 +260,44 @@ export function MortgageDashboard() {
           </p>
         </section>
       </div>
+
+      <section className="rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
+        <h2 className="text-base font-semibold text-foreground">Balance & rate history</h2>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Actual balances and rate changes as recorded from statements.
+        </p>
+        <div className="mt-4 space-y-2">
+          {balanceSnapshots.map((snapshot) => {
+            const rate = [...rateHistory]
+              .reverse()
+              .find((r) => r.date <= snapshot.date);
+            return (
+              <div
+                key={snapshot.date}
+                className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-border/70 bg-muted/30 px-3 py-2.5 text-sm"
+              >
+                <span className="text-muted-foreground">{formatDate(snapshot.date)}</span>
+                <span className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                  {rate ? (
+                    <>
+                      <span>{(rate.annualRate * 100).toFixed(2)}% p.a.</span>
+                      <span>{currencyExact.format(rate.instalment)}/mo</span>
+                      {rate.note && rate.date === snapshot.date ? (
+                        <Badge variant="outline" className="text-[10px]">
+                          {rate.note}
+                        </Badge>
+                      ) : null}
+                    </>
+                  ) : null}
+                  <span className="text-sm font-medium text-foreground">
+                    {currencyExact.format(snapshot.balance)}
+                  </span>
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       <section className="rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
         <h2 className="text-base font-semibold text-foreground">Modelled scenarios</h2>
