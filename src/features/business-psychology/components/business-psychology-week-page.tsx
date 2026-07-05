@@ -4,24 +4,14 @@ import Link from "next/link";
 import * as React from "react";
 import {
   ArrowLeft,
-  BookOpen,
   ChevronDown,
-  ClipboardList,
   ExternalLink,
-  FileText,
-  Image,
   Layers3,
-  Lightbulb,
-  Link2,
-  NotebookPen,
-  PlayCircle,
-  Sparkles,
 } from "lucide-react";
 
 import { DashboardCard } from "@/components/dashboard/dashboard-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { StudyTabs } from "@/features/business-psychology/components/study-tabs";
 import type {
   StudyUnit,
   WeeklyLearningBlock,
@@ -304,125 +294,6 @@ export function BusinessPsychologyWeekPage({
         description="Open a sub-module to organise notes, concepts, screenshots, videos, readings, reflections, and linked captures."
       >
         <SubModuleAccordion subModules={subModules} />
-      </DashboardCard>
-
-      <DashboardCard
-        description="Weekly workspace for summary, module notes, readings, screenshots, videos, key concepts, assessment links, personal notes, Feynman explanation, and linked captures."
-        eyebrow="Weekly topic page"
-        title={`Week ${week.week}: ${week.title}`}
-      >
-        <StudyTabs
-          ariaLabel={`${week.title} weekly sections`}
-          tabs={[
-            {
-              id: "summary",
-              label: "Summary",
-              icon: BookOpen,
-              content: <WeekSummaryContent week={week} />,
-            },
-            {
-              id: "module-notes",
-              label: "Module Notes",
-              icon: NotebookPen,
-              content: (
-                <PlaceholderList
-                  items={[
-                    "Add copied university module notes, lecture summaries, and personal synthesis here.",
-                    "Keep this area concise first, then expand with details when the source notes are migrated.",
-                  ]}
-                />
-              ),
-            },
-            {
-              id: "readings",
-              label: "Readings",
-              icon: Link2,
-              content: (
-                <PlaceholderList
-                  items={[
-                    "Add required readings, article links, citation notes, and key page references.",
-                    "Future: separate required, recommended, and assessment-critical readings.",
-                  ]}
-                />
-              ),
-            },
-            {
-              id: "images-screenshots",
-              label: "Images / Screenshots",
-              icon: Image,
-              content: (
-                <PlaceholderList
-                  items={[
-                    "Add lecture screenshots, model images, diagrams, slides, and visual examples.",
-                    "Keep visual references organised by lecture, model, assessment, or personal summary.",
-                  ]}
-                />
-              ),
-            },
-            {
-              id: "videos",
-              label: "Videos",
-              icon: PlayCircle,
-              content: (
-                <PlaceholderList
-                  items={[
-                    "Add YouTube links, university media links, timestamps, and video summaries.",
-                  ]}
-                />
-              ),
-            },
-            {
-              id: "key-concepts",
-              label: "Key Concepts",
-              icon: Lightbulb,
-              content: <BulletList items={week.keyConcepts} />,
-            },
-            {
-              id: "assessment-links",
-              label: "Assessment Links",
-              icon: ClipboardList,
-              content: <BulletList items={week.assessmentLinks} />,
-            },
-            {
-              id: "my-notes",
-              label: "My Notes",
-              icon: FileText,
-              content: (
-                <PlaceholderList
-                  items={[
-                    "Add Jared's personal notes, reflections, assignment ideas, and applied workplace examples.",
-                  ]}
-                />
-              ),
-            },
-            {
-              id: "feynman-technique",
-              label: "Feynman Technique",
-              icon: Sparkles,
-              content: (
-                <PlaceholderList
-                  items={[
-                    "Explain the topic in plain language as if teaching it to someone outside the degree.",
-                    "Add gaps, unclear terms, simple metaphors, and one practical business psychology example.",
-                  ]}
-                />
-              ),
-            },
-            {
-              id: "linked-captures",
-              label: "Linked Captures",
-              icon: FileText,
-              content: (
-                <PlaceholderList
-                  items={[
-                    "Future: show Global Capture Inbox notes linked to this week.",
-                    "Useful captures may include lecture thoughts, reading insights, assignment ideas, and voice dumps.",
-                  ]}
-                />
-              ),
-            },
-          ]}
-        />
       </DashboardCard>
     </div>
   );
@@ -739,73 +610,6 @@ function withLinks<T extends { links?: LearningLink[] }>(
   }
 
   return { ...item, links: mergedLinks };
-}
-
-function WeekSummaryContent({ week }: { week: WeeklyTopic }) {
-  if (!week.summarySections?.length) {
-    return <p className="text-sm leading-6 text-muted-foreground">{week.summary}</p>;
-  }
-
-  return (
-    <div className="space-y-3">
-      {week.summarySections.map((section) => (
-        <SummarySectionCard key={section.id} section={section} />
-      ))}
-    </div>
-  );
-}
-
-function SummarySectionCard({ section }: { section: WeeklySummarySection }) {
-  return (
-    <section className="rounded-md border border-border/70 bg-background/70 p-4">
-      <h3 className="text-sm font-semibold text-foreground">{section.title}</h3>
-      {section.body ? (
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
-          {section.body}
-        </p>
-      ) : null}
-      {section.bullets?.length ? (
-        <BulletList className="mt-3" items={section.bullets} />
-      ) : null}
-      {section.table ? <SummaryTable table={section.table} /> : null}
-    </section>
-  );
-}
-
-function SummaryTable({
-  table,
-}: {
-  table: NonNullable<WeeklySummarySection["table"]>;
-}) {
-  return (
-    <div className="mt-3 overflow-hidden rounded-md border border-border/70">
-      <div className="grid grid-cols-[130px_minmax(0,1fr)] bg-muted/45 text-xs font-medium uppercase tracking-normal text-muted-foreground">
-        {table.headers.map((header) => (
-          <div className="border-r border-border/70 px-3 py-2 last:border-r-0" key={header}>
-            {header}
-          </div>
-        ))}
-      </div>
-      {table.rows.map((row) => (
-        <div
-          className="grid grid-cols-[130px_minmax(0,1fr)] border-t border-border/70 bg-background/70 text-sm"
-          key={row.join("-")}
-        >
-          {row.map((cell, index) => (
-            <div
-              className={cn(
-                "border-r border-border/70 px-3 py-2 text-muted-foreground last:border-r-0",
-                index === 0 && "font-medium text-foreground",
-              )}
-              key={cell}
-            >
-              {cell}
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
 }
 
 function SubModuleAccordion({ subModules }: { subModules: RenderableSubModule[] }) {
