@@ -1,6 +1,7 @@
 import {
   BrainCircuit,
   GraduationCap,
+  Landmark,
   LayoutDashboard,
   Sparkles,
   UtensilsCrossed,
@@ -45,5 +46,11 @@ export const primaryNavigation: NavItem[] = [
     href: "/recipes",
     icon: UtensilsCrossed,
     description: "Your recipe collection",
+  },
+  {
+    title: "Mortgage",
+    href: "/mortgage",
+    icon: Landmark,
+    description: "Payoff progress and strategy",
   },
 ];
