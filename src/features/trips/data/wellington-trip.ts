@@ -97,7 +97,7 @@ export const activities: TripActivity[] = [
     description:
       "Behind the scenes at the five-time Academy Award-winning effects studio in Miramar — props, prosthetics and miniatures from Lord of the Rings, Avatar and more. Book the workshop tour ahead; combos include the Thunderbirds-style miniatures stage.",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/b/b6/Weta_Workshop_Buildings.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f8/Weta_Cave.jpg",
     estCostNzd: 55,
     duration: "1.5-2 hrs",
     link: "https://tours.wetaworkshop.com/",
@@ -109,7 +109,7 @@ export const activities: TripActivity[] = [
     description:
       "196m hill immediately east of the CBD with a 360° panorama over the city, harbour and airport approach. Walk up through the town belt from Oriental Bay (~40 min) or drive/bus to the top. Best at golden hour — bring a windproof layer.",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/8/81/Oriental_Bay_from_Wellington_Harbour_Ferry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/85/Wellington_from_the_Mount_Victoria_lookout.jpg",
     estCostNzd: 0,
     duration: "1-2 hrs",
   },
@@ -146,6 +146,30 @@ export const activities: TripActivity[] = [
       "https://upload.wikimedia.org/wikipedia/commons/8/8d/Makara_beach%2C_New_Zealand.jpg",
     estCostNzd: 0,
     duration: "3-4 hrs",
+  },
+  {
+    id: "martinborough",
+    title: "Martinborough Wine Village",
+    category: "Food",
+    description:
+      "Day trip over the Remutaka Hill to the Wairarapa's boutique wine village — 20+ cellar doors arranged around a leafy colonial square, most within walking or cycling distance. Famous for pinot noir. Hire bikes and loop the vineyards, with a long lunch in the village.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/IMG9408_Martinborough_vineyards%2C_New_Zealand.jpg",
+    estCostNzd: 80,
+    duration: "Full day",
+    link: "https://www.wairarapanz.com/martinborough",
+  },
+  {
+    id: "brewtown",
+    title: "Brewtown, Upper Hutt",
+    category: "Food",
+    description:
+      "A former Dunlop tyre factory turned craft-beverage destination — multiple breweries and a cidery (Panhead, Boneface, Te Aro and more) plus eateries, all in one complex. 30-40 minutes from the city by train or car. Free to wander; pay as you pour.",
+    imageUrl:
+      "https://www.brewtown.co.nz/wp-content/uploads/2024/10/image-14-1600x742.webp",
+    estCostNzd: 45,
+    duration: "Half day",
+    link: "https://www.brewtown.co.nz/",
   },
 ];
 
