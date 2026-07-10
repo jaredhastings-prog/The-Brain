@@ -1,13 +1,8 @@
-"use client";
-
 import Image from "next/image";
-import * as React from "react";
 import {
   CalendarDays,
-  Check,
   Clock,
   ExternalLink,
-  Luggage,
   MapPin,
   Wallet,
   Wind,
@@ -16,9 +11,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import {
   activities,
-  getActivity,
-  itinerary,
-  packingList,
   tripBudgetNzd,
   tripMeta,
   type ActivityCategory,
@@ -40,7 +32,11 @@ const categoryStyles: Record<ActivityCategory, string> = {
 };
 
 export function TripPlanner() {
-  const days = itinerary.length;
+  const days =
+    Math.round(
+      (new Date(tripMeta.endDate).getTime() - new Date(tripMeta.startDate).getTime()) /
+        (1000 * 60 * 60 * 24),
+    ) + 1;
 
   return (
     <div className="space-y-6 pb-20">
@@ -75,41 +71,7 @@ export function TripPlanner() {
       </section>
 
       <section>
-        <h2 className="text-lg font-semibold text-foreground">Day-by-day itinerary</h2>
-        <div className="mt-4 space-y-4">
-          {itinerary.map((day, index) => (
-            <div
-              key={day.date}
-              className="rounded-lg border border-border/80 bg-card/95 p-4 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_4px_12px_rgb(24_24_27_/_0.04)] md:p-5"
-            >
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Day {index + 1} · {day.title}
-                </h3>
-                <span className="text-xs text-muted-foreground">
-                  {formatDateLong(day.date)}
-                </span>
-              </div>
-              {day.notes && (
-                <p className="mt-1 text-xs leading-5 text-muted-foreground">{day.notes}</p>
-              )}
-              {day.activityIds.length > 0 && (
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  {day.activityIds.map((id) => {
-                    const activity = getActivity(id);
-                    return activity ? (
-                      <ActivityCard key={id} activity={activity} compact />
-                    ) : null;
-                  })}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-lg font-semibold text-foreground">All activities</h2>
+        <h2 className="text-lg font-semibold text-foreground">Activities</h2>
         <p className="mt-1 text-sm text-muted-foreground">
           Everything on the list with costs and details.
         </p>
@@ -119,29 +81,15 @@ export function TripPlanner() {
           ))}
         </div>
       </section>
-
-      <section className="rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_10px_24px_rgb(24_24_27_/_0.04)] md:p-6">
-        <div className="flex items-center gap-2">
-          <Luggage className="size-4 text-muted-foreground" />
-          <h2 className="text-base font-semibold text-foreground">Packing & prep</h2>
-        </div>
-        <PackingChecklist />
-      </section>
     </div>
   );
 }
 
-function ActivityCard({
-  activity,
-  compact = false,
-}: {
-  activity: TripActivity;
-  compact?: boolean;
-}) {
+function ActivityCard({ activity }: { activity: TripActivity }) {
   return (
     <div className="flex flex-col overflow-hidden rounded-lg border border-border/80 bg-card/95 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_4px_12px_rgb(24_24_27_/_0.04)]">
       {activity.imageUrl && (
-        <div className={cn("relative w-full bg-muted/60", compact ? "h-32" : "h-40")}>
+        <div className="relative h-40 w-full bg-muted/60">
           <Image
             src={activity.imageUrl}
             alt={activity.title}
@@ -163,11 +111,7 @@ function ActivityCard({
             {activity.category}
           </Badge>
         </div>
-        {!compact && (
-          <p className="text-xs leading-5 text-muted-foreground">
-            {activity.description}
-          </p>
-        )}
+        <p className="text-xs leading-5 text-muted-foreground">{activity.description}</p>
         <div className="mt-auto flex flex-wrap items-center gap-3 pt-1 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
             <Clock className="size-3.5" />
@@ -194,64 +138,6 @@ function ActivityCard({
   );
 }
 
-function PackingChecklist() {
-  const [checked, setChecked] = React.useState<Record<string, boolean>>({});
-  const done = Object.values(checked).filter(Boolean).length;
-
-  return (
-    <div className="mt-3">
-      <p className="text-xs text-muted-foreground">
-        {done} of {packingList.length} packed
-      </p>
-      <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-        {packingList.map((item) => {
-          const isChecked = !!checked[item.id];
-          return (
-            <li key={item.id}>
-              <button
-                type="button"
-                onClick={() =>
-                  setChecked((prev) => ({ ...prev, [item.id]: !prev[item.id] }))
-                }
-                className={cn(
-                  "flex w-full items-start gap-2.5 rounded-md border px-3 py-2.5 text-left text-sm transition-colors",
-                  isChecked
-                    ? "border-emerald-500/40 bg-emerald-500/10 text-muted-foreground line-through"
-                    : "border-border/70 bg-muted/30 text-muted-foreground hover:bg-muted/50",
-                )}
-              >
-                <span
-                  className={cn(
-                    "mt-0.5 grid size-4 shrink-0 place-items-center rounded border",
-                    isChecked
-                      ? "border-emerald-500 bg-emerald-500 text-white"
-                      : "border-border",
-                  )}
-                >
-                  {isChecked && <Check className="size-3" />}
-                </span>
-                {item.label}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-      <p className="mt-3 text-xs text-muted-foreground">
-        Checklist state resets on reload — it&apos;s a quick pre-trip scratchpad.
-      </p>
-    </div>
-  );
-}
-
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short" });
-}
-
-function formatDateLong(iso: string) {
-  return new Date(iso).toLocaleDateString("en-AU", {
-    weekday: "short",
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
 }
