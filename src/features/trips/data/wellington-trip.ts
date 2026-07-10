@@ -166,7 +166,7 @@ export const activities: TripActivity[] = [
     description:
       "A former Dunlop tyre factory turned craft-beverage destination — multiple breweries and a cidery (Panhead, Boneface, Te Aro and more) plus eateries, all in one complex. 30-40 minutes from the city by train or car. Free to wander; pay as you pour.",
     imageUrl:
-      "https://www.brewtown.co.nz/wp-content/uploads/2024/10/image-14-1600x742.webp",
+      "https://wellingtonnz.bynder.com/transform/f49d07a5-315b-4410-9ffd-1fcab91334f3/Brewtown-93?quality=60&io=transform:fill,width:2000,height:1200",
     estCostNzd: 45,
     duration: "Half day",
     link: "https://www.brewtown.co.nz/",
