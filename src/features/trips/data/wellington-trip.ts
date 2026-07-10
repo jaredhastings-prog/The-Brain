@@ -171,6 +171,18 @@ export const activities: TripActivity[] = [
     duration: "Half day",
     link: "https://www.brewtown.co.nz/",
   },
+  {
+    id: "eastbourne",
+    title: "Eastbourne & Days Bay",
+    category: "Sightseeing",
+    description:
+      "Seaside village on the harbour's eastern shore, best reached by the East by West ferry to Days Bay (~25 min across the water). Beach promenade, boutique shops and cafés along Rimu Street, and the Butterfly Creek bush walk behind the village. Pairs well with a Matiu/Somes Island stop on the same ferry route.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/a/a0/Days_Bay%2C_Wellington%2C_New_Zealand.jpg",
+    estCostNzd: 25,
+    duration: "Half day",
+    link: "https://www.eastbywest.co.nz/",
+  },
 ];
 
 export const itinerary: TripDay[] = [
