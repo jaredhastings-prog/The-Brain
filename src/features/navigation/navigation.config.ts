@@ -3,6 +3,7 @@ import {
   GraduationCap,
   Landmark,
   LayoutDashboard,
+  Plane,
   Sparkles,
   UtensilsCrossed,
 } from "lucide-react";
@@ -46,6 +47,12 @@ export const primaryNavigation: NavItem[] = [
     href: "/recipes",
     icon: UtensilsCrossed,
     description: "Your recipe collection",
+  },
+  {
+    title: "Trips",
+    href: "/trips/wellington",
+    icon: Plane,
+    description: "Wellington, New Zealand",
   },
   {
     title: "Mortgage",

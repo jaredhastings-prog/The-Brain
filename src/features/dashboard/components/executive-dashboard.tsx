@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, GraduationCap, Landmark, UtensilsCrossed } from "lucide-react";
+import { ArrowRight, GraduationCap, Landmark, Plane, UtensilsCrossed } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -36,6 +36,13 @@ export function ExecutiveDashboard() {
           subtitle="Payoff progress and strategy"
           href="/mortgage"
           label="Go to Mortgage"
+        />
+        <LandingCard
+          icon={<Plane className="size-5" />}
+          title="Trips"
+          subtitle="Wellington · 26 Aug – 2 Sep"
+          href="/trips/wellington"
+          label="Go to Trip Planner"
         />
       </div>
     </div>
