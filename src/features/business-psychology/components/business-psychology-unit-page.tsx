@@ -5,21 +5,14 @@ import * as React from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowLeft,
-  BookOpen,
   CalendarDays,
   ClipboardList,
-  FileText,
   GraduationCap,
-  Image as ImageIcon,
-  Landmark,
-  Link2,
-  NotebookPen,
 } from "lucide-react";
 
 import { DashboardCard } from "@/components/dashboard/dashboard-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { StudyTabs } from "@/features/business-psychology/components/study-tabs";
 import type { StudyUnit } from "@/features/business-psychology/data/business-psychology-data";
 import { getWeekHref } from "@/features/business-psychology/data/business-psychology-data";
 
@@ -69,82 +62,35 @@ export function BusinessPsychologyUnitPage({ unit }: { unit: StudyUnit }) {
       </section>
 
       <DashboardCard
-        description="Unit workspace tabs for notes, assessment details, resources, grades, and linked captures."
-        eyebrow="Unit page"
+        description="Learning outcomes, unit content, and assessment overview."
+        eyebrow="Unit overview"
         title={unit.name}
       >
-        <StudyTabs
-          ariaLabel={`${unit.name} unit sections`}
-          tabs={[
-            {
-              id: "overview",
-              label: "Overview",
-              icon: BookOpen,
-              content: <OverviewTab unit={unit} />,
-            },
-            {
-              id: "weekly-content",
-              label: "Weekly Content",
-              icon: CalendarDays,
-              content: <WeeklyContentTab unit={unit} />,
-            },
-            {
-              id: "assessments",
-              label: "Assessments",
-              icon: ClipboardList,
-              content: <AssessmentsTab unit={unit} />,
-            },
-            {
-              id: "notes",
-              label: "Notes",
-              icon: NotebookPen,
-              content: (
-                <PlaceholderPanel
-                  title="Notes workspace"
-                  items={[
-                    "Add copied university notes, personal summaries, diagrams, and assignment planning notes here.",
-                    "Future: connect notes to weekly topics, assessment briefs, and Global Capture Inbox entries.",
-                  ]}
-                />
-              ),
-            },
-            {
-              id: "resources",
-              label: "Resources",
-              icon: Link2,
-              content: <ResourceTab unit={unit} />,
-            },
-            {
-              id: "grades",
-              label: "Grades",
-              icon: Landmark,
-              content: <GradesTab unit={unit} />,
-            },
-            {
-              id: "linked-captures",
-              label: "Linked Captures",
-              icon: FileText,
-              content: (
-                <PlaceholderPanel
-                  title="Linked Captures"
-                  items={[
-                    "Future: show capture inbox items connected to this unit.",
-                    "Useful captures may include assignment ideas, reading notes, lecture screenshots, and voice dumps.",
-                  ]}
-                />
-              ),
-            },
-          ]}
-        />
+        <OverviewSection unit={unit} />
+      </DashboardCard>
+
+      <DashboardCard
+        description="Briefs, grades, and notes for each assessment."
+        eyebrow="Assessments"
+        title="Assessments"
+      >
+        <AssessmentsSection unit={unit} />
+      </DashboardCard>
+
+      <DashboardCard
+        description="Open a week or expand its contents in place."
+        eyebrow="Weekly content"
+        title="Weekly Content"
+      >
+        <WeeklyContentSection unit={unit} />
       </DashboardCard>
     </div>
   );
 }
 
-function OverviewTab({ unit }: { unit: StudyUnit }) {
+function OverviewSection({ unit }: { unit: StudyUnit }) {
   const isHumanInformationProcessing = unit.id === "human-information-processing";
   const blocks = [
-    { title: "Description", items: [unit.overview.description] },
     {
       title: isHumanInformationProcessing ? "This includes" : "Learning Outcomes",
       items: unit.overview.learningOutcomes,
@@ -166,7 +112,7 @@ function OverviewTab({ unit }: { unit: StudyUnit }) {
   );
 }
 
-function WeeklyContentTab({ unit }: { unit: StudyUnit }) {
+function WeeklyContentSection({ unit }: { unit: StudyUnit }) {
   if (!unit.weeklyTopics.length) {
     return (
       <PlaceholderPanel
@@ -260,7 +206,7 @@ function WeekCard({
   );
 }
 
-function AssessmentsTab({ unit }: { unit: StudyUnit }) {
+function AssessmentsSection({ unit }: { unit: StudyUnit }) {
   if (!unit.assessments.length) {
     return (
       <PlaceholderPanel
@@ -286,57 +232,6 @@ function AssessmentsTab({ unit }: { unit: StudyUnit }) {
           <p className="mt-2 text-sm leading-6 text-muted-foreground">
             {assessment.notes}
           </p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function ResourceTab({ unit }: { unit: StudyUnit }) {
-  return (
-    <div className="grid gap-3 sm:grid-cols-2">
-      {unit.keyResources.map((resource) => (
-        <div
-          className="flex items-start gap-3 rounded-md border border-border/70 bg-background/70 p-3"
-          key={resource}
-        >
-          <span className="grid size-8 shrink-0 place-items-center rounded-md bg-accent text-accent-foreground">
-            <ImageIcon className="size-4" />
-          </span>
-          <div>
-            <div className="text-sm font-medium text-foreground">{resource}</div>
-            <p className="mt-1 text-xs leading-5 text-muted-foreground">
-              Placeholder for PDFs, screenshots, YouTube links, copied notes, or
-              university resource links.
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function GradesTab({ unit }: { unit: StudyUnit }) {
-  if (!unit.assessments.length) {
-    return (
-      <PlaceholderPanel
-        title="Grades to add"
-        items={["Add grade records, rubric feedback, and result reflections as they become available."]}
-      />
-    );
-  }
-
-  return (
-    <div className="overflow-hidden rounded-md border border-border/70">
-      {unit.assessments.map((assessment) => (
-        <div
-          className="grid gap-2 border-b border-border/70 bg-background/70 px-4 py-3 last:border-b-0 sm:grid-cols-[minmax(0,1fr)_120px]"
-          key={assessment.id}
-        >
-          <span className="text-sm text-muted-foreground">{assessment.title}</span>
-          <span className="text-sm font-semibold text-foreground">
-            {assessment.grade}
-          </span>
         </div>
       ))}
     </div>
