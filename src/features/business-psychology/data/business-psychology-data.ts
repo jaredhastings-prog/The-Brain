@@ -7,6 +7,10 @@ export type WeeklyTopic = {
   summary: string;
   summarySections?: WeeklySummarySection[];
   subModules?: WeeklySubModule[];
+  image?: {
+    src: string;
+    alt: string;
+  };
   keyConcepts: string[];
   assessmentLinks: string[];
 };
@@ -1396,6 +1400,10 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
     summary: "",
     keyConcepts: [],
     assessmentLinks: [],
+    image: {
+      src: "/images/business-psychology/hrm6005/week-1/pms-components.png",
+      alt: "Components of a performance management system",
+    },
     subModules: [
       createLearningSubModule("1.1 Get to Know Your Assessment / Project Group", [
         {
