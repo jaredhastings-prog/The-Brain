@@ -11,10 +11,20 @@ export type NlpTopic = {
   linkedCaptures: string[];
 };
 
+export type NlpGroupIntro = {
+  body: string[];
+  image?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
+};
+
 export type NlpTopicGroup = {
   id: string;
   title: string;
   description: string;
+  intro?: NlpGroupIntro;
   topics: NlpTopic[];
 };
 
@@ -29,6 +39,7 @@ type TopicGroupSeed = {
   id: string;
   title: string;
   description: string;
+  intro?: NlpGroupIntro;
   applicationFrame: string;
   principles: string[];
   modelFrame: string;
@@ -227,6 +238,18 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
     id: "states",
     title: "States",
     description: "How emotional, cognitive, and physiological states are elicited, shifted, anchored, and integrated.",
+    intro: {
+      body: [
+        "A State is a mind-body-emotion energy field. Human beings are always in a state - we are never not in a state.",
+        "Thinking creates meaning (semantics). Our internal representations specify our \u201cstate of mind\u201d. We map with VAK-ad.",
+        "Using our Body/Neurology enables us to act our way into a state. Physiology and/or neurology describe the physical \u201cstate of body\u201d. The functioning of our nervous system as it interacts with our body and physiology of our central, peripheral and autonomic nervous systems.",
+      ],
+      image: {
+        src: "/images/nlp/states-neuro-semantic.png",
+        alt: "Our thinking (semantics) plus our body (neurology) equals neuro-semantic states",
+        caption: "Semantics + Neurology = Neuro-Semantic States",
+      },
+    },
     applicationFrame: "It turns emotion, physiology, representation, meaning, and attention into practical levers for choice.",
     principles: [
       "State is shaped by representation, physiology, meaning, attention, and context.",
@@ -409,5 +432,6 @@ export const nlpTopicGroups: NlpTopicGroup[] = nlpRepositorySeeds.map((group) =>
   id: group.id,
   title: group.title,
   description: group.description,
+  intro: group.intro,
   topics: createTopics(group),
 }));
