@@ -1430,6 +1430,83 @@ const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
   },
 };
 
+const ANCHORING_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "1. Identify the desired state and its mind-body component",
+    steps: [
+      {
+        text: "What state do you want? Describe it a little bit.",
+      },
+      {
+        text: "As you're talking about that state, are you beginning to enter into that state?",
+      },
+      {
+        text: "When would you like this new empowering state (in what context(s))?",
+      },
+    ],
+  },
+  {
+    heading: "2. Evoke it fully",
+    steps: [
+      {
+        text: "Think of a time when you fully experienced this state…",
+      },
+      {
+        text: "Think of a time when you clearly had it in a powerful way. What thoughts really evoke this state?",
+      },
+      {
+        text: "What else do you need to do?",
+      },
+      {
+        text: "How much do you now have the feeling of this state? Be with that feeling… let it grow… now let it double…",
+      },
+      {
+        text: "What would increase the experience of this state even more?",
+      },
+      {
+        text: "What would it be like if you did fully experience this state?",
+        prompts: ["Use this if you're having any difficulty eliciting the state."],
+      },
+      {
+        text: "How do you know to call or label this state X?…",
+      },
+    ],
+  },
+  {
+    heading: "3. Anchor the state when it is highly amplified",
+    body: [
+      "Set a physical touch on arm, forearm, or shoulder as the person reaches the peak of their state for 1-2 seconds with equal pressure each time, in exactly the same location (only at an 8 or above on a 0 to 10 scale).",
+      "Additionally, use visual anchoring through a gesture, auditory anchoring through a particular tone or intonation.",
+    ],
+  },
+  {
+    heading: "4. Practice stepping in and out — break state and repeatedly re-access",
+    body: [
+      "“In just a moment I want you to step out of that powerful state, but before you do, take a snapshot of it in all sensory systems (what you see, hear, feel, etc.). Now let's practice stepping in and out of that state so that you can quickly fly into that state at any time you choose.”",
+    ],
+  },
+  {
+    heading: "5. Apply the resourceful state to a time or place in everyday life",
+    steps: [
+      {
+        text: "Where could you really use this state in your everyday life? What was the context again?",
+      },
+      {
+        text: "Think of that context specifically, and feel this (fire the anchor) about that…",
+      },
+      {
+        text: "Suppose you had this feeling or way of thinking as your attitude, fully and completely, in just the way that you would want it… Would you like that? → Yes",
+      },
+      {
+        text: "Would that attitude transform things as you think about that context again? → Yes",
+      },
+      {
+        text: "How does it transform things?… just notice inside… and enjoy. → Yes",
+      },
+    ],
+  },
+];
+
 const COLLAPSING_ANCHORS_PATTERN_SECTIONS: NlpContentSection[] = [
   {
     heading: "Working with State Energies",
@@ -1518,6 +1595,10 @@ const COLLAPSING_ANCHORS_PATTERN_SECTIONS: NlpContentSection[] = [
 
 const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
   {
+    "states-anchoring": {
+      patterns: [],
+      patternSections: ANCHORING_PATTERN_SECTIONS,
+    },
     "states-collapsing-anchors": {
       patterns: [],
       patternSections: COLLAPSING_ANCHORS_PATTERN_SECTIONS,
