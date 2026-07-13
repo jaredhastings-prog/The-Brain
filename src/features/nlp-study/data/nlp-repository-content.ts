@@ -245,7 +245,7 @@ const nlpRepositorySeeds: TopicGroupSeed[] = [
         "Using our Body/Neurology enables us to act our way into a state. Physiology and/or neurology describe the physical \u201cstate of body\u201d. The functioning of our nervous system as it interacts with our body and physiology of our central, peripheral and autonomic nervous systems.",
       ],
       image: {
-        src: "/images/nlp/states-neuro-semantic.png",
+        src: "/images/nlp/states-neuro-semantic.svg",
         alt: "Our thinking (semantics) plus our body (neurology) equals neuro-semantic states",
         caption: "Semantics + Neurology = Neuro-Semantic States",
       },
