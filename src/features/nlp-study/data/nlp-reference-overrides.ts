@@ -1430,8 +1430,98 @@ const referenceContentByTitle: Record<string, NlpTopicReferenceContent> = {
   },
 };
 
+const COLLAPSING_ANCHORS_PATTERN_SECTIONS: NlpContentSection[] = [
+  {
+    heading: "Working with State Energies",
+    body: [
+      "As we work with states, we either build up neurological energies or we disperse those energies.",
+      "Building up energies is amplifying states, eliciting sub-modalities that juice them up, bringing in resources, meta-stating, etc.",
+      "Dispersing energies means tearing a neuro-linguistic (mind-body) program apart, de-framing it, meta-modelling it.",
+    ],
+  },
+  {
+    heading: "1. Access a limiting state",
+    steps: [
+      {
+        text: "What state do you want to take the emotional charge out of?",
+      },
+      {
+        text: "Check how fully the state is present.",
+        prompts: [
+          "Ask: How much are you accessing that state right now? Are you fully there right now? How do you know?",
+        ],
+      },
+      {
+        text: "Set the anchor.",
+        prompts: [
+          "As I set this as an anchor for that state, nod when you re-access that state even more. How is that?",
+        ],
+      },
+      {
+        text: "How much are you experiencing that limiting state? 0/10?",
+      },
+    ],
+  },
+  {
+    heading: "2. Access a contradictory state",
+    steps: [
+      {
+        text: "What would be a powerful and resourceful state for you given that limiting state?",
+        prompts: ["Menu: relaxation for tension, playful for serious, etc."],
+      },
+      {
+        text: "Elicit the resourceful state fully.",
+        prompts: [
+          "When are/were you most fully and completely in this state? What is that like? How much are you experiencing it now? 0/10?",
+        ],
+      },
+      {
+        text: "Set the anchor and test it.",
+        prompts: [
+          "Now that I've set an anchor for that state, how well does it fire it off when I do this [fire the anchor]?",
+        ],
+      },
+    ],
+  },
+  {
+    heading: "3. Fire both anchors simultaneously",
+    steps: [
+      {
+        text: "Ask: now, are you ready to collapse the limiting state?",
+      },
+      {
+        text: "Fire both anchors and hold them.",
+        prompts: [
+          "Coach says: there's no need to do anything, just experience. Just let it happen. So, notice what happens when I do this [fire both anchors simultaneously and hold them]. What is that like?",
+        ],
+      },
+      {
+        text: "Is there any confusion or disorientation as you try to process both experiences at the same time?",
+      },
+    ],
+  },
+  {
+    heading: "4. Maintain the powerful state",
+    steps: [
+      {
+        text: "Let go of the limiting state anchor whilst holding on to the powerful state anchor.",
+      },
+      {
+        text: "How is that?",
+      },
+      {
+        text: "As you recall that limiting state, how much do you have it back?",
+      },
+    ],
+  },
+];
+
 const referenceContentByTopicId: Record<string, NlpTopicReferenceContent> =
   {
+    "states-collapsing-anchors": {
+      patterns: [],
+      patternSections: COLLAPSING_ANCHORS_PATTERN_SECTIONS,
+    },
     "time-lines-the-time-lines-model": {
       tabs: ["overview"],
       overview: TIME_LINES_MODEL_OVERVIEW,
