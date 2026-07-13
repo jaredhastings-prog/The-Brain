@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b2447"/>
+      <stop offset="1" stop-color="#051529"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffb347" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#ff8c1a" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ff8c1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7dd3fc" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#7dd3fc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="arrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#cbd5e1" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#94a3b8" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- top arrow -->
+  <g>
+    <rect x="330" y="34" width="500" height="26" rx="13" fill="url(#arrow)"/>
+    <path d="M830 20 L890 47 L830 74 Z" fill="#94a3b8" opacity="0.9"/>
+  </g>
+
+  <!-- labels row -->
+  <g fill="#1e2a4a" text-anchor="middle">
+    <text x="215" y="130" font-size="34" font-weight="600">1. Our thinking</text>
+    <text x="215" y="172" font-size="34" font-weight="800" letter-spacing="2">SEMANTICS</text>
+
+    <text x="440" y="160" font-size="72" font-weight="800">+</text>
+
+    <text x="640" y="130" font-size="34" font-weight="600">2. Our body</text>
+    <text x="640" y="172" font-size="34" font-weight="800" letter-spacing="2">NEUROLOGY</text>
+
+    <text x="845" y="160" font-size="72" font-weight="800">=</text>
+
+    <text x="1035" y="130" font-size="34" font-weight="600">3. Neuro-Semantic</text>
+    <text x="1035" y="172" font-size="34" font-weight="800" letter-spacing="2">STATES</text>
+  </g>
+
+  <!-- panels -->
+  <g>
+    <rect x="20" y="210" width="380" height="390" rx="14" fill="url(#panel)"/>
+    <rect x="410" y="210" width="380" height="390" rx="14" fill="url(#panel)"/>
+    <rect x="800" y="210" width="380" height="390" rx="14" fill="url(#panel)"/>
+  </g>
+
+  <!-- Panel 1: thinking head with network brain -->
+  <g>
+    <path d="M255 560 L255 500 C300 480 320 440 318 395 C316 330 270 280 205 280 C140 280 95 330 95 395 C95 430 108 460 130 482 L130 520 L150 560 Z"
+      fill="#123a6b" stroke="#7dd3fc" stroke-width="2" opacity="0.9"/>
+    <circle cx="205" cy="370" r="72" fill="url(#glowBlue)" opacity="0.5"/>
+    <!-- network nodes -->
+    <g stroke="#ffb347" stroke-width="1.6" opacity="0.9">
+      <line x1="165" y1="350" x2="205" y2="330"/>
+      <line x1="205" y1="330" x2="248" y2="352"/>
+      <line x1="248" y1="352" x2="238" y2="400"/>
+      <line x1="238" y1="400" x2="188" y2="412"/>
+      <line x1="188" y1="412" x2="165" y2="350"/>
+      <line x1="205" y1="330" x2="188" y2="412"/>
+      <line x1="165" y1="350" x2="238" y2="400"/>
+    </g>
+    <g fill="#ffd27d">
+      <circle cx="165" cy="350" r="7"/>
+      <circle cx="205" cy="330" r="8"/>
+      <circle cx="248" cy="352" r="7"/>
+      <circle cx="238" cy="400" r="7"/>
+      <circle cx="188" cy="412" r="7"/>
+    </g>
+  </g>
+
+  <!-- Panel 2: neuron in circular frame -->
+  <g>
+    <circle cx="600" cy="405" r="140" fill="#0e2f57" stroke="#7dd3fc" stroke-width="2" opacity="0.95"/>
+    <circle cx="600" cy="405" r="95" fill="url(#glowBlue)" opacity="0.35"/>
+    <!-- soma -->
+    <circle cx="600" cy="405" r="34" fill="#c4b5fd" opacity="0.9"/>
+    <circle cx="600" cy="405" r="16" fill="#7c6bd6"/>
+    <!-- dendrites -->
+    <g stroke="#a5b4fc" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.9">
+      <path d="M600 371 C595 340 610 320 625 300"/>
+      <path d="M572 385 C540 365 525 345 515 320"/>
+      <path d="M566 415 C535 430 515 440 495 465"/>
+      <path d="M590 438 C580 470 565 485 545 500"/>
+      <path d="M628 425 C660 445 675 460 690 485"/>
+      <path d="M632 390 C665 375 685 365 705 345"/>
+    </g>
+    <g fill="#ffd27d">
+      <circle cx="625" cy="300" r="6"/>
+      <circle cx="515" cy="320" r="6"/>
+      <circle cx="495" cy="465" r="6"/>
+      <circle cx="545" cy="500" r="6"/>
+      <circle cx="690" cy="485" r="6"/>
+      <circle cx="705" cy="345" r="6"/>
+    </g>
+  </g>
+
+  <!-- Panel 3: integrated head, glowing brain + spine -->
+  <g>
+    <path d="M1030 560 L1030 505 C1072 486 1092 448 1090 405 C1088 345 1046 298 986 298 C926 298 884 345 884 405 C884 438 896 466 916 486 L916 522 L934 560 Z"
+      fill="#123a6b" stroke="#7dd3fc" stroke-width="2" opacity="0.9"/>
+    <!-- ponytail -->
+    <path d="M1086 372 C1120 380 1138 410 1130 455 C1126 480 1114 505 1096 522 C1104 490 1104 455 1092 428 Z"
+      fill="#0e2f57" stroke="#7dd3fc" stroke-width="1.5" opacity="0.9"/>
+    <!-- glowing brain -->
+    <circle cx="982" cy="380" r="85" fill="url(#glow)"/>
+    <ellipse cx="982" cy="380" rx="46" ry="38" fill="#ffb347" opacity="0.85"/>
+    <path d="M945 380 C955 360 975 355 982 372 C990 355 1010 360 1019 378 C1012 398 995 405 982 398 C970 407 952 400 945 380 Z"
+      fill="#ffd27d" opacity="0.9"/>
+    <!-- spine energy line -->
+    <path d="M982 418 C980 450 972 490 962 560" stroke="#ffb347" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.85"/>
+    <circle cx="972" cy="470" r="5" fill="#ffd27d"/>
+    <circle cx="966" cy="515" r="5" fill="#ffd27d"/>
+  </g>
+</svg>
