@@ -29,6 +29,10 @@ export type WeeklySummarySection = {
 export type WeeklySubModule = {
   id: string;
   title: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
   learningBlocks?: WeeklyLearningBlock[];
   notes: string[];
   keyConcepts: string[];
@@ -1392,6 +1396,45 @@ const psychologicalScienceWellbeingWeeklyTopics: WeeklyTopic[] = [
   },
 ];
 
+
+const hrm6005Week1ModuleImages: Record<string, { src: string; alt: string }> = {
+  [slugify("1.2 Performance Management Systems")]: {
+    src: "/images/business-psychology/hrm6005/week-1/module-1-2.png",
+    alt: "Module 1.2 visual map — Performance Management Systems",
+  },
+  [slugify("1.3 Performance Management — A Multilevel Interpretation")]: {
+    src: "/images/business-psychology/hrm6005/week-1/module-1-3.png",
+    alt: "Module 1.3 visual map — A Multilevel Interpretation",
+  },
+  [slugify("1.4 Performance Management — A Process")]: {
+    src: "/images/business-psychology/hrm6005/week-1/module-1-4.png",
+    alt: "Module 1.4 visual map — A Process",
+  },
+  [slugify("1.5 Goal Setting")]: {
+    src: "/images/business-psychology/hrm6005/week-1/module-1-5.png",
+    alt: "Module 1.5 visual map — Goal Setting",
+  },
+  [slugify("1.6 Performance Management — Formality")]: {
+    src: "/images/business-psychology/hrm6005/week-1/module-1-6.png",
+    alt: "Module 1.6 visual map — Formality",
+  },
+  [slugify("1.7 Performance Management — A Critique (Part 1)")]: {
+    src: "/images/business-psychology/hrm6005/week-1/module-1-7.png",
+    alt: "Module 1.7 visual map — A Critique (Part 1)",
+  },
+  [slugify("1.8 Performance Management — A Critique (Part 2)")]: {
+    src: "/images/business-psychology/hrm6005/week-1/module-1-8.png",
+    alt: "Module 1.8 visual map — A Critique (Part 2)",
+  },
+};
+
+function withHrm6005Week1Images(subModules: WeeklySubModule[]): WeeklySubModule[] {
+  return subModules.map((subModule) => {
+    const image = hrm6005Week1ModuleImages[subModule.id];
+    return image ? { ...subModule, image } : subModule;
+  });
+}
+
 const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
   {
     id: slugify("Week 1: Performance Management Systems"),
@@ -1404,7 +1447,7 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
       src: "/images/business-psychology/hrm6005/week-1/pms-components.png",
       alt: "Components of a performance management system",
     },
-    subModules: [
+    subModules: withHrm6005Week1Images([
       createLearningSubModule("1.1 Get to Know Your Assessment / Project Group", [
         {
           id: "purpose",
@@ -1994,7 +2037,7 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
           body: "You survived! The purpose of the final activity was to see that, although there are strong criticisms of performance management, it serves as a necessary evil in organisations. The truth is less absolute — performance management that is too evaluative and in the wrong context can be disastrous. But a none-at-all approach also poses problems.",
         },
       ]),
-    ],
+    ]),
   },
   {
     id: slugify("Week 2: The Performance Appraisal and Bias"),
