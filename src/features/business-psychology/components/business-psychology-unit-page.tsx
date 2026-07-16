@@ -141,19 +141,59 @@ function WeekCard({
   unitId: string;
 }) {
   const [showContents, setShowContents] = React.useState(false);
+  const [imageExpanded, setImageExpanded] = React.useState(false);
   const subModules = topic.subModules ?? [];
+
+  React.useEffect(() => {
+    if (!imageExpanded) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setImageExpanded(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [imageExpanded]);
 
   return (
     <article className="overflow-hidden rounded-lg border border-border/70 bg-background/70">
-      <div className="flex flex-col sm:flex-row">
-        <div className="relative w-full shrink-0 border-b border-border/70 bg-muted/40 sm:w-52 sm:border-b-0 sm:border-r md:w-64">
-          {topic.image ? (
+      {imageExpanded && topic.image ? (
+        <div
+          className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/90 backdrop-blur-sm"
+          onClick={() => setImageExpanded(false)}
+        >
+          <button
+            aria-label="Close expanded image"
+            className="fixed right-4 top-4 z-10 grid size-10 place-items-center rounded-full bg-slate-800/90 text-white shadow-lg transition-colors hover:bg-slate-700"
+            onClick={() => setImageExpanded(false)}
+            type="button"
+          >
+            ✕
+          </button>
+          <div className="mx-auto min-h-full w-full max-w-[1600px] p-3 md:p-6">
             <img
               src={topic.image.src}
               alt={topic.image.alt}
-              className="h-40 w-full object-cover sm:h-full"
-              loading="lazy"
+              className="w-full rounded-lg shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
             />
+          </div>
+        </div>
+      ) : null}
+      <div className="flex flex-col sm:flex-row">
+        <div className="relative w-full shrink-0 border-b border-border/70 bg-muted/40 sm:w-52 sm:border-b-0 sm:border-r md:w-64">
+          {topic.image ? (
+            <button
+              aria-label={`Expand image: ${topic.image.alt}`}
+              className="block h-full w-full cursor-zoom-in"
+              onClick={() => setImageExpanded(true)}
+              type="button"
+            >
+              <img
+                src={topic.image.src}
+                alt={topic.image.alt}
+                className="h-40 w-full object-cover sm:h-full"
+                loading="lazy"
+              />
+            </button>
           ) : (
             <div className="grid h-24 w-full place-items-center p-4 sm:h-full sm:min-h-32">
               <div className="text-center">
