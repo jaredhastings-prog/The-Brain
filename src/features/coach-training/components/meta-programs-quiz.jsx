@@ -408,6 +408,14 @@ export default function MetaProgramsQuiz() {
     }
     setSelected(null);
     setStage(1);
+    // reshuffle the pool each time a full pass completes, so questions
+    // never repeat in the same order
+    if (filteredPool.length && (idx + 1) % filteredPool.length === 0) {
+      const bank = mode === "meta" ? Q : mode === "rep" ? RQ : PQ;
+      setPools((prev) => ({ ...prev, [mode]: prepare(bank) }));
+      setIdx(0);
+      return;
+    }
     setIdx((i) => i + 1);
   };
 
