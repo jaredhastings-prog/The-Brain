@@ -667,6 +667,9 @@ function SubModuleAccordion({ subModules }: { subModules: RenderableSubModule[] 
             </button>
             {isOpen ? (
               <div className="border-t border-border/70 p-4">
+                {subModule.image ? (
+                  <ExpandableImage image={subModule.image} />
+                ) : null}
                 {subModule.learningBlocks?.length ? (
                   <LearningBlockStack blocks={subModule.learningBlocks} />
                 ) : (
@@ -678,6 +681,64 @@ function SubModuleAccordion({ subModules }: { subModules: RenderableSubModule[] 
         );
       })}
     </div>
+  );
+}
+
+function ExpandableImage({
+  image,
+}: {
+  image: { src: string; alt: string };
+}) {
+  const [expanded, setExpanded] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!expanded) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setExpanded(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [expanded]);
+
+  return (
+    <>
+      {expanded ? (
+        <div
+          className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/90 backdrop-blur-sm"
+          onClick={() => setExpanded(false)}
+        >
+          <button
+            aria-label="Close expanded image"
+            className="fixed right-4 top-4 z-10 grid size-10 place-items-center rounded-full bg-slate-800/90 text-white shadow-lg transition-colors hover:bg-slate-700"
+            onClick={() => setExpanded(false)}
+            type="button"
+          >
+            ✕
+          </button>
+          <div className="mx-auto min-h-full w-full max-w-[1600px] p-3 md:p-6">
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full rounded-lg shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
+            />
+          </div>
+        </div>
+      ) : null}
+      <button
+        aria-label={`Expand image: ${image.alt}`}
+        className="mb-4 block w-full cursor-zoom-in overflow-hidden rounded-md border border-border/70 bg-background/80"
+        onClick={() => setExpanded(true)}
+        type="button"
+      >
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="w-full object-contain"
+          loading="lazy"
+        />
+      </button>
+    </>
   );
 }
 
