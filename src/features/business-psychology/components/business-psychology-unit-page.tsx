@@ -157,17 +157,25 @@ function WeekCard({
     <article className="overflow-hidden rounded-lg border border-border/70 bg-background/70">
       {imageExpanded && topic.image ? (
         <div
-          aria-label={`Expanded view: ${topic.image.alt}. Click to close.`}
-          className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-slate-950/85 p-4 backdrop-blur-sm md:p-8"
+          className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/90 backdrop-blur-sm"
           onClick={() => setImageExpanded(false)}
-          role="button"
-          tabIndex={0}
         >
-          <img
-            src={topic.image.src}
-            alt={topic.image.alt}
-            className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
-          />
+          <button
+            aria-label="Close expanded image"
+            className="fixed right-4 top-4 z-10 grid size-10 place-items-center rounded-full bg-slate-800/90 text-white shadow-lg transition-colors hover:bg-slate-700"
+            onClick={() => setImageExpanded(false)}
+            type="button"
+          >
+            ✕
+          </button>
+          <div className="mx-auto min-h-full w-full max-w-[1600px] p-3 md:p-6">
+            <img
+              src={topic.image.src}
+              alt={topic.image.alt}
+              className="w-full rounded-lg shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
+            />
+          </div>
         </div>
       ) : null}
       <div className="flex flex-col sm:flex-row">
