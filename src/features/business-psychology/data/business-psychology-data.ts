@@ -1401,8 +1401,8 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
     keyConcepts: [],
     assessmentLinks: [],
     image: {
-      src: "/images/business-psychology/hrm6005/week-1/pms-components.png",
-      alt: "Components of a performance management system",
+      src: "/images/business-psychology/hrm6005/week-1/week-1-map.png",
+      alt: "Week One mapped — visual summary of the week's content",
     },
     subModules: [
       createLearningSubModule("1.1 Get to Know Your Assessment / Project Group", [

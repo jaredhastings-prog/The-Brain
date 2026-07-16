@@ -141,19 +141,51 @@ function WeekCard({
   unitId: string;
 }) {
   const [showContents, setShowContents] = React.useState(false);
+  const [imageExpanded, setImageExpanded] = React.useState(false);
   const subModules = topic.subModules ?? [];
+
+  React.useEffect(() => {
+    if (!imageExpanded) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setImageExpanded(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [imageExpanded]);
 
   return (
     <article className="overflow-hidden rounded-lg border border-border/70 bg-background/70">
+      {imageExpanded && topic.image ? (
+        <div
+          aria-label={`Expanded view: ${topic.image.alt}. Click to close.`}
+          className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-slate-950/85 p-4 backdrop-blur-sm md:p-8"
+          onClick={() => setImageExpanded(false)}
+          role="button"
+          tabIndex={0}
+        >
+          <img
+            src={topic.image.src}
+            alt={topic.image.alt}
+            className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
+          />
+        </div>
+      ) : null}
       <div className="flex flex-col sm:flex-row">
         <div className="relative w-full shrink-0 border-b border-border/70 bg-muted/40 sm:w-52 sm:border-b-0 sm:border-r md:w-64">
           {topic.image ? (
-            <img
-              src={topic.image.src}
-              alt={topic.image.alt}
-              className="h-40 w-full object-cover sm:h-full"
-              loading="lazy"
-            />
+            <button
+              aria-label={`Expand image: ${topic.image.alt}`}
+              className="block h-full w-full cursor-zoom-in"
+              onClick={() => setImageExpanded(true)}
+              type="button"
+            >
+              <img
+                src={topic.image.src}
+                alt={topic.image.alt}
+                className="h-40 w-full object-cover sm:h-full"
+                loading="lazy"
+              />
+            </button>
           ) : (
             <div className="grid h-24 w-full place-items-center p-4 sm:h-full sm:min-h-32">
               <div className="text-center">
