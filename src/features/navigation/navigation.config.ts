@@ -5,6 +5,7 @@ import {
   LayoutDashboard,
   Plane,
   Sparkles,
+  Target,
   UtensilsCrossed,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -39,6 +40,11 @@ export const primaryNavigation: NavItem[] = [
         title: "NLP",
         href: "/study-learning/nlp",
         icon: Sparkles,
+      },
+      {
+        title: "Coach Training",
+        href: "/study-learning/coach-training",
+        icon: Target,
       },
     ],
   },
