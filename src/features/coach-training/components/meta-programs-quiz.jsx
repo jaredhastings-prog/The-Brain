@@ -19,6 +19,8 @@ const ink = {
   tabBlueText: "#E9F0F7",
   tabSand: "#6B5B3E",
   tabSandText: "#F4EFE4",
+  tabPine: "#3F5F52",
+  tabPineText: "#E8F2ED",
   redPen: "#A8382C",
   textDark: "#2B2620",
 };
@@ -338,6 +340,39 @@ const LQ = [
   { id: 12, group: "practice", statement: "The manual's paired practice cycles 2 minutes at each level while a partner shares for 8. What's the training point?", options: ["Levels are states you can deliberately enter and feel the difference between — from both chairs", "Proving level 4 is impossible", "Showing 2 minutes is enough for any level", "Making the client talk longer"], correct: 0, explanation: "Cycling the levels builds felt discrimination — you learn what each level does to the speaker and to you, which is what makes level-shifting a choice." },
 ];
 
+// ---------- Self-Reflexive / Meta-Questions bank (Meta-States model; IC manual "Self-Reflexive Questions") ----------
+const REFLEX_GROUPS = {
+  concept: "The Model",
+  category: "Name the Category",
+  choose: "Choose the Question",
+  verbatim: "Real Clients",
+};
+
+const XQ = [
+  // The model
+  { id: 1, group: "concept", statement: "What exactly is a meta-state?", options: ["A state applied to another state — thoughts-feelings referring back to a previous thought or feeling, not to the world", "A very intense primary state", "Any state experienced during meditation", "A state you can't name"], correct: 0, explanation: "Primary states point at the world; meta-states point at your own experience — anger about your fear, guilt about your anger. Self-reflexive consciousness." },
+  { id: 2, group: "concept", statement: "Why do higher frames matter more than the primary state underneath them?", options: ["Higher levels organise, drive and modulate the lower levels — the frame governs everything under it", "They don't — primary states are always stronger", "Higher frames are easier to observe", "They contain more emotion"], correct: 0, explanation: "Bateson's principle, central to the Meta-States model: change the governing frame and everything beneath it reorganises." },
+  { id: 3, group: "concept", statement: "A coaching conversation stays shallow and \"all on the surface.\" Per the manual, what is the coach most likely NOT doing?", options: ["Asking self-reflexive questions — the up-questions that take the client into their inner game", "Taking enough notes", "Asking enough factual questions", "Talking enough themselves"], correct: 0, explanation: "Content questions circle the story. Self-reflexive questions go up — into the matrix of frames that make the story mean what it means." },
+  { id: 4, group: "concept", statement: "What's the difference between \"What happened next?\" and \"What does that mean to you?\"", options: ["The first stays at the primary level (content); the second goes meta — into the client's frames of meaning", "The second is just more polite", "The first is a closed question", "No structural difference"], correct: 0, explanation: "Same conversation, different altitude. The meaning question is one of the 10 self-reflexive categories; the content question never leaves the story." },
+  // Name the category
+  { id: 5, group: "category", statement: "\"What do you believe about X?\" — which self-reflexive category?", options: ["Believe", "Value / Importance", "Expect", "Decide"], correct: 0, explanation: "The first of the manual's memorised categories — surfacing the operating belief above the experience." },
+  { id: 6, group: "category", statement: "\"Do you have permission to experience X?\" — which category, and why is it so powerful?", options: ["Permit / Prohibit — it surfaces internal rules about what's allowed, which clients rarely know they're running", "Identity — it's about who they are", "Expect — it's about the future", "Remember — it references the past"], correct: 0, explanation: "Permission questions expose the prohibitions installed long ago — often the exact wall a stuck client keeps hitting without seeing it." },
+  { id: 7, group: "category", statement: "\"What is X like? What would you compare it to?\" — which category?", options: ["Metaphor (compare)", "Imagine", "Meaning", "World"], correct: 0, explanation: "Metaphor questions retrieve the client's own symbolic coding — and the metaphor often carries more structure than the literal description." },
+  { id: 8, group: "category", statement: "\"How does this affect your sense of self?\" — which category?", options: ["Identity", "Powers", "Others", "Believe"], correct: 0, explanation: "The identity category — where an experience stops being something that happens and starts being something they are." },
+  { id: 9, group: "category", statement: "\"What is your intention in doing X — and what's your higher intention above that?\" — what's the coach doing?", options: ["Climbing the intention category — each 'higher intention' question moves another frame up the matrix", "Checking commitment", "Testing memory", "Challenging the goal"], correct: 0, explanation: "Intention stacks: above every intention sits another. Climbing it reveals what the behaviour is ultimately in service of." },
+  { id: 10, group: "category", statement: "In the quadrants exercise, \"How do you experience time when you X?\" belongs to which quadrant?", options: ["Lower Right (ITS) — objective-collective, alongside 'what domain of experience does X activate?'", "Upper Left (I) — subjective-individual", "Upper Right (IT)", "Lower Left (WE)"], correct: 0, explanation: "The manual maps the categories across all four quadrants — time and domain questions sit in the lower right." },
+  // Choose the question
+  { id: 11, group: "choose", statement: "Client: \"I keep procrastinating on the business plan.\" Which question goes META rather than into content?", options: ["\"What do you believe about yourself when you procrastinate?\"", "\"What part of the plan is hardest?\"", "\"When do you usually procrastinate?\"", "\"Have you tried time-blocking?\""], correct: 0, explanation: "The other three stay inside the story (content, time, tactics). The belief question rises to the frame the procrastination runs under." },
+  { id: 12, group: "choose", statement: "Client: \"I gave the presentation and it went fine, I guess.\" Flat tone. Best self-reflexive question?", options: ["\"What does 'fine' mean to you — and what were you expecting instead?\"", "\"How long was the presentation?\"", "\"Who was in the audience?\"", "\"Will you present again soon?\""], correct: 0, explanation: "Meaning + expectation — the flatness lives in the gap between the event and the frames around it, not in the event's details." },
+  { id: 13, group: "choose", statement: "Client: \"Success would be finally launching the thing.\" To explore the inner game, which question?", options: ["\"Imagine you've launched — what do you imagine happens then, and what does that say about why this matters?\"", "\"What's your launch date?\"", "\"What's your marketing plan?\"", "\"Who are your competitors?\""], correct: 0, explanation: "The Imagine category plus meaning — future-frames reveal what the goal is actually carrying for the client." },
+  { id: 14, group: "choose", statement: "The manual's transformational-question exercise: \"I don't have time to exercise\" becomes \"How can I create more time?\" What's the NEXT move?", options: ["Question the question — \"what decision would I need to make?\" then \"do I have permission to make that decision?\"", "Answer it with a scheduling app", "Turn it back into a statement", "Ask it louder"], correct: 0, explanation: "The exercise stacks self-reflexive questions on the question itself — surfacing the assumptions and permissions the whole problem sits on." },
+  // Real clients
+  { id: 15, group: "verbatim", statement: "Elena: \"I know I have the tools, but I don't use them — and that awareness makes me even more pissed off at myself.\" In Meta-States terms, what is the anger?", options: ["A meta-state — a state about her own state, governing the whole experience from above", "A primary state about the world", "A rep-system preference", "A universal quantifier"], correct: 0, explanation: "Textbook self-reflexive structure: frustration applied to her own awareness. The intervention has to address the frame, not the tools." },
+  { id: 16, group: "verbatim", statement: "Elena: \"After I smoke I take shorter breaths on purpose — I don't feel worthy of a real breath.\" Which self-reflexive question goes to the governing frame?", options: ["\"Do you have permission to be worthy of a breath even after a mistake — and who set that rule?\"", "\"How many cigarettes per day?\"", "\"Have you tried nicotine patches?\"", "\"When did you start smoking?\""], correct: 0, explanation: "Permit/Prohibit at the identity level — the breath-restriction is a prohibition running above the behaviour. Content questions can't touch it." },
+  { id: 17, group: "verbatim", statement: "Arun: \"I want to reincarnate myself — I don't see life as singular.\" Which self-reflexive question would open his inner game further?", options: ["\"What does 'reincarnate' mean to you — and what does having that capability say about who you are?\"", "\"What career would you pick next?\"", "\"How much would retraining cost?\"", "\"When would you make the change?\""], correct: 0, explanation: "His own metaphor is the doorway — unpacking it through Meaning and Identity explores the frame; logistics questions drop back to content." },
+  { id: 18, group: "verbatim", statement: "Tessa: \"I don't like being on a stage — a fear of big-upping yourself.\" Someone else's phrase, adopted as hers. Which question tests the frame?", options: ["\"When you say 'big-upping' — is that your word or theirs? What do YOU believe being visible says about you?\"", "\"How big was the stage?\"", "\"Have you tried public-speaking courses?\"", "\"How often do you have to present?\""], correct: 0, explanation: "A borrowed label can install a borrowed frame. Checking authorship and the belief underneath it is self-reflexive work at the Believe/Identity level." },
+];
+
 const STORAGE_KEY = "meta-quiz-stats-v3";
 const emptyStats = () => ({
   meta: { attempted: 0, correct: 0 },
@@ -345,6 +380,7 @@ const emptyStats = () => ({
   pace: { attempted: 0, correct: 0 },
   ground: { attempted: 0, correct: 0 },
   listen: { attempted: 0, correct: 0 },
+  reflex: { attempted: 0, correct: 0 },
 });
 
 function shuffle(arr) {
@@ -377,7 +413,7 @@ function prepare(bank) {
   });
 }
 
-const BANKS = { meta: () => Q, rep: () => RQ, pace: () => PQ, ground: () => GQ, listen: () => LQ };
+const BANKS = { meta: () => Q, rep: () => RQ, pace: () => PQ, ground: () => GQ, listen: () => LQ, reflex: () => XQ };
 
 const MODES = {
   meta: { label: "Meta Programs", title: "Meta Program Drill", groups: GROUPS, tab: ink.tabTeal, tabText: ink.tabTealText },
@@ -385,6 +421,7 @@ const MODES = {
   pace: { label: "Pacing", title: "Pacing & Matching Drill", groups: PACE_GROUPS, tab: ink.tabPlum, tabText: ink.tabPlumText },
   ground: { label: "Precision Qs", title: "Precision / Grounding Drill", groups: GROUND_GROUPS, tab: ink.tabBlue, tabText: ink.tabBlueText },
   listen: { label: "Listening", title: "Levels of Listening Drill", groups: LISTEN_GROUPS, tab: ink.tabSand, tabText: ink.tabSandText },
+  reflex: { label: "Self-Reflexive Qs", title: "Self-Reflexive / Meta-Questions Drill", groups: REFLEX_GROUPS, tab: ink.tabPine, tabText: ink.tabPineText },
 };
 
 export default function MetaProgramsQuiz() {
@@ -395,6 +432,7 @@ export default function MetaProgramsQuiz() {
     pace: new Set(Object.keys(PACE_GROUPS)),
     ground: new Set(Object.keys(GROUND_GROUPS)),
     listen: new Set(Object.keys(LISTEN_GROUPS)),
+    reflex: new Set(Object.keys(REFLEX_GROUPS)),
   });
   const [pools, setPools] = useState(() => ({
     meta: prepare(Q),
@@ -402,6 +440,7 @@ export default function MetaProgramsQuiz() {
     pace: prepare(PQ),
     ground: prepare(GQ),
     listen: prepare(LQ),
+    reflex: prepare(XQ),
   }));
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState(null);
