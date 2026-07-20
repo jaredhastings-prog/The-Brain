@@ -15,6 +15,12 @@ const ink = {
   tabRustText: "#F5EBDD",
   tabPlum: "#5C4470",
   tabPlumText: "#F0EAF5",
+  tabBlue: "#3E5C76",
+  tabBlueText: "#E9F0F7",
+  tabSand: "#6B5B3E",
+  tabSandText: "#F4EFE4",
+  tabPine: "#3F5F52",
+  tabPineText: "#E8F2ED",
   redPen: "#A8382C",
   textDark: "#2B2620",
 };
@@ -275,11 +281,106 @@ const PQ = [
   { id: 113, group: "verbatim", statement: "Tessa: \"I might have a think about that — I'd have to look at budget. I was hoping for a lot less.\" Best pacing response?", options: ["\"Totally fair — how about one trial session first, so you can feel how it works before any bigger commitment?\"", "\"Quality coaching costs — you get what you pay for.\"", "\"I'll hold the spot, but you'd need to decide today.\"", "\"Maybe coaching isn't for you right now, then.\""], correct: 0, explanation: "Pace the real constraint (money, uncertainty) without defensiveness or pressure, and lower the risk of the first step — which keeps the door open on her terms." },
 ];
 
+// ---------- Precision / Grounding Questions bank (NLP Practitioner + Integral Coach manuals) ----------
+const GROUND_GROUPS = {
+  category: "DDG Triage",
+  spot: "Spot the Pattern",
+  question: "Choose the Question",
+  verbatim: "Real Clients",
+};
+
+const GQ = [
+  // DDG triage — deletion / distortion / generalisation
+  { id: 1, group: "category", statement: "\"Let's catch up soon\" — said while knowing you're flat out for the next two weeks. Which modelling process?", options: ["Deletion — important information (your unavailability) is left out", "Generalisation — a sweeping statement", "Distortion — twisting information", "None — it's well-formed"], correct: 0, explanation: "The manual's own example: deletion is leaving out important information. The words survive; the availability didn't." },
+  { id: 2, group: "category", statement: "\"She's not smiling at me — that means she doesn't like me.\" Which modelling process?", options: ["Distortion — mind reading twists an observation into a conclusion about her mind", "Deletion — who is she?", "Generalisation — all people who don't smile", "None — it's a fair inference"], correct: 0, explanation: "Distortions twist information in ways that limit choice — here an external behaviour is read as certain knowledge of another's inner state." },
+  { id: 3, group: "category", statement: "One bad breakup, and now: \"all men are bastards.\" Which modelling process?", options: ["Generalisation — one experience detached from context now represents the whole category", "Distortion — an unfair judgment", "Deletion — which men?", "Complex equivalence"], correct: 0, explanation: "The manual's example of generalisation: a single experience becomes the rule for every case." },
+  { id: 4, group: "category", statement: "Why does the grounding model matter at all? Because surface structure is…", options: ["What's left after you've deleted, distorted and generalised hundreds of times — the movie's trailer, not the movie", "The deepest available version of the client's meaning", "Usually a deliberate lie", "Only relevant with talkative clients"], correct: 0, explanation: "Surface structure is what gets said; deep structure holds the meaning. Grounding questions recover what filtering removed." },
+  // Spot the pattern
+  { id: 5, group: "spot", statement: "\"They don't listen to me.\" Which precision pattern is missing?", options: ["Lack of referential index — who specifically are \"they\"?", "Universal quantifier", "Mind reading", "Nominalisation"], correct: 0, explanation: "The doer has been deleted. \"Who specifically doesn't listen to you?\" recovers the referential index." },
+  { id: 6, group: "spot", statement: "\"She's a better person.\" What's been deleted?", options: ["The comparison standard — better than whom, at what, by what criteria?", "The referential index — who is she?", "The time frame — when?", "Nothing — it's specific"], correct: 0, explanation: "Comparative deletion: the standard, criteria, and comparison group have all vanished from the map." },
+  { id: 7, group: "spot", statement: "\"He never listens. Everybody's against me.\" Which pattern?", options: ["Universal quantifiers — never, everybody: absolute global statements", "Modal operator of necessity", "Lost performative", "Cause-effect"], correct: 0, explanation: "Never/always/everybody/nobody are the key words. The challenge: \"NEVER? Absolutely EVERYBODY?\" regains specificity." },
+  { id: 8, group: "spot", statement: "\"I have to be perfect. I must never let them down.\" Which pattern?", options: ["Modal operators of necessity — have to, must: rules that delete choice", "Modal operators of possibility", "Universal quantifiers", "Presupposition"], correct: 0, explanation: "Must/should/have-to language encodes rules of necessity. Aim: regain possibility, choice and personal power." },
+  { id: 9, group: "spot", statement: "\"I can't speak up in those meetings.\" Which pattern?", options: ["Modal operator of possibility — can't: an encoded impossibility", "Modal operator of necessity", "Simple deletion", "Mind reading"], correct: 0, explanation: "Can/can't/impossible are rules of possibility — usually applied where choice exists but action isn't being taken." },
+  { id: 10, group: "spot", statement: "\"The failure is holding me back.\" What has the language done?", options: ["Nominalisation — the verb \"to fail\" has been frozen into a thing; the action is hidden in a static noun", "Cause-effect", "Lost performative", "Comparative deletion"], correct: 0, explanation: "Can it fit in a wheelbarrow? No — so it's a process masquerading as a thing. Put it back into process form: \"what did you do that didn't work — and what's next?\"" },
+  { id: 11, group: "spot", statement: "\"You make me angry.\" Which pattern?", options: ["Cause-effect — absolute assignment of your state to their action", "Mind reading", "Complex equivalence", "Personalising"], correct: 0, explanation: "Makes/forces language claims X causes Y directly. \"How specifically does what they do cause you to feel that?\" opens the map." },
+  { id: 12, group: "spot", statement: "\"He didn't call back — that means he doesn't respect me.\" Which pattern?", options: ["Complex equivalence — an external behaviour is equated to an internal state (EB = IS)", "Universal quantifier", "Simple deletion", "Modal operator"], correct: 0, explanation: "This-means-that: a behaviour is welded to a meaning. \"How does not calling equal disrespect? Could it mean anything else?\"" },
+  { id: 13, group: "spot", statement: "\"It's just wrong to want more.\" Says who? Which pattern?", options: ["Lost performative — the map-maker has been deleted from the judgment", "Mind reading", "Cause-effect", "Modal operator of necessity"], correct: 0, explanation: "A value judgment floating free of its author. \"Says who? By what standard? Under what circumstances?\" recovers the source." },
+  // Choose the question
+  { id: 14, group: "question", statement: "Client: \"She hurt me.\" Best grounding question?", options: ["\"How specifically did she hurt you?\"", "\"Why would she do that?\"", "\"Are you sure you're not overreacting?\"", "\"What's your plan now?\""], correct: 0, explanation: "Vague verb — recover the specific process. Why-questions invite justification; the manual's move is how-specifically." },
+  { id: 15, group: "question", statement: "Client: \"I can't deal with it.\" Best grounding question?", options: ["\"What specifically is 'it' — and what would happen if you could deal with it?\"", "\"You definitely can — believe in yourself.\"", "\"Why can't you?\"", "\"Who told you that?\""], correct: 0, explanation: "Two recoveries in one: the deleted referent (\"it\") and the possibility rule (\"can't\" → what would happen if…?)." },
+  { id: 16, group: "question", statement: "Client: \"I should be more understanding when he's like that.\" Best grounding question?", options: ["\"What do you think would happen if you weren't?\"", "\"Yes — understanding is important in relationships.\"", "\"Why aren't you more understanding?\"", "\"Is he worth understanding?\""], correct: 0, explanation: "Straight from the manual: challenge the rule of necessity with the consequence question, not agreement or blame." },
+  { id: 17, group: "question", statement: "Client: \"My manager thinks I'm not leadership material.\" (No feedback has been given.) Best grounding question?", options: ["\"How specifically do you know what your manager thinks?\"", "\"What a terrible manager — tell me more.\"", "\"Maybe you're right — what's your evidence you ARE leadership material?\"", "\"Have you considered changing jobs?\""], correct: 0, explanation: "Mind reading — recover the evidence basis so the client can judge whether the belief is real or projected." },
+  { id: 18, group: "question", statement: "What makes grounding questions coaching rather than interrogation?", options: ["Pacing first — the question lands inside rapport, aimed at the map's limits, not at the person", "Asking them rapidly so the client can't rationalise", "Only asking questions the coach knows the answer to", "Correcting each violation as an error"], correct: 0, explanation: "The model targets ill-formed maps, not wrong people. Without rapport and timing, precision becomes pedantry." },
+  // Real clients
+  { id: 19, group: "verbatim", statement: "Nicole: \"I keep saying I can't do this, I'll never achieve this.\" Which TWO patterns are stacked?", options: ["Modal operator of possibility (can't) + universal quantifier (never)", "Mind reading + cause-effect", "Nominalisation + lost performative", "Complex equivalence + deletion"], correct: 0, explanation: "An impossibility rule reinforced by an all-time generalisation. Ground both: \"what stops you?\" and \"never — not once, in any form?\"" },
+  { id: 20, group: "verbatim", statement: "Elena: \"My brain's job is to keep me safe, not happy — and safety is a repetitive thought.\" What's the coaching-relevant structure?", options: ["A presupposition — a frame that must be accepted as true for the rest to make sense; question what it assumes", "A simple deletion", "A universal quantifier", "Well-formed language needing no question"], correct: 0, explanation: "\"What are you assuming about what safety is — and who decided the brain's job?\" The frame drives everything downstream of it." },
+  { id: 21, group: "verbatim", statement: "Jean-Charles: \"I don't want to be afraid of someone leaving me, or losing my job.\" Before grounding anything — what does the manual say comes first?", options: ["Pace the experience, then question — precision without rapport reads as attack", "Immediately challenge the away-from framing", "List every violation you heard", "Reassure him the fears are irrational"], correct: 0, explanation: "The grounding model sits inside the coaching relationship: support first, then question the map — never the other way round." },
+  { id: 22, group: "verbatim", statement: "Tessa: \"I feel like there's a block, and it appears in random areas.\" Best grounding question?", options: ["\"When you say 'block' — blocked from doing what specifically, in which areas exactly?\"", "\"Blocks aren't real — let's move on.\"", "\"Why do you think you're blocked?\"", "\"Everyone has blocks — it's normal.\""], correct: 0, explanation: "\"Block\" is a nominalisation and \"random areas\" a deletion — put the frozen process back into motion and index the contexts." },
+];
+
+// ---------- Listening bank (Integral Coach manual — levels of listening) ----------
+const LISTEN_GROUPS = {
+  levels: "Levels of Listening",
+  spot: "Spot the Level",
+  practice: "Coach Practice",
+};
+
+const LQ = [
+  { id: 1, group: "levels", statement: "While the client talks, you're nodding — but internally narrating your own similar story and waiting to share your view. Which level?", options: ["Level 1 — Download listening", "Level 2 — Factual listening", "Level 3 — Empathetic listening", "Level 4 — Sacred listening"], correct: 0, explanation: "Download: listening to your own stories in your head while someone shares. The attention never actually left you." },
+  { id: 2, group: "levels", statement: "You're scanning the client's story for information you want — dates, decisions, facts that pertain to your interest. Which level?", options: ["Level 2 — Factual listening", "Level 1 — Download listening", "Level 3 — Empathetic listening", "Level 4 — Sacred listening"], correct: 0, explanation: "Factual: attention has moved outside you, but you're looking AT the person, hunting facts — and missing what you don't know to look for." },
+  { id: 3, group: "levels", statement: "You find yourself experiencing the situation AS the client — noticing their courage and commitment at a systemic level, not just their facts. Which level?", options: ["Level 3 — Empathetic listening", "Level 2 — Factual listening", "Level 4 — Sacred listening", "Level 1 — Download listening"], correct: 0, explanation: "Empathetic: second-position perspective — out of yourself, looking AS them, hearing what's being communicated beneath the content." },
+  { id: 4, group: "levels", statement: "Open mind, open heart, open gut — no judgment forming, nothing of you contracting, simply being present to their sharing. Which level?", options: ["Level 4 — Sacred listening", "Level 3 — Empathetic listening", "Level 2 — Factual listening", "Mindfulness, not listening"], correct: 0, explanation: "Sacred: objective, non-judgemental awareness — open at mind, heart, and identity. \"There isn't a you there, but you are more than there at the same time.\"" },
+  { id: 5, group: "levels", statement: "Waiting in line, oblivious to the noise around you — until someone calls your name and your attention snaps outward. That shift is…", options: ["Level 1 to Level 2 — from attention within you to attention outside you", "Level 2 to Level 3", "Level 3 to Level 4", "No level change"], correct: 0, explanation: "The manual's coffee-queue example: the name pulls you from download (inner world) into factual (outer attention)." },
+  { id: 6, group: "spot", statement: "Mid-session, the client mentions buying a car — and you're suddenly thinking about what car YOU'd buy. What just happened?", options: ["You dropped into download listening — their content triggered your content", "You rose to empathetic listening", "Healthy associative listening", "Factual listening working correctly"], correct: 0, explanation: "The manual's exact example of download: their sharing becomes a launchpad for your own inner movie." },
+  { id: 7, group: "spot", statement: "A coach takes rapid notes of every date, name and figure, cross-checking details — while the client's voice keeps cracking with emotion. What's the mismatch?", options: ["Stuck at factual listening — the facts are captured while the systemic signal (the emotion) goes unheard", "Perfect professional listening", "Sacred listening — staying objective", "Download listening"], correct: 0, explanation: "Factual listening looks AT the person for information. The crack in the voice is empathetic-level data — it needs level 3 to be received." },
+  { id: 8, group: "spot", statement: "You notice a judgment forming — \"this client is making excuses\" — as they speak. Per the levels model, what has contracted?", options: ["Your open mind (and likely identity) — you've left sacred listening; the judgment is now doing the listening", "Nothing — evaluation is the coach's job", "Your open gut only", "Factual accuracy"], correct: 0, explanation: "Level 4 requires non-judgemental awareness. The moment a judgment forms, you're listening through your frames, not to the client." },
+  { id: 9, group: "practice", statement: "How does the manual say you move from level 1 to level 4 with clients?", options: ["Practice — valuing the other while they share, without presupposing what they'll say", "Certification in advanced listening", "Years of experience make it automatic", "Preparing better questions beforehand"], correct: 0, explanation: "\"The answer is practice.\" Listening without your habits, judgments and frames doing the hearing is a trainable discipline." },
+  { id: 10, group: "practice", statement: "Why does download listening undermine even technically good questions?", options: ["The question comes from YOUR movie, not their map — so it paces nothing and often misses what they actually said", "It doesn't — questions stand on their own", "Clients can't tell the difference", "It only matters in long sessions"], correct: 0, explanation: "Every skill downstream of listening (pacing, grounding, patterns) works on what you actually received. Download means you're working on your own material." },
+  { id: 11, group: "practice", statement: "Which listening level does grounding-model questioning REQUIRE as its minimum floor — and why?", options: ["At least factual, ideally empathetic — you must receive their actual surface structure before you can question it", "Download is fine — the violations are obvious", "Sacred only — nothing less works", "Listening level doesn't interact with questioning"], correct: 0, explanation: "You can't recover deletions from words you didn't hear. Precision questioning is only as good as the listening that feeds it." },
+  { id: 12, group: "practice", statement: "The manual's paired practice cycles 2 minutes at each level while a partner shares for 8. What's the training point?", options: ["Levels are states you can deliberately enter and feel the difference between — from both chairs", "Proving level 4 is impossible", "Showing 2 minutes is enough for any level", "Making the client talk longer"], correct: 0, explanation: "Cycling the levels builds felt discrimination — you learn what each level does to the speaker and to you, which is what makes level-shifting a choice." },
+];
+
+// ---------- Self-Reflexive / Meta-Questions bank (Meta-States model; IC manual "Self-Reflexive Questions") ----------
+const REFLEX_GROUPS = {
+  concept: "The Model",
+  category: "Name the Category",
+  choose: "Choose the Question",
+  verbatim: "Real Clients",
+};
+
+const XQ = [
+  // The model
+  { id: 1, group: "concept", statement: "What exactly is a meta-state?", options: ["A state applied to another state — thoughts-feelings referring back to a previous thought or feeling, not to the world", "A very intense primary state", "Any state experienced during meditation", "A state you can't name"], correct: 0, explanation: "Primary states point at the world; meta-states point at your own experience — anger about your fear, guilt about your anger. Self-reflexive consciousness." },
+  { id: 2, group: "concept", statement: "Why do higher frames matter more than the primary state underneath them?", options: ["Higher levels organise, drive and modulate the lower levels — the frame governs everything under it", "They don't — primary states are always stronger", "Higher frames are easier to observe", "They contain more emotion"], correct: 0, explanation: "Bateson's principle, central to the Meta-States model: change the governing frame and everything beneath it reorganises." },
+  { id: 3, group: "concept", statement: "A coaching conversation stays shallow and \"all on the surface.\" Per the manual, what is the coach most likely NOT doing?", options: ["Asking self-reflexive questions — the up-questions that take the client into their inner game", "Taking enough notes", "Asking enough factual questions", "Talking enough themselves"], correct: 0, explanation: "Content questions circle the story. Self-reflexive questions go up — into the matrix of frames that make the story mean what it means." },
+  { id: 4, group: "concept", statement: "What's the difference between \"What happened next?\" and \"What does that mean to you?\"", options: ["The first stays at the primary level (content); the second goes meta — into the client's frames of meaning", "The second is just more polite", "The first is a closed question", "No structural difference"], correct: 0, explanation: "Same conversation, different altitude. The meaning question is one of the 10 self-reflexive categories; the content question never leaves the story." },
+  // Name the category
+  { id: 5, group: "category", statement: "\"What do you believe about X?\" — which self-reflexive category?", options: ["Believe", "Value / Importance", "Expect", "Decide"], correct: 0, explanation: "The first of the manual's memorised categories — surfacing the operating belief above the experience." },
+  { id: 6, group: "category", statement: "\"Do you have permission to experience X?\" — which category, and why is it so powerful?", options: ["Permit / Prohibit — it surfaces internal rules about what's allowed, which clients rarely know they're running", "Identity — it's about who they are", "Expect — it's about the future", "Remember — it references the past"], correct: 0, explanation: "Permission questions expose the prohibitions installed long ago — often the exact wall a stuck client keeps hitting without seeing it." },
+  { id: 7, group: "category", statement: "\"What is X like? What would you compare it to?\" — which category?", options: ["Metaphor (compare)", "Imagine", "Meaning", "World"], correct: 0, explanation: "Metaphor questions retrieve the client's own symbolic coding — and the metaphor often carries more structure than the literal description." },
+  { id: 8, group: "category", statement: "\"How does this affect your sense of self?\" — which category?", options: ["Identity", "Powers", "Others", "Believe"], correct: 0, explanation: "The identity category — where an experience stops being something that happens and starts being something they are." },
+  { id: 9, group: "category", statement: "\"What is your intention in doing X — and what's your higher intention above that?\" — what's the coach doing?", options: ["Climbing the intention category — each 'higher intention' question moves another frame up the matrix", "Checking commitment", "Testing memory", "Challenging the goal"], correct: 0, explanation: "Intention stacks: above every intention sits another. Climbing it reveals what the behaviour is ultimately in service of." },
+  { id: 10, group: "category", statement: "In the quadrants exercise, \"How do you experience time when you X?\" belongs to which quadrant?", options: ["Lower Right (ITS) — objective-collective, alongside 'what domain of experience does X activate?'", "Upper Left (I) — subjective-individual", "Upper Right (IT)", "Lower Left (WE)"], correct: 0, explanation: "The manual maps the categories across all four quadrants — time and domain questions sit in the lower right." },
+  // Choose the question
+  { id: 11, group: "choose", statement: "Client: \"I keep procrastinating on the business plan.\" Which question goes META rather than into content?", options: ["\"What do you believe about yourself when you procrastinate?\"", "\"What part of the plan is hardest?\"", "\"When do you usually procrastinate?\"", "\"Have you tried time-blocking?\""], correct: 0, explanation: "The other three stay inside the story (content, time, tactics). The belief question rises to the frame the procrastination runs under." },
+  { id: 12, group: "choose", statement: "Client: \"I gave the presentation and it went fine, I guess.\" Flat tone. Best self-reflexive question?", options: ["\"What does 'fine' mean to you — and what were you expecting instead?\"", "\"How long was the presentation?\"", "\"Who was in the audience?\"", "\"Will you present again soon?\""], correct: 0, explanation: "Meaning + expectation — the flatness lives in the gap between the event and the frames around it, not in the event's details." },
+  { id: 13, group: "choose", statement: "Client: \"Success would be finally launching the thing.\" To explore the inner game, which question?", options: ["\"Imagine you've launched — what do you imagine happens then, and what does that say about why this matters?\"", "\"What's your launch date?\"", "\"What's your marketing plan?\"", "\"Who are your competitors?\""], correct: 0, explanation: "The Imagine category plus meaning — future-frames reveal what the goal is actually carrying for the client." },
+  { id: 14, group: "choose", statement: "The manual's transformational-question exercise: \"I don't have time to exercise\" becomes \"How can I create more time?\" What's the NEXT move?", options: ["Question the question — \"what decision would I need to make?\" then \"do I have permission to make that decision?\"", "Answer it with a scheduling app", "Turn it back into a statement", "Ask it louder"], correct: 0, explanation: "The exercise stacks self-reflexive questions on the question itself — surfacing the assumptions and permissions the whole problem sits on." },
+  // Real clients
+  { id: 15, group: "verbatim", statement: "Elena: \"I know I have the tools, but I don't use them — and that awareness makes me even more pissed off at myself.\" In Meta-States terms, what is the anger?", options: ["A meta-state — a state about her own state, governing the whole experience from above", "A primary state about the world", "A rep-system preference", "A universal quantifier"], correct: 0, explanation: "Textbook self-reflexive structure: frustration applied to her own awareness. The intervention has to address the frame, not the tools." },
+  { id: 16, group: "verbatim", statement: "Elena: \"After I smoke I take shorter breaths on purpose — I don't feel worthy of a real breath.\" Which self-reflexive question goes to the governing frame?", options: ["\"Do you have permission to be worthy of a breath even after a mistake — and who set that rule?\"", "\"How many cigarettes per day?\"", "\"Have you tried nicotine patches?\"", "\"When did you start smoking?\""], correct: 0, explanation: "Permit/Prohibit at the identity level — the breath-restriction is a prohibition running above the behaviour. Content questions can't touch it." },
+  { id: 17, group: "verbatim", statement: "Arun: \"I want to reincarnate myself — I don't see life as singular.\" Which self-reflexive question would open his inner game further?", options: ["\"What does 'reincarnate' mean to you — and what does having that capability say about who you are?\"", "\"What career would you pick next?\"", "\"How much would retraining cost?\"", "\"When would you make the change?\""], correct: 0, explanation: "His own metaphor is the doorway — unpacking it through Meaning and Identity explores the frame; logistics questions drop back to content." },
+  { id: 18, group: "verbatim", statement: "Tessa: \"I don't like being on a stage — a fear of big-upping yourself.\" Someone else's phrase, adopted as hers. Which question tests the frame?", options: ["\"When you say 'big-upping' — is that your word or theirs? What do YOU believe being visible says about you?\"", "\"How big was the stage?\"", "\"Have you tried public-speaking courses?\"", "\"How often do you have to present?\""], correct: 0, explanation: "A borrowed label can install a borrowed frame. Checking authorship and the belief underneath it is self-reflexive work at the Believe/Identity level." },
+];
+
 const STORAGE_KEY = "meta-quiz-stats-v3";
 const emptyStats = () => ({
   meta: { attempted: 0, correct: 0 },
   rep: { attempted: 0, correct: 0 },
   pace: { attempted: 0, correct: 0 },
+  ground: { attempted: 0, correct: 0 },
+  listen: { attempted: 0, correct: 0 },
+  reflex: { attempted: 0, correct: 0 },
 });
 
 function shuffle(arr) {
@@ -312,10 +413,15 @@ function prepare(bank) {
   });
 }
 
+const BANKS = { meta: () => Q, rep: () => RQ, pace: () => PQ, ground: () => GQ, listen: () => LQ, reflex: () => XQ };
+
 const MODES = {
   meta: { label: "Meta Programs", title: "Meta Program Drill", groups: GROUPS, tab: ink.tabTeal, tabText: ink.tabTealText },
   rep: { label: "Rep Systems", title: "Rep Systems Drill", groups: REP_GROUPS, tab: ink.tabRust, tabText: ink.tabRustText },
   pace: { label: "Pacing", title: "Pacing & Matching Drill", groups: PACE_GROUPS, tab: ink.tabPlum, tabText: ink.tabPlumText },
+  ground: { label: "Precision Qs", title: "Precision / Grounding Drill", groups: GROUND_GROUPS, tab: ink.tabBlue, tabText: ink.tabBlueText },
+  listen: { label: "Listening", title: "Levels of Listening Drill", groups: LISTEN_GROUPS, tab: ink.tabSand, tabText: ink.tabSandText },
+  reflex: { label: "Self-Reflexive Qs", title: "Self-Reflexive / Meta-Questions Drill", groups: REFLEX_GROUPS, tab: ink.tabPine, tabText: ink.tabPineText },
 };
 
 export default function MetaProgramsQuiz() {
@@ -324,11 +430,17 @@ export default function MetaProgramsQuiz() {
     meta: new Set(Object.keys(GROUPS)),
     rep: new Set(Object.keys(REP_GROUPS)),
     pace: new Set(Object.keys(PACE_GROUPS)),
+    ground: new Set(Object.keys(GROUND_GROUPS)),
+    listen: new Set(Object.keys(LISTEN_GROUPS)),
+    reflex: new Set(Object.keys(REFLEX_GROUPS)),
   });
   const [pools, setPools] = useState(() => ({
     meta: prepare(Q),
     rep: prepare(RQ),
     pace: prepare(PQ),
+    ground: prepare(GQ),
+    listen: prepare(LQ),
+    reflex: prepare(XQ),
   }));
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -340,7 +452,7 @@ export default function MetaProgramsQuiz() {
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) setStats(JSON.parse(raw));
+      if (raw) setStats({ ...emptyStats(), ...JSON.parse(raw) });
     } catch (e) {
       /* no stats yet */
     } finally {
@@ -396,8 +508,7 @@ export default function MetaProgramsQuiz() {
   };
 
   const restart = () => {
-    const bank = mode === "meta" ? Q : mode === "rep" ? RQ : PQ;
-    setPools((prev) => ({ ...prev, [mode]: prepare(bank) }));
+    setPools((prev) => ({ ...prev, [mode]: prepare(BANKS[mode]()) }));
     setIdx(0);
     setSelected(null);
     setStage(1);
@@ -435,8 +546,7 @@ export default function MetaProgramsQuiz() {
     // reshuffle the pool each time a full pass completes, so questions
     // never repeat in the same order
     if (filteredPool.length && (idx + 1) % filteredPool.length === 0) {
-      const bank = mode === "meta" ? Q : mode === "rep" ? RQ : PQ;
-      setPools((prev) => ({ ...prev, [mode]: prepare(bank) }));
+      setPools((prev) => ({ ...prev, [mode]: prepare(BANKS[mode]()) }));
       setIdx(0);
       return;
     }
