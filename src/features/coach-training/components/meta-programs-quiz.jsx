@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { Check, X, ChevronRight, Shuffle } from "lucide-react";
+import { lookupPattern } from "@/features/coach-training/data/patterns";
 
 // ---------- Design tokens ----------
 const ink = {
@@ -727,6 +728,9 @@ export default function MetaProgramsQuiz() {
                   <p style={{ fontFamily: serif, fontStyle: "italic", color: selected === activePart.correct ? ink.tabTeal : ink.redPen }} className="text-sm leading-snug">
                     {activePart.explanation}
                   </p>
+                  {stage === 2 && lookupPattern(activePart.options[activePart.correct]) && (
+                    <PatternProtocol pattern={lookupPattern(activePart.options[activePart.correct])} />
+                  )}
                   <button
                     onClick={next}
                     style={{ background: ink.textDark, color: ink.paper, fontFamily: sans }}
@@ -751,3 +755,45 @@ export default function MetaProgramsQuiz() {
     </div>
   );
 }
+
+function PatternProtocol({ pattern }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="mt-4 rounded-xl overflow-hidden" style={{ border: `1px solid ${ink.tabPine}` }}>
+      <button
+        onClick={() => setOpen((o) => !o)}
+        style={{ background: ink.tabPine, color: ink.tabPineText, fontFamily: sans }}
+        className="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm font-semibold"
+      >
+        <span>Practise: {pattern.name}</span>
+        <ChevronRight size={15} style={{ transform: open ? "rotate(90deg)" : "none", transition: "transform 0.15s" }} />
+      </button>
+      {open && (
+        <div style={{ background: ink.bgSoft, color: "#D8DEEA", fontFamily: sans }} className="px-4 py-4">
+          <p style={{ color: "#9AA6BC" }} className="text-xs mb-1">
+            When to use
+          </p>
+          <p className="text-sm mb-3 leading-snug">{pattern.when}</p>
+          <ol className="space-y-2">
+            {pattern.steps.map((step, i) => (
+              <li key={i} className="flex gap-2.5 text-sm leading-snug">
+                <span
+                  style={{ background: ink.tabPine, color: ink.tabPineText, width: 20, height: 20 }}
+                  className="flex-shrink-0 grid place-items-center rounded-full text-xs font-bold"
+                  aria-hidden
+                >
+                  {i + 1}
+                </span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+          <p style={{ color: "#9AA6BC", fontFamily: mono }} className="text-[11px] mt-3">
+            Source: {pattern.source}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
