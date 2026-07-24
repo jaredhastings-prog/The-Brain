@@ -784,7 +784,7 @@ function PatternProtocol({ pattern }) {
             When to use
           </p>
           <p className="text-sm mb-3 leading-snug">{pattern.when}</p>
-          <ol className="space-y-2">
+          <ol className="space-y-3">
             {pattern.steps.map((step, i) => (
               <li key={i} className="flex gap-2.5 text-sm leading-snug">
                 <span
@@ -794,7 +794,18 @@ function PatternProtocol({ pattern }) {
                 >
                   {i + 1}
                 </span>
-                <span>{step}</span>
+                <div className="min-w-0">
+                  <div className="font-semibold">{step.title.replace(/^\d+[.)]\s*/, "")}</div>
+                  {step.prompts?.length ? (
+                    <ul className="mt-1 space-y-1">
+                      {step.prompts.map((q, j) => (
+                        <li key={j} style={{ color: "#AEB8CC" }} className="text-[13px] leading-snug pl-3 border-l" >
+                          {q}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
               </li>
             ))}
           </ol>
