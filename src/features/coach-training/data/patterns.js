@@ -413,35 +413,39 @@ export const PATTERNS = {
 };
 
 // Map the leading phrase of a follow-up's correct option to a protocol.
+// Both the library keys and the incoming option text are normalised the same
+// way, so a trailing "Pattern"/"Patterns" on either side still resolves.
+function normalise(text) {
+  return String(text)
+    .split(/\s+—\s+|\s+-\s+/)[0]
+    .trim()
+    .toLowerCase()
+    .replace(/\s+patterns?$/, "")
+    .replace(/[.,]$/, "")
+    .trim();
+}
+
+const INDEX = Object.keys(PATTERNS).reduce((acc, key) => {
+  acc[normalise(key)] = PATTERNS[key];
+  return acc;
+}, {});
+
+const ALIASES = {
+  "milton model": "hypnotic language",
+  "hypnotic language (milton model)": "hypnotic language",
+  "kinaesthetic time-line": "basic time-line",
+  "basic (kinaesthetic) time-line": "basic time-line",
+  "timeline awareness": "time-line awareness",
+  "six step reframing": "six-step reframing",
+  "parts integration": "visual squash",
+  "visual squash (parts integration)": "visual squash",
+  "meta-yes and meta-no": "meta-yes and meta-no",
+  "meta yes and meta no": "meta-yes and meta-no",
+  "state accessing & anchoring": "state accessing and anchoring",
+};
+
 export function lookupPattern(optionText) {
   if (!optionText) return null;
-  let key = optionText.split(/\s+—\s+|\s+-\s+/)[0].trim().toLowerCase();
-  key = key.replace(/\s+pattern$/, "").replace(/[.,]$/, "").trim();
-  const aliases = {
-    "movie rewind": "movie rewind",
-    "well-formed outcome": "well-formed outcome",
-    "excuse blow-out": "excuse blow-out",
-    "collapsing anchors": "collapsing anchors",
-    "somatic swish": "somatic swish",
-    "swish": "swish",
-    "six-step reframing": "six-step reframing",
-    "six step reframing": "six-step reframing",
-    "sphere of excellence": "sphere of excellence",
-    "time-line awareness": "time-line awareness",
-    "timeline awareness": "time-line awareness",
-    "basic time-line": "basic time-line",
-    "basic (kinaesthetic) time-line": "basic time-line",
-    "kinaesthetic time-line": "basic time-line",
-    "finishing unfinished business": "finishing unfinished business",
-    "creating a new part": "creating a new part",
-    "negotiating between parts": "negotiating between parts",
-    "visual squash": "visual squash",
-    "agreement frame": "agreement frame",
-    "hypnotic language patterns": "hypnotic language patterns",
-    "hypnotic language": "hypnotic language patterns",
-    "milton model": "hypnotic language patterns",
-    "hypnotic language (milton model)": "hypnotic language patterns",
-  };
-  if (aliases[key]) key = aliases[key];
-  return PATTERNS[key] || null;
+  const key = normalise(optionText);
+  return INDEX[key] || INDEX[ALIASES[key]] || null;
 }
