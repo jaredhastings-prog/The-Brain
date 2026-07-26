@@ -440,7 +440,7 @@ export const recipes: Recipe[] = [
       "Finish with an extra dusting of Tajín, a little more coriander, and a lime wedge. For meal prep, divide across 4 containers.",
     ],
     source: "https://www.tiktok.com/@adamwolfefitness/video/7646434459889241358",
-    imagePath: "images/recipes/street-corn-sweet-potato-bowl.jpg",
+    imagePath: "images/recipes/image-1785045712441.png",
     tags: ["High protein", "Meal prep", "Mexican-inspired"],
   },
 ];
