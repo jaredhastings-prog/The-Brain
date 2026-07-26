@@ -20,7 +20,6 @@ export const definitions: Definition[] = [
     term: "Prejudice",
     summary:
       "An unfair opinion or feeling formed without knowing the facts, usually directed against people based on their group, race, or religion.",
-    tags: ["Psychology", "Social"],
     sections: [
       {
         heading: "Key features",
@@ -84,7 +83,6 @@ export const definitions: Definition[] = [
     term: "Ignorance",
     summary:
       "A lack of knowledge, information, or awareness about something. Unlike prejudice, it is an absence of understanding rather than an unfair judgment — though it can be innocent or wilful.",
-    tags: ["Psychology", "Social"],
     sections: [
       {
         heading: "Key features",

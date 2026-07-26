@@ -53,13 +53,17 @@ function FlipCard({ definition }: { definition: Definition }) {
       >
         {/* Front */}
         <div className="absolute inset-0 flex min-h-64 flex-col justify-between rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_8px_20px_rgb(24_24_27_/_0.05)] [backface-visibility:hidden]">
-          <div className="flex flex-wrap gap-1.5">
-            {definition.tags?.map((tag) => (
-              <Badge key={tag} variant="outline" className="text-[10px]">
-                {tag}
-              </Badge>
-            ))}
-          </div>
+          {definition.tags?.length ? (
+            <div className="flex flex-wrap gap-1.5">
+              {definition.tags.map((tag) => (
+                <Badge key={tag} variant="outline" className="text-[10px]">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          ) : (
+            <div />
+          )}
           <div>
             <h2 className="text-2xl font-semibold text-foreground">{definition.term}</h2>
             <p className="mt-2 text-sm leading-6 text-muted-foreground line-clamp-4">
