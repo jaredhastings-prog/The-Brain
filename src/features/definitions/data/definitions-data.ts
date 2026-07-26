@@ -160,4 +160,76 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "primitive",
+    term: "Primitive / Primitively",
+    summary:
+      "Relating to an early, basic, or original stage of development — simple and undeveloped, or acting from raw instinct rather than refined thought. 'Primitively' is the adverb: doing something in a basic, instinctive, or unrefined way.",
+    sections: [
+      {
+        heading: "Key features",
+        items: [
+          {
+            term: "Early / original",
+            detail: "Belonging to the first or earliest stage of something.",
+          },
+          {
+            term: "Basic / undeveloped",
+            detail: "Simple, crude, or lacking refinement and sophistication.",
+          },
+          {
+            term: "Instinctive",
+            detail: "Driven by raw, deep-seated impulse rather than reason.",
+          },
+        ],
+      },
+      {
+        heading: "Common types",
+        items: [
+          {
+            term: "Developmental",
+            detail: "An early stage of evolution or progress (e.g. primitive tools, primitive organisms).",
+          },
+          {
+            term: "Behavioural",
+            detail: "Raw, instinctive drives (e.g. primitive urges, the 'primitive brain').",
+          },
+          {
+            term: "Foundational",
+            detail: "An irreducible building block (e.g. a 'primitive' in maths or computing).",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          { term: "Rudimentary", detail: "Basic, at an early or incomplete stage of development." },
+          { term: "Crude", detail: "Rough and unrefined, made or done without skill or finish." },
+          { term: "Elementary", detail: "Simple and foundational; concerning the first principles." },
+          { term: "Instinctive", detail: "Arising from natural impulse rather than learned thought." },
+          { term: "Archaic", detail: "Belonging to a much earlier period; old-fashioned or ancient." },
+        ],
+      },
+      {
+        heading: "Important distinctions",
+        items: [
+          {
+            term: "Primitive vs. Primitively",
+            detail:
+              "'Primitive' is the adjective, describing the thing ('a primitive shelter', 'a primitive fear'). 'Primitively' is the adverb, describing the manner of action ('they lived primitively', 'he reacted primitively').",
+          },
+          {
+            term: "Primitive vs. Simple",
+            detail:
+              "Simple means uncomplicated by design and can be elegant. Primitive implies underdeveloped or crude — simple because it hasn't yet advanced, not because it was refined down.",
+          },
+          {
+            term: "Neutral vs. Dismissive",
+            detail:
+              "'Primitive' can be neutral and technical (primitive life forms, a primitive data type) or dismissive and critical ('a primitive attempt'). It is now often considered offensive when applied to people or cultures.",
+          },
+        ],
+      },
+    ],
+  },
 ];
