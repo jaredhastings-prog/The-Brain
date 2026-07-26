@@ -160,4 +160,73 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "primitive",
+    term: "Primitive / Primitively",
+    summary:
+      "Relating to an early, basic, or original stage of development — simple and undeveloped, or acting from raw instinct rather than refined thought. 'Primitively' is the adverb: doing something in a basic, instinctive, or unrefined way.",
+    sections: [
+      {
+        heading: "Key senses",
+        items: [
+          {
+            term: "Early / original",
+            detail: "Belonging to the first or earliest stage of something (e.g. primitive tools, primitive organisms).",
+          },
+          {
+            term: "Basic / undeveloped",
+            detail: "Simple, crude, or lacking refinement and sophistication.",
+          },
+          {
+            term: "Instinctive",
+            detail: "Driven by raw, deep-seated impulse rather than reason (e.g. a primitive urge, reacting primitively).",
+          },
+          {
+            term: "Foundational",
+            detail: "A base element that other things are built from (e.g. a 'primitive' in maths or computing — an irreducible building block).",
+          },
+        ],
+      },
+      {
+        heading: "In use",
+        items: [
+          {
+            term: "Adjective — primitive",
+            detail: "Describes the thing: 'a primitive shelter', 'primitive technology', 'a primitive fear'.",
+          },
+          {
+            term: "Adverb — primitively",
+            detail: "Describes the manner of action: 'they lived primitively', 'he reacted primitively, without thinking'.",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          { term: "Rudimentary", detail: "Basic, at an early or incomplete stage of development." },
+          { term: "Crude", detail: "Rough and unrefined, made or done without skill or finish." },
+          { term: "Elementary", detail: "Simple and foundational; concerning the first principles." },
+          { term: "Instinctive", detail: "Arising from natural impulse rather than learned thought." },
+          { term: "Archaic", detail: "Belonging to a much earlier period; old-fashioned or ancient." },
+        ],
+      },
+      {
+        heading: "Nuance & tone",
+        items: [
+          {
+            term: "Neutral vs. dismissive",
+            detail: "'Primitive' can be neutral and technical (primitive life forms, a primitive data type) or dismissive and critical ('a primitive attempt'). Context and tone decide which.",
+          },
+          {
+            term: "Primitive vs. Simple",
+            detail: "Simple means uncomplicated by design and can be elegant. Primitive implies underdeveloped or crude — simple because it hasn't yet advanced, not because it was refined down.",
+          },
+          {
+            term: "'Primitive' the noun",
+            detail: "Can name a foundational building block (in computing/maths), or — now often considered offensive when applied to people or cultures — an early or 'untutored' artist or society.",
+          },
+        ],
+      },
+    ],
+  },
 ];
