@@ -1,6 +1,5 @@
-import { SectionPage } from "@/features/sections/components/section-page";
-import { sectionRegistry } from "@/features/sections/section-registry";
+import { LiamIdeasBoard } from "@/features/liam/components/liam-ideas-board";
 
 export default function LiamPage() {
-  return <SectionPage section={sectionRegistry.liam} />;
+  return <LiamIdeasBoard />;
 }
