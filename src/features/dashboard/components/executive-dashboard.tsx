@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, GraduationCap, Landmark, Plane, UtensilsCrossed } from "lucide-react";
+import { ArrowRight, GraduationCap, Heart, Landmark, Plane, UtensilsCrossed } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -22,6 +22,13 @@ export function ExecutiveDashboard() {
           subtitle="Business Psychology · NLP"
           href="/study-learning"
           label="Go to Study & Learning"
+        />
+        <LandingCard
+          icon={<Heart className="size-5" />}
+          title="Liam"
+          subtitle="Ideas register"
+          href="/liam"
+          label="Go to Liam"
         />
         <LandingCard
           icon={<UtensilsCrossed className="size-5" />}

@@ -2,6 +2,7 @@ import {
   BrainCircuit,
   GraduationCap,
   Landmark,
+  Heart,
   LayoutDashboard,
   Plane,
   BookMarked,
@@ -53,6 +54,12 @@ export const primaryNavigation: NavItem[] = [
         icon: BookMarked,
       },
     ],
+  },
+  {
+    title: "Liam",
+    href: "/liam",
+    icon: Heart,
+    description: "Ideas register",
   },
   {
     title: "Recipes",
