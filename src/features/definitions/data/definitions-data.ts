@@ -306,4 +306,75 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "ambivalence",
+    term: "Ambivalence",
+    summary:
+      "Holding two opposing feelings or attitudes toward something at the same time — wanting and not wanting it at once. It is the coexistence of both, not the absence of feeling.",
+    sections: [
+      {
+        heading: "Key features",
+        items: [
+          {
+            term: "Both at once",
+            detail: "Genuinely feeling two opposite pulls (e.g. attraction and aversion) toward the same thing simultaneously.",
+          },
+          {
+            term: "Internal tension",
+            detail: "The conflict is felt inside the person, and can create discomfort, hesitation, or feeling stuck.",
+          },
+          {
+            term: "Not neutrality",
+            detail: "It is strong feeling on both sides, not the absence of feeling or simple not-caring.",
+          },
+        ],
+      },
+      {
+        heading: "Common types",
+        items: [
+          {
+            term: "Emotional",
+            detail: "Mixed feelings about a person or situation — love and resentment toward the same person.",
+          },
+          {
+            term: "Decisional",
+            detail: "Being torn between options, wanting and not wanting the same choice (common in change and coaching).",
+          },
+          {
+            term: "Attitudinal",
+            detail: "Holding both positive and negative evaluations of an idea, group, or belief at once.",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          { term: "Mixed feelings", detail: "The everyday phrase for the same experience." },
+          { term: "Uncertainty", detail: "Being unsure — though ambivalence is specifically pulled two ways, not just unsure." },
+          { term: "Conflicted", detail: "Torn between opposing desires or values." },
+          { term: "Equivocation", detail: "Wavering or hedging, often outwardly, between two positions." },
+        ],
+      },
+      {
+        heading: "Important distinctions",
+        items: [
+          {
+            term: "Ambivalence vs. Indifference",
+            detail:
+              "Ambivalence is caring strongly in two opposite directions. Indifference is not caring either way — one is full of feeling, the other is empty of it.",
+          },
+          {
+            term: "Ambivalence vs. Ambiguity",
+            detail:
+              "Ambivalence is about a person's conflicting feelings (internal). Ambiguity is about something being open to more than one meaning (external, in the thing itself).",
+          },
+          {
+            term: "Ambivalence vs. Indecision",
+            detail:
+              "Indecision is simply not having chosen yet. Ambivalence is the deeper reason it's hard to choose — genuinely wanting and not wanting the same thing.",
+          },
+        ],
+      },
+    ],
+  },
 ];
