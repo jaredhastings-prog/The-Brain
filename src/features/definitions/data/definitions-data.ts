@@ -232,4 +232,78 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "anecdotally",
+    term: "Anecdotally",
+    summary:
+      "Based on personal accounts or individual stories rather than formal research or data. Used to flag that a claim comes from informal observation and experience, not systematic proof.",
+    sections: [
+      {
+        heading: "Key features",
+        items: [
+          {
+            term: "Personal accounts",
+            detail: "Drawn from individual stories and experiences, not systematic study.",
+          },
+          {
+            term: "Informal",
+            detail: "Reported casually or from memory rather than through rigorous method.",
+          },
+          {
+            term: "Illustrative, not proof",
+            detail: "Can suggest a pattern but isn't necessarily representative or measurable.",
+          },
+        ],
+      },
+      {
+        heading: "Common types",
+        items: [
+          {
+            term: "Anecdotal evidence",
+            detail: "Support for a claim that rests on personal testimony rather than research.",
+          },
+          {
+            term: "As a hedge",
+            detail: "'Anecdotally…' signals an informal observation the speaker can't fully back with data.",
+          },
+          {
+            term: "As illustration",
+            detail: "Using a short real-life account to make a broader point relatable.",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          { term: "Informally", detail: "Not through official or systematic channels." },
+          { term: "Reportedly", detail: "According to what has been said, without confirmation." },
+          { term: "Unofficially", detail: "Not established or verified by a formal source." },
+          {
+            term: "Impressionistically",
+            detail: "Based on general impressions rather than precise measurement.",
+          },
+        ],
+      },
+      {
+        heading: "Important distinctions",
+        items: [
+          {
+            term: "Anecdotally vs. Empirically",
+            detail:
+              "Anecdotal knowledge comes from individual stories. Empirical knowledge comes from systematic observation, testing, and measurement.",
+          },
+          {
+            term: "Anecdotally vs. Statistically",
+            detail:
+              "A single account can be vivid but unrepresentative. Statistical evidence aggregates many cases, so it shows whether the pattern actually holds.",
+          },
+          {
+            term: "Anecdotally (adverb) vs. Anecdote (noun)",
+            detail:
+              "'Anecdotally' frames how something is known or said ('anecdotally, it works'). An 'anecdote' is the short account itself.",
+          },
+        ],
+      },
+    ],
+  },
 ];
