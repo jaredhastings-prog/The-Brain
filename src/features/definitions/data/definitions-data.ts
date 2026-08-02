@@ -377,4 +377,75 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "ubiquitous",
+    term: "Ubiquitous",
+    summary:
+      "Present, appearing, or found everywhere at once. Describes something so widespread it seems to be everywhere you look.",
+    sections: [
+      {
+        heading: "Key features",
+        items: [
+          {
+            term: "Everywhere",
+            detail: "Found across many or all places, seemingly without exception.",
+          },
+          {
+            term: "Constantly present",
+            detail: "So common it's encountered again and again, often taken for granted.",
+          },
+          {
+            term: "Often unnoticed",
+            detail: "Its very commonness can make it fade into the background.",
+          },
+        ],
+      },
+      {
+        heading: "Common types",
+        items: [
+          {
+            term: "Physical",
+            detail: "A thing that's everywhere in the world (e.g. smartphones are ubiquitous).",
+          },
+          {
+            term: "Cultural / social",
+            detail: "An idea, phrase, or trend that appears across a whole society.",
+          },
+          {
+            term: "Technological",
+            detail: "'Ubiquitous computing' — technology woven so thoroughly into life it's always present.",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          { term: "Omnipresent", detail: "Present everywhere at the same time." },
+          { term: "Pervasive", detail: "Spreading widely and thoroughly through something." },
+          { term: "Universal", detail: "Applying to or found in all cases or places." },
+          { term: "Everywhere", detail: "The plain everyday equivalent." },
+        ],
+      },
+      {
+        heading: "Important distinctions",
+        items: [
+          {
+            term: "Ubiquitous vs. Common",
+            detail:
+              "Common means happening often or found frequently. Ubiquitous is stronger — found virtually everywhere, not just frequently.",
+          },
+          {
+            term: "Ubiquitous vs. Omnipresent",
+            detail:
+              "Both mean 'everywhere', but 'omnipresent' carries a grander, sometimes spiritual tone (an omnipresent God). 'Ubiquitous' is more everyday and often describes objects or trends.",
+          },
+          {
+            term: "Ubiquitous vs. Prevalent",
+            detail:
+              "Prevalent means widespread or dominant in a particular context or time. Ubiquitous means everywhere, without that sense of being tied to one setting.",
+          },
+        ],
+      },
+    ],
+  },
 ];
