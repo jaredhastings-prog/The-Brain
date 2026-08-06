@@ -448,4 +448,92 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "reductionist",
+    term: "Reductionist",
+    summary:
+      "Explaining something complex by breaking it down into its simplest parts — and treating those parts as the whole explanation. A powerful method, but a criticism when it strips out meaning the parts can't carry.",
+    sections: [
+      {
+        heading: "Key features",
+        items: [
+          {
+            term: "Breaking down",
+            detail: "Reducing a whole into its component parts to understand it.",
+          },
+          {
+            term: "Parts explain the whole",
+            detail:
+              "Assumes the sum of the parts fully accounts for what's being explained.",
+          },
+          {
+            term: "Loses emergence",
+            detail:
+              "Misses properties that only exist at the level of the whole system, not in any part.",
+          },
+        ],
+      },
+      {
+        heading: "Common types",
+        items: [
+          {
+            term: "Methodological",
+            detail:
+              "A deliberate research strategy — study the parts to understand the system. Neutral and often useful.",
+          },
+          {
+            term: "Ontological",
+            detail:
+              "The claim that reality really is nothing more than its smallest components.",
+          },
+          {
+            term: "As criticism",
+            detail:
+              "'That's reductionist' — an accusation of oversimplifying something that has more to it (e.g. reducing a person to a diagnosis, or performance to a single metric).",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          {
+            term: "Simplistic",
+            detail: "Treating something as simpler than it actually is.",
+          },
+          {
+            term: "Atomistic",
+            detail: "Viewing things as separate individual units rather than a connected whole.",
+          },
+          {
+            term: "Mechanistic",
+            detail: "Explaining a system purely as parts operating like machinery.",
+          },
+          {
+            term: "Oversimplified",
+            detail: "Stripped of necessary complexity or nuance.",
+          },
+        ],
+      },
+      {
+        heading: "Important distinctions",
+        items: [
+          {
+            term: "Reductionist vs. Holistic",
+            detail:
+              "Reductionist explains the whole by its parts. Holistic says the whole has properties its parts don't — you have to look at the system together.",
+          },
+          {
+            term: "Reductionist vs. Simple",
+            detail:
+              "Simple is uncomplicated and can be elegant or accurate. Reductionist means reduced too far — complexity has been removed that actually mattered.",
+          },
+          {
+            term: "Method vs. Insult",
+            detail:
+              "As a method it's legitimate and productive (much of science depends on it). As a label it's usually critical — signalling that something essential was left out.",
+          },
+        ],
+      },
+    ],
+  },
 ];
