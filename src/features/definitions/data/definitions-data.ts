@@ -536,4 +536,75 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "self-righteous",
+    term: "Self-Righteous",
+    summary:
+      "Convinced of your own moral superiority, in a way that makes you look down on others. The certainty of being right becomes a position above people rather than a view about an issue.",
+    sections: [
+      {
+        heading: "Key features",
+        items: [
+          {
+            term: "Moral superiority",
+            detail: "Certainty that your own values, choices, or conduct are better than other people's.",
+          },
+          {
+            term: "Looking down",
+            detail: "The rightness is aimed at people — it produces contempt, not just disagreement.",
+          },
+          {
+            term: "Closed to challenge",
+            detail: "Being right is the starting assumption, so counter-views are treated as moral failings rather than arguments.",
+          },
+        ],
+      },
+      {
+        heading: "Common types",
+        items: [
+          {
+            term: "Moral / political",
+            detail: "Treating a stance as proof of being a better person, and opponents as bad ones.",
+          },
+          {
+            term: "Lifestyle",
+            detail: "Superiority about how one eats, parents, works, or lives.",
+          },
+          {
+            term: "Grievance-based",
+            detail: "Using a real wrong done to you as licence for ongoing moral high ground.",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          { term: "Sanctimonious", detail: "Making a show of being morally superior." },
+          { term: "Holier-than-thou", detail: "Openly acting more virtuous than everyone else." },
+          { term: "Pious (pejorative)", detail: "Ostentatiously virtuous, in a performative way." },
+          { term: "Preachy", detail: "Moralising at people who haven't asked." },
+        ],
+      },
+      {
+        heading: "Important distinctions",
+        items: [
+          {
+            term: "Self-righteous vs. Righteous",
+            detail:
+              "Righteous means genuinely morally right or justified (righteous anger at real injustice). Self-righteous is about the posture toward others — the superiority, not the correctness. You can be right without being self-righteous, and self-righteous while wrong.",
+          },
+          {
+            term: "Self-righteous vs. Principled",
+            detail:
+              "Principled means holding firm convictions and living by them. Self-righteous adds contempt for those who don't — the difference is whether the conviction is a standard for yourself or a weapon against others.",
+          },
+          {
+            term: "Self-righteous vs. Arrogant",
+            detail:
+              "Arrogance is superiority about ability, status, or intelligence. Self-righteousness is superiority specifically about morality — being a better person, not a more capable one.",
+          },
+        ],
+      },
+    ],
+  },
 ];
