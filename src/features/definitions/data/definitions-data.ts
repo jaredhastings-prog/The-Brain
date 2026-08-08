@@ -607,4 +607,75 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "first-principles-thinking",
+    term: "First Principles Thinking",
+    summary:
+      "Breaking a problem down to the fundamental truths you know are true, then reasoning up from there — instead of reasoning by analogy to how it's always been done.",
+    sections: [
+      {
+        heading: "Key features",
+        items: [
+          {
+            term: "Strip to fundamentals",
+            detail: "Keep questioning until you reach what is actually, verifiably true — not what is merely assumed or inherited.",
+          },
+          {
+            term: "Reason upward",
+            detail: "Rebuild the solution from those basics, rather than copying an existing answer.",
+          },
+          {
+            term: "Assumptions made visible",
+            detail: "The method's real work is exposing beliefs you didn't know you were holding.",
+          },
+        ],
+      },
+      {
+        heading: "Common types",
+        items: [
+          {
+            term: "Socratic questioning",
+            detail: "Repeatedly asking 'why is that true?' and 'how do I know?' until you hit bedrock.",
+          },
+          {
+            term: "Cost / component deconstruction",
+            detail: "Breaking a thing into its raw parts to see what it's genuinely made of, rather than accepting the headline price or design.",
+          },
+          {
+            term: "Problem restatement",
+            detail: "Asking what outcome is actually needed, rather than accepting the problem as it was handed to you.",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          { term: "Reasoning from scratch", detail: "Building the answer from the ground up." },
+          { term: "Fundamental analysis", detail: "Examining the underlying basics rather than surface signals." },
+          { term: "Deconstruction", detail: "Taking something apart to see what it's really composed of." },
+          { term: "Root-cause thinking", detail: "Working past symptoms to the thing actually generating them." },
+        ],
+      },
+      {
+        heading: "Important distinctions",
+        items: [
+          {
+            term: "First principles vs. Reasoning by analogy",
+            detail:
+              "Analogy says 'do it like the last one, with tweaks' — fast, and usually fine. First principles asks 'what's actually true here?' — slower, but the only route to genuinely new answers.",
+          },
+          {
+            term: "First principles vs. Reductionist",
+            detail:
+              "Both break things down. Reductionist stops there and treats the parts as the whole explanation. First principles breaks down in order to rebuild — the reconstruction is the point.",
+          },
+          {
+            term: "First principles vs. Common sense",
+            detail:
+              "Common sense is inherited consensus — often useful, but unexamined. First principles thinking deliberately tests whether that consensus is true.",
+          },
+        ],
+      },
+    ],
+  },
 ];
