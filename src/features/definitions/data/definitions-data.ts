@@ -678,4 +678,75 @@ export const definitions: Definition[] = [
       },
     ],
   },
+  {
+    id: "categorical",
+    term: "Categorical",
+    summary:
+      "Absolute and unqualified — stated without exceptions, conditions, or room for doubt. Also used in its plainer sense: relating to categories or classification.",
+    sections: [
+      {
+        heading: "Key features",
+        items: [
+          {
+            term: "Unqualified",
+            detail: "No hedging, no 'usually' or 'in most cases' — the claim is stated flat out.",
+          },
+          {
+            term: "No exceptions",
+            detail: "Presented as holding in every case, not just typically.",
+          },
+          {
+            term: "Closed to conditions",
+            detail: "Doesn't depend on circumstances — it applies regardless of context.",
+          },
+        ],
+      },
+      {
+        heading: "Common types",
+        items: [
+          {
+            term: "Categorical denial / assurance",
+            detail: "A flat, absolute statement ('a categorical denial') that leaves no wriggle room.",
+          },
+          {
+            term: "Moral (categorical imperative)",
+            detail: "Kant's term for a moral rule that binds unconditionally, regardless of your goals or desires.",
+          },
+          {
+            term: "Classificatory",
+            detail: "The neutral sense — relating to categories (e.g. 'categorical data' is data in groups rather than numbers).",
+          },
+        ],
+      },
+      {
+        heading: "Key synonyms",
+        items: [
+          { term: "Absolute", detail: "Complete and without qualification." },
+          { term: "Unequivocal", detail: "Leaving no doubt about the meaning." },
+          { term: "Unconditional", detail: "Not dependent on any condition being met." },
+          { term: "Emphatic", detail: "Stated forcefully and clearly — though this is about delivery, not scope." },
+        ],
+      },
+      {
+        heading: "Important distinctions",
+        items: [
+          {
+            term: "Categorical vs. Qualified",
+            detail:
+              "A qualified statement carries conditions and exceptions ('generally', 'in these circumstances'). A categorical one deliberately removes them.",
+          },
+          {
+            term: "Categorical vs. Emphatic",
+            detail:
+              "Emphatic is about force of delivery — saying it strongly. Categorical is about scope — allowing no exceptions. You can state a qualified position emphatically, or a categorical one calmly.",
+          },
+          {
+            term: "The two senses",
+            detail:
+              "'Categorical' meaning absolute (a categorical refusal) is evaluative and often forceful. 'Categorical' meaning by-category (categorical variables) is purely technical and neutral. Context tells you which is in play.",
+          },
+        ],
+      },
+    ],
+  },
 ];
