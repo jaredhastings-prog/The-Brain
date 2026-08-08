@@ -34,30 +34,48 @@ export function DefinitionsBoard() {
   );
 }
 
-function FlipCard({ definition }: { definition: Definition }) {
-  const [flipped, setFlipped] = React.useState(false);
-  const frontRef = React.useRef<HTMLDivElement>(null);
-  const backRef = React.useRef<HTMLDivElement>(null);
-  const [height, setHeight] = React.useState<number>();
+// Both faces are absolutely positioned so they can stack for the flip, which
+// means they contribute no height to the card. We measure each face
+// independently and drive the card's height from whichever one is showing.
+function useFaceHeight(ref: React.RefObject<HTMLDivElement | null>) {
+  const [height, setHeight] = React.useState(0);
 
-  // Size the card to whichever face is showing, so long definitions display
-  // in full (no cramped inner scroll) on any screen size.
   React.useEffect(() => {
-    const measure = () => {
-      const front = frontRef.current?.offsetHeight ?? 0;
-      const back = backRef.current?.offsetHeight ?? 0;
-      setHeight(flipped ? back : front);
-    };
+    const el = ref.current;
+    if (!el) return;
+    const measure = () => setHeight(el.getBoundingClientRect().height);
     measure();
     const observer = new ResizeObserver(measure);
-    if (frontRef.current) observer.observe(frontRef.current);
-    if (backRef.current) observer.observe(backRef.current);
+    observer.observe(el);
     window.addEventListener("resize", measure);
     return () => {
       observer.disconnect();
       window.removeEventListener("resize", measure);
     };
-  }, [flipped]);
+  }, [ref]);
+
+  return height;
+}
+
+function FlipCard({ definition }: { definition: Definition }) {
+  const [flipped, setFlipped] = React.useState(false);
+  const frontRef = React.useRef<HTMLDivElement>(null);
+  const backRef = React.useRef<HTMLDivElement>(null);
+
+  const frontHeight = useFaceHeight(frontRef);
+  const backHeight = useFaceHeight(backRef);
+  const height = flipped ? backHeight : frontHeight;
+
+  // iOS Safari still needs the -webkit- prefixes, and if backface-visibility
+  // fails the two faces overlap. Hiding the inactive face with opacity and
+  // visibility makes that impossible regardless of 3D support.
+  const face = (isVisible: boolean): React.CSSProperties => ({
+    backfaceVisibility: "hidden",
+    WebkitBackfaceVisibility: "hidden",
+    opacity: isVisible ? 1 : 0,
+    visibility: isVisible ? "visible" : "hidden",
+    transition: "opacity 250ms ease",
+  });
 
   return (
     <button
@@ -65,19 +83,27 @@ function FlipCard({ definition }: { definition: Definition }) {
       onClick={() => setFlipped((f) => !f)}
       aria-pressed={flipped}
       aria-label={`${definition.term} — tap to ${flipped ? "hide" : "show"} definition`}
-      style={{ height }}
-      className="relative w-full text-left transition-[height] duration-500 [perspective:1600px]"
+      style={{
+        height: height || undefined,
+        perspective: 1600,
+        WebkitPerspective: 1600,
+      }}
+      className="relative block w-full min-h-56 text-left transition-[height] duration-500"
     >
       <div
-        className={cn(
-          "relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d]",
-          flipped && "[transform:rotateY(180deg)]",
-        )}
+        style={{
+          transformStyle: "preserve-3d",
+          WebkitTransformStyle: "preserve-3d",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transition: "transform 500ms",
+        }}
+        className="relative h-full w-full"
       >
         {/* Front */}
         <div
           ref={frontRef}
-          className="absolute inset-x-0 top-0 flex min-h-56 flex-col justify-between gap-4 rounded-lg border border-border/80 bg-card/95 p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_8px_20px_rgb(24_24_27_/_0.05)] [backface-visibility:hidden]"
+          style={face(!flipped)}
+          className="absolute inset-x-0 top-0 flex min-h-56 flex-col justify-between gap-4 rounded-lg border border-border/80 bg-card p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_8px_20px_rgb(24_24_27_/_0.05)]"
         >
           {definition.tags?.length ? (
             <div className="flex flex-wrap gap-1.5">
@@ -88,11 +114,13 @@ function FlipCard({ definition }: { definition: Definition }) {
               ))}
             </div>
           ) : null}
-          <div>
-            <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+          <div className="min-w-0">
+            <h2 className="break-words text-xl font-semibold text-foreground sm:text-2xl">
               {definition.term}
             </h2>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">{definition.summary}</p>
+            <p className="mt-2 break-words text-sm leading-6 text-muted-foreground">
+              {definition.summary}
+            </p>
           </div>
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground/70">
             <RotateCw className="size-3.5" />
@@ -103,10 +131,15 @@ function FlipCard({ definition }: { definition: Definition }) {
         {/* Back */}
         <div
           ref={backRef}
-          className="absolute inset-x-0 top-0 rounded-lg border border-primary/30 bg-card p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_8px_20px_rgb(24_24_27_/_0.05)] [backface-visibility:hidden] [transform:rotateY(180deg)]"
+          style={{ ...face(flipped), transform: "rotateY(180deg)" }}
+          className="absolute inset-x-0 top-0 rounded-lg border border-primary/30 bg-card p-5 shadow-[0_1px_2px_rgb(24_24_27_/_0.04),0_8px_20px_rgb(24_24_27_/_0.05)]"
         >
-          <h3 className="text-base font-semibold text-foreground">{definition.term}</h3>
-          <p className="mt-1 text-sm leading-5 text-muted-foreground">{definition.summary}</p>
+          <h3 className="break-words text-base font-semibold text-foreground">
+            {definition.term}
+          </h3>
+          <p className="mt-1 break-words text-sm leading-5 text-muted-foreground">
+            {definition.summary}
+          </p>
           {definition.sections?.map((section) => (
             <div key={section.heading} className="mt-4">
               <p className="text-[11px] font-semibold uppercase tracking-wide text-primary/80">
@@ -115,7 +148,7 @@ function FlipCard({ definition }: { definition: Definition }) {
               {section.body?.map((paragraph) => (
                 <p
                   key={paragraph.slice(0, 24)}
-                  className="mt-1.5 text-sm leading-6 text-muted-foreground"
+                  className="mt-1.5 break-words text-sm leading-6 text-muted-foreground"
                 >
                   {paragraph}
                 </p>
@@ -123,7 +156,7 @@ function FlipCard({ definition }: { definition: Definition }) {
               {section.items?.length ? (
                 <ul className="mt-1.5 space-y-2">
                   {section.items.map((item) => (
-                    <li key={item.term} className="text-sm leading-6">
+                    <li key={item.term} className="break-words text-sm leading-6">
                       <span className="font-medium text-foreground">{item.term}:</span>{" "}
                       <span className="text-muted-foreground">{item.detail}</span>
                     </li>
