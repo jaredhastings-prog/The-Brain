@@ -3552,10 +3552,53 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
         "5.5 Comparing Job Demands and Resources Across Different Contexts",
         [
           {
-            id: "placeholder",
-            kind: "note",
-            title: "Content To Add",
-            body: "This section appears in the unit outline but the source document contains only the closing feedback for it — the activity steps are not yet captured. Add the content here when available.",
+            id: "purpose",
+            kind: "purpose",
+            title: "Purpose",
+            body: "Examine job demands and resources across different sectors.",
+          },
+          {
+            id: "people-at-work",
+            kind: "resource",
+            title: "Step 1: The People at Work Tool",
+            body: "People at Work is a tool and resource provided by the Queensland government for undertaking a job demands and resources analysis of different workplaces. It is loosely based on COPSOQ, though scales providing indicative measures of mental health are added to the COPSOQ questions, along with a more detailed examination of workplace bullying.",
+            links: [
+              {
+                href: "https://www.peopleatwork.gov.au/",
+                label: "People at Work",
+              },
+            ],
+          },
+          {
+            id: "paw-report",
+            kind: "activity",
+            title: "Step 2: The 2016 Psychosocial Risk Audit",
+            body: "In 2016, People at Work conducted a job demands and resources (psychosocial risk) audit of different workplaces across Australia.",
+            steps: [
+              {
+                id: "exec-summary",
+                title: "Read the executive summary",
+                body: "Open the People at Work report and read the executive summary.",
+              },
+              {
+                id: "industry-comparison",
+                title: "Read pages 67-69, the industry comparison",
+                body: "Pay particular attention to Table 8.1, which compares psychosocial hazard scores across industries.",
+              },
+            ],
+            links: [
+              {
+                href: "https://www.worksafe.qld.gov.au/__data/assets/pdf_file/0014/12317/paw-report.pdf",
+                label:
+                  "People at Work (2016) — An assessment of psychosocial hazards in the workplace (PDF)",
+              },
+            ],
+          },
+          {
+            id: "discussion",
+            kind: "discussion",
+            title: "Steps 3-4: Three Surprising Findings",
+            body: "From Table 8.1, select three findings that surprised you and post approximately 100 words of analysis, explaining why you think those scores occurred. For example: emotional demands scores were high for education and training and for health care and social assistance — likely because of the degree of complex human interaction involved in those settings. Then comment on at least one peer's post.",
           },
           {
             id: "feedback",
