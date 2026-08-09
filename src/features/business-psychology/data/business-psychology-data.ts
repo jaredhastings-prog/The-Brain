@@ -2043,14 +2043,403 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
     id: slugify("Week 2: The Performance Appraisal and Bias"),
     week: 2,
     title: "The Performance Appraisal and Bias",
-    summary: "",
-    keyConcepts: [],
-    assessmentLinks: [],
+    summary:
+      "Picking up from last week's critique of evaluative appraisals, this week builds practical capability in critiquing, using and navigating performance appraisals — and the biases that distort them. The content directly supports Assessments 1 and 2.",
+    keyConcepts: [
+      "Performance appraisal features: qualitative feedback, quantitative metrics, overall ratings, and the formal sign-off.",
+      "Feedback platforms: top-down line manager review, 360-degree multi-rater feedback, and the balanced scorecard.",
+      "Reductionist rating systems condense complex information into a single score — useful for decisions, costly in context.",
+      "The feedback sandwich is widely espoused but not supported by the evidence; Corrective-Positive-Positive outperformed it.",
+      "Empathic concern measurably improves how negative feedback lands, and benefits the leader's own promotability.",
+      "Rater and method bias: recency, primacy, halo/horns, central tendency, leniency, similar-to-me, idiosyncratic, confirmation, gender, and the law of small numbers.",
+    ],
+    assessmentLinks: [
+      "Assessment 1 (Presentation): use the bias material to critique the performance appraisals in the task.",
+      "Assessment 2: journal notes on bias, feedback frameworks, and the empathy/EQ action list feed directly into the response.",
+    ],
+    image: {
+      src: "/images/business-psychology/hrm6005/week-2/rater-bias.jpeg",
+      alt: "Week 2 — the performance appraisal and bias",
+    },
     subModules: [
-      createSubModule("2.1 The Performance Appraisal"),
-      createSubModule("2.2 Feedback Sources"),
-      createSubModule("2.3 The Feedback Sandwich"),
-      createSubModule("2.4 Rater and Method Bias"),
+      createLearningSubModule("Week 2 Introduction", [
+        {
+          id: "overview",
+          kind: "purpose",
+          title: "Purpose",
+          body: "We left last week's content by exploring broad issues related to performance management, paying particular attention to the failings of evaluative performance appraisals relative to developmentally focused ones. This week picks up where that left off and builds specific capabilities in critiquing, utilising and navigating performance appraisals. The topic is built around the skills and knowledge needed for progression through the first and second assessment items.",
+        },
+        {
+          id: "learning-objectives",
+          kind: "objectives",
+          title: "Learning Objectives",
+          body: "After successfully completing this week's tasks, you should be able to:",
+          items: [
+            "Examine different elements of performance appraisals.",
+            "Explore top-down, multi-user and balanced scorecard feedback platforms.",
+            "Critique common verbal and written feedback frameworks.",
+            "Examine the issue of user and rater bias as it applies to performance appraisals.",
+          ],
+        },
+      ]),
+      createLearningSubModule("2.1 The Performance Appraisal", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Immerse yourself in the features and components common to performance appraisals. A lot of attention in this unit is paid to appraisals and to the general aspects of work — though the actual appraisal document itself is typically underwhelming to look at.",
+        },
+        {
+          id: "appraisal-form",
+          kind: "activity",
+          title: "Step 1: Features of an Appraisal Form",
+          body: "Identify the generic features common to performance appraisal forms by analysing a standard template.",
+          images: [
+            {
+              alt: "Performance appraisal form features",
+              caption: "Common features of a performance appraisal form",
+              src: "/images/business-psychology/hrm6005/week-2/appraisal-form-features.png",
+            },
+          ],
+        },
+        {
+          id: "appraisal-elements",
+          kind: "summary",
+          title: "Step 2: Going Deeper Into the Elements",
+          items: [
+            "Beyond the generic features, appraisals may include a space for an overall rating, and — where rewards, commissions or bonuses apply — those may be listed too.",
+            "Appraisals generally combine qualitative feedback (written, verbal, open-ended) with quantitative metrics (output, profit, tangibles, ratings) to capture both workplace output and workplace behaviour.",
+            "The sign-off matters: appraisals typically end with a section where both reviewer and employee sign. This makes it a formal document, which can be subject to legal proceedings.",
+            "Behavioural elements — punctuality, deportment, tattoos, 'professional' communication style — may have nothing to do with actual output, yet can shape the tone of an appraisal. Balance these against empirical facts.",
+            "Evidence check: French, Mortensen and Timming (2019, Human Relations) analysed whether tattoos are associated with employment and wage discrimination. Across gender, ethnicity, role and education, tattoos — visible or offensive or not — showed no correlation with wage. The authors argue such behavioural discrimination is more myth than reality: it happens, but more rarely than assumed, and in some work contexts tattoos signal fitting in.",
+            "Quantitative elements are common, especially Likert and rating scales (1-5 for overall performance). Overall performance rankings are a residual of Taylor's scientific management, where managers rated employees against each other and ascribed pay accordingly — and they remain subject to rater bias.",
+          ],
+        },
+        {
+          id: "prowse-reading",
+          kind: "resource",
+          title: "Step 4: Reading — Prowse & Prowse (2009), The Dilemma of Performance Appraisal",
+          body: "A literature review in Measuring Business Excellence. Core argument: despite 80-90% adoption across US/UK organisations, research has ignored the critical success factor — line manager interpersonal and interviewing skill (the 'Bradford Approach') — while the theory stays underdeveloped.",
+          items: [
+            "History of appraisal methods: 1800s, Robert Owen's factory used coloured wood blocks to signal performance; early 1900s, Taylor's scientific management; 1930s, the psychological tradition of trait and graphic rating scales; 1940s, behavioural methods (BARS, BOS, critical incident); post-1945, Management by Objectives; 1960s, self-appraisal and discussion-based interviews; 1990s, 360-degree appraisal and the emergence of pay-for-performance.",
+            "Orthodox critique: appraisal carries built-in conflicting purposes — motivating and developing versus judging past performance for reward. This creates bias: central tendency, halo/horns, recency, political manipulation by managers protecting their own interests, and gender/ethnicity bias.",
+            "Radical critique (Foucauldian — Townley, Newton & Findley): appraisal functions as covert managerial control and surveillance rather than genuine development.",
+            "Proposed fixes and their limits: 360-degree appraisal was meant to reduce bias and power imbalance, but a five-year study (Walker & Smither) still found subjectivity persisting. Interpersonal skills training for appraisers remains under-researched despite being critical.",
+            "Performance-related pay: merit pay is increasingly tied to appraisal (UK civil service, NHS, banking), but the evidence is largely negative — demotivating, encourages gaming and narrow target focus, and reduces honest self-disclosure, since employees won't admit weaknesses that will hit their pay.",
+            "Conclusion: appraisal remains 'muddled', and good outcomes hinge heavily on the quality of the relationship with the line manager. No viable alternative has been proposed that still delivers feedback, motivation and reward justification — so organisations keep using, revising and periodically abolishing appraisal systems rather than replacing them.",
+          ],
+        },
+        {
+          id: "journal",
+          kind: "journal",
+          title: "Journal Entry",
+          body: "Skim pages 69-77 of The Dilemma of Performance Appraisal and answer in your own words:",
+          items: [
+            "What are the three questions for quality of feedback in performance appraisals?",
+            "What is conflict avoidance?",
+            "What is a recency effect?",
+            "What mechanisms have been deployed to increase objectivity in performance appraisals?",
+          ],
+        },
+      ]),
+      createLearningSubModule("2.2 Feedback Sources", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Explore top-down, multi-user and balanced scorecard feedback platforms.",
+        },
+        {
+          id: "context",
+          kind: "note",
+          title: "Some Context Before You Begin",
+          body: "The most typical form of performance appraisal occurs between a line manager and one of their staff. It is a formal event, and completion of the document typically happens alongside a face-to-face meeting where verbal feedback is given. Feedback usually consists of the manager's perspective on the employee's performance, plus (in some cases) objective performance data collated into the appraisal. This is the most common form partly because it is relatively efficient — certainly more so than multi-rater appraisals.",
+          images: [
+            {
+              alt: "Feedback sources",
+              caption: "Feedback sources",
+              src: "/images/business-psychology/hrm6005/week-2/feedback-sources.jpeg",
+            },
+          ],
+        },
+        {
+          id: "360-definition",
+          kind: "definition",
+          title: "Definition",
+          definitions: [
+            {
+              term: "360 Degree Feedback",
+              definition:
+                "An assessment system or process in which employees receive confidential, anonymous evaluations from the people who work around them. This typically includes manager, peers, and direct reports.",
+            },
+          ],
+          images: [
+            {
+              alt: "360-degree feedback overview",
+              caption: "360-degree feedback",
+              src: "/images/business-psychology/hrm6005/week-2/360-feedback-1.png",
+            },
+            {
+              alt: "360-degree feedback detail",
+              src: "/images/business-psychology/hrm6005/week-2/360-feedback-2.png",
+            },
+            {
+              alt: "360-degree feedback detail",
+              src: "/images/business-psychology/hrm6005/week-2/360-feedback-3.png",
+            },
+          ],
+        },
+        {
+          id: "reductionist-definition",
+          kind: "definition",
+          title: "Definition",
+          body: "Rating systems are everywhere: customer service calls, star ratings for restaurants and service providers, ride-sharing platforms, and — in some regions of China — citizen social credit systems. Like it or not, reductionist forms of performance evaluation are creeping into all aspects of life and shaping decisions. If you are a telemarketer who has received several bad customer ratings, those form part of your performance appraisal.",
+          definitions: [
+            {
+              term: "Reductionist rating system",
+              definition:
+                "A reductionist rating system condenses complex, multi-dimensional information into a single, easily digestible score, metric, or label. While highly useful for quick decision-making, it often strips away vital context, nuances, and the interconnected dynamics of the subject being evaluated.",
+            },
+          ],
+        },
+        {
+          id: "psychology-of-ratings",
+          kind: "summary",
+          title: "Step 3: Roosa (2019), The Psychology of Ratings",
+          body: "A general-interest piece on rating systems, with direct analogies to appraisal bias.",
+          items: [
+            "Social credit systems reward and punish citizens based on trust behaviour — an extreme, formalised rating system with real consequences.",
+            "People rate too leniently. On platforms like Uber, raters avoid low scores even after bad experiences because they don't want to harm someone's livelihood — social/emotional bias overriding accuracy, exactly like managers avoiding negative appraisal ratings.",
+            "Ratings tend to be all-or-nothing. YouTube found people rated 5-star or 1-star and rarely in between, which is why it abandoned stars for thumbs up/down.",
+            "Explaining a rating changes it. When people had to justify their score, positive experiences got rated lower and negative ones higher — explanation moderates emotional extremes toward the middle. Yelp uses this by requiring a written review with every star rating.",
+            "Ratings carry real economic weight: 85% of people trust online reviews like personal recommendations, and a one-star increase can raise revenue 5-9%.",
+            "Relevance: this mirrors the central tendency and halo effects from Prowse & Prowse, and the reluctance to give critical feedback — the same rater psychology, just from consumer platforms instead of workplaces.",
+          ],
+        },
+        {
+          id: "my-notes-ratings",
+          kind: "journal",
+          title: "My Notes: Five Good and Five Bad Things About Rating Systems",
+          items: [
+            "Good — Rating systems are quick and efficient for consumers to complete. Anything more complex or time consuming would result in even less participation.",
+            "Good — They can contain valuable feedback from the consumer's perspective where there are genuine holes in the business's process that need to be addressed.",
+            "Good — When done electronically, data can be easily sorted and processed without manual intervention by company staff.",
+            "Good — In the case of public services like Uber, rating systems can serve the social system by keeping people safe if a driver is behaving in an unsafe way.",
+            "Bad — Rating systems are a reductionist system, so they do not cater for context and other factors that influence a rating. They are black and white, which can be frustrating for the employee/business if the ratings impact their development and finances.",
+            "Bad — They are biased. One person's good or bad experience is likely to be different to another's. Asking questions like 'rate your experience' is quite global and will be answered subjectively.",
+            "Bad — They have become commoditised. Every business asks for a rating of some sort, and they have become annoying, or seen as spam communication, which devalues the process.",
+            "Bad — They can be seen as the be all and end all if a company has no other way to get consumer feedback. This lacks diversity and exacerbates the reductionist issue.",
+          ],
+        },
+        {
+          id: "balanced-scorecard",
+          kind: "resource",
+          title: "Step 5: The Balanced Scorecard",
+          body: "Watch The Explainer: The Balanced Scorecard (HBR, 2:40). The balanced scorecard applies to company performance rather than employee performance, but it gives context for why performance appraisals today carry more financial metrics and use a range of qualitative and quantitative tools. Kaplan and Norton developed the framework in the early 90s, and it has since been applied to multiple performance contexts — think of metric-driven school report cards from that era. While most appraisals today look different to the 1993 model, many track employee performance against the financial, customer, internal (work behaviour), and learning and growth perspectives.",
+        },
+      ]),
+      createLearningSubModule("2.3 The Feedback Sandwich", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Critique common verbal and written feedback frameworks.",
+        },
+        {
+          id: "the-method",
+          kind: "activity",
+          title: "Step 1: The Feedback Sandwich Method",
+          body: "The feedback sandwich is the most espoused method for giving feedback. The approach is simple — start with something positive, deliver the critical substance, which may be negative, and then finish with something positive.",
+          links: [
+            {
+              href: "https://www.youtube.com/watch?v=hDNde-Eub_A",
+              label: "What is a Feedback Sandwich | Explained in 2 min",
+            },
+          ],
+          images: [
+            {
+              alt: "Feedback sandwich explainer video",
+              caption: "What is a Feedback Sandwich",
+              src: "/images/business-psychology/hrm6005/week-2/feedback-sandwich-video.png",
+            },
+          ],
+        },
+        {
+          id: "my-notes-sandwich",
+          kind: "journal",
+          title: "My Notes: Is the Feedback Sandwich Useful?",
+          body: "Yes, I think starting with a compliment or positive feedback acknowledges the effort that has been put in thus far. Jumping straight to negative feedback can leave someone feeling discounted. Like anything, if overdone the process can become scripted and the positive feedback de-valued. So, it does need to be applied at the right times and genuinely.",
+        },
+        {
+          id: "henley-reed",
+          kind: "summary",
+          title: "Henley & DiGennaro Reed (2015): Should You Order the Feedback Sandwich?",
+          body: "Researchers tested whether the classic feedback sandwich (positive → corrective → positive) actually works best. Undergraduates performed simulated office tasks with different feedback sequences, delivered either before or after each session.",
+          items: [
+            "If feedback came before the task, no feedback at all worked best.",
+            "If feedback came after the task, corrective first followed by two positives worked best.",
+            "The classic sandwich was not the most efficacious sequence in either case, despite claims to the contrary.",
+            "Key line for the journal: 'We found that the Corrective-Positive-Positive condition produced the highest aggregate mean' (Henley & DiGennaro Reed, 2015).",
+          ],
+        },
+        {
+          id: "empathic-concern",
+          kind: "summary",
+          title: "Empathic Concern and Negative Feedback (two-study examination)",
+          body: "Does a leader showing empathy while giving negative feedback make a difference?",
+          items: [
+            "Video experiment (n=177): everyone felt less negative after receiving criticism, but only those whose leader showed empathic concern also felt more positive afterward — and they rated the leader as more effective at giving feedback.",
+            "Field study (n=306 leaders): leaders who gave high-quality negative feedback were rated more promotable by their boss — but only where subordinates also perceived empathic concern. Good feedback alone wasn't enough; empathy amplified the career benefit.",
+            "Practitioner points: show empathic concern when delivering feedback; train leaders to recognise emotional reactions and communicate understanding; reward leaders who demonstrate it; educate leaders on the career benefits of high-quality negative feedback paired with empathy.",
+          ],
+        },
+        {
+          id: "journal-sandwich",
+          kind: "journal",
+          title: "My Journal Entry: Evidence on the Feedback Sandwich",
+          body: "The evidence did not support the feedback sandwich process (Positive-Corrective-Positive) as being effective. The more effective process was Corrective-Positive-Positive. My thoughts are that by delivering negative feedback first, followed by two doses of positive reinforcement, the subjects were allowed the psychological space to recover from any negative impact of the corrective feedback, and to re-appraise the meta-feedback as being more balanced and constructive.",
+        },
+        {
+          id: "empathy-eq",
+          kind: "summary",
+          title: "Step 5: Westfall (2021), Understanding Empathy — How EQ Can Improve Your Career Impact",
+          body: "Core argument: empathy is a career-boosting leadership skill, not a soft nice-to-have — especially when people are stressed or burned out.",
+          items: [
+            "Empathy is not sympathy. Sympathy is feeling for someone and can lead to excuses or cutting corners. Empathy is understanding someone's situation as it is, without losing your own perspective — which lets you actually help them act.",
+            "Empathy is not ego. It means focusing on others' experience rather than your own goals, identity, or need for recognition.",
+            "'Cognitive compassion' — sensing someone's emotional state without being overwhelmed by it — is essentially emotional intelligence. Citing HBR, EQ has 12 components including self-management and social awareness.",
+            "EQ is career fuel. Leaders who genuinely acknowledge where people are build trust and unlock better outcomes, because you can only move a team forward from where they actually are.",
+            "The restaurant analogy: a great waiter who catches a nut allergy before you order isn't intruding — that's attentive service. Empathetic leadership works the same way: proactive and attentive, not passively nice.",
+          ],
+        },
+        {
+          id: "my-notes-empathy-actions",
+          kind: "journal",
+          title: "My Notes: Actions for Deploying Empathy and EQ in Critical Feedback",
+          items: [
+            "Create rapport with the employee immediately. Resistance can emerge when there is no rapport in a relationship, so establishing rapport is a key first step to an empathetic approach.",
+            "Manage your own state before others. Ensure you are in an uptime state going into the discussion — switching on all your senses so you can detect the employee's emotional shifts during the discussion and check in on them.",
+            "Access a second-person perspective. This is the perspective of empathy: removing your own subjectivity and applying the other person's worldview. What are they thinking, what are they feeling, what do they want me to understand?",
+            "Apply sacred listening skills. Listen with an open heart and an open mind — without judgement, simply perceiving what the other is saying.",
+            "Apply communication loops in the discussion. Repeat back what you think you have understood to ensure it matches what was communicated. Done effectively, this creates a deep level of accurate understanding and leaves the other person feeling heard.",
+            "Frame the conversation effectively. Gain agreement upfront on how the discussion will go and the desired outcome. If both parties agree, this sets the foundation for a constructive, balanced discussion without surprises.",
+            "Check in with the employee throughout. Ask if you have missed anything so far, and whether there is anything they would like to add.",
+          ],
+        },
+        {
+          id: "feedback-note",
+          kind: "note",
+          title: "Feedback",
+          body: "The list of considerations for providing critical feedback that you co-develop with peers and facilitator should be used to inform the development of your Assessment 2 response.",
+        },
+      ]),
+      createLearningSubModule("2.4 Rater and Method Bias", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Examine how performance reviews are shaped by implicit biases.",
+        },
+        {
+          id: "assessment-note",
+          kind: "note",
+          title: "Assessment 2",
+          body: "Notes taken in the journal activities relate directly to Assessment 2. Revisit the assessment to see how your notes on bias may be used.",
+        },
+        {
+          id: "implicit-bias",
+          kind: "activity",
+          title: "Steps 1-2: Implicit Bias Self-Assessment",
+          body: "Bias occurs when, rather than being neutral, you have a preference for or aversion to a person or people. These preferences or aversions are indicative of implicit (unconscious) bias. Take Harvard's Implicit Association Test and reflect on the result in your journal.",
+          links: [
+            {
+              href: "https://implicit.harvard.edu/implicit/takeatest.html",
+              label: "Implicit Association Test",
+            },
+          ],
+        },
+        {
+          id: "my-notes-iat",
+          kind: "journal",
+          title: "My Notes",
+          body: "My results are shaped by my upbringing and values.",
+        },
+        {
+          id: "ten-biases",
+          kind: "summary",
+          title: "Step 3: Campbell (2019), 10 Performance Review Biases and How to Avoid Them",
+          body: "Core premise: everyone is biased (citing Kahneman), so good performance review design must actively counter it. Ten biases and their fixes:",
+          items: [
+            "Recency bias — over-weighting recent events. Fix: collect feedback at multiple points through the year, not just at review time.",
+            "Primacy bias — first impressions dominate. Fix: multiple data points over time.",
+            "Halo/Horns effect — one trait, good or bad, colours the whole rating. Fix: rate on 2-3 distinct dimensions rather than one overall impression.",
+            "Central tendency bias — everyone rated middle of the road. Fix: remove the neutral middle option on scales.",
+            "Leniency bias — inflated ratings across the board. Fix: redesign the scale so 'average' isn't the top label; reserve top ratings for genuine standouts.",
+            "Similar-to-me bias — rating people like yourself higher. Fix: agree assessment criteria before evaluating, reducing reliance on stereotypes.",
+            "Idiosyncratic rater bias — rating others harshly on skills you're weak at, generously on skills you're strong at. Fix: frame questions around concrete intentions or decisions (e.g. 'I would hire this person again') rather than vague traits.",
+            "Confirmation bias — seeking evidence that confirms your existing view. Fix: actively look for evidence that contradicts your initial impression.",
+            "Gender bias — women get personality-focused feedback, men get behaviour/achievement-focused feedback. Fix: structured feedback forms rather than open text boxes, prompting for specific situations, behaviours and impact.",
+            "Law of small numbers — judging someone's rank against too small a comparison group (best on a strong team is not best company-wide). Fix: company-wide talent calibration sessions to standardise what 'above average' means.",
+            "Bottom line: people can't reliably self-detect their own bias, so the fix has to be structural — better scales, criteria and timing — not just awareness.",
+          ],
+          images: [
+            {
+              alt: "Rater and method bias",
+              caption: "Rater and method bias",
+              src: "/images/business-psychology/hrm6005/week-2/rater-bias.jpeg",
+            },
+          ],
+        },
+        {
+          id: "bias-definitions",
+          kind: "definition",
+          title: "Definitions",
+          definitions: [
+            {
+              term: "Talent Management",
+              definition:
+                "The systematic process of identifying a vacant position, hiring a suitable candidate, developing the skills and expertise of that candidate to match the position, and retaining them to achieve long-term business objectives.",
+            },
+            {
+              term: "Talent Calibration",
+              definition:
+                "An HR practice where managers and leaders align employee performance evaluations against shared standards. While intended to reduce individual manager bias and ensure fairness, HBR research warns that unstructured sessions can inadvertently introduce new biases, like favouritism or uneven discussion times.",
+            },
+            {
+              term: "Gender Bias",
+              definition:
+                "The tendency to make decisions, form judgments, or treat individuals preferentially based on their gender or socially constructed gender roles. It can be explicit (conscious) or implicit (unconscious), frequently manifesting as unequal treatment, stereotypes, or structural disadvantages across society.",
+            },
+            {
+              term: "Constructive Feedback",
+              definition:
+                "Specific, actionable information meant to improve someone's performance or behaviour. Unlike destructive criticism, which is judgmental or personal, it is offered in a supportive manner to highlight strengths and provide practical, forward-looking solutions for growth.",
+            },
+          ],
+        },
+        {
+          id: "gender-bias-reading",
+          kind: "summary",
+          title: "Step 4: Cecchi-Dimeglio (2017), How Gender Bias Corrupts Performance Reviews",
+          body: "Core finding: annual performance reviews are highly subjective, which lets gender bias creep in. Based on content analysis of individual reviews at professional services firms.",
+          items: [
+            "Key data point: women were 1.4x more likely to receive critical subjective feedback, versus positive or critical objective feedback.",
+            "Double standards — same behaviour, different spin: a woman lacking client confidence 'needs to be more self-confident' (a personal flaw), while a man with the same issue 'needs to develop his natural ability' (a skill to build). A woman's careful deliberation is 'analysis paralysis'; a man's is 'hesitant but thorough, works out alternatives'.",
+            "Women received vaguer feedback overall, consistent with Stanford research by Correll & Simard.",
+            "Women's success was more often attributed to luck or long hours than to skill or ability — so they got less credit for actual competence.",
+            "General rater biases (leniency, halo) distort ratings for everyone, compounding the problem.",
+            "Proposed fix, tested via field experiments: replace annual reviews with real-time weekly feedback from 2-6 reviewers (supervisors, peers, clients) at roughly 15 minutes each; use gender-neutral, pre-agreed criteria rather than open-ended commentary; include client feedback; and weight input by how much exposure each reviewer has to the person.",
+            "Results: subjective, personality-based criticism of women disappears or significantly decreases; collaborative and participatory leadership styles (per Alice Eagly's research, more common among women) are better recognised; and managers get more accurate, contextual, longitudinal data on all employees.",
+            "Bottom line: the fix isn't more bias-awareness training alone — it's structural. Objective criteria, frequency, and multiple raters reduce the room subjectivity has to operate in.",
+          ],
+        },
+        {
+          id: "feedback-note",
+          kind: "note",
+          title: "Feedback",
+          body: "This activity relates directly to the first assessment item. Use what you've learned about gender bias and other forms of bias to critique the performance appraisals nested within the Assessment 2 task.",
+        },
+      ]),
     ],
   },
   {
