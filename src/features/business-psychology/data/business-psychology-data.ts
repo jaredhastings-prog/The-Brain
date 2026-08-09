@@ -2273,6 +2273,12 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
         {
           id: "henley-reed",
           kind: "summary",
+          links: [
+            {
+              href: "https://www.tandfonline.com/doi/full/10.1080/01608061.2015.1093057",
+              label: "Should You Order the Feedback Sandwich? Efficacy of Feedback Sequence and Timing",
+            },
+          ],
           title: "Henley & DiGennaro Reed (2015): Should You Order the Feedback Sandwich?",
           body: "Researchers tested whether the classic feedback sandwich (positive → corrective → positive) actually works best. Undergraduates performed simulated office tasks with different feedback sequences, delivered either before or after each session.",
           items: [
@@ -2285,6 +2291,12 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
         {
           id: "empathic-concern",
           kind: "summary",
+          links: [
+            {
+              href: "https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/joop.12184",
+              label: "How empathic concern helps leaders in providing negative feedback: a two-study examination",
+            },
+          ],
           title: "Empathic Concern and Negative Feedback (two-study examination)",
           body: "Does a leader showing empathy while giving negative feedback make a difference?",
           items: [
@@ -2393,6 +2405,16 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
         {
           id: "bias-definitions",
           kind: "definition",
+          links: [
+            {
+              href: "https://www.hrdconnect.com/2019/09/06/how-to-develop-your-talent-management-strategy/",
+              label: "Talent management strategy (HRD Connect)",
+            },
+            {
+              href: "https://sprad.io/blog/talent-calibration-guide-how-to-run-fair-evidence-based-rating-sessions-templates-inside",
+              label: "Talent calibration guide",
+            },
+          ],
           title: "Definitions",
           definitions: [
             {
