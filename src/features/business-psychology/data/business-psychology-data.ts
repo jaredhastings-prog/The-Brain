@@ -3298,16 +3298,355 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
     id: slugify("Week 5: Work Design"),
     week: 5,
     title: "Work Design",
-    summary: "",
-    keyConcepts: [],
-    assessmentLinks: [],
+    summary:
+      "Explores work design (job design) — the job characteristics conducive to employee performance, with particular focus on flexible work and autonomy as drivers of productivity, and on what happens when demands outstrip resources.",
+    keyConcepts: [
+      "Work design shapes outcomes: positive (engagement, performance, work-life balance, wellbeing) and negative (stress, work-life conflict, poor health).",
+      "One hundred years of research clusters into five perspectives: sociotechnical systems, the Job Characteristics Model, Job Demands-Control, Job Demands-Resources, and role theory.",
+      "The five job characteristics (Hackman & Oldham): skill variety, task identity, task significance, autonomy, feedback.",
+      "JD-R lets you examine any job — whatever its form — and ask whether physical, emotional and cognitive demands are balanced by organisational, managerial and individual resources.",
+      "Demands and resources are not fixed categories: remove a resource and a demand often appears in its place, and the classification can be subjective.",
+      "'Doing more with less' (New Public Management) raises demands and strips resources, with individual, organisational and economy-wide costs.",
+      "COPSOQ is a validated, free instrument for assessing psychosocial working conditions — a structural alternative to individual output rating.",
+      "Underperformance has two dimensions (output and behaviour), and incompetence is frequently unintentional — often a systemic rather than individual failing.",
+    ],
+    assessmentLinks: [
+      "Assessment 3: work design gives the other half of the puzzle — useful for arguing traditional PM frameworks fail partly because they ignore how the job itself is designed, not just how it is evaluated.",
+      "Assessment 3: COPSOQ is an example of an alternative to traditional appraisal — assessing systemic conditions rather than individually rating output.",
+    ],
+    image: {
+      src: "/images/business-psychology/hrm6005/week-5/more-with-less-demands.png",
+      alt: "Week 5 — work design",
+    },
     subModules: [
-      createSubModule("5.1 Introduction to Work Design"),
-      createSubModule("5.2 Job Demands and Resources"),
-      createSubModule("5.3 Doing More with Less"),
-      createSubModule("5.4 Measuring Job Demands and Resources"),
-      createSubModule("5.5 Comparing Job Demands and Resources Across Different Contexts"),
-      createSubModule("5.6 Underperformance"),
+      createLearningSubModule("Week 5 Introduction", [
+        {
+          id: "overview",
+          kind: "purpose",
+          title: "Purpose",
+          body: "This week explores the concept of work design (also known as job design), including the job characteristics conducive to employee performance, with a particular focus on flexible work and autonomy as drivers of employee productivity. (The unit frames the week with Sheena Easton's 1981 hit '9 to 5 (Morning Train)' — and how much times have changed since.)",
+        },
+        {
+          id: "learning-objectives",
+          kind: "objectives",
+          title: "Learning Objectives",
+          body: "After completing this week's tasks, you should be able to:",
+          items: [
+            "Explore the concept of work design.",
+            "Examine the impact of work design elements on employee performance outcomes.",
+            "Explore the job demands and resources across different sectors.",
+            "Explore the issue of underperformance.",
+          ],
+        },
+      ]),
+      createLearningSubModule("5.1 Introduction to Work Design", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Introduce the concept of work design. Work design is a classic HRM concept, and most textbooks dedicate a detailed section to it. One problem with such an established and largely theoretical concept is that it can lack practical meaning — but work design can be highly practical, providing the foundation for exploring how the particulars of a job (where it happens, for how long, how regularly, involving which tasks) can be crafted to shape positive or negative work outcomes. Positive outcomes include engagement, performance, work-life balance, career satisfaction and wellbeing; negative outcomes include work stress, work-life conflict, and poor physical and mental health.",
+        },
+        {
+          id: "parker",
+          kind: "summary",
+          title: "Step 1: Parker, Morgeson & Johns (2017), One Hundred Years of Work Design Research",
+          body: "The Journal of Applied Psychology's 100th anniversary review — a big-picture retrospective mapping how the field evolved. Five historical perspectives were identified via citation mapping:",
+          items: [
+            "Sociotechnical Systems & Autonomous Work Groups (1950s onward) — sparked by Trist & Bamforth's 1951 coal mining studies, which found that replacing self-managing, multiskilled small teams with mass-production 'longwall' methods caused psychological and social harm. This showed work design itself, not just individual factors, causes sickness and dysfunction.",
+            "Job Characteristics Model (Hackman & Oldham, 1975/1980) — the most dominant and highly-cited perspective. Five core characteristics (skill variety, task identity, task significance, autonomy, feedback) drive motivation, satisfaction and performance. Rated by expert judges as one of only eight OB theories simultaneously high in scientific validity and practical usefulness.",
+            "Job Demands-Control Model (Karasek, 1979) — focused on health and strain rather than motivation. Core claim: high demands plus low control produces the highest strain, and control buffers the negative effects of demands. Karasek & Theorell (1990) later added social support as another buffer.",
+            "Job Demands-Resources Model (Demerouti et al., 2001) — broadened 'resources' beyond control and support, and added a dual-path structure: demands primarily drive strain and burnout (health impairment path), while resources drive engagement and performance (motivational path). Widely applied but criticised as more descriptive than explanatory — it doesn't say why the relationships hold, and needs borrowed theories (SDT, Conservation of Resources, Social Cognitive Theory) to explain mechanisms.",
+            "Role Theory — traces to Kahn et al. (1964) on role conflict, ambiguity and overload as distinct stressors, predating Karasek. Later expanded via job crafting (Wrzesniewski & Dutton, 2001) and role orientation/proactivity research showing autonomous job design promotes flexible role-taking and better performance.",
+            "Key argument: these five clusters are historically distinct but 'convenient rather than substantive' — the boundaries are more a product of academic history and citation patterns than genuinely separate phenomena. The authors call for integrative, multilevel models bridging individual-level theories with team and system-level ones.",
+            "Future directions: more multilevel research; better attention to social, relational, cognitive and physical aspects of work; considering curvilinear effects (Warr's 1984 'vitamin model', where traditionally positive characteristics like complexity show diminishing or negative returns at very high levels); and contemporary changes such as electronic monitoring, emotional labour and remote work.",
+            "The paper closes by echoing a 1917 quote from JAP's first issue calling for work to preserve human dignity — bookending the field's century-long moral purpose.",
+          ],
+        },
+        {
+          id: "job-characteristics-definition",
+          kind: "definition",
+          title: "Definition",
+          definitions: [
+            {
+              term: "Job Characteristics",
+              definition:
+                "From Hackman & Oldham's Job Characteristics Model: the specific design elements of work that drive motivation, satisfaction and performance — skill variety, task identity, task significance, autonomy, and feedback.",
+            },
+          ],
+        },
+        {
+          id: "my-notes-work-design",
+          kind: "journal",
+          title: "My Notes: Journal Questions",
+          items: [
+            "Define 'job characteristics' — skill variety, task identity, task significance, autonomy, feedback. Aspects of a job.",
+            "Define the job demands-resources/control model — focuses on health versus strain rather than motivation. It claims high demands plus low control equals highest strain, whereas control buffers the negative effects of demands.",
+            "How has work design impacted management thinking? It has shaped how managers think about talent, engagement, flexibility and organisational structure.",
+          ],
+        },
+      ]),
+      createLearningSubModule("5.2 Job Demands and Resources", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Gain practical insight into work design through the lens of the Job Demands-Resources model.",
+        },
+        {
+          id: "jdr-context",
+          kind: "summary",
+          title: "Step 1: Why JD-R?",
+          items: [
+            "Some of us work shifts, sometimes at night; some underground or in mostly dark settings; others sit for hours behind a computer; others are bound to the seat of a car or truck making deliveries; and some stand for hours delivering classes, chasing toddlers, or doing rounds on elderly residents.",
+            "How is it possible to compare all the physical and knowledge-based roles that make up the labour force? And how can the work environment be catered so that — whether the job is based in a vehicle, a house, an office, a ward or a street — it is conducive to performance?",
+            "The answer is the JD-R model: a framework that lets us examine work in whatever form it takes and ask whether the physical, emotional and cognitive demands of the job are balanced by organisational, managerial and individual resources local to the worker.",
+            "Demands are those things that, left unchecked, drain or deplete an employee's ability to perform. Job resources are those things that mitigate the strain caused by demands, or provide energy or capital to overcome that strain.",
+          ],
+          images: [
+            { alt: "Varied work contexts", src: "/images/business-psychology/hrm6005/week-5/work-contexts-1.jpeg" },
+            { alt: "Varied work contexts", src: "/images/business-psychology/hrm6005/week-5/work-contexts-2.jpeg" },
+          ],
+        },
+        {
+          id: "sorting-activity",
+          kind: "activity",
+          title: "Step 2: Demand or Resource?",
+          body: "Read the scenarios and sort each into job demand or job resource.",
+          images: [
+            {
+              alt: "Job demands and resources sorting activity",
+              src: "/images/business-psychology/hrm6005/week-5/demands-resources-activity.png",
+            },
+          ],
+        },
+        {
+          id: "my-notes-demands",
+          kind: "journal",
+          title: "My Notes: Demands and Mitigating Resources",
+          body: "Additional customers to manage — additional resources that could buffer the demands of managing more customers than the role initially required could be: travel compensation or a work vehicle to visit more customers, additional pay given the extra responsibility, and tools to manage more customers such as digital systems.",
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "Did you realise that if something that is a job resource weren't available, a demand would be there instead? For example, if instead of a supportive boss you had one who bullied, surveilled and micromanaged, you would be detracted from your ability to perform. There are no hard and fast rules about what counts as a demand versus a resource — it can be subjective. In some cases an individual might have a resource that stops them experiencing something in their work context as a demand at all.",
+        },
+      ]),
+      createLearningSubModule("5.3 Doing More with Less", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Explore the JD-R model against the backdrop of contemporary workplace logic centred on doing more with less, and the impact of that logic on employee performance and wellbeing.",
+        },
+        {
+          id: "origins",
+          kind: "summary",
+          title: "Origins of the Logic",
+          items: [
+            "'Doing more with less' has become particularly — but not exclusively — synonymous with the public sector. The phrase isn't new: it has grown as a workplace logic since the 1970s, influenced by Thatcherism and subsequently neoliberalism.",
+            "Thatcherism held that the role of the public service was to be as lean as possible — small government, and if people wished to pull themselves up by their bootstraps, that was on them.",
+            "Neoliberalism is a broader ideology, strongly associated with Reagan, holding that because the private sector is more efficient, governments should outsource or privatise as much as possible.",
+            "In the public sector this logic acquired its own name: New Public Management — the deliberate under-resourcing of public sector departments and services by senior managers, bureaucrats and governments. Because the public sector cannot generate profit, its only route to apparent efficiency is reducing input costs, so departments face efficiency targets and regular program cuts.",
+            "There is arguably a motivational logic behind this, akin to 'treat them mean, keep them keen' — a misguided managerial thought that underfunding operations motivates employees to work harder. The evidence does not support this; forcing employees to work under-resourced simply makes them stressed.",
+          ],
+          images: [
+            { alt: "Doing more with less", src: "/images/business-psychology/hrm6005/week-5/more-with-less-1.png" },
+          ],
+        },
+        {
+          id: "increased-demands",
+          kind: "summary",
+          title: "What Happens to Demands",
+          items: [
+            "Employees have to work at a faster pace across more functions, undertaking tasks with higher cognitive or emotional demand.",
+            "Being spread across multiple roles — perhaps filling in for staff who have left or can't be rehired — creates unpredictability and confusion about what one's role actually entails.",
+            "Staff are asked to compromise and prioritise unreasonably, creating conflicts about which task comes first.",
+            "Having worked at that intensity, staff may also be asked to undertake illegitimate tasks — beneath their pay grade, or a poor use of their time.",
+            "In a climate of austerity and the flow-on effects of stress, staff may be bullied, manipulated or coerced into doing work — classic negative work acts that degrade mental health over time.",
+          ],
+          images: [
+            { alt: "Increased demands", src: "/images/business-psychology/hrm6005/week-5/more-with-less-demands.png" },
+          ],
+        },
+        {
+          id: "reduced-resources",
+          kind: "summary",
+          title: "What Happens to Resources",
+          items: [
+            "Staff may be provisioned with fewer tangible and intangible resources, and not receive pay commensurate with their work.",
+            "They may not receive social support from supervisors or colleagues, who may themselves be too stretched to provide it.",
+            "Leaders, constantly stressed working without necessary resources, may be tired, lacking inspiration and the strategic capability to drive better outcomes.",
+            "Employees might lose their ability to cope, with lower levels of resilience, hope and optimism.",
+            "There may be a curt psychosocial climate where personal wellbeing is not a priority, and low levels of trust, with appetite for risk so low that employees are kept within strict lines of control.",
+          ],
+          images: [
+            { alt: "Reduced resources", src: "/images/business-psychology/hrm6005/week-5/more-with-less-resources.png" },
+          ],
+        },
+        {
+          id: "outcomes",
+          kind: "summary",
+          title: "The Outcomes — Individual, Organisational and Economic",
+          items: [
+            "Over time, working continuously in a climate of doing more with less produces very negative health and wellbeing outcomes. The method meant to boost financial performance begins to have the opposite effect, and ends up costing — potentially a lot.",
+            "Primary impacts on individuals range from reduced engagement (drive, energy, flow), a loss of meaning, and low wellbeing. Increased cognitive stress takes physical hold: reduced sleep, increased blood pressure and heart rate, burnout, and negative mental health outcomes.",
+            "Over time people leave, creating further costs sourcing replacements — particularly for roles that have become undesirable.",
+            "At scale this affects economy-wide productivity (consider aged care, or healthcare during COVID). An economically depressed sector then affects other sectors.",
+            "Working under these conditions increases workplace risks and potentially accidents, with further workers' compensation costs. And when people en masse don't receive sufficient income, they don't receive sufficient superannuation — increasing collective economic burden later, as the cost of healthcare for people worn down by their work history falls to the public.",
+          ],
+          images: [
+            { alt: "Outcomes of doing more with less", src: "/images/business-psychology/hrm6005/week-5/more-with-less-outcomes.png" },
+          ],
+        },
+        {
+          id: "reflection",
+          kind: "reflection",
+          title: "Step 3: Personalise It",
+          body: "An employee's performance, to be assessed truly and fairly, needs to account for the job demands and resources they are exposed to. Reflect on a work context familiar to you and discuss your performance — good or bad — and the kinds of demands and resources that shaped that experience.",
+        },
+      ]),
+      createLearningSubModule("5.4 Measuring Job Demands and Resources", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Introduces a conceptual and measurement framework for examining work design issues in practice.",
+        },
+        {
+          id: "culture-surveys",
+          kind: "note",
+          title: "Some Context Before You Begin",
+          body: "Most of us who have worked in corporate environments have been exposed to workplace culture surveys — an anonymous link once or twice a year, 15-20 minutes rating feelings about the work environment on a Likert scale. These surveys are affiliated with performance management systems, particularly in high-performance work environments, and are common in financial, professional and public administration settings. Results are sometimes reported against leaders' and managers' performance appraisals, but they are also used to get insight into what might be stifling employee productivity.",
+          images: [
+            { alt: "Measuring job demands and resources", src: "/images/business-psychology/hrm6005/week-5/measuring-jdr.png" },
+          ],
+        },
+        {
+          id: "copsoq",
+          kind: "summary",
+          title: "Step 1: COPSOQ III — Guidelines and Questionnaire",
+          body: "The Copenhagen Psychosocial Questionnaire is an international, standardised instrument for assessing and improving psychosocial working conditions. Developed by Tage Kristensen and Vilhelm Borg at the Danish National Research Centre for the Working Environment (1995-2007), now coordinated by the International COPSOQ Network.",
+          items: [
+            "Widely used and validated — cited in hundreds of indexed journal articles, referenced by the WHO and ILO, and recognised as good practice by the EU Occupational Safety and Health Agency. Available in 25+ languages, enabling cross-country comparison.",
+            "Theoretically integrative — operationalises multiple established work environment theories in one tool: demand-control-social support, effort-reward imbalance, job demands-resources, work-family conflict, social capital, the vitamin model, and sociotechnical systems theory. In other words, it draws together most of the theories from the Parker, Morgeson & Johns paper.",
+            "Generic — usable across any industry, sector or workplace size, and allows benchmarking against general population reference values.",
+            "Structure — three versions built from a shared item bank. CORE items are mandatory in every national version, ensuring international and longitudinal comparability; MIDDLE and LONG items are added depending on version. Short/middle versions suit workplace risk assessment and organisational development; the long version is primarily for research.",
+            "Guidelines for workplace use: it exists to identify and reduce psychosocial risk, not just measure it, so results should drive real change. Management, worker representatives and staff must be involved at every stage — worker participation isn't optional, as the tool's validity depends on genuine buy-in. Anonymity and confidentiality are strictly mandatory. The wording and structure of the validated national questionnaire cannot be altered.",
+            "Ten 'soft guidelines' include: never start an assessment without genuine intent to act on results; a response rate below 60% may signal lack of engagement; employees have the right to see and discuss results they contributed to; no one-size-fits-all solutions — interventions must be participatory and context-specific; distinguish clearly between what can and cannot be changed; repeat the survey 1-2 years after interventions; treat results as a tool for dialogue, not a verdict; and position the process within a learning-organisation mindset.",
+            "Relevance: COPSOQ bridges the PM/appraisal material and the JD-R and work design literature, operationalising the psychosocial risk side of JD-R into a practical tool. For Assessment 3 it's a useful example of an alternative to traditional appraisal — rather than individually rating output, it assesses the systemic, organisational conditions that shape wellbeing and performance: a structural, participatory model rather than a top-down evaluative one.",
+          ],
+        },
+        {
+          id: "my-notes-copsoq",
+          kind: "journal",
+          title: "My Notes: Journal Questions",
+          items: [
+            "Define 'psychosocial risk factor' — something that exists in the work environment that poses a risk to an employee's psychological health.",
+            "What work environment theories are covered through COPSOQ? JD-R; demand-control and social support; effort-reward imbalance; work-family conflict; the vitamin model; sociotechnical systems theory.",
+            "What is the substance of the anonymity clause, and why is it important? Anonymity and data confidentiality must be guaranteed for workers' active participation.",
+          ],
+        },
+      ]),
+      createLearningSubModule(
+        "5.5 Comparing Job Demands and Resources Across Different Contexts",
+        [
+          {
+            id: "placeholder",
+            kind: "note",
+            title: "Content To Add",
+            body: "This section appears in the unit outline but the source document contains only the closing feedback for it — the activity steps are not yet captured. Add the content here when available.",
+          },
+          {
+            id: "feedback",
+            kind: "note",
+            title: "Feedback",
+            body: "Having access to a validated tool for assessing job demands, resources and workplace culture is a handy thing to have, particularly when it is free. The last set of tasks before closing the topic is to review the COPSOQ in action.",
+          },
+        ],
+      ),
+      createLearningSubModule("5.6 Underperformance", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Explore the causes and solutions to employee underperformance.",
+        },
+        {
+          id: "definitions",
+          kind: "definition",
+          title: "Step 1: Three Key Terms",
+          definitions: [
+            {
+              term: "Underperformance",
+              definition:
+                "Two dimensions. First, an employee can underperform because the quality or volume of their output is not up to standard. Second — which may or may not relate to the first — an employee's work behaviour is not deemed appropriate: for example, attending work under the influence of alcohol or drugs, or sending inappropriate communications to colleagues or clients.",
+            },
+            {
+              term: "Blame",
+              definition:
+                "Traditionally we have put all the blame for underperformance on the employee. Sometimes this is appropriate, particularly where an employee has acted under the second dimension with the intention of deriving a negative outcome for the workplace. However, incompetence — more frequently associated with the first dimension — is often not intentional.",
+            },
+            {
+              term: "Incompetence",
+              definition:
+                "The state where an employee lacks the necessary skills/ability, motivation or opportunity to generate the desired outcome.",
+            },
+          ],
+        },
+        {
+          id: "fairwork-causes",
+          kind: "summary",
+          title: "Fair Work: Causes of Incompetence",
+          items: [
+            "The employee doesn't know what is expected of them because goals and standards are unclear.",
+            "The employee may not have the knowledge or skills to do the job.",
+            "The employee is unsure if they are meeting the requirements.",
+            "Low personal motivation or confidence.",
+            "Personal issues, such as family stress, physical and/or mental health problems, or problems with drugs or alcohol.",
+            "Low morale in the workplace and/or a poor work environment.",
+            "Interpersonal differences or cultural misunderstandings.",
+            "Workplace bullying.",
+          ],
+          links: [
+            {
+              href: "https://www.fairwork.gov.au/employment-conditions/performance-in-the-workplace",
+              label: "Fair Work — Managing underperformance",
+            },
+          ],
+        },
+        {
+          id: "my-notes-dismissal",
+          kind: "journal",
+          title: "My Notes: Six Considerations Before Dismissing for Underperformance",
+          items: [
+            "Told them the purpose of performance meetings in advance and allowed them to prepare.",
+            "Told them they could have a support person present.",
+            "Clearly outlined the expected level of performance and the improvement that was required.",
+            "Clearly warned them that their performance needed to improve.",
+            "Gave them time and support to improve their performance.",
+            "Told them that they may be dismissed if their performance didn't improve.",
+          ],
+        },
+        {
+          id: "hallowell",
+          kind: "summary",
+          title: "Step 3: Hallowell (2005), Overloaded Circuits — Why Smart People Underperform",
+          body: "HBR. Core concept: Attention Deficit Trait (ADT) — a purely environmentally-caused condition, unlike ADD which has a genetic basis. ADT is brought on by chronic brain overload from modern work demands: constant multitasking, interruptions, and information overload. Symptoms include distractibility, inner frenzy, impatience, and difficulty organising, prioritising and managing time.",
+          items: [
+            "The neuroscience: the frontal lobes handle executive functioning — decision-making, prioritisation, planning — and work well under normal conditions. Beneath them, deep brain centres govern survival instincts and basic emotion. When overload hits, the brain treats it like a physical threat, triggering fear and panic. Control shifts from the rational frontal lobes to the primitive survival brain, impairing flexibility, humour, creativity and nuanced thinking exactly when they're most needed. Fear, not any diagnosable disorder, is the most dangerous factor undermining performance.",
+            "Critical management failure: organisations tend to view ADT symptoms through a moral lens, seeing struggling employees as weak or deficient rather than recognising a real neurological response to an overloaded environment. Hallowell describes a client with stellar reviews who was told to resign after admitting he was overloaded — and who later thrived elsewhere.",
+            "Case study: a toxic, isolated, no-help culture in a university chemistry department led to a graduate student's suicide. Leadership responded structurally — multiple supervisors instead of one, biweekly social gatherings, redesigned open office space, mental health education, and confidential support. Performance stayed excellent and the culture became far more humane.",
+            "Solution 1 — promote positive emotions and human connection. Fear-free environments where colleagues trust and connect activate brain pathways supporting executive functioning, even under stress. Isolation worsens ADT; regular face-to-face human moments counteract it.",
+            "Solution 2 — take physical care of your brain: adequate sleep (can you wake without an alarm?), stable blood glucose via complex carbs and protein rather than sugar and white flour, omega-3s, and exercise, which boosts brain health chemicals.",
+            "Solution 3 — organise for ADT: break large tasks into smaller ones, keep a clear workspace, block distraction-free time, set specific email hours, end each day with a maximum five-item priority list, and apply the OHIO rule (Only Handle It Once — act, file or bin, no piles).",
+            "Solution 4 — protect your frontal lobes: slow down, don't rush incoming information, and use mind-clearing tricks when overwhelmed to quiet the panicked lower brain.",
+            "Solution 5 — leaders should match skills to tasks. JetBlue's David Neeleman openly discusses his weaknesses, delegates accordingly, and encourages managers to fit tasks to people's natural strengths rather than forcing uniformity — echoing the strengths-based approach from van Woerkom & Kroon.",
+            "Bottom line: ADT is a real, named, manageable phenomenon, not a character flaw. The most powerful lever for leaders is naming it, removing the moral stigma, and redesigning environments rather than expecting individuals to push through.",
+            "Relevance: connects directly to JD-R (demands overwhelming resources leads to strain and burnout) and to SDT (competence — matching tasks to strengths). It is also a strong counterpoint to purely metrics-driven PM: a traditional appraisal focused only on output would likely punish someone struggling with ADT as underperforming, when the real issue is systemic overload — reinforcing the Assessment 3 critique that traditional PM frameworks often misdiagnose structural problems as individual failings.",
+          ],
+        },
+      ]),
     ],
   },
   {
