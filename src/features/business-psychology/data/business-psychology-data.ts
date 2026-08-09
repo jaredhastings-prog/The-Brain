@@ -2446,16 +2446,524 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
     id: slugify("Week 3: Employee Motivation"),
     week: 3,
     title: "Employee Motivation",
-    summary: "",
-    keyConcepts: [],
-    assessmentLinks: [],
+    summary:
+      "Covers the classical work-motivation canon — much of which hasn't held up under scrutiny, but whose vernacular still fills boardrooms — then moves to the theories that emerged from the positive psychology revolution, and applies that lens to a performance management case study.",
+    keyConcepts: [
+      "Intrinsic vs extrinsic motivation — foundational, but overstated in practice; most people run on shades of both.",
+      "Content theories explain WHAT motivates (Maslow, Herzberg, McClelland, Alderfer); process theories explain HOW motivation is directed and sustained (Vroom, Adams, Locke & Latham, Skinner).",
+      "Positive psychology (Seligman, 1998) shifted the field from fixing dysfunction to building flourishing — PERMA and flow.",
+      "Flow (Csikszentmihalyi): intense absorption when challenge and skill are both high — a direct challenge to hours-based conceptions of work.",
+      "Conservation of Resources theory (Hobfoll, 1989): people protect, retain and build valued resources; resource loss hits harder than equivalent gain.",
+      "Strengths-based appraisal raises motivation to improve via perceived supervisor support — and matters most when the rating is low.",
+    ],
+    assessmentLinks: [
+      "Assessment 3: CoR theory (two principles, four corollaries) can be used as a lens to evaluate a performance management system and its effect on staff.",
+      "Assessment 3: the van Woerkom & Kroon journal activity was designed to prepare the third assessment item, including references critiquing traditional performance management.",
+    ],
+    image: {
+      src: "/images/business-psychology/hrm6005/week-3/flow-theory.png",
+      alt: "Week 3 — employee motivation",
+    },
     subModules: [
-      createSubModule("3.1 Extrinsic and Intrinsic Motivation"),
-      createSubModule("3.2 Psychology and the Mind"),
-      createSubModule("3.3 Content and Process Theories of Motivation"),
-      createSubModule("3.4 Positive Psychology"),
-      createSubModule("3.5 Conservation of Resources Theory"),
-      createSubModule("3.6 Application of Positive Psychology to a Performance Management System"),
+      createLearningSubModule("Week 3 Introduction", [
+        {
+          id: "overview",
+          kind: "purpose",
+          title: "Purpose",
+          body: "While there are many — perhaps hundreds — of theories of motivation and a plethora of subsets dealing with motivation at work, the most significant recent developments reshaping our understanding of employee motivation have come through the lens of positive psychology (Seligman chose it as his theme as APA president in 1998). This week briefly covers the standard work motivation body of knowledge — classical material, much of which has not held up under broader academic scrutiny, but whose vernacular around hierarchies of needs and hygiene factors is still commonplace in boardrooms and worksites. It then explores work motivation theories stemming from the positive psychology revolution, and concludes by examining a performance management case study through a positive psychology lens.",
+        },
+        {
+          id: "learning-objectives",
+          kind: "objectives",
+          title: "Learning Objectives",
+          body: "After completing this week's tasks, you should be able to:",
+          items: [
+            "Define intrinsic and extrinsic motivation.",
+            "Explore traditional, content and process motivation and work motivation theories.",
+            "Examine the contribution of positive psychology to the field of work motivation.",
+            "Apply a positive psychology lens to an analysis of a performance management system.",
+          ],
+        },
+      ]),
+      createLearningSubModule("3.1 Extrinsic and Intrinsic Motivation", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Explore the definitions of extrinsic and intrinsic motivation, and their influence in workplace dynamics.",
+        },
+        {
+          id: "context",
+          kind: "note",
+          title: "Some Context Before You Begin",
+          body: "Extrinsic and intrinsic motivation are foundational concepts for discussing work motivation, and grasping them helps orient more challenging concepts such as the distinction between process and content theories. At the same time, their usability in practice is somewhat overstated. Rarely is an organisation in a position to radically boost someone's pay to drive extrinsic motivation, and equally it is difficult to change an employee's perspective to help them love the job for its own sake — particularly if that employee is picking up garbage all day.",
+          images: [
+            {
+              alt: "Intrinsic and extrinsic motivation",
+              src: "/images/business-psychology/hrm6005/week-3/intrinsic-extrinsic.png",
+            },
+          ],
+        },
+        {
+          id: "video",
+          kind: "resource",
+          title: "Step 1: Extrinsic vs Intrinsic Motivation",
+          body: "As you watch, make notes on possible workplace motivators for either extrinsic or intrinsic personality types, and the potential pros and cons of each in a workplace team dynamic.",
+          links: [
+            {
+              href: "https://www.youtube.com/watch?v=HLiasZwWTjA",
+              label: "Extrinsic vs Intrinsic Motivation (video)",
+            },
+          ],
+          images: [
+            {
+              alt: "Extrinsic vs intrinsic motivation video",
+              src: "/images/business-psychology/hrm6005/week-3/video-intrinsic-extrinsic.png",
+            },
+          ],
+        },
+        {
+          id: "match-activity",
+          kind: "activity",
+          title: "Step 3: Matching Workplace Motivation Types",
+          body: "Match workplace motivation types to intrinsic or extrinsic orientations.",
+          images: [
+            {
+              alt: "Workplace motivation types matching activity",
+              src: "/images/business-psychology/hrm6005/week-3/motivation-types-match.png",
+            },
+          ],
+        },
+        {
+          id: "my-notes",
+          kind: "journal",
+          title: "My Notes: Pros and Cons in a Team Dynamic",
+          items: [
+            "Intrinsic — Pro: an intrinsically motivated employee will apply their attention to what fills their intrinsic needs. If met, they can be very productive and fulfilled.",
+            "Intrinsic — Con: paying no attention to extrinsic forces can mean little or no adherence to systems, processes, or frameworks that exist to keep the workplace operating. This becomes an opposing force for the employee and could lead to wellbeing issues.",
+            "Extrinsic — Pro: they will respond positively to competition, incentives and external validation, which in a workplace with this dynamic can work well.",
+            "Extrinsic — Con: the employee may be missing their underlying intrinsic needs and end up masking their personality.",
+          ],
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "While doing this activity you might have realised the list was a bit simplistic. Humans are complicated, and our brains hold multiple and sometimes conflicting perspectives. Most of us have shades of extrinsic and intrinsic motivation when we do any one thing — it is rare that we do anything for money alone or purely because we love it. Often both drivers are at play.",
+        },
+      ]),
+      createLearningSubModule("3.2 Psychology and the Mind", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Develop a background on what psychology is and how it differs from neuroscience. If you have a strong background in psychology you may want to skip this activity — it is a high-level overview that scaffolds foundational knowledge for later activities.",
+        },
+        {
+          id: "mind-brain",
+          kind: "summary",
+          title: "Steps 1-2: Mind and Brain",
+          body: "The clip shows Bart Simpson struggling to sleep while contemplating the difference between the brain and the mind — an important distinction here, because psychology is the study of the mind, whereas neuroscience is the study of the brain.",
+          items: [
+            "We know a lot about the mind: more than 120 years of dedicated study into how it works and how it influences human behaviour — preceded by nearly 3,000 years of debate about how and why humans exist and behave. Psychology was born out of the scientific method applied to human behaviour.",
+            "Our understanding of the mechanics of the brain — how thoughts and feelings correspond with chemical reactions — remains nascent by comparison.",
+            "Neuropsychology (the interaction between brain and mind) has developed hugely in the last two decades. Before that, most studies of the brain's interaction with behaviour were based on atypical or pathological scenarios: brain damage affecting behaviour, or brains significantly different from the norm.",
+            "For a contemporary account, see A.C. Grayling's The Frontiers of Knowledge (2021).",
+          ],
+          links: [
+            {
+              href: "https://www.youtube.com/watch?v=pUwH-P3Iz0Y",
+              label: "Introductory clip",
+            },
+          ],
+          images: [
+            {
+              alt: "Mind and brain",
+              src: "/images/business-psychology/hrm6005/week-3/mind-and-brain.jpeg",
+            },
+            {
+              alt: "Theories of the mind",
+              src: "/images/business-psychology/hrm6005/week-3/theories-of-mind.jpeg",
+            },
+          ],
+        },
+        {
+          id: "six-psychologists",
+          kind: "summary",
+          title: "Step 4: Six Foundational Psychologists",
+          body: "Modern psychology would not be what it is today without these contributions.",
+          items: [
+            "Sigmund Freud — often called the father of modern psychology. Developed theories from observations of minds appearing to suffer behavioural problems (which he termed neurosis and hysteria), treating many female victims of sexual abuse in Vienna from the 1890s. From these somewhat gendered observations of atypical patients he developed psychoanalysis, which uses hypnosis to put a patient in a state where they can recall and rationalise past traumatic events.",
+            "Carl Jung — also interested in psychoanalysis, expanded understanding of the function of dreams in thought processing, and examined how interactions with the collective shape conscious and subconscious processing.",
+            "Lev Vygotsky — picked up Jung's work in the Soviet Union and laid the foundation for social psychology and our understanding of childhood development of thought as shaped by the social, familial and parental environment.",
+            "Jean Piaget — influential in unpacking normal cognition (as opposed to atypical cognition) and developed schema theory, explaining how we learn and how learning builds on prior learning. Schema theory has been a bedrock for understanding neuropsychology.",
+            "Alfred Adler — an Austrian contemporary of Freud who championed individual psychology, explaining the drivers of behaviour for the typical population. A central tenet is that humans strive to be self-actualised and powerful as well as happy.",
+            "Ivan Pavlov — focused on conditioning behaviour: how behaviours can be encouraged or discouraged through incentives or punishment. His work would be considered extreme and potentially unethical today, but it formed the basis of cognitive behaviour therapy, which remains the mainstay of psychological treatment because it is efficacious relative to psychotherapy and psychoanalysis.",
+            "Note: these six men exclusively dominated early-modern psychology. Their theories are still touched on today, though many have been disputed or disregarded in favour of a more nuanced understanding.",
+          ],
+          images: [
+            { alt: "Sigmund Freud", src: "/images/business-psychology/hrm6005/week-3/psychologist-26.png" },
+            { alt: "Carl Jung", src: "/images/business-psychology/hrm6005/week-3/psychologist-27.png" },
+            { alt: "Lev Vygotsky", src: "/images/business-psychology/hrm6005/week-3/psychologist-28.png" },
+            { alt: "Jean Piaget", src: "/images/business-psychology/hrm6005/week-3/psychologist-29.png" },
+            { alt: "Alfred Adler", src: "/images/business-psychology/hrm6005/week-3/psychologist-30.png" },
+            { alt: "Ivan Pavlov", src: "/images/business-psychology/hrm6005/week-3/psychologist-31.png" },
+          ],
+        },
+      ]),
+      createLearningSubModule("3.3 Content and Process Theories of Motivation", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Review the two foundational families of motivation theory — content and process. These form the backbone of much of what we know about why employees do what they do and how they might be stimulated to perform. Things have moved on since, and later activities cover the more recent developments.",
+          images: [
+            {
+              alt: "Theories of motivation",
+              src: "/images/business-psychology/hrm6005/week-3/motivation-theories.jpeg",
+            },
+          ],
+        },
+        {
+          id: "definition",
+          kind: "definition",
+          title: "Definition",
+          definitions: [
+            {
+              term: "Content and Process Theories of Motivation",
+              definition:
+                "The separation of theories of motivation in the workplace into what motivates people (content), and how motivation occurs through cognitive processes (process).",
+            },
+          ],
+        },
+        {
+          id: "my-notes-definitions",
+          kind: "journal",
+          title: "My Notes: Defining Content and Process Theories",
+          items: [
+            "Content theories explain what drives behaviour; process theories explain how behaviour is directed and sustained.",
+            "Content theories focus on the specific needs, desires and incentives that get people to take action. These needs could be intrinsic or extrinsic. Key theories: Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, McClelland's Theory of Needs.",
+            "Process theories focus on the mental mechanisms and cognitive processes people use to choose specific behaviours and sustain them over time. Key theories: Vroom's Expectancy Theory, Adams' Equity Theory, Locke's Goal-Setting Theory.",
+          ],
+        },
+        {
+          id: "classify-activity",
+          kind: "activity",
+          title: "Step 2: Classify Each Theory",
+          body: "Correctly identify each theory as a content or a process theory of motivation.",
+          images: [
+            {
+              alt: "Content vs process theory classification activity",
+              src: "/images/business-psychology/hrm6005/week-3/content-process-match.png",
+            },
+          ],
+        },
+        {
+          id: "my-notes-maslow",
+          kind: "journal",
+          title: "My Notes: Maslow's Hierarchy of Needs",
+          items: [
+            "Proposes human needs are arranged in a five-level hierarchy: physiological (food, shelter, sleep), safety, belonging and social connection, esteem, and self-actualisation. The premise is that lower-level needs must be met before higher-level needs become motivating.",
+            "In practice, the model helps managers recognise that different employees may be operating at different levels at any given time. Job stability addresses safety; team cohesion addresses belonging; recognition and advancement address esteem and self-actualisation. Satisfying basic needs can produce meaningful gains in productivity and retention.",
+            "Criticism: the model is too rigid, prioritising linear progression as the only way people meet needs. Critics argue people often pursue and satisfy multiple needs simultaneously rather than strictly checking off one level to reach another.",
+            "Workplace example: employees willing to tolerate low pay and poor job stability (safety/physiological) because they are deeply motivated by a passionate mission or creative freedom (self-actualisation).",
+          ],
+        },
+        {
+          id: "practical-application",
+          kind: "summary",
+          title: "Practical Application: How Each Family Shows Up in HR",
+          items: [
+            "Maslow's Hierarchy — basic pay and benefits meeting physiological and safety needs; job security policies and safe conditions; team-building for belonging; recognition and promotions for esteem; stretch projects and creative autonomy for self-actualisation.",
+            "Herzberg's Two-Factor Theory — hygiene factors (fair pay, safe conditions, job security, good policies) prevent dissatisfaction but don't motivate; motivators (meaningful work, recognition, achievement, growth, responsibility) drive real engagement. Practical use: don't assume a pay rise will boost motivation — it just removes dissatisfaction.",
+            "McClelland's Acquired Needs (achievement, affiliation, power) — assign high-achievers to goal-driven measurable projects; give affiliation-driven employees team-based or client-facing roles; offer power-motivated employees leadership tracks. Used in role-fit and career pathing.",
+            "Alderfer's ERG (Existence, Relatedness, Growth) — similar to Maslow but non-hierarchical; used in flexible reward systems letting employees choose what matters most, e.g. flexible benefits menus.",
+            "Vroom's Expectancy Theory (Effort → Performance → Outcome) — clear achievable KPIs, a transparent link between performance and reward, and rewards actually valued by the individual. Practical use: commission structures, clear promotion criteria, personalised incentives.",
+            "Adams' Equity Theory — pay transparency and benchmarking for perceived fairness; consistent criteria-based ratings (ties back to the rater-bias papers); understanding 'quiet quitting' as equity-restoring behaviour when the input/output ratio feels unfair.",
+            "Locke & Latham's Goal-Setting Theory — SMART goals outperform vague 'do your best' goals; OKRs; regular goal check-ins rather than annual-only reviews (ties to the Cappelli & Tavis shift to frequent feedback).",
+            "Skinner's Reinforcement Theory — spot bonuses and immediate recognition (positive reinforcement); performance improvement plans as a structured consequence system; gamified recognition platforms tying instant reward to behaviour.",
+          ],
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "Many units exploring performance management and motivation stop at content and process theories — for the last 30 years these have been the bedrock from which practical techniques were developed, so it was important to explore them. However, the world has moved on from these dated and sometimes disproven theories. The latest developments come next.",
+        },
+      ]),
+      createLearningSubModule("3.4 Positive Psychology", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Explore the concept of positive psychology and examine how it is deployed in relation to work motivation.",
+        },
+        {
+          id: "flow",
+          kind: "summary",
+          title: "Steps 1-2: Flow",
+          body: "Have you ever been completely immersed in an activity where you felt such enjoyment that nothing else mattered? If so, you were likely in a state of flow.",
+          items: [
+            "Csikszentmihalyi's theory of flow is an important theory within positive psychology.",
+            "From a work motivation perspective, flow is revolutionary. We have previously conceived of work as a set number of hours per week during which one undertakes a set number of tasks — a work design perspective. Australia's Fair Work Act enshrines full-time work as an average of 38 hours per week.",
+            "Flow creates a natural tension with that conception, because given the right circumstances a person can be more productive and could do what would usually be eight hours of work in two.",
+            "Over the last five years there has been much media attention on the four-day working week, flexible work, and whether transit should count as work hours. Dig deep enough and all of these are prompted by flow theory: we can be more productive if we stop thinking about work as a 9-to-5 activity at a particular office, and instead as something done as efficiently as possible given the right circumstances.",
+          ],
+          links: [
+            {
+              href: "https://www.youtube.com/watch?v=8h6IMYRoCZw",
+              label: "Flow by Mihaly Csikszentmihalyi — animated book summary",
+            },
+          ],
+          images: [
+            { alt: "Flow video", src: "/images/business-psychology/hrm6005/week-3/video-flow.png" },
+            { alt: "Mihaly Csikszentmihalyi", src: "/images/business-psychology/hrm6005/week-3/csikszentmihalyi.png" },
+            { alt: "Flow theory", src: "/images/business-psychology/hrm6005/week-3/flow-theory.png" },
+            { alt: "Flow and work", src: "/images/business-psychology/hrm6005/week-3/flow-work.png" },
+          ],
+        },
+        {
+          id: "my-notes-flow",
+          kind: "journal",
+          title: "My Notes: A Flow Experience",
+          body: "The flow state was also induced by some extrinsic motivation of realising both financial reward and recognition from superiors that I had done a good job. When in the state, I felt full focus and drive where nothing could distract me from the task. I found myself to be far more productive in work output when in the flow state.",
+        },
+        {
+          id: "positive-psychology",
+          kind: "summary",
+          title: "Step 4: Ackerman (2019), What Is Positive Psychology & Why Is It Important?",
+          body: "Positive psychology is the scientific study of what makes life most worth living — studying strengths rather than weaknesses, and building the good rather than only fixing what's broken.",
+          items: [
+            "Founder: Martin Seligman, who had earlier developed the learned helplessness theory tied to depression. Frustrated that psychology focused only on illness, he pushed the new sub-field when elected APA president in 1998; the foundational paper was published in 2000 with Mihaly Csikszentmihalyi.",
+            "PERMA — Seligman's framework for wellbeing: Positive emotions, Engagement (losing yourself in something you enjoy), Relationships, Meaning, Accomplishment.",
+            "Flourishing — the state of hitting all five PERMA elements; a process, not a fixed trait.",
+            "Practical applications: gratitude journals, gratitude letters, strengths-based coaching, wellbeing therapy, positive psychotherapy.",
+            "Criticisms: some findings overstated or hyped; too reliant on self-report survey data; cultural/Western bias in the research base; too individualistic, under-attending to teams, organisations and systemic issues; sometimes dismissed as shallow 'Pollyanna' positivity — though the author argues this last critique is weakest, since the field also studies the value of negative emotions.",
+            "Bottom line: a legitimate scientific field, not self-help, aimed at understanding and building thriving rather than only treating dysfunction.",
+          ],
+        },
+        {
+          id: "learned-helplessness",
+          kind: "definition",
+          title: "Definition",
+          definitions: [
+            {
+              term: "Learned Helplessness",
+              definition:
+                "A psychological state where an individual repeatedly faces uncontrollable stressors and eventually stops trying to change their circumstances, even when opportunities for escape arise. Coined by Martin Seligman and Steven Maier in the late 1960s, it often stems from past trauma or chronic failure, leading to deep-seated passivity, low motivation, and a persistent belief that one's actions are entirely futile.",
+            },
+          ],
+        },
+        {
+          id: "donaldson-meta",
+          kind: "summary",
+          title: "Step 5: Donaldson, Lee & Donaldson (2019), Evaluating Positive Psychology Interventions at Work",
+          body: "The first meta-analysis of workplace Positive Psychology Interventions (PPIs), pooling 22 studies — 52 effect sizes, roughly 6,000 participants across 10 countries.",
+          items: [
+            "Five intervention types tested: Psychological Capital (PsyCap), job crafting, employee strengths, employee gratitude, and employee wellbeing (PERMA-based).",
+            "Overall small-to-moderate effect on work outcomes (g = .31).",
+            "Bigger effect on reducing bad outcomes — stress, burnout, incivility (g = -.34) — than on boosting good outcomes (g = .25).",
+            "Significant improvement in wellbeing, engagement, and 'other' outcomes (trust, leadership, organisational virtue). No significant effect on job performance itself — a notable gap.",
+            "By type: no statistically significant differences between the five theories, though gratitude and strengths interventions had the strongest individual effects on desirable outcomes, and PsyCap the strongest effect on reducing undesirable ones.",
+            "By delivery: group interventions were somewhat better for boosting good outcomes (likely social/collaborative benefits); individual interventions worked best for reducing bad outcomes, possibly because they mirror one-on-one positive psychotherapy.",
+            "Caveat: publication bias was detected (Fail-Safe N, Egger's test), meaning true effects may be smaller than reported.",
+            "Bottom line: workplace PPIs do work, modestly — particularly good at reducing stress, burnout and negative behaviour, less proven at directly lifting job performance. This challenges the 'toxic positivity' critique: focusing on the positive doesn't ignore the negative, and may be one of the more effective ways to address it.",
+          ],
+        },
+        {
+          id: "my-notes-ppi",
+          kind: "journal",
+          title: "My Notes: Journal Questions",
+          items: [
+            "Why would individually focused PPIs do better than group-level ones? Working individually allows the space and care to surface an individual's personal strengths and apply them to a specific problem. It's a tailored, personal approach that may target an individual's specific sources of stress better than a generic group or workshop can.",
+            "Why might the mitigating effect on undesirable outcomes be stronger? The authors point to PPT's logic that rather than attacking a problem or deficiency, PPIs surface a person's existing strengths and build plans to use them more. It can be easier to neutralise a negative stress by strengthening something positive than it is to add extra positivity on top of an already adequate baseline.",
+          ],
+        },
+        {
+          id: "psycap-definitions",
+          kind: "definition",
+          title: "Definitions",
+          definitions: [
+            {
+              term: "Psychological Capital (PsyCap)",
+              definition:
+                "A positive psychological state of development defined by four core resources, remembered by the acronym HERO: Hope, Efficacy, Resilience, and Optimism. Unlike fixed personality traits, PsyCap is malleable — these states can be actively developed and trained.",
+            },
+            {
+              term: "Job Crafting",
+              definition:
+                "The process of proactively redesigning your own work to better align with your individual passions, strengths, and values. The concept involves three primary areas of adjustment: task crafting, relational crafting, and cognitive crafting.",
+            },
+          ],
+        },
+      ]),
+      createLearningSubModule("3.5 Conservation of Resources Theory", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Take a deep dive into conservation of resources theory, which — coupled with positive psychology — provides a robust framework for understanding why individuals are drawn to perform, or not perform, at work.",
+        },
+        {
+          id: "wellbeing-context",
+          kind: "summary",
+          title: "Before You Begin: The Concept of Wellbeing",
+          items: [
+            "Wellbeing has gained increasing focus over the last 20 years through positive psychology research. Increasingly it is seen not as a desirable outcome of work but as an important input to maintain in order to boost employee performance. The distinction might seem semantic — it isn't.",
+            "Employees feeling good about themselves and their work used to be conceived of as nice-to-have but not essential. Building a work environment conducive to wellbeing is costly: people need to behave decently toward each other, employees need sufficient resourcing, and there need to be mechanisms where people feel valued and can raise concerns or ideas and have them acted on. That investment meant the wellbeing narrative was traditionally sidelined as a cost rather than an investment.",
+            "The research now supports the broad notion that if employees have wellbeing, they will perform more. Bluntly: yelling at an employee to 'finish that report' is less efficacious than supporting them to finish it — and the yelling is likely to reduce quality, increasing performance anxiety and creating emotional blocks.",
+            "Now that work requires less mechanical effort and more complex, creative problem-solving, providing a foundation of support guided by employee wellbeing is much more effective at getting a better result quicker.",
+          ],
+          images: [
+            {
+              alt: "Wellbeing",
+              src: "/images/business-psychology/hrm6005/week-3/wellbeing.jpeg",
+            },
+          ],
+        },
+        {
+          id: "assessment-note",
+          kind: "note",
+          title: "Assessment 3",
+          body: "Content covered in this activity can be used in your third assignment for this unit.",
+        },
+        {
+          id: "cor-definition",
+          kind: "definition",
+          title: "Definition",
+          definitions: [
+            {
+              term: "Conservation of Resources Theory",
+              definition:
+                "Developed by Dr Stevan Hobfoll in 1989, a psychological stress model stating that humans are fundamentally motivated to protect, retain, and build their valued resources. Stress and burnout occur when these resources are threatened, actually lost, or when investment fails to yield expected resource gains.",
+            },
+          ],
+          links: [
+            {
+              href: "https://www.youtube.com/embed/8Exq1ZDFzPI",
+              label: "Why we conserve energy: the conservation of resources theory (3:10)",
+            },
+          ],
+          images: [
+            { alt: "Conservation of resources video", src: "/images/business-psychology/hrm6005/week-3/video-cor.png" },
+          ],
+        },
+        {
+          id: "resource-loss",
+          kind: "note",
+          title: "Step 2: The Primacy of Loss",
+          body: "One particularly salient component of Hobfoll's theory is that the impact of a resource loss on an individual is significantly stronger than an equivalent resource gain. For example, when a manager yells at you about your work, it is likely to have a much more pronounced and negative impact than receiving praise.",
+          images: [
+            { alt: "Resource loss vs gain", src: "/images/business-psychology/hrm6005/week-3/resource-loss.png" },
+          ],
+        },
+        {
+          id: "my-notes-cor",
+          kind: "journal",
+          title: "My Notes: CoR Principles and Resource Types",
+          items: [
+            "The primacy of loss — losing a resource is psychologically much more painful and impactful than the joy of gaining an equivalent resource.",
+            "Resource investment — to prevent loss and recover from stress, individuals must invest their existing resources to build more reserves.",
+            "Four primary resource types: Objects (physical items like housing, tools, clothing); Conditions (states of value such as employment, marital status, good health); Personal characteristics (internal traits like self-esteem, optimism, skills); Energies (means to attain other resources, such as time, money, knowledge).",
+          ],
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "As part of your third assignment you may choose to adopt a CoR lens and apply the two principles and four corollaries to evaluate a performance management system and its effect on staff.",
+        },
+      ]),
+      createLearningSubModule(
+        "3.6 Application of Positive Psychology to a Performance Management System",
+        [
+          {
+            id: "purpose",
+            kind: "purpose",
+            title: "Purpose",
+            body: "Explore an application of positive psychology to a performance management process. This journal activity was designed to assist in preparing for the third assessment item.",
+          },
+          {
+            id: "van-woerkom",
+            kind: "summary",
+            title: "van Woerkom & Kroon (2020), The Effect of Strengths-Based Performance Appraisal",
+            body: "Core question: does focusing on employee strengths rather than deficits in performance appraisal boost motivation to improve — and does this depend on how good or bad the person's rating was? Theoretical basis is Self-Determination Theory, specifically the need for relatedness. Method: 422 consultants at a Dutch IT firm surveyed right after their annual appraisal, with answers linked to their actual official performance ratings.",
+            items: [
+              "Hypothesis 1 supported: strengths-based appraisal leads to higher motivation to improve — a direct positive relationship.",
+              "Hypothesis 2 supported: Perceived Supervisor Support mediates the effect. Strengths-based appraisal boosts how supported employees feel, and that feeling of support is what drives the motivation boost — not just the appraisal content itself.",
+              "Hypothesis 3 supported (the key finding): the effect is stronger when the performance rating was relatively low. A strengths-based approach matters more for preserving supervisor support and motivation when the rating is mediocre or poor.",
+              "Why low ratings matter more: a low rating threatens self-view and can trigger defensive withdrawal from the supervisor relationship. Because strengths-based appraisal focuses on 'you at your best' rather than ranking against others, it buffers that blow — supervisors can convey competence and care even while delivering disappointing news.",
+              "Practical implications: organisations reluctant to abandon ratings should still train supervisors in strengths-based conversation techniques — Strengthsfinder, reflected-best-self exercises, feedforward interviews, or a 3:1 positive-to-negative feedback ratio. Especially valuable for employees receiving disappointing ratings.",
+              "Limitations: cross-sectional design can't prove causation; the sample skewed toward already high-performing employees; single company and single industry; and only the relatedness need from SDT was tested, not autonomy or competence.",
+            ],
+          },
+          {
+            id: "sdt-definition",
+            kind: "definition",
+            title: "Definition",
+            definitions: [
+              {
+                term: "Self-Determination Theory",
+                definition:
+                  "A psychological framework exploring human motivation and personality. It posits that people are driven by an innate desire to grow. To achieve optimal functioning and wellbeing, three fundamental psychological needs must be met: autonomy, competence, and relatedness.",
+              },
+            ],
+          },
+          {
+            id: "sdt-practical",
+            kind: "summary",
+            title: "Practical Application: SDT Needs as Observable Behaviour",
+            items: [
+              "Autonomy met — proposes their own approach rather than waiting for instructions; pushes back respectfully on inefficient process; shows initiative; uses ownership language ('my project', 'I decided to…').",
+              "Autonomy unmet — waits passively for direction; follows process exactly even when it clearly isn't working; quiet compliance, doing only what's asked; frustration when micromanaged.",
+              "Competence met — seeks challenges slightly above current skill; talks about progress and mastery; enters flow states; confidently offers solutions in their area.",
+              "Competence unmet — avoids tasks that risk exposing a skill gap; anxiety or defensiveness around feedback; repeats safe tasks; expresses self-doubt.",
+              "Relatedness met — builds genuine rather than transactional relationships; mentors or seeks mentorship voluntarily; uses 'we' language; comfortable sharing struggles.",
+              "Relatedness unmet — isolates from the team; guarded, transactional communication with the manager; doesn't seek help; cynicism about team culture.",
+              "HR applications — Autonomy: flexible work arrangements, job crafting, employee input into KPIs/OKRs, minimal micromanagement. Competence: stretch assignments matched to skill (the flow zone), developmental rather than purely evaluative feedback, mastery-oriented training, recognising growth not just outcomes. Relatedness: mentoring and buddy systems, genuinely collaborative team projects, manager check-ins focused on support, psychological safety practices.",
+              "Programs built on SDT: Google's 20% time (autonomy), Netflix's 'freedom and responsibility' culture, feedforward interviews (Kluger & Nir — future-focused rather than past-deficit-focused), and job crafting interventions (Wrzesniewski & Dutton).",
+            ],
+          },
+          {
+            id: "my-notes-journal",
+            kind: "journal",
+            title: "My Notes: Journal Questions",
+            items: [
+              "Interpreting the .38 R² — nearly two-fifths of the difference between employees in how motivated they felt to improve their performance can be accounted for by whether they experienced a strengths-based appraisal and how supported they felt by their supervisor. When an employee got a bad performance rating, a strengths-based conversation helped them still feel supported by their manager, so they stay motivated to improve instead of shutting down or getting defensive.",
+              "Summary of the paper's contribution — (1) Strengths-based appraisal boosts motivation to improve, partly because it increases how supported employees feel. (2) The effect is strongest when the rating is relatively low, helping employees cope with a disappointing rating without damaging the supervisor relationship. (3) Social and relational aspects of the appraisal matter, not just content: discussing an employee's unique qualities invites active participation and signals a developmental rather than purely evaluative purpose. (4) Contribution to SDT — among the first to treat the appraisal interview itself as a social context that can support or hurt the need for relatedness, an angle prior SDT research largely overlooked. (5) An unexpected age effect — age was negatively associated with performance ratings, PSS and MTI, suggesting older workers may benefit less from current appraisal approaches.",
+            ],
+          },
+          {
+            id: "my-notes-sbpa",
+            kind: "journal",
+            title: "My Notes: What a Strengths-Based Appraisal Looks Like in Practice",
+            items: [
+              "Preparation — the manager reviews the employee's peak moments over the past year and identifies tasks where they showed strengths. The employee completes a self-assessment focused on their most successful achievements, which strengths they used, and how they want to grow those strengths.",
+              "Meeting structure — roughly 80% of time on strengths, 20% on managing risks. Success analysis: open-ended questions dissecting a recent win ('Your project was flawless. Which of your strengths did you rely on to keep the team on track?'). Future alignment: building world-class expertise rather than incremental improvement ('Since you excel at client relationship building, let's pair you with our high-value accounts next quarter and get you advanced negotiation training'). Risk mitigation: weaknesses addressed only if they block performance, reframed as blind spots, overdone strengths, or skills deficits to manage.",
+              "Feedback phrasing — traditional: 'You need to work on your public speaking skills.' Strengths-based: 'Your analytical writing is incredibly clear. Let's leverage that structure to help you build confidence when presenting your data to stakeholders.'",
+              "Action plans — strength stretch goals that require applying top talents to bigger, more complex organisational problems. Remediation rather than rehabilitation: for critical skills gaps, focus on workarounds — technology, restructuring the role, or partnering with teammates who hold complementary strengths.",
+              "Deployment — treat it as a cultural shift, not an HR box-tick. Phase the rollout to secure buy-in, select the systems and tools, and train managers on the framework.",
+            ],
+          },
+          {
+            id: "my-notes-references",
+            kind: "journal",
+            title: "My Notes: References for Assessment 3",
+            items: [
+              "Culbert, S. A. (2010). Get rid of the performance review! How companies can stop intimidating, start managing — and focus on what really matters. Business Plus. Directly argues traditional performance review damages the supervisor-employee relationship.",
+              "Adler, S., Campion, M., Colquitt, A., Grubb, A., Murphy, K., Ollander-Krane, R., et al. (2016). Getting rid of performance ratings: genius or folly? A debate. Industrial and Organizational Psychology, 9, 219-252. A full debate piece weighing both sides of abandoning ratings.",
+              "Murphy, K. R. (2019). Performance evaluation will not die, but it should. Human Resource Management Journal, 30, 13-31. Directly critiques the continued survival of performance evaluation despite its flaws.",
+              "van Woerkom, M., & de Bruijn, M. (2016). Why performance appraisal does not lead to performance improvement: excellent performance as a function of uniqueness instead of uniformity. Industrial and Organizational Psychology, 9, 275-281. Argues traditional appraisal's push for uniform standards actively works against improvement, since excellence is individual.",
+            ],
+          },
+          {
+            id: "feedback",
+            kind: "note",
+            title: "Feedback",
+            body: "This last activity touched on all the former activities related to psychology, CoR and positive psychology, and sought to apply them to a performance management and appraisal approach.",
+          },
+        ],
+      ),
     ],
   },
   {
