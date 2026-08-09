@@ -2992,14 +2992,306 @@ const managingRewardingPerformanceWeeklyTopics: WeeklyTopic[] = [
     id: slugify("Week 4: Rewarding Performance"),
     week: 4,
     title: "Rewarding Performance",
-    summary: "",
-    keyConcepts: [],
-    assessmentLinks: [],
+    summary:
+      "A deep dive into rewards — a specific critique of the role of financial rewards and intrinsic value at work. Heavy on scholarly evidence about performance-related pay, with the aim of building a nuanced understanding of how performance pay affects different kinds of work.",
+    keyConcepts: [
+      "PRP evidence is genuinely mixed, and context counts: positive effects cluster in production, sales and retail where output is easy to measure; results are far more mixed in knowledge work.",
+      "Sample bias matters — most PRP research is US-based and WEIRD (Western, educated, industrialised, rich, democratic), and the US tipping/low-minimum-wage context differs sharply from Australia's.",
+      "Lazear's taxonomy: pay can be input- or output-based, and discrete, continuous, or relative in structure.",
+      "Pay-for-performance is good for effort on routine tasks but bad for innovation — the fix is contract design (tolerate early failure, reward long-run success), not removing incentives.",
+      "Crowding-in vs crowding-out: whether performance pay helps or harms public service motivation depends on how the reward is delivered and who receives it.",
+      "Meaning at work is not the same as meaningful work — eight sources across purpose, self-realisation, prestige and social.",
+    ],
+    assessmentLinks: [
+      "Assessment 3: the PRP readings support a review of the effectiveness of a current performance management system.",
+      "Assessment 3: Lazear provides an orthodox economic counterpoint to the Critical HRM and SDT readings — useful for contrasting mainstream and critical perspectives.",
+      "Assessment 3: the meaning-over-transactions discussion builds critical reasoning for the final assessment.",
+    ],
+    image: {
+      src: "/images/business-psychology/hrm6005/week-4/lazear-compensation.png",
+      alt: "Week 4 — rewarding performance",
+    },
     subModules: [
-      createSubModule("4.1 Performance-Related Pay"),
-      createSubModule("4.2 PRP and Innovation"),
-      createSubModule("4.3 PRP in the Public Sector"),
-      createSubModule("4.4 Meaning at Work"),
+      createLearningSubModule("Week 4 Introduction", [
+        {
+          id: "overview",
+          kind: "purpose",
+          title: "Purpose",
+          body: "This week takes a deep dive into rewards, offering a specific critique of the role of financial rewards and intrinsic value at work. Activities involve a lot of reading of the scholarly evidence related to performance-related pay, with guidance notes to keep that reading active and digestible. The purpose is a nuanced understanding of the impact of performance pay on different kinds of work performance. (The unit frames the week with Pink Floyd's 'Money' from The Dark Side of the Moon.)",
+        },
+        {
+          id: "learning-objectives",
+          kind: "objectives",
+          title: "Learning Objectives",
+          body: "After completing this week's tasks, you should be able to:",
+          items: [
+            "Examine the question: does money motivate?",
+            "Explore the impact of financial rewards on intrinsic motivation.",
+            "Research the role of meaning as it applies to work.",
+            "Examine non-financial rewards.",
+          ],
+        },
+      ]),
+      createLearningSubModule("4.1 Performance-Related Pay", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Take a deep dive into the complexities of performance-related pay as it applies to employment systems in Australian and non-Australian contexts.",
+        },
+        {
+          id: "prp-disclosure",
+          kind: "note",
+          title: "Product Disclosure: Why the Results Are So Mixed",
+          items: [
+            "PRP is contentious. Empirical research generally opens with 'previous research highlights mixed results for PRP'. One paper will say most researchers agree PRP can have a positive effect; another will say most agree it has little or no effect.",
+            "Context counts. Studies showing a positive PRP-performance relationship are generally in production/manufacturing, sales and retail — settings where work output is easy to measure. In knowledge-based industries, where output depends on creativity and problem-solving, results are far more mixed.",
+            "Most PRP studies come out of the US. Despite apparent similarity (Hofstede's dimensions make the two countries look nearly indistinguishable), Australia differs on a key point: a much more robust social welfare system, a significantly higher minimum wage, and a tax system that maintains a relatively better distribution of income across classes.",
+            "In the US, where tipping is a culturally acceptable substitution for a poor minimum wage, PRP and work incentives are more the norm — and because they are more common, they can also be more successful at stimulating performance. This is sample bias. Expect to meet the acronym WEIRD (Western, educated, industrialised, rich and democratic): most research findings, particularly in psychology, derive from US-based, college-educated people who are in no way representative of the rest of the world.",
+          ],
+        },
+        {
+          id: "lazear",
+          kind: "summary",
+          title: "Step 1: Lazear (2018), Compensation and Incentives in the Workplace",
+          body: "Journal of Economic Perspectives 32(3): 195-214. Core argument: compensation structure — not just level — drives worker behaviour. A personnel economics review through an agency theory lens, summarising decades of empirical labour economics research. Schedule 45-60 minutes for this one.",
+          items: [
+            "Taxonomy of incentive pay (a 2×3 matrix): input vs output based pay, crossed with discrete, continuous, or relative structure. An hourly wage is discrete/input; a piece rate is continuous/output; a promotion tournament is relative.",
+            "Piece rates — strongly effective when output is easily observed. The Safelite Auto Glass case: switching from hourly to piece rate lifted productivity 44%. Works best where quality isn't hard to monitor.",
+            "Team-based incentives — solve the 'won't help colleagues' problem of individual piece rates, but introduce free-riding. Work better in small groups, or via broader mechanisms like employee stock ownership.",
+            "Tournament theory — promotions act like tournament prizes based on relative performance. A bigger spread between winner and loser pay produces more effort, but an excessive spread breeds sabotage, reduced cooperation, and more risk-taking, sometimes destructive.",
+            "Career incentives — firms underpay young workers and overpay older ones to incentivise sustained effort and discourage shirking, since workers are protecting future rents.",
+            "Nonmonetary incentives — acknowledges Deci's crowding-out effect (paying for previously voluntary acts can reduce intrinsic motivation) but argues intrinsic motivation is a marginal phenomenon in most paid labour markets, with pay still doing the heavy lifting.",
+            "CEO/executive pay — reviews the 'overpaid CEO' critique against counterarguments (firm size complementarity, sorting effects, survivorship bias). Lazear is sceptical that CEO overpayment is as widespread or inefficient as critics claim.",
+            "Relevance: a strongly orthodox economic counterpoint to the Critical HRM and SDT readings — useful for contrasting mainstream economic rationalist views of motivation against psychological and critical perspectives.",
+          ],
+          images: [
+            {
+              alt: "Lazear compensation and incentives",
+              src: "/images/business-psychology/hrm6005/week-4/lazear-compensation.png",
+            },
+          ],
+        },
+        {
+          id: "pay-definitions",
+          kind: "definition",
+          title: "Definitions",
+          definitions: [
+            {
+              term: "Input and Output Pay",
+              definition:
+                "Input pay is compensation tied to the time or effort put in, not the result produced — e.g. hourly wage, salary, pay per course taught. Output pay is compensation tied to the result produced — e.g. piece rates, sales commission, or a fixed fee per job.",
+            },
+            {
+              term: "Discrete, Continuous, Relative structure",
+              definition:
+                "Discrete — pay is all-or-nothing, tied to hitting one exact target (a fixed wage for a required 40-hour week, or a fixed fee for completing a job); no reward for exceeding or subtraction for falling short. Continuous — pay scales with however much input or output the worker provides (a piece rate, or flexible hours paid per hour). Relative (tournament theory) — pay depends on performance compared to others rather than an absolute standard, e.g. promotion tournaments won by ranking above peers.",
+            },
+            {
+              term: "Piece-rate pay",
+              definition:
+                "A continuous, output-based pay scheme where workers are paid per unit of output they produce. A rate is set per unit, and pay scales directly with quantity produced.",
+            },
+            {
+              term: "Team Based Incentives",
+              definition:
+                "Pay tied to the output of a group rather than the individual. Often used to solve the problem that pure piece-rate pay creates (individualism).",
+            },
+          ],
+        },
+        {
+          id: "my-notes-lazear",
+          kind: "journal",
+          title: "My Notes: Journal Questions",
+          items: [
+            "Define piece-rate pay — pay based on output with a continuous structure. Worker pay scales with quantity produced and the agreed rate per unit/job.",
+            "In Australia, what might be a problem switching from hourly to piece-rate pay, despite likely productivity gains? The trade-off is generally quality. Because there is a financial incentive for quantity, this can drive behaviour that prefers job speed over quality. Workers may also lean towards independent working over team-based work, which reduces collaboration, learning and mentoring, and creates a cultural shift.",
+            "What are team-based incentives, and are they effective? Pay tied to the output of a group rather than the individual, often used to solve the individualism problem pure piece-rate pay creates. According to the article, in a manufacturing (output-based) setting, team-based pay successfully increased output. In an input-based setting (law), it saw more delegation of work to junior staff, where senior staff saw less incentive to put in effort themselves to increase earnings.",
+            "How effective is relative pay? The key is getting the spread right. Too small a gap in promotion pay does not motivate; too large a gap can drive excessive risk-taking and unethical actions.",
+            "As employees age, what other benefits might they provide outside traditional outputs? Generally, the longer an employee is at an organisation, the more knowledge they have of it. Knowledge has become a critical resource with an ageing population — more people retiring and taking critical company knowledge with them, leaving a knowledge deficit.",
+            "How effective is intrinsic motivation in driving work outcomes, and where does it fall short? The article suggests intrinsic motivation is more effective at higher pay points where additional extrinsic financial rewards are less motivating, and in meaning-based roles where workers are aligned with the work. But it argues intrinsic motivation is marginal in most labour settings, where pay and extrinsic motivation elicit more effort.",
+          ],
+        },
+      ]),
+      createLearningSubModule("4.2 PRP and Innovation", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "Explore the effect of performance incentives on innovative behaviour.",
+        },
+        {
+          id: "ederer-manso",
+          kind: "summary",
+          title: "Ederer & Manso (2013), Is Pay for Performance Detrimental to Innovation?",
+          body: "Management Science 59(7): 1496-1513. Central question: standard economics says pay-for-performance boosts effort and productivity, but psychology research says financial incentives inhibit creativity. How should compensation be structured if you specifically want to motivate innovation, not just effort?",
+          items: [
+            "Method: a controlled lab experiment with 379 subjects running a simulated lemonade stand — choosing location, ingredients and pricing across over six million possible combinations. This creates a genuine trade-off between exploitation (fine-tuning the inherited strategy) and exploration (abandoning it to search for a better, unknown one).",
+            "Three pay conditions: fixed wage; standard pay-for-performance (a fixed % of profits every period); and an exploration contract that tolerates failure in the first half (no performance penalty for experimenting early) then rewards performance in the second — mirroring stock options with long vesting periods.",
+            "Subjects on the exploration contract found the best strategy 80% of the time, far outperforming fixed wage (60%) and standard pay-for-performance (40%).",
+            "Standard pay-for-performance backfired for innovation: those subjects mostly tweaked the existing strategy rather than searching for a new one — only 50% strayed from the default location, versus 80% under the exploration contract.",
+            "Fixed-wage subjects explored a lot but haphazardly — only 55% tracked their choices carefully, versus 82% under the exploration contract. Exploring without discipline is inefficient.",
+            "Risk aversion mattered: more risk-averse subjects performed worse specifically under standard pay-for-performance, since it punishes early failed experiments.",
+            "Job security findings: a threat of termination for poor early results sharply reduced innovation (only 45% found the optimal strategy), while a golden parachute largely offset this (65%).",
+            "Bottom line: pay-for-performance isn't bad per se — it's good for effort on routine tasks but bad for innovation, because it punishes early failure and pushes people to exploit what already works. The fix isn't removing incentives (a fixed wage isn't the answer either) but redesigning them: tolerate early failure, reward long-run success. Practices often criticised as 'rewarding failure' can be functional for innovation when combined with genuine long-term upside.",
+          ],
+        },
+        {
+          id: "my-notes-innovation",
+          kind: "journal",
+          title: "My Notes: Journal Questions",
+          items: [
+            "Why is performance-based pay not an effective motivator (per McGraw 1978, McCullers 1978, Kohn 1993, Amabile 1996)? They shared the finding that performance-based pay should not be used for creativity and innovation, because tying pay to performance narrows focus towards safe, proven strategies rather than the novel ones that produce innovation.",
+            "How would you define innovation? Doing things differently to get a different result.",
+            "How would you define an exploration contract? A contract designed to motivate innovation as opposed to routine effort.",
+            "Summarise the experiment design — the lemonade stand experiment was designed to test which of three performance-based pay structures drove the most innovation from the stand holder.",
+            "Summarise the results — participants on an exploration contract found the best strategy 80% of the time, far outperforming fixed wage and pay-for-performance.",
+          ],
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "You have seen that performance-based pay can be detrimental for roles involving problem-solving, failure and creativity — and dug deeper into a hybrid exploration contract, which may not suit all settings but combines some of the good things of a wage with a piece-pay structure that plays out over time.",
+        },
+      ]),
+      createLearningSubModule("4.3 PRP in the Public Sector", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "A deep dive into the latest evidence about performance-related pay as it applies to the public sector — followed by a debate. Many professionals in Australia work for the public sector, and in recent years there has been considerable criticism of performance-based pay applied to Australian public sector contexts.",
+        },
+        {
+          id: "assessment-note",
+          kind: "note",
+          title: "Assessment 3",
+          body: "The readings in Steps 2 and 3 should be useful for Assessment 3, particularly if you are reviewing the effectiveness of a current performance management system.",
+        },
+        {
+          id: "corduneanu",
+          kind: "summary",
+          title: "Corduneanu, Dudau & Kominis (2020), Crowding-in or Crowding-out",
+          body: "Public Management Review. Core question: do performance-related pay and other extrinsic rewards undermine (crowd out) or enhance (crowd in) Public Service Motivation — the intrinsic drive to do good for others that characterises public sector workers? The literature has been contradictory for decades; this conceptual paper uses Self-Determination Theory to reconcile it. It matters because under New Public Management reforms, public sector workers are increasingly paid on performance metrics — and if this erodes their underlying motivation to serve, it backfires on delivery of public value.",
+          items: [
+            "Crowding-out evidence: performance bonuses reduced service quality among Chinese physicians (Qian & He 2018); PFP undermines professionalism and pride (Wynia 2009); high extrinsic rewards reduced intrinsically motivated people's willingness to even take public sector jobs (Georgellis et al. 2011).",
+            "Crowding-in evidence: federal employees expecting merit pay performed better regardless of PSM level (Alonso & Lewis 2001); PFP linked to higher job satisfaction, especially for high-PSM employees (Stazyk 2013); 'love of money' strengthened the PSM-job satisfaction link in Chinese public servants (Liu & Tang 2011).",
+            "The SDT resolution: the relationship isn't fixed — it depends on moderators. Contextual moderators include managerial autonomy support (when rewards are delivered in a supportive environment with positive feedback and minimal pressure, they're perceived as informational — signalling competence — rather than controlling) and colleague autonomy support.",
+            "Person-specific moderators: general causality orientations (autonomous vs controlled), intrinsic/extrinsic reward values, and integrated versus non-integrated money motives. Thibault Landry et al. (2016) found money motives integrated into identity (pride in achievement, fair compensation, ability to give) support wellbeing, while non-integrated motives (impulse spending, overcoming self-doubt, social comparison) undermine it.",
+            "Key theoretical contribution: the paper adds a fourth need — beneficence (doing good for others) — to SDT's traditional three, because ordinary SDT doesn't fully capture the prosocial dimension central to PSM.",
+            "Bottom line: whether performance pay helps or harms public service motivation isn't a fixed effect. It depends on how the reward is delivered (autonomy-supportive vs controlling) and who receives it. This reframes decades of contradictory findings as a moderation problem rather than a yes/no question.",
+          ],
+        },
+        {
+          id: "my-notes-public",
+          kind: "journal",
+          title: "My Notes: Journal Questions",
+          items: [
+            "How have the authors defined intrinsic motivation? Through the lens of SDT, and meeting the three psychological needs of autonomy, competence and relatedness.",
+            "Crowding-in and crowding-out — crowding in is where performance-related pay enhances the intrinsic drive to do good for others/society; crowding out is where it undermines that drive in a public service role.",
+            "Summarise the mixed findings — the article documents contradictory evidence on whether PFP crowds out or crowds in Public Service Motivation, with evidence produced for both. Their conclusion is that the answer lies at the psychological level, in how rewards are subjectively experienced.",
+            "Define public service motivation — the motivation to work in the public sector, where efforts benefit the immediate community or wider society rather than the self.",
+            "Describe self-determination theory — a psychological theory explaining the inherent needs for human motivation: autonomy, relatedness and competence.",
+            "Under what conditions do performance-contingent rewards advance PSM? Contextual factors (how the reward is delivered): managerial autonomy support and colleague autonomy support. Person-specific factors (who receives it): general causality orientations, intrinsic/extrinsic reward values, and integrated vs non-integrated money motives. The overarching principle: rewards advance rather than undermine PSM when they satisfy the four basic needs — autonomy, competence, relatedness and beneficence — rather than threatening them. That happens when the reward is delivered in an autonomy-supportive context, the employee has an autonomy-oriented disposition, and their motives for wanting the reward are integrated with their identity rather than externally imposed. In plain terms: it's not the reward itself that determines the outcome, but the psychological meaning it carries for that person in that context. The same bonus scheme can crowd in motivation for one pairing and crowd it out for another.",
+          ],
+        },
+        {
+          id: "australia-post",
+          kind: "discussion",
+          title: "Steps 3-4: The Australia Post Debate",
+          body: "Read the ABC News article on Australia Post chief executive Christine Holgate's resignation, considering her reasoning for how she rewarded executives and the public's perception. Then take a position (80-100 words), using at least one academic reference from the week: are you FOR performance-contingent pay in this case, or AGAINST, and do you feel the Prime Minister made the right call in criticising the scenario?",
+        },
+        {
+          id: "my-notes-debate",
+          kind: "journal",
+          title: "My Notes: Debate Position",
+          body: "I am for performance-contingent pay in the case of Australia Post and Ms Holgate. I think that a CEO/Board has the right to reward its most high-performing employees. Australia Post is a government-owned business, however it operates as an independent business and does not receive funding from the Government. Personally, I would trust that the CEO and Board of a government-owned enterprise have considered that the benefit the enterprise is receiving from the work far outweighs the expense of the gift, and therefore is in the interest of the Australian public to drive more benefits.",
+        },
+        {
+          id: "feedback",
+          kind: "note",
+          title: "Feedback",
+          body: "Pay for performance can sometimes be a good thing, but it very much depends on a whole range of factors. Review the peer responses in the debate and note any interesting points.",
+        },
+      ]),
+      createLearningSubModule("4.4 Meaning at Work", [
+        {
+          id: "purpose",
+          kind: "purpose",
+          title: "Purpose",
+          body: "So far this topic has spent a lot of time on money as a motivator. But most of us don't only go to work for the money — money is important as a hygiene factor, but it isn't the only reason. This activity researches the role of meaning as it applies to work.",
+        },
+        {
+          id: "hurst-video",
+          kind: "resource",
+          title: "Step 1: Aaron Hurst — Elevation of Meaning",
+          body: "Hurst's argument is that 'what is my purpose?' is a grandiose and intimidating question, and that purpose is more accessible than that. His research finds we are wired to find meaning at different elevations, and that this isn't hierarchical — people tend to start and stay at one level rather than graduating through them. Roughly a third of people find the most meaning through direct individual impact (a doctor seeing each patient as a unique opportunity), a third at the organisational level, and a third at the societal level. His prompt: work out which elevation gives you the most purpose, and redesign your identity and job around it.",
+          links: [
+            {
+              href: "https://www.youtube.com/watch?v=H54vh7UI3_I",
+              label: "How to find a meaningful job, or find purpose in the job you already have (4:51)",
+            },
+          ],
+          images: [
+            {
+              alt: "Aaron Hurst — finding meaning at work",
+              src: "/images/business-psychology/hrm6005/week-4/video-meaning-at-work.png",
+            },
+          ],
+        },
+        {
+          id: "my-notes-elevations",
+          kind: "journal",
+          title: "My Notes: The Three Elevations of Meaning",
+          items: [
+            "Individual level — making an impact person by person in a unique and intimate way.",
+            "Organisational level — making an impact by building organisations that can have a sustained impact at a larger scale.",
+            "Societal level — making an impact by addressing meta issues that affect society systemically: patterns, trends, policy.",
+          ],
+        },
+        {
+          id: "hansen-keltner",
+          kind: "summary",
+          title: "Step 2: Hansen & Keltner (2012), Finding Meaning at Work, Even When Your Job Is Dull",
+          body: "HBR. Core premise: meaning at work isn't the same as meaningful work — the latter refers to the task itself, but meaning can come from many sources beyond the content of what you do. The authors identify eight sources across four categories.",
+          items: [
+            "Purpose — Contributions beyond yourself: feeling your work helps others or serves a broader mission. Most jobs lack an obvious social mission, but even ordinary companies can infuse purpose if employees genuinely feel their work benefits others.",
+            "Self-realisation — Learning: work as a vehicle for skill acquisition and growth. And Accomplishment: pursuing mastery and being recognised for it drives satisfaction, confidence and self-worth — intrinsically meaningful even without a grand social mission.",
+            "Prestige — Status: the social credibility that comes with a job title or employer name. And Power: the ability to acquire and exercise influence, meaningful for those drawn to it.",
+            "Social — Belonging to a community: the workplace as a source of friendship and connection, especially valuable where other community ties are eroding. Agency: feeling your ideas are heard and your contributions genuinely affect outcomes. Autonomy: freedom from being told what to do and control over your own work.",
+            "Key takeaways: different people are drawn to different sources, with no universal hierarchy; more isn't necessarily better, and deeply experiencing even one can be enough; the real problem is experiencing none of them — that's when work feels empty.",
+            "Relevance: complements SDT — autonomy and agency map to SDT's autonomy need, belonging to relatedness, learning and accomplishment to competence. But it adds dimensions SDT doesn't fully cover: status, power, and purpose beyond yourself.",
+          ],
+        },
+        {
+          id: "meaning-definition",
+          kind: "definition",
+          title: "Definition",
+          definitions: [
+            {
+              term: "Meaning at Work",
+              definition:
+                "A person's experience of something meaningful, something of value, that work provides. That is not the same as 'meaningful work', which refers to the task itself.",
+            },
+          ],
+        },
+        {
+          id: "my-notes-meaning",
+          kind: "journal",
+          title: "My Notes: Journal Questions",
+          items: [
+            "Define meaning at work — where a job, role or company provides purpose and fulfilment.",
+            "The four categories — Purpose: contributions beyond yourself. Self-realisation: learning and accomplishment. Prestige: status and power. Social: belonging, agency and autonomy.",
+            "What drives my meaning at work? I am driven by self-realisation and prestige.",
+          ],
+        },
+        {
+          id: "meaning-over-transactions",
+          kind: "journal",
+          title: "My Notes: Meaning Over Transactions",
+          body: "How can performance management systems appropriate meaning over transactions? Shift the purpose of performance management from evaluative to developmental as the foundational layer — this immediately makes PM forward-looking and growth-focused. Incorporate SDT to satisfy employees' psychological needs by supporting autonomy, competence and relatedness. Include meaning-based assessments such as Michael Steger's Work and Meaning Inventory to assess whether employees are finding meaning in their work. Replace annual transactions with frequent, human dialogue where the conversation can be about meaning rather than scores.",
+        },
+      ]),
     ],
   },
   {
