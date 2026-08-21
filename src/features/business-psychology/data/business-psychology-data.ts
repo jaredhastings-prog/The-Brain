@@ -1085,6 +1085,661 @@ const healthyWorkWeeklyTopics: WeeklyTopic[] = [
   },
 ];
 
+const hipWeekOneSubModules: WeeklySubModule[] = [
+  createLearningSubModule("Week 1 Introduction", [
+    {
+      id: "overview",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Human thinking is a complex process that involves various cognitive functions, such as attention, perception, memory, language and problem-solving. Cognition refers to the mental processes that enable individuals to acquire, process, store and use information, and it plays a significant role in shaping our behaviour, emotions and overall mental health. This week introduces cognitive psychology as a discipline, the two traditional approaches used to study it (introspection and behaviourism), and the ways we categorise and network knowledge.",
+    },
+    {
+      id: "learning-objectives",
+      kind: "objectives",
+      title: "Learning Objectives",
+      body: "By successfully completing the tasks this week, you should be able to:",
+      items: [
+        "Form an understanding of the importance of cognition and how it affects everyday life.",
+        "Develop an applied understanding of the two approaches used to study cognitive psychology.",
+        "Challenge behaviourism in relation to mental states.",
+        "Evaluate when categorising via prototype and via exemplar can be done.",
+        "Develop an awareness of the roles of conceptual knowledge and knowledge networks.",
+      ],
+    },
+    {
+      id: "core-definition",
+      kind: "definition",
+      title: "Definition Callout",
+      definitions: [
+        {
+          term: "Cognition",
+          definition:
+            "Mental processes that allow for the acquisition, storage, manipulation and use of knowledge and understanding. This is the whole toolbox.",
+        },
+        {
+          term: "Cognitive functions",
+          definition:
+            "Attention (attend to), perception (take in and make meaning), memory (storage), language (speak representations) and problem-solving. These are the individual tools.",
+        },
+      ],
+    },
+  ]),
+  createLearningSubModule("1.1 The importance of cognition", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "This activity will help you to understand the rationale for studying cognition and what this discipline can teach — it is all about getting you to think about thinking. Learning about the importance of cognition in everyday life will assist you in recognising the basic and more complex cognitive skills we rely on, and the circumstances where we need them most. You will also explore situations where your cognitive functions might be interrupted and the consequences that can arise from impaired cognition.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1: Reflect on your understanding of cognition",
+          body:
+            "Cognitive psychology is associated with how we perceive the world, remember, pay attention, think and produce language. Share up to three keywords you associate with cognition, then watch the class word cloud grow. Worked example: you are studying for a Tuesday exam and cannot hold the key topics in mind — is there a strategy that could help? It is Sunday, your friends are at the beach, your housemates are playing music next door, and you cannot block it out — why can't you better control your attention or concentration? These are exactly the questions a cognitive psychologist researches.",
+        },
+        {
+          id: "step-2",
+          title: "Step 2: Read about the foundations of cognitive psychology",
+          body:
+            "Read pages 1–2 and 20–23 of Chapter 1 in Taylor and Workman (2021), Cognitive Psychology: The Basics. See the article notes block below for the full write-up.",
+        },
+        {
+          id: "step-3",
+          title: "Step 3: Learn how modern science has deconstructed the mind",
+          body:
+            "Watch the TEDx talk by Dr John Vervaeke, 'All the king's disciplines: Cognitive science rescues the deconstructed mind' [12:49]. Pay attention to what Vervaeke says about cognition as a discipline.",
+        },
+        {
+          id: "step-4",
+          title: "Step 4: Consider how you use cognition in everyday life",
+          body:
+            "Work through each mental process and log a personal example. The analogies below are the ones worth keeping.",
+        },
+        {
+          id: "step-5",
+          title: "Step 5: Share an example of interrupted cognitive function",
+          body:
+            "Come up with one example of when your cognitive functions get interrupted and explain which functions were impacted. Then explore peers' posts and consider what could be done to improve cognitive function in their situations.",
+        },
+      ],
+    },
+    {
+      id: "function-analogies",
+      kind: "note",
+      title: "The Cognitive Functions — Analogies and Examples",
+      items: [
+        "Perceiving — taking raw information in through the senses and giving it meaning. Camera lens (eyes/ears/touch) plus software (brain organising data into something recognisable). E.g. you see squiggly black marks on a page, the brain turns them into letters, then into words.",
+        "Attending — the brain's spotlight; what we choose (or get forced) to focus on. Like a torch in the dark: the world is full of stuff, but only what the beam hits gets processed in detail. You can move the beam, but you can't light up everything at once. E.g. at a cafe, dozens of voices and clinking cups, until a friend says your name and your attention zooms in.",
+        "Thinking — the brain's way of playing with information; combining, comparing and transforming it. Like LEGO bricks: each brick is a piece of info, thinking is snapping them together in new ways. E.g. you're hungry, the fridge has eggs and bread, so eggs + bread = scrambled eggs on toast.",
+        "Processing — the conversion step; input becomes information. Like a blender: raw fruit is sensory input, the blender is processing, the smoothie is organised info you can use. E.g. you hear a friend speak, raw sound waves hit your ears, the brain processes it into words and then meaning.",
+        "Problem-solving — the brain's toolkit for bridging the gap between where you are and where you want to be. Like finding your way through a maze. E.g. your phone won't charge, so you test the cord, then the socket, then a different charger, eliminating options step by step.",
+        "Knowledge — the brain's library of past information that guides what you do now. Each book is a chunk of information; the catalogue is how it's organised so you can find the right book. E.g. you know fire is hot, so seeing flames tells you 'don't touch'. Without knowledge, every situation would feel brand new.",
+        "Language — the brain's translation tool, turning private thoughts into public communication. Like a wifi router: your thoughts are the data, language is the signal that sends it. E.g. you think 'I'm hungry', convert it to 'let's get lunch', and the other person understands because you share the same code.",
+        "Memory — the brain's save-and-recall system. Like cloud storage: saving a file is encoding, the file staying stored is retention, opening it later is retrieval. E.g. you learn a friend's phone number and later dial it without looking.",
+      ],
+    },
+    {
+      id: "article-notes-basics",
+      kind: "resource",
+      title:
+        "Article Notes — Cognitive Psychology: The Basics (Ch. 1, pp. 1–2 and 20–23)",
+      body:
+        "Cognitive psychology is the branch of psychology that explores the operation of mental processes related to perceiving, attending, thinking, language and memory, mainly through inferences from behaviour. Neural networking (computer systems modelled on the brain and nervous system) comes out of computational modelling research that aspires to imitate human cognitive functioning. The development of cognitive psychology was in part a reaction to behaviourism's focus on overt behaviour: behaviourism was concerned only with what could be seen, so how we think and remember was off limits. With the popularisation of information processing during the 1970s, an all-encompassing approach to understanding mental processing was introduced, and information-processing models helped explain the transition from sensory pick-up of stimuli to forging meaning in the brain.",
+      items: [
+        "Four main areas of contribution: cognitive psychology, cognitive neuroscience, cognitive neuropsychology, computational cognitive science.",
+        "Attention and perception — sensory organs pick up light, sound, pressure waves and molecules (sensation); attending to these inputs allows further processing; the brain interprets them based mainly on experience (perception). The two are interdependent: we perceive what goes on around us and try to make sense out of potential chaos.",
+        "Learning and memory — learning occurs when we interact with our environment, but is of no consequence unless we can store and retrieve information as required. The two most popular memory models are the multi-store model and working memory. Consolidation into long-term storage is explained by levels of processing and implicit learning.",
+        "Thinking: decision-making and problem-solving — reasoning is required for hypothesis testing (e.g. the classic Wason task). Problem-solving strategies include means-ends analysis, progress monitoring and planning. Decision-making judgements often require quick analysis using rules of thumb known as heuristics, which are largely the antithesis of deductive thought.",
+        "Language and communication — reading, writing and speech are all part of language. The consensus is that language acquisition is driven by both nature and nurture. Language is a subset of communication, and communication can be non-verbal. Animals communicate, but as yet there is no evidence they produce anything akin to human language.",
+      ],
+    },
+    {
+      id: "feedback",
+      kind: "reflection",
+      title: "Feedback",
+      body:
+        "Reflect on your understanding of what cognitive psychology means today. Revisit the word cloud from Step 1 and think about what words you might want to add. Do the existing words have a different meaning now, and how has your understanding progressed?",
+    },
+  ]),
+  createLearningSubModule("1.2 Different cognitive perspectives", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "In this activity you will learn about the different perspectives that form the foundations of cognitive psychology, which help explain why the discipline has taken the form we know today. Cognitive psychology emerged in the late 1950s, and academics often describe this as 'the cognitive revolution' because of its powerful impact on the wider field. One predecessor was a 19th-century movement that emphasised introspection as the main research tool; psychologists soon became disenchanted with it, and the behaviourist movement rejected introspection by criticising its validity as a method. Both approaches have influenced cognitive psychology today.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1: Explore the foundations of introspection",
+          body:
+            "The history of introspection: in the late 19th century, Wilhelm Wundt and his student Bradford Titchener created a new research enterprise that led to the modern field of experimental psychology. They believed psychology should focus on the study of conscious events — feelings, perceptions, recollections and thoughts — and concluded that the only way to study thoughts is through introspection, as only the individual can experience or observe their own inner life. Introspection means 'looking within': people observe and record the content of their own mental lives and the sequences of their own experiences. Wundt insisted introspection had to be trained, and the training included teaching vocabulary to describe observations, be as complete as possible, and report experiences with as little interpretation as possible. This style of research was influential for several years, but psychologists gradually started to disagree with the method.",
+          links: [
+            {
+              href: "https://www.youtube.com/watch?v=QmAAi2T3Mhs",
+              label:
+                "Bear it in Mind (2022) — Origins of psychology: Wilhelm Wundt & introspection",
+            },
+          ],
+        },
+        {
+          id: "step-2",
+          title: "Step 2: Explore the foundations of behaviourism",
+          body:
+            "Behaviourism rejected introspection on the grounds of validity, arguing that human and animal behaviour can be explained in terms of conditioning without appeal to thoughts or feelings — and that some mental conditions are best treated by altering behaviour patterns. The canonical illustration is Pavlov's classical conditioning work with dogs.",
+        },
+        {
+          id: "step-3",
+          title:
+            "Step 3: Find out more about the application of introspection and behaviourism",
+          body:
+            "Conduct a 10–15 minute online search and find an example of a study that used either introspection or behaviourism as a method of research (excluding the Pavlov example). My response: Lutz, Lachaux, Martinerie and Varela — participants provided first-person introspective reports about their experiences during a visual task, which were then correlated with neural synchrony patterns.",
+          links: [
+            {
+              href: "https://pubmed.ncbi.nlm.nih.gov/11805299/",
+              label:
+                "Guiding the study of brain dynamics by using first-person data: synchrony patterns correlate with ongoing conscious states during a simple visual task",
+            },
+          ],
+        },
+        {
+          id: "step-4",
+          title: "Step 4: Assess the strengths and limitations",
+          body:
+            "Each approach has strengths and limitations. This matters for two reasons: it helps us understand the development of cognitive psychology as a discipline and why we use certain methods over others, and it underlines the importance of critical reflection. As you progress through the literature, keep asking: what are the strengths and limitations of this approach, and is there a better way to investigate the research question?",
+        },
+      ],
+    },
+    {
+      id: "definitions",
+      kind: "definition",
+      title: "Definition Callout",
+      definitions: [
+        {
+          term: "Introspection",
+          definition:
+            "Literally 'looking into'. The conscious examination of conscious experience — self-observation of your own thoughts. Strength: it is the only direct access to subjective experience. Limitation: it is unverifiable and cannot be observed by anyone else.",
+        },
+        {
+          term: "Behaviourism",
+          definition:
+            "The theory that human and animal behaviour can be explained in terms of conditioning, without appeal to thoughts or feelings, and that some mental conditions are best treated by altering behaviour patterns. Strength: observable and objectively measurable. Limitation: it ignores inner mental states.",
+        },
+      ],
+    },
+    {
+      id: "timeline",
+      kind: "note",
+      title: "The Emergence of Psychology as a Science — Timeline",
+      items: [
+        "1897 — Wilhelm Wundt",
+        "1913 — Behaviourist approach",
+        "1960s — Cognitive approach",
+        "1980s — Biological approach",
+        "Today — Cognitive neuroscience",
+      ],
+    },
+    {
+      id: "optional-resources",
+      kind: "resource",
+      title:
+        "Optional Reading — Article Notes: 'History and Core Themes' (Abrahamsen & Bechtel)",
+      body:
+        "Chapter 1: History and Core Themes (pp. 1–12 and 24–26) from The Cambridge Handbook of Cognitive Science.",
+      items: [
+        "Key terms — Cognitive science: the interdisciplinary study of cognition across psychology, AI, linguistics, neuroscience, philosophy and anthropology. Cognitive revolution: the mid-20th-century shift from behaviourism and structuralism toward models of information processing, computation and mental representation. Symbolic models: cognitive architectures using discrete symbols and rule-based manipulation. Connectionism: subsymbolic, statistical models via artificial neural networks. Embodied/extended cognition: cognition as situated in body, environment and social systems.",
+        "Origins and roots — early psychology (James, Wundt) and neurophysiology (Broca, Lashley) framed mind–brain questions; behaviourism (Watson, Skinner) dominated in the US, sidelining mental constructs until mid-century; Chomsky's generative grammar provided a foundation for cognitive science.",
+        "The cognitive revolution (1940s–1960s) — information theory (Shannon) and computing supplied metaphors and models of mind. Key figures: Miller (memory capacity, 'chunking'), Broadbent (attention filter), Chomsky (transformational grammar), Newell & Simon (AI programs). The 1956 MIT symposium is often cited as the 'birth' of cognitive science.",
+        "Symbolic models (1956–1975) — dominance of rules and representations (GPS, ACT, ELINOR). Cognitive psychology re-emerged, integrating perception, memory and reasoning, with strong links to AI and linguistics.",
+        "Naming the field (1975–1980) — 'cognitive science' coined; the Cognitive Science Society and the journal Cognitive Science established. Interdisciplinary, but dominated by psychology and computer science.",
+        "The connectionist challenge (1980s onward) — PDP networks (Rumelhart, McClelland, Hinton) revived neural networks; backpropagation allowed multilayer learning and fuelled debates with symbolic theorists. This opened space for statistical learning, Bayesian models and hybrid approaches.",
+        "Expansion (1990s–present) — downward into cognitive neuroscience (fMRI, ERP, Marr's computational vision) and outward into embodied, situated and extended cognition (Gibson, Hutchins, Clark), plus evolutionary psychology, animal cognition, robotics and dynamical systems.",
+        "Takeaway — cognitive science is pluralistic and dynamic, shifting between symbolic, connectionist and embodied paradigms. Interdisciplinarity is its defining trait, and current approaches increasingly integrate brain, body and environment.",
+      ],
+    },
+    {
+      id: "feedback",
+      kind: "reflection",
+      title: "Feedback",
+      body:
+        "Think about how your understanding of cognitive psychology has changed so far this week. Has learning about introspection and behaviourism changed or enhanced your understanding?",
+    },
+  ]),
+  createLearningSubModule(
+    "1.3 Basic building blocks of cognition: Mental concepts",
+    [
+      {
+        id: "purpose",
+        kind: "purpose",
+        title: "Purpose",
+        body:
+          "This activity furthers your understanding of the basic building blocks of cognition, which underlie the mental processes that produce our thoughts, feelings and actions. It starts with mental representations — the ideas and concepts we use to understand the world — which are constantly updated based on our experiences and knowledge. You will also consider how past experience and current knowledge shape conceptual understanding and influence the way we think.",
+      },
+      {
+        id: "activity-steps",
+        kind: "activity",
+        title: "Activity Steps",
+        steps: [
+          {
+            id: "step-1",
+            title: "Step 1: Learn about the use of mental concepts",
+            body:
+              "Psychologists use 'mental concepts' to explain our knowledge and thinking; they are the building blocks of all knowledge. If I tell you I have a dog named Ginger, you already know a lot about her — fur not feathers, likely to bark and chase cats, unlikely to fly — because of your concept of 'dog'. Slide 1, when seeing a dog, how do you know it is a dog and not a cat? Suppose you categorise a dog as 'a creature that barks and has fur and four legs'. What happens with a furless chihuahua or a barkless Benji? We could soften this to 'creatures that usually bark and usually have fur and four legs', which works in most instances, but comes with uncertainty because there are exceptions. Slide 2, Wittgenstein's family resemblances: there are probably no set features that everyone in a family shares, but there will be common features. A few members might share brown hair and large eyes; another member might not, but shares wide lips and a distinctive chin with some of them. The common features depend on the subgroup you use, and this feature overlap is why family members resemble each other. Slide 3, characteristic features: ordinary categories like 'dog' or 'vehicle' work the same way. There may be no features shared by all dogs, but we can categorise characteristic features — those most members have — and these enable us to recognise that a dog is a dog even when one doesn't have fur.",
+          },
+          {
+            id: "step-2",
+            title:
+              "Step 2: Explore how mental concepts can be applied to abstract concepts",
+            body:
+              "Can family resemblance apply to abstract concepts such as 'winning'? Winning an argument may or may not be recognised by your opponent; winning a game is probably recognised by the other players; winning a competition will be officially recognised; you might 'win' a person's affection, admiration or friendship; and some types of winning are rewarded with an incentive, such as recognition or a monetary reward. There are many attributes typically associated with 'winning' and we apply them flexibly, distinguishing a win from a loss. The concept of 'winning' is therefore a group of instances that all have certain family resemblances.",
+          },
+          {
+            id: "step-3",
+            title:
+              "Step 3: Apply mental concepts to understand visual information",
+            body:
+              "Look at a picture of the dog, Ginger. How would you use mental concepts to understand this image? Select all that apply: (a) apply general knowledge to new cases, (b) refine your definition of that category, (c) establish a category definition to understand the concept, (d) draw broad conclusions from this specific case. Correct answer: (a) and (d).",
+          },
+          {
+            id: "step-4",
+            title: "Step 4: Consolidate your understanding",
+            body:
+              "Watch 'Mary's room: A philosophical thought experiment' by Eleanor Nelsen (TED-Ed) [4:51] — a thought experiment about what happens when a neuroscientist who is an expert in colour, but who can only see in black and white, finally sees colour. Mary's room is also known as the knowledge argument, proposed by Frank Jackson. Reflect on: is there knowledge that can be attained only through conscious experience? Does Mary learn anything new when she perceives colour for the first time? What does the debate say about our understanding of knowledge?",
+          },
+        ],
+      },
+      {
+        id: "limitations",
+        kind: "note",
+        title: "Limitations of Mental Concepts",
+        items: [
+          "There are no defining features for categorising most concepts, only shared attributes.",
+          "We don't categorise on the basis of set definitions.",
+          "We can easily find exceptions to any definition that we produce for most concepts.",
+        ],
+      },
+      {
+        id: "definitions",
+        kind: "definition",
+        title: "Definition Callout",
+        definitions: [
+          {
+            term: "Knowledge argument",
+            definition:
+              "Can we know everything about something without the physical experience? Mary had a mental concept of colour despite never seeing it — until you experience something, it is only a concept.",
+          },
+          {
+            term: "Qualia",
+            definition:
+              "The subjective or qualitative properties of experience. What it feels like, experientially, to see a red rose is different from what it feels like to see a yellow rose. Likewise for hearing a musical note played by a piano and hearing the same note played by a tuba.",
+          },
+        ],
+      },
+      {
+        id: "my-note",
+        kind: "note",
+        title: "My Note",
+        body:
+          "Deletions, distortions and generalisations based on past knowledge and experience create our mental concepts. Here they are called categories.",
+      },
+      {
+        id: "feedback",
+        kind: "reflection",
+        title: "Feedback",
+        body:
+          "We have learned how we process information in categories based on past knowledge, and why it is important to categorise. Think about how your categories might differ from your classmates', or from someone from a different culture or country.",
+      },
+    ],
+  ),
+  createLearningSubModule("1.4 Categorising via prototypes and exemplars", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "In this activity we explore how our brains use prototypes and exemplars to make judgments about the world. Have you ever seen something new and immediately thought, 'oh, that looks like a ___'? That's your brain using a prototype — a mental representation of what an object or concept should look like. We are good at making quick judgments from prototypes, but we also use exemplars — specific instances of a concept — to make more nuanced decisions.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1: Learn about prototypes in psychology",
+          body:
+            "Prototypes represent what is most typical for a category. A person's mental category of 'family' will likely feature readily accessible information based on shared physical attributes. If you see a four-legged fluff ball with little pointy ears that meows, you can quickly identify it as a cat by reference to your prototype cat — a depiction of the 'ideal' cat. Prototypes are usually based on the attribute cluster for a concept: the average of the various category members you have encountered. You will have your own representation of prototypes based on your experiences, and there is no definitive prototype for a concept, although most people have a prototypical example.",
+        },
+        {
+          id: "step-2",
+          title: "Step 2: Explore how prototype theory is tested",
+          body:
+            "Some researchers use a 'production task': participants name as many dogs or birds as they can. According to prototype theory, they first locate their prototype in memory and then ask what resembles it, starting with the closest match (the centre of the category) and working outward. For 'bird' in Australia, a crow-like bird may come first while a penguin comes much later because it is farther from the prototype. Another method presents different items from a category and asks which comes to mind first. My poll responses: vegetable — carrot; bird — pigeon; furniture — chair.",
+        },
+        {
+          id: "step-3",
+          title: "Step 3: Learn about exemplar theory",
+          body:
+            "Under prototype theory, new objects are processed by comparison to your prototype of the category. Exemplar theory suggests that in some situations we categorise using knowledge about specific category members instead. For example, a vase is placed in front of you and you are asked whether it is a vase. Under prototype theory you recall your prototype vase and compare. But you might instead notice that this object is very similar to one in your grandmother's living room — you saw flowers in it and she called it a vase — so if the new object resembles your grandmother's object, and that object is a vase, this must be a vase too. That is exemplar-based reasoning: we make category judgments by comparing new stimuli with similar instances already stored in memory.",
+        },
+        {
+          id: "step-4",
+          title:
+            "Step 4: Consider when prototype theory and exemplar theory are used",
+          body:
+            "Hint: think about someone with extensive knowledge of fish species snorkelling on the Great Barrier Reef versus a first-time snorkeller. The expert draws on many exemplars of fish in memory to identify species; the newbie compares every fish to their prototype and identifies them all as simply 'fish' — 'fish with big lips', 'fish with blue stripes', 'big fish'. My response: a scientist would use exemplar theory when studying subjects, as they are evidence-based practitioners. Someone unfamiliar with the experience of being in love may draw from movies they have watched and their frame of reference for what love should look like.",
+        },
+        {
+          id: "step-5",
+          title: "Step 5: Test your knowledge",
+          body:
+            "Sort statements into prototype or exemplar theory. Statement 1 is exemplar theory because you are comparing the new unknown object against bird exemplars in your memory, not against a typical bird or the bird prototype. Statement 2 is prototype theory because you are comparing the new unknown object against your general idea of what fruit looks like. Statement 3 is exemplar theory because you are comparing the new unknown object against dog exemplars, not a typical dog or the dog prototype.",
+        },
+        {
+          id: "step-6",
+          title:
+            "Step 6: Explore how categorising theories apply to other sensory experiences",
+          body:
+            "Do the categorising theories also apply to other sensory experiences, such as hearing sounds? My response: 'Categories as Acts of Meaning: The Case of Categories in Olfaction and Audition' (Dubois et al.) explores whether prototype and exemplar models generalise to smell and sound. In the olfactory channel, people sort odours by source (rose, lemon) rather than by sensory features, and smell lacks a universal descriptive vocabulary — so prototype/exemplar models struggle: what is the 'average' smell of a flower, or the exemplar of 'spicy'? In the auditory channel, speech sounds support prototype-like categories such as the 'average' sound of vowels, while exemplar storage applies to specific voices or instruments heard before. In my view, we are using stimuli as physiological anchors which then produce an internal representation, based on sameness or difference comparison biases.",
+        },
+      ],
+    },
+    {
+      id: "definitions",
+      kind: "definition",
+      title: "Definition Callout",
+      definitions: [
+        {
+          term: "Prototype",
+          definition:
+            "Your mental 'average example' of a category — a mental representation of the most typical or ideal example of a concept. A default picture in your head: when someone says 'bird', you don't imagine all birds, you imagine your typical bird. Good for fast conceptualisation: little cognitive load, fast recall, semi-constructed.",
+        },
+        {
+          term: "Exemplar",
+          definition:
+            "A specific, individual instance or memory of a concept used to categorise new objects or ideas. Exemplar theory proposes that people form categories not from an abstract prototype but by comparing a new stimulus to a collection of specific memories from past experience. Like a photo album: when you see something new, you flip through memories of particular cases to decide what it is. The brain's way of judging by 'does this match something I've seen before?' — matching/sameness.",
+        },
+      ],
+    },
+    {
+      id: "shorthand",
+      kind: "note",
+      title: "Shorthand",
+      items: [
+        "Prototype = average, the 'typical image'.",
+        "Exemplar = specific, 'that one I've seen before'.",
+      ],
+    },
+    {
+      id: "article-notes-averageness",
+      kind: "resource",
+      title:
+        "Article Notes — It's not just average faces that are attractive (Halberstadt & Rhodes, 2003)",
+      body:
+        "Halberstadt and Rhodes asked participants to rate the attractiveness of birds, fish and cars. Participants rated the most 'average' picture as the most attractive, suggesting we find average or typical exemplars attractive.",
+      items: [
+        "Key terms — Averageness: the degree to which a stimulus resembles the central tendency of its category. Direct selection hypothesis: preference for average faces evolved as an adaptation for identifying healthy, high-quality mates. Familiarity hypothesis: average stimuli appear more attractive because they are more familiar. Caricature/anticaricature: digitally exaggerating or reducing differences from a category average. Composite averaging: blending multiple exemplars (2, 4, 8, 16, 32) to systematically increase averageness.",
+        "Methodology — Experiment 1 (birds): manipulated passerine line drawings using caricature/anticaricature software. Experiment 2 (fish): created composites of 2–32 fish images. Experiment 3 (automobiles): created composites of sedan line drawings. Participants rated stimuli on attractiveness, averageness and familiarity.",
+        "Findings — Birds: attraction increased with similarity to the average, and averageness predicted attractiveness beyond familiarity. Fish: composite averaging increased attractiveness up to 16–32 blends, and averageness again predicted attractiveness beyond familiarity. Automobiles: averageness correlated with attractiveness, but the effect disappeared once familiarity was controlled — so attractiveness here was driven by familiarity, not averageness.",
+        "Discussion — averageness effects are not limited to human faces; they also apply to animals. For artefacts such as cars and watches, familiarity accounts for attractiveness. For living organisms (birds, fish, humans) there seems to be an independent preference for averageness itself, possibly linked to cues of genetic quality and health.",
+        "Implications — human preference for 'average' features may come from two mechanisms: familiarity (average items look more typical, driving attraction to both natural and manufactured objects) and biological quality signals (in animals, including humans, averageness may signal health, stability and genetic fitness). This challenges purely evolutionary accounts by showing averageness also taps general cognitive processing biases.",
+        "Key references — Halberstadt & Rhodes (2000); Langlois & Roggman (1990); Rhodes & Tremewan (1996); Møller & Swaddle (1997); Zajonc (1968) mere exposure effect.",
+      ],
+    },
+    {
+      id: "article-notes-infants",
+      kind: "resource",
+      title:
+        "Article Notes — Categorization of Speech by Infants: Support for Speech-Sound Prototypes (Grieser & Kuhl, 1989)",
+      items: [
+        "Key terms — Equivalence classification: treating distinct but phonetically similar sounds as members of the same category. Prototype effect: some category members are 'better' exemplars, serving as perceptual anchors for categorization. Good vs poor exemplars: prototypical (central) sounds vs less typical but still category-consistent sounds. Head-turn conditioning: a behavioural method where infants turn toward a sound change, reinforced with visual stimuli. Generalization score: how broadly infants apply category membership from a trained exemplar to novel stimuli.",
+        "Background — adults categorise speech around prototypes. The question: do infants, by 6 months, also organise vowel categories around prototypes? This helps explain how infants process variable speech efficiently so early.",
+        "Experiment 1 (categorization with good exemplars) — infants trained on two good vowel exemplars (/i/ as in peep, /e/ as in pep), then tested on 64 novel variants systematically shifted in vowel space. Infants correctly categorised over 90% of novel stimuli even when not prototypical, and performance was immediate (first-trial accuracy), not just learned.",
+        "Experiment 2 (prototypes vs non-prototypes) — one group trained on a good (prototypical) /i/, the other on a poor (non-prototypical) /i/, then tested with 16 novel /i/ variants. Generalization was significantly greater after exposure to the good exemplar, and infant responses strongly correlated (r = .92) with adult ratings of stimulus 'goodness'.",
+        "Discussion — infants show both equivalence classification and prototype effects, suggesting early perceptual efficiency: prototypes help infants rapidly organise speech despite variability. This raises the developmental question of whether prototypes are innate auditory biases (like focal colours) or shaped by early linguistic experience.",
+        "Implications — human speech perception mechanisms are in place well before first words; infants' use of prototypes may explain how they handle vast acoustic variability in real speech; prototypes could serve as anchors for language acquisition, influencing later phoneme perception and learning.",
+        "Key references — Kuhl (1979, 1983, 1985); Rosch (1975, 1977); Peterson & Barney (1952); Werker & Tees (1984).",
+      ],
+    },
+    {
+      id: "feedback",
+      kind: "reflection",
+      title: "Feedback",
+      body:
+        "What advantages do the two approaches provide for categorical reasoning? Prototypes provide a quick summary of the category, whereas exemplars allow you to adjust your concept to different contexts. Reflect on how you can apply this in everyday life.",
+    },
+  ]),
+  createLearningSubModule("1.5 Knowledge networks: Part 1", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "In the previous activity we talked about how our brains use mental representations called exemplars and prototypes to quickly categorise new information. Now we dive deeper into how our brains store and retrieve information from memory. Memory is a huge part of cognition — it is what allows us to learn and remember things over time.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1: Conceptualise memory networks",
+          body:
+            "Picture memory like a network or mind map with nodes. The top category is 'animals', with characteristics such as 'has skin', 'eats' and 'breathes'. Subcategories of animal could be 'bird' and 'fish', each with their own characteristics. You know that a horse is an animal; that connection is an association link between two nodes, and the link itself is a form of knowledge. Retrieval works through activation spreading from one node to the next. If a node is 'far away' the activation needs to travel farther and retrieval takes longer — 'far away' means the ideas are not activated frequently, or you learnt them a long time ago.",
+        },
+        {
+          id: "step-2",
+          title: "Step 2: Learn about the semantic memory network",
+          body:
+            "Knowledge is organised in the mind through the semantic network. Watch 'Semantic networks and spreading activation | Processing the environment' [3:38].",
+        },
+        {
+          id: "step-3",
+          title:
+            "Step 3: Explore what changes in the 'modified semantic network theory'",
+          body:
+            "Everyone has their own semantic network that develops based on their experience and knowledge, so we experience different processing times for retrieving certain information. Knowledge you use often stays front of mind; knowledge you don't use is forgotten or hard to retrieve. Links are strong or weak based on usage. What is one topic you activate every day, and one you do not activate often?",
+        },
+        {
+          id: "step-4",
+          title: "Step 4: Test your activation time",
+          body:
+            "The most prominent test of activation time is the sentence verification task (Collins & Quillian, 1969). Participants are shown true sentences (e.g. 'cats have claws') and false sentences (e.g. 'a dog is a bird') and asked to indicate true or false as fast as possible. You can try it via the free Inquisit app; press Ctrl+Q (PC) or Cmd+Q (Mac) to exit.",
+        },
+      ],
+    },
+    {
+      id: "diagram",
+      kind: "resource",
+      title: "Semantic Network Hierarchy",
+      body:
+        "The classic Collins and Quillian hierarchy: Animal (has skin, can move around, eats, breathes) branches to Bird (has wings, can fly, has feathers) and Fish (has fins, can swim, has gills), which branch again to Canary and Ostrich, and Shark and Salmon.",
+      images: [
+        {
+          alt: "Hierarchical semantic network with Animal at the top branching to Bird and Fish, then to Canary, Ostrich, Shark and Salmon, each with characteristic properties",
+          caption:
+            "Semantic network hierarchy — properties are stored at the highest applicable level.",
+          src: "/images/business-psychology/hip/week-1/semantic-network-hierarchy.png",
+        },
+      ],
+    },
+    {
+      id: "definitions",
+      kind: "definition",
+      title: "Definition Callout",
+      definitions: [
+        {
+          term: "Memory network",
+          definition:
+            "A web of connected ideas in your brain. Like a spider web with lights on each knot: touch one knot (idea) and nearby lights (related ideas) glow too.",
+        },
+        {
+          term: "Semantic network (basic)",
+          definition:
+            "A model of memory where knowledge is stored as nodes (ideas/concepts) connected by links (relationships). Each link shows how the ideas are connected — categories. 'Semantic' means meaning, so a semantic network is about how the meanings of concepts are linked in memory. The limitation is that basic semantic networks only link concepts (Toby ↔ dog) but don't capture the kind of relationship — 'Toby is a dog' versus 'Toby has a dog'.",
+        },
+      ],
+    },
+    {
+      id: "feedback",
+      kind: "reflection",
+      title: "Feedback",
+      body:
+        "Although the activation of our memory network happens without us being consciously aware of it, can you think of situations where one thought or idea activated another?",
+    },
+  ]),
+  createLearningSubModule("1.6 Knowledge networks: Part 2", [
+    {
+      id: "purpose",
+      kind: "purpose",
+      title: "Purpose",
+      body:
+        "Semantic networks and connectionist networks are both theoretical models used to explain how humans process and represent information. Semantic networks propose that knowledge is organised as interconnected concepts, with related concepts linked in a hierarchical network; this activity extends them with propositions, which explain the full range of knowledge we possess. Connectionist networks propose instead that the mind is made up of a large number of simple processing units working together, with connections between them forming complex patterns of activation. Both have strengths and weaknesses, and both are heavily influential in shaping how we believe the mind acquires and uses knowledge.",
+    },
+    {
+      id: "activity-steps",
+      kind: "activity",
+      title: "Activity Steps",
+      steps: [
+        {
+          id: "step-1",
+          title: "Step 1: Learn about advanced semantic networks",
+          body:
+            "The semantic network theories from 1.5 help explain how information is stored, but they are too simple to explain the full range of our knowledge. How would we differentiate 'Toby has a dog' from 'Toby is a dog'? Anderson and Bower (1974) solve this by adding propositions — the smallest unit of knowledge that can be either true or false. 'Everyone loves chocolate' is a proposition, but 'everyone' alone is not; 'Marion likes purple flowers' is a proposition, whereas 'purple flowers' is not. Propositions can be presented as a structure of nodes and linkages, with each ellipse representing one proposition. With propositions added, we can distinguish 'cats eat meat' from 'meat eats cats'. The model still shares aspects of earlier network theories: associative links, some stronger than others depending on how frequently and recently we have used them, with activation spreading to other nodes once a node is activated.",
+        },
+        {
+          id: "step-2",
+          title: "Step 2: Learn about levels of processing",
+          body:
+            "The levels of processing theory focuses on the depth of processing involved in memory, and expects that deeper levels of analysis produce more sophisticated and longer-lasting memory traces — the deeper the processing, the longer the memory trace lasts. Watch 'Memory: Levels of processing and elaboration' [8:37].",
+        },
+        {
+          id: "step-3",
+          title: "Step 3: Learn about connectionist networks",
+          body:
+            "Slide 1 — In the network described in Step 1, each node represents an idea. Connectionist network theory proposes a different approach: each idea is represented by a pattern of activation across the network, so we need to look at several nodes at once to see what pattern is happening. Many nodes represent one concept and the activations happen in parallel — parallel distributed processing (PDP). Watch 'Parallel distributed processing (PDP)' [1:03]. Slide 2 — The connectionist model relates to how brain activity spreads. The brain relies on parallel processing when several regions are activated simultaneously; you can think of the nodes as neurons. Imagine how we would function if we were not able to process information simultaneously in several brain regions. Watch 'But what is a neural network?' [stop at 16:26].",
+        },
+        {
+          id: "step-4",
+          title: "Step 4: Share with your peers",
+          body:
+            "There are many other examples where neural networks and machine learning would be useful. Come up with one example and share it with your peers.",
+        },
+      ],
+    },
+    {
+      id: "diagram",
+      kind: "resource",
+      title: "Propositional Network",
+      body:
+        "Each ellipse represents one proposition, with labelled links for agent, object, relation and subject. This is what allows the model to distinguish 'cats eat meat' from 'meat eats cats'.",
+      images: [
+        {
+          alt: "Propositional network diagram with ellipses linking Cat, Cat food, Meat and Mouse via labelled agent, object, relation and subject links",
+          caption:
+            "Anderson and Bower's propositional network — propositions carry the relation type, not just the association.",
+          src: "/images/business-psychology/hip/week-1/propositional-network.png",
+        },
+      ],
+    },
+    {
+      id: "memory-tricks",
+      kind: "note",
+      title: "Memory Tricks — Elaboration and Mnemonics",
+      items: [
+        "Elaboration — linking a stimulus to other information at the time of encoding, via mental association.",
+        "Elaborative rehearsal — repetition plus analysis: linking new information to existing information and processing it further.",
+        "Mnemonics are memory aids that require elaborative rehearsal.",
+        "Method of loci — sequential pieces of information are first associated with sequential locations in a very familiar room. When retrieving, you mentally walk around the room and retrieve the item at each location. Uses elaborative mental imagery.",
+        "Peg-word system — you visually associate the items to be remembered with a jingle that you first memorise.",
+        "Acronym — make a word where the letters stand for something (Big 5 personality: OCEAN; Great Lakes: HOMES; visible spectrum: ROY G. BIV).",
+        "Multi-coding theory — memory is enhanced by using more than one type of coding: speak (vocal), hear (auditory), read (visual), write (kinesthetic), plus elaboration, self-reference and mnemonics.",
+      ],
+    },
+    {
+      id: "definitions",
+      kind: "definition",
+      title: "Definition Callout",
+      definitions: [
+        {
+          term: "Semantic network (advanced)",
+          definition:
+            "Includes propositions — the smallest unit of meaning that can be true or false. Propositions make our semantic memory networks more precise: taking the correct path for a semantic outcome, joining the dots to make the mental picture.",
+        },
+        {
+          term: "Connectionist network",
+          definition:
+            "A model where knowledge is stored in patterns of activity spread across many simple units (like neurons). Like a city skyline at night: no single light is 'dog'; instead the pattern of many lights glowing together is 'dog'. Remembering your grandmother's face isn't one 'face node', it's a pattern across many neurons firing together — eyes, smile, voice, emotions, all blended.",
+        },
+        {
+          term: "Parallel distributed processing (PDP)",
+          definition:
+            "Activation of many nodes at the same time rather than one after another. This mirrors how the brain actually works — lots of neurons firing in parallel.",
+        },
+      ],
+    },
+    {
+      id: "model-comparison",
+      kind: "note",
+      title: "Comparing the Three Models",
+      items: [
+        "Semantic network — knowledge is concepts as nodes linked by associations. Analogy: mind map or family tree. Example: 'Canary → Bird → Animal'. Strength: explains spreading activation, where one thought triggers another. Limitation: too simple; can't capture relation types ('is a' vs 'has a').",
+        "Propositions — knowledge is mini sentences, the smallest true/false unit. Analogy: LEGO sentence blocks. Example: 'Toby has a dog' vs 'Toby is a dog'. Strength: captures meaning and relation type, not just links. Limitation: still abstract; doesn't explain how the brain encodes it.",
+        "Connectionist (PDP) — knowledge is patterns of activation across many units. Analogy: city lights at night, or a fingerprint. Example: remembering grandma's face is many neurons firing together. Strength: mirrors how neurons work; explains flexibility and learning. Limitation: harder to visualise; less precise for symbolic rules.",
+        "Shorthand: semantic = map of meanings; propositions = mini truth sentences; connectionist = neuron-like patterns. These networks are not mutually exclusive — they are evolutionary steps in modelling memory, different layers of explanation.",
+      ],
+    },
+    {
+      id: "feedback",
+      kind: "reflection",
+      title: "Feedback",
+      body:
+        "Knowing about memory networks helps us better understand how humans process and store information. Thinking about artificial intelligence, how would you write a program that can understand commands or recognise objects?",
+    },
+  ]),
+  createLearningSubModule("Week 1 summary", [
+    {
+      id: "recap",
+      kind: "summary",
+      title: "Recap of this week's activities",
+      body:
+        "This week we covered the basic building blocks of cognition, from an overarching theoretical approach such as behaviourism to more specific theories on categorisation and knowledge-building. Cognition is a critical component of us as humans and informs how we view the world around us.",
+    },
+    {
+      id: "this-week-you",
+      kind: "summary",
+      title: "This week you...",
+      items: [
+        "Discovered how cognition impacts almost every aspect of our day-to-day functioning.",
+        "Learned about behaviourism and its competing approach, introspection.",
+        "Explored how we conceptualise and store information derived from our environment.",
+        "Evaluated a network-based approach to information storage.",
+        "Critically analysed cognitive theories.",
+      ],
+    },
+    {
+      id: "look-ahead",
+      kind: "summary",
+      title: "A brief look ahead",
+      body:
+        "Next week we examine the specifics of how we retrieve and process information from our environment, particularly in the form of objects, words and faces.",
+    },
+  ]),
+];
+
 const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
   {
     id: "week-1-foundations-of-human-thinking",
@@ -1092,21 +1747,14 @@ const humanInformationProcessingWeeklyTopics: WeeklyTopic[] = [
     title: "Foundations of human thinking",
     summary:
       "Introduces cognition, cognitive perspectives, mental concepts, categorisation, and knowledge networks.",
-    subModules: createPlaceholderSubModules([
-      "Week 1 introduction",
-      "1.1 The importance of cognition",
-      "1.2 Different cognitive perspectives",
-      "1.3 Basic building blocks of cognition: Mental concepts",
-      "1.4 Categorising via prototypes and exemplars",
-      "1.5 Knowledge networks: Part 1",
-      "1.6 Knowledge networks: Part 2",
-      "Week 1 summary",
-    ]),
+    subModules: hipWeekOneSubModules,
     keyConcepts: [
-      "Human thinking",
       "Cognition",
-      "Information processing",
-      "Mental representation",
+      "Introspection and behaviourism",
+      "Mental concepts and family resemblance",
+      "Prototype and exemplar theory",
+      "Semantic networks and propositions",
+      "Connectionist networks (PDP)",
     ],
     assessmentLinks: [
       "Add assessment links, rubric notes, and study priorities for this week.",
